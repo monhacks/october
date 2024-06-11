@@ -100,10 +100,9 @@ GetOptionPointer:
 	dw Options_Cancel
 
 	const_def
-	const OPT_TEXT_SPEED_FAST ; 0
-	const OPT_TEXT_SPEED_MED  ; 1
-	const OPT_TEXT_SPEED_SLOW ; 2
-	const OPT_TEXT_SPEED_INSTANT ; 3
+	const OPT_TEXT_SPEED_INSTANT ; 0
+	const OPT_TEXT_SPEED_FAST ; 1
+	const OPT_TEXT_SPEED_MED  ; 2
 
 Options_TextSpeed:
 	call GetTextSpeed
@@ -112,10 +111,11 @@ Options_TextSpeed:
 	jr nz, .LeftPressed
 	bit D_RIGHT_F, a
 	jr z, .NonePressed
-	ld a, c ; right pressed
-	cp OPT_TEXT_SPEED_INSTANT
+; right pressed
+	ld a, c
+	cp OPT_TEXT_SPEED_MED
 	jr c, .Increase
-	ld c, OPT_TEXT_SPEED_FAST + -1
+	ld c, OPT_TEXT_SPEED_INSTANT
 
 .Increase:
 	inc c
@@ -126,7 +126,7 @@ Options_TextSpeed:
 	ld a, c
 	and a
 	jr nz, .Decrease
-	ld c, OPT_TEXT_SPEED_INSTANT + 1
+	ld c, OPT_TEXT_SPEED_MED
 
 .Decrease:
 	dec c
@@ -154,34 +154,25 @@ Options_TextSpeed:
 
 .Strings:
 ; entries correspond to OPT_TEXT_SPEED_* constants
+	dw .Instant
 	dw .Fast
 	dw .Mid
-	dw .Slow
-	dw .Instant
 
 .Fast: db "FAST   @"
 .Mid:  db "MEDIUM @"
-.Slow: db "SLOW   @"
 .Instant: db "INSTANT@"
 GetTextSpeed:
 ; converts TEXT_DELAY_* value in a to OPT_TEXT_SPEED_* value in c,
 ; with previous/next TEXT_DELAY_* values in d/e
 	ld a, [wOptions]
 	and TEXT_DELAY_MASK
-	cp TEXT_DELAY_SLOW
-	jr z, .slow
 	cp TEXT_DELAY_FAST
 	jr z, .fast
 	cp TEXT_DELAY_INSTANT
 	jr z, .instant
 	; none of the above
 	ld c, OPT_TEXT_SPEED_MED
-	lb de, TEXT_DELAY_FAST, TEXT_DELAY_SLOW
-	ret
-
-.slow
-	ld c, OPT_TEXT_SPEED_SLOW
-	lb de, TEXT_DELAY_MED, TEXT_DELAY_INSTANT
+	lb de, TEXT_DELAY_FAST, TEXT_DELAY_INSTANT
 	ret
 
 .fast
@@ -191,7 +182,7 @@ GetTextSpeed:
 	
 .instant
 	ld c, OPT_TEXT_SPEED_INSTANT
-	lb de, TEXT_DELAY_SLOW, TEXT_DELAY_FAST
+	lb de, TEXT_DELAY_MED, TEXT_DELAY_FAST
 	ret
 
 Options_BattleScene:
