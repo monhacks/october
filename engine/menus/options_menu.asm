@@ -115,7 +115,7 @@ Options_TextSpeed:
 	ld a, c
 	cp OPT_TEXT_SPEED_MED
 	jr c, .Increase
-	ld c, OPT_TEXT_SPEED_INSTANT
+	ld c, OPT_TEXT_SPEED_INSTANT - 1
 
 .Increase:
 	inc c
@@ -126,7 +126,7 @@ Options_TextSpeed:
 	ld a, c
 	and a
 	jr nz, .Decrease
-	ld c, OPT_TEXT_SPEED_MED
+	ld c, OPT_TEXT_SPEED_MED + 1
 
 .Decrease:
 	dec c
