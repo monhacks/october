@@ -126,8 +126,12 @@ enum plum_flags {
 
 enum plum_image_types {
   PLUM_IMAGE_NONE,
+  PLUM_IMAGE_BMP,
   PLUM_IMAGE_GIF,
   PLUM_IMAGE_PNG,
+  PLUM_IMAGE_APNG,
+  PLUM_IMAGE_JPEG,
+  PLUM_IMAGE_PNM,
   PLUM_NUM_IMAGE_TYPES
 };
 
@@ -682,6 +686,33 @@ internal void deallocate(struct allocator_node **, void *);
 internal void * reallocate(struct allocator_node **, void *, size_t);
 internal void destroy_allocator_list(struct allocator_node *);
 
+// bmpread.c
+internal void load_BMP_data(struct context *, unsigned, size_t);
+internal uint8_t load_BMP_palette(struct context *, size_t, unsigned, uint64_t * restrict);
+internal void load_BMP_bitmasks(struct context *, size_t, uint8_t * restrict, unsigned);
+internal uint8_t * load_monochrome_BMP(struct context *, size_t, bool);
+internal uint8_t * load_halfbyte_BMP(struct context *, size_t, bool);
+internal uint8_t * load_byte_BMP(struct context *, size_t, bool);
+internal uint8_t * load_halfbyte_compressed_BMP(struct context *, size_t, bool);
+internal uint8_t * load_byte_compressed_BMP(struct context *, size_t, bool);
+internal uint64_t * load_BMP_pixels(struct context *, size_t, bool, size_t, uint64_t (*) (const unsigned char *, const void *), const void *);
+internal uint64_t load_BMP_halfword_pixel(const unsigned char *, const void *);
+internal uint64_t load_BMP_word_pixel(const unsigned char *, const void *);
+internal uint64_t load_BMP_RGB_pixel(const unsigned char *, const void *);
+internal uint64_t load_BMP_bitmasked_pixel(uint_fast32_t, const uint8_t *);
+
+// bmpwrite.c
+internal void generate_BMP_data(struct context *);
+internal void generate_BMP_bitmasked_data(struct context *, uint32_t, unsigned char *);
+internal void generate_BMP_palette_halfbyte_data(struct context *, unsigned char *);
+internal void generate_BMP_palette_byte_data(struct context *, unsigned char *);
+internal size_t try_compress_BMP(struct context *, size_t, size_t (*) (uint8_t * restrict, const uint8_t * restrict, size_t));
+internal size_t compress_BMP_halfbyte_row(uint8_t * restrict, const uint8_t * restrict, size_t);
+internal unsigned emit_BMP_compressed_halfbyte_remainder(uint8_t * restrict, const uint8_t * restrict, unsigned);
+internal size_t compress_BMP_byte_row(uint8_t * restrict, const uint8_t * restrict, size_t);
+internal void append_BMP_palette(struct context *);
+internal void generate_BMP_RGB_data(struct context *, unsigned char *);
+
 // checksum.c
 internal uint32_t compute_PNG_CRC(const unsigned char *, size_t);
 internal uint32_t compute_Adler32_checksum(const unsigned char *, size_t);
@@ -751,6 +782,114 @@ internal void write_GIF_data_blocks(struct context *, const unsigned char * rest
 // huffman.c
 internal void generate_Huffman_tree(struct context *, const size_t * restrict, unsigned char * restrict, size_t, unsigned char);
 internal void generate_Huffman_codes(unsigned short * restrict, size_t, const unsigned char * restrict, bool);
+
+// jpegarithmetic.c
+internal void decompress_JPEG_arithmetic_scan(struct context *, struct JPEG_decompressor_state * restrict, const struct JPEG_decoder_tables *, size_t,
+                                              const struct JPEG_component_info *, const size_t * restrict, unsigned, unsigned char, unsigned char, bool);
+internal void decompress_JPEG_arithmetic_bit_scan(struct context *, struct JPEG_decompressor_state * restrict, size_t, const struct JPEG_component_info *,
+                                                  const size_t * restrict, unsigned, unsigned char, unsigned char);
+internal void decompress_JPEG_arithmetic_lossless_scan(struct context *, struct JPEG_decompressor_state * restrict, const struct JPEG_decoder_tables *, size_t,
+                                                       const struct JPEG_component_info *, const size_t * restrict, unsigned char, unsigned);
+internal void initialize_JPEG_arithmetic_counters(struct context *, size_t * restrict, size_t * restrict, uint32_t * restrict);
+internal int16_t next_JPEG_arithmetic_value(struct context *, size_t * restrict, size_t * restrict, uint32_t * restrict, uint16_t * restrict,
+                                            unsigned char * restrict, signed char * restrict, unsigned, unsigned, unsigned char);
+internal unsigned char classify_JPEG_arithmetic_value(uint16_t, unsigned char);
+internal bool next_JPEG_arithmetic_bit(struct context *, size_t * restrict, size_t * restrict, signed char * restrict, uint32_t * restrict, uint16_t * restrict,
+                                       unsigned char * restrict);
+
+// jpegcomponents.c
+internal uint32_t determine_JPEG_components(struct context *, size_t);
+internal unsigned get_JPEG_component_count(uint32_t);
+internal void (* get_JPEG_component_transfer_function(struct context *, const struct JPEG_marker_layout *, uint32_t))
+               (uint64_t * restrict, size_t, unsigned, const double **);
+internal void append_JPEG_color_depth_metadata(struct context *, void (*) (uint64_t * restrict, size_t, unsigned, const double **), unsigned);
+internal void JPEG_transfer_RGB(uint64_t * restrict, size_t, unsigned, const double **);
+internal void JPEG_transfer_BGR(uint64_t * restrict, size_t, unsigned, const double **);
+internal void JPEG_transfer_ABGR(uint64_t * restrict, size_t, unsigned, const double **);
+internal void JPEG_transfer_grayscale(uint64_t * restrict, size_t, unsigned, const double **);
+internal void JPEG_transfer_alpha_grayscale(uint64_t * restrict, size_t, unsigned, const double **);
+internal void JPEG_transfer_YCbCr(uint64_t * restrict, size_t, unsigned, const double **);
+internal void JPEG_transfer_CbYCr(uint64_t * restrict, size_t, unsigned, const double **);
+internal void JPEG_transfer_YCbCrK(uint64_t * restrict, size_t, unsigned, const double **);
+internal void JPEG_transfer_CbKYCr(uint64_t * restrict, size_t, unsigned, const double **);
+internal void JPEG_transfer_ACbYCr(uint64_t * restrict, size_t, unsigned, const double **);
+internal void JPEG_transfer_CMYK(uint64_t * restrict, size_t, unsigned, const double **);
+internal void JPEG_transfer_CKMY(uint64_t * restrict, size_t, unsigned, const double **);
+
+// jpegcompress.c
+internal struct JPEG_encoded_value * generate_JPEG_luminance_data_stream(struct context *, double (* restrict)[64], size_t, const uint8_t [restrict static 64],
+                                                                         size_t * restrict);
+internal struct JPEG_encoded_value * generate_JPEG_chrominance_data_stream(struct context *, double (* restrict)[64], double (* restrict)[64], size_t,
+                                                                           const uint8_t [restrict static 64], size_t * restrict);
+internal double generate_JPEG_data_unit(struct JPEG_encoded_value *, size_t * restrict, const double [restrict static 64], const uint8_t [restrict static 64],
+                                        double);
+internal void encode_JPEG_value(struct JPEG_encoded_value *, int16_t, unsigned, unsigned char);
+internal size_t generate_JPEG_Huffman_table(struct context *, const struct JPEG_encoded_value *, size_t, unsigned char * restrict,
+                                            unsigned char [restrict static 0x100], unsigned char);
+internal void encode_JPEG_scan(struct context *, const struct JPEG_encoded_value *, size_t, const unsigned char [restrict static 0x200]);
+
+// jpegdct.c
+internal double apply_JPEG_DCT(int16_t [restrict static 64], const double [restrict static 64], const uint8_t [restrict static 64], double);
+internal void apply_JPEG_inverse_DCT(double [restrict static 64], const int16_t [restrict static 64], const uint16_t [restrict static 64]);
+
+// jpegdecompress.c
+internal void initialize_JPEG_decompressor_state(struct context *, struct JPEG_decompressor_state * restrict, const struct JPEG_component_info *,
+                                                 const unsigned char *, size_t * restrict, size_t, size_t, size_t, unsigned char, unsigned char,
+                                                 const struct JPEG_decoder_tables *, const size_t * restrict, int16_t (* restrict *)[64]);
+internal void initialize_JPEG_decompressor_state_lossless(struct context *, struct JPEG_decompressor_state * restrict, const struct JPEG_component_info *,
+                                                          const unsigned char *, size_t * restrict, size_t, size_t, size_t, unsigned char, unsigned char,
+                                                          const struct JPEG_decoder_tables *, const size_t * restrict, uint16_t * restrict *);
+internal void initialize_JPEG_decompressor_state_common(struct context *, struct JPEG_decompressor_state * restrict, const struct JPEG_component_info *,
+                                                        const unsigned char *, size_t * restrict, size_t, size_t, size_t, unsigned char, unsigned char,
+                                                        const struct JPEG_decoder_tables *, const size_t * restrict, unsigned char);
+internal uint16_t predict_JPEG_lossless_sample(const uint16_t *, ptrdiff_t, bool, bool, unsigned, unsigned);
+
+// jpeghierarchical.c
+internal unsigned load_hierarchical_JPEG(struct context *, const struct JPEG_marker_layout *, uint32_t, double **);
+internal void expand_JPEG_component_horizontally(struct context *, double * restrict, size_t, size_t, size_t, double * restrict);
+internal void expand_JPEG_component_vertically(struct context *, double * restrict, size_t, size_t, size_t, double * restrict);
+internal void normalize_JPEG_component(double * restrict, size_t, double);
+
+// jpeghuffman.c
+internal void decompress_JPEG_Huffman_scan(struct context *, struct JPEG_decompressor_state * restrict, const struct JPEG_decoder_tables *, size_t,
+                                           const struct JPEG_component_info *, const size_t * restrict, unsigned, unsigned char, unsigned char, bool);
+internal void decompress_JPEG_Huffman_bit_scan(struct context *, struct JPEG_decompressor_state * restrict, const struct JPEG_decoder_tables *, size_t,
+                                               const struct JPEG_component_info *, const size_t * restrict, unsigned, unsigned char, unsigned char);
+internal void decompress_JPEG_Huffman_lossless_scan(struct context *, struct JPEG_decompressor_state * restrict, const struct JPEG_decoder_tables *, size_t,
+                                                    const struct JPEG_component_info *, const size_t * restrict, unsigned char, unsigned);
+internal unsigned char next_JPEG_Huffman_value(struct context *, const unsigned char **, size_t * restrict, uint32_t * restrict, uint8_t * restrict,
+                                               const short * restrict);
+
+// jpegread.c
+internal void load_JPEG_data(struct context *, unsigned, size_t);
+internal struct JPEG_marker_layout * load_JPEG_marker_layout(struct context *);
+internal unsigned get_JPEG_rotation(struct context *, size_t);
+internal unsigned load_single_frame_JPEG(struct context *, const struct JPEG_marker_layout *, uint32_t, double **);
+internal unsigned char process_JPEG_metadata_until_offset(struct context *, const struct JPEG_marker_layout *, struct JPEG_decoder_tables *, size_t * restrict,
+                                                          size_t);
+
+// jpegreadframe.c
+internal void load_JPEG_DCT_frame(struct context *, const struct JPEG_marker_layout *, uint32_t, size_t, struct JPEG_decoder_tables *, size_t * restrict,
+                                  double **, unsigned, size_t, size_t);
+internal void load_JPEG_lossless_frame(struct context *, const struct JPEG_marker_layout *, uint32_t, size_t, struct JPEG_decoder_tables *, size_t * restrict,
+                                       double **, unsigned, size_t, size_t);
+internal unsigned get_JPEG_component_info(struct context *, const unsigned char *, struct JPEG_component_info * restrict, uint32_t);
+internal const unsigned char * get_JPEG_scan_components(struct context *, size_t, struct JPEG_component_info * restrict, unsigned, unsigned char * restrict);
+internal void unpack_JPEG_component(double * restrict, double * restrict, size_t, size_t, size_t, size_t, unsigned char, unsigned char, unsigned char,
+                                    unsigned char);
+
+// jpegtables.c
+internal void initialize_JPEG_decoder_tables(struct context *, struct JPEG_decoder_tables *, const struct JPEG_marker_layout *);
+internal short * process_JPEG_Huffman_table(struct context *, const unsigned char ** restrict, uint16_t * restrict);
+internal void load_default_JPEG_Huffman_tables(struct context *, struct JPEG_decoder_tables * restrict);
+
+// jpegwrite.c
+internal void generate_JPEG_data(struct context *);
+internal void calculate_JPEG_quantization_tables(struct context *, uint8_t [restrict static 64], uint8_t [restrict static 64]);
+internal void convert_JPEG_components_to_YCbCr(struct context *, double (* restrict)[64], double (* restrict)[64], double (* restrict)[64]);
+internal void convert_JPEG_colors_to_YCbCr(const void * restrict, size_t, unsigned char, double * restrict, double * restrict, double * restrict,
+                                           uint64_t * restrict);
+internal void subsample_JPEG_component(double (* restrict)[64], double (* restrict)[64], size_t, size_t);
 
 // load.c
 internal void load_image_buffer_data(struct context *, unsigned, size_t);
@@ -829,16 +968,41 @@ internal void remove_PNG_filter(struct context *, unsigned char * restrict, uint
 
 // pngwrite.c
 internal void generate_PNG_data(struct context *);
+internal void generate_APNG_data(struct context *);
 internal unsigned generate_PNG_header(struct context *, struct plum_rectangle * restrict);
 internal void append_PNG_header_chunks(struct context *, unsigned, uint32_t);
 internal void append_PNG_palette_data(struct context *, bool);
 internal void append_PNG_background_chunk(struct context *, const void * restrict, unsigned);
 internal void append_PNG_image_data(struct context *, const void * restrict, unsigned, uint32_t * restrict, const struct plum_rectangle *);
+internal void append_APNG_frame_header(struct context *, uint64_t, uint8_t, uint8_t, uint32_t * restrict, int64_t * restrict, const struct plum_rectangle *);
 internal void output_PNG_chunk(struct context *, uint32_t, uint32_t, const void * restrict);
 internal unsigned char * generate_PNG_frame_data(struct context *, const void * restrict, unsigned, size_t * restrict, const struct plum_rectangle *);
 internal void generate_PNG_row_data(struct context *, const void * restrict, unsigned char * restrict, size_t, unsigned);
 internal void filter_PNG_rows(unsigned char * restrict, const unsigned char * restrict, size_t, unsigned);
 internal unsigned char select_PNG_filtered_row(const unsigned char *, size_t);
+
+// pnmread.c
+internal void load_PNM_data(struct context *, unsigned, size_t);
+internal void load_PNM_header(struct context *, size_t, struct PNM_image_header * restrict);
+internal void load_PAM_header(struct context *, size_t, struct PNM_image_header * restrict);
+internal void skip_PNM_whitespace(struct context *, size_t * restrict);
+internal void skip_PNM_line(struct context *, size_t * restrict);
+internal unsigned next_PNM_token_length(struct context *, size_t);
+internal void read_PNM_numbers(struct context *, size_t * restrict, uint32_t * restrict, size_t);
+internal void add_PNM_bit_depth_metadata(struct context *, const struct PNM_image_header *);
+internal void load_PNM_frame(struct context *, const struct PNM_image_header * restrict, uint64_t * restrict);
+internal void load_PNM_bit_frame(struct context *, size_t, size_t, size_t, uint64_t * restrict);
+
+// pnmwrite.c
+internal void generate_PNM_data(struct context *);
+internal uint32_t * get_true_PNM_frame_sizes(struct context *);
+internal void generate_PPM_data(struct context *, const uint32_t * restrict, unsigned, uint64_t * restrict);
+internal void generate_PPM_header(struct context *, uint32_t, uint32_t, unsigned);
+internal void generate_PAM_data(struct context *, const uint32_t * restrict, unsigned, uint64_t * restrict);
+internal void generate_PAM_header(struct context *, uint32_t, uint32_t, unsigned);
+internal size_t write_PNM_number(unsigned char * restrict, uint32_t);
+internal void generate_PNM_frame_data(struct context *, const uint64_t *, uint32_t, uint32_t, unsigned, bool);
+internal void generate_PNM_frame_data_from_palette(struct context *, const uint8_t *, const uint64_t *, uint32_t, uint32_t, unsigned, bool);
 
 // sort.c
 internal void sort_values(uint64_t * restrict, uint64_t);
@@ -1069,6 +1233,704 @@ void plum_free (struct plum_image * image, void * buffer) {
     image -> allocator = list;
   } else
     free(buffer); // special compatibility mode for bad runtimes without access to C libraries
+}
+
+void load_BMP_data (struct context * context, unsigned flags, size_t limit) {
+  if (context -> size < 54) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  uint_fast32_t subheader = read_le32_unaligned(context -> data + 14);
+  if (subheader < 40 || subheader >= 0xffffffe6u) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  context -> image -> type = PLUM_IMAGE_BMP;
+  context -> image -> frames = 1;
+  context -> image -> width = read_le32_unaligned(context -> data + 18);
+  context -> image -> height = read_le32_unaligned(context -> data + 22);
+  if (context -> image -> width > 0x7fffffffu || context -> image -> height == 0x80000000u) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  bool inverted = true;
+  if (context -> image -> height > 0x7fffffffu) {
+    context -> image -> height = -context -> image -> height;
+    inverted = false;
+  }
+  validate_image_size(context, limit);
+  uint_fast32_t dataoffset = read_le32_unaligned(context -> data + 10);
+  if (dataoffset < subheader + 14 || dataoffset >= context -> size) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  if (read_le16_unaligned(context -> data + 26) != 1) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  uint_fast16_t bits = read_le16_unaligned(context -> data + 28);
+  uint_fast32_t compression = read_le32_unaligned(context -> data + 30);
+  if (bits > 32 || compression > 3) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  allocate_framebuffers(context, flags, bits <= 8);
+  void * frame;
+  uint8_t bitmasks[8];
+  uint64_t palette[256];
+  switch (bits | (compression << 8)) {
+    case 1: // palette-based, first pixel in MSB
+      context -> image -> max_palette_index = load_BMP_palette(context, (size_t) 14 + subheader, 2, palette);
+      frame = load_monochrome_BMP(context, dataoffset, inverted);
+      write_palette_to_image(context, palette, flags);
+      write_palette_framebuffer_to_image(context, frame, palette, 0, flags, context -> image -> max_palette_index);
+      break;
+    case 4: // palette-based, first pixel in upper half
+      context -> image -> max_palette_index = load_BMP_palette(context, (size_t) 14 + subheader, 16, palette);
+      frame = load_halfbyte_BMP(context, dataoffset, inverted);
+      write_palette_to_image(context, palette, flags);
+      write_palette_framebuffer_to_image(context, frame, palette, 0, flags, context -> image -> max_palette_index);
+      break;
+    case 0x204: // 4-bit RLE
+      context -> image -> max_palette_index = load_BMP_palette(context, (size_t) 14 + subheader, 16, palette);
+      frame = load_halfbyte_compressed_BMP(context, dataoffset, inverted);
+      write_palette_to_image(context, palette, flags);
+      write_palette_framebuffer_to_image(context, frame, palette, 0, flags, context -> image -> max_palette_index);
+      break;
+    case 8: // palette-based
+      context -> image -> max_palette_index = load_BMP_palette(context, (size_t) 14 + subheader, 256, palette);
+      frame = load_byte_BMP(context, dataoffset, inverted);
+      write_palette_to_image(context, palette, flags);
+      write_palette_framebuffer_to_image(context, frame, palette, 0, flags, context -> image -> max_palette_index);
+      break;
+    case 0x108: // 8-bit RLE
+      context -> image -> max_palette_index = load_BMP_palette(context, (size_t) 14 + subheader, 256, palette);
+      frame = load_byte_compressed_BMP(context, dataoffset, inverted);
+      write_palette_to_image(context, palette, flags);
+      write_palette_framebuffer_to_image(context, frame, palette, 0, flags, context -> image -> max_palette_index);
+      break;
+    case 16: // mask 0x7c00 red, 0x03e0 green, 0x001f blue
+      add_color_depth_metadata(context, 5, 5, 5, 0, 0);
+      frame = load_BMP_pixels(context, dataoffset, inverted, 2, &load_BMP_halfword_pixel, (const uint8_t []) {10, 5, 5, 5, 0, 5, 0, 0});
+      write_framebuffer_to_image(context -> image, frame, 0, flags);
+      break;
+    case 0x310: // 16-bit bitfield-based
+      load_BMP_bitmasks(context, subheader, bitmasks, 16);
+      add_color_depth_metadata(context, bitmasks[1], bitmasks[3], bitmasks[5], bitmasks[7], 0);
+      frame = load_BMP_pixels(context, dataoffset, inverted, 2, &load_BMP_halfword_pixel, bitmasks);
+      write_framebuffer_to_image(context -> image, frame, 0, flags);
+      break;
+    case 24: // blue, green, red
+      add_color_depth_metadata(context, 8, 8, 8, 0, 0);
+      frame = load_BMP_pixels(context, dataoffset, inverted, 3, &load_BMP_RGB_pixel, NULL);
+      write_framebuffer_to_image(context -> image, frame, 0, flags);
+      break;
+    case 32: // blue, green, red, ignored
+      add_color_depth_metadata(context, 8, 8, 8, 0, 0);
+      frame = load_BMP_pixels(context, dataoffset, inverted, 4, &load_BMP_word_pixel, (const uint8_t []) {16, 8, 8, 8, 0, 8, 0, 0});
+      write_framebuffer_to_image(context -> image, frame, 0, flags);
+      break;
+    case 0x320: // 32-bit bitfield-based
+      load_BMP_bitmasks(context, subheader, bitmasks, 32);
+      add_color_depth_metadata(context, bitmasks[1], bitmasks[3], bitmasks[5], bitmasks[7], 0);
+      frame = load_BMP_pixels(context, dataoffset, inverted, 4, &load_BMP_word_pixel, bitmasks);
+      write_framebuffer_to_image(context -> image, frame, 0, flags);
+      break;
+    default:
+      throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  }
+  ctxfree(context, frame);
+}
+
+uint8_t load_BMP_palette (struct context * context, size_t offset, unsigned max_count, uint64_t * restrict palette) {
+  uint_fast32_t count = read_le32_unaligned(context -> data + 46);
+  if (!count || count > max_count) count = max_count;
+  size_t end = offset + count * 4;
+  if (end < offset || end > context -> size) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  for (unsigned p = 0; p < count; p ++, offset += 4)
+    palette[p] = (((uint64_t) context -> data[offset] << 32) | ((uint64_t) context -> data[offset + 1] << 16) | (uint64_t) context -> data[offset + 2]) * 0x101;
+  add_color_depth_metadata(context, 8, 8, 8, 0, 0);
+  return count - 1;
+}
+
+void load_BMP_bitmasks (struct context * context, size_t headersize, uint8_t * restrict bitmasks, unsigned maxbits) {
+  bool valid = false;
+  const uint8_t * bp;
+  unsigned count;
+  if (headersize >= 56) {
+    bp = context -> data + 54;
+    count = 4;
+  } else {
+    if (context -> size <= headersize + 26) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+    bp = context -> data + 14 + headersize;
+    count = 3;
+    bitmasks[6] = bitmasks[7] = 0;
+  }
+  while (count --) {
+    uint_fast32_t mask = read_le32_unaligned(bp);
+    *bitmasks = bitmasks[1] = 0;
+    if (mask) {
+      while (!(mask & 1)) {
+        ++ *bitmasks;
+        mask >>= 1;
+      }
+      while (mask & 1) {
+        bitmasks[1] ++;
+        mask >>= 1;
+      }
+      if (mask) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+      if (bitmasks[1] > 16) {
+        *bitmasks += bitmasks[1] - 16;
+        bitmasks[1] = 16;
+      }
+      if (*bitmasks + bitmasks[1] > maxbits) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+      valid = true; // at least one mask is not empty
+    }
+    bp += 4;
+    bitmasks += 2;
+  }
+  if (!valid) throw(context, PLUM_ERR_NO_DATA);
+}
+
+uint8_t * load_monochrome_BMP (struct context * context, size_t offset, bool inverted) {
+  size_t rowsize = ((context -> image -> width + 31) >> 3) & bitnegate(3);
+  size_t imagesize = rowsize * context -> image -> height;
+  if (imagesize > context -> size - offset) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  uint8_t * frame = ctxmalloc(context, (size_t) context -> image -> width * context -> image -> height);
+  const unsigned char * rowdata = context -> data + offset + (inverted ? rowsize * (context -> image -> height - 1) : 0);
+  size_t cell = 0;
+  for (uint_fast32_t row = 0; row < context -> image -> height; row ++) {
+    const unsigned char * pixeldata = rowdata;
+    for (uint_fast32_t pos = (context -> image -> width >> 3); pos; pos --, pixeldata ++) {
+      frame[cell ++] = !!(*pixeldata & 0x80);
+      frame[cell ++] = !!(*pixeldata & 0x40);
+      frame[cell ++] = !!(*pixeldata & 0x20);
+      frame[cell ++] = !!(*pixeldata & 0x10);
+      frame[cell ++] = !!(*pixeldata & 8);
+      frame[cell ++] = !!(*pixeldata & 4);
+      frame[cell ++] = !!(*pixeldata & 2);
+      frame[cell ++] = *pixeldata & 1;
+    }
+    if (context -> image -> width & 7) {
+      unsigned char remainder = *pixeldata;
+      for (uint_fast8_t pos = context -> image -> width & 7; pos; pos --, remainder <<= 1) frame[cell ++] = !!(remainder & 0x80);
+    }
+    if (inverted)
+      rowdata -= rowsize;
+    else
+      rowdata += rowsize;
+  }
+  return frame;
+}
+
+uint8_t * load_halfbyte_BMP (struct context * context, size_t offset, bool inverted) {
+  size_t rowsize = ((context -> image -> width + 7) >> 1) & bitnegate(3);
+  size_t imagesize = rowsize * context -> image -> height;
+  if (imagesize > context -> size - offset) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  uint8_t * frame = ctxmalloc(context, (size_t) context -> image -> width * context -> image -> height);
+  const unsigned char * rowdata = context -> data + offset + (inverted ? rowsize * (context -> image -> height - 1) : 0);
+  size_t cell = 0;
+  for (uint_fast32_t row = 0; row < context -> image -> height; row ++) {
+    const unsigned char * pixeldata = rowdata;
+    for (uint_fast32_t pos = context -> image -> width >> 1; pos; pos --) {
+      frame[cell ++] = *pixeldata >> 4;
+      frame[cell ++] = *(pixeldata ++) & 15;
+    }
+    if (context -> image -> width & 1) frame[cell ++] = *pixeldata >> 4;
+    if (inverted)
+      rowdata -= rowsize;
+    else
+      rowdata += rowsize;
+  }
+  return frame;
+}
+
+uint8_t * load_byte_BMP (struct context * context, size_t offset, bool inverted) {
+  size_t rowsize = (context -> image -> width + 3) & bitnegate(3);
+  size_t imagesize = rowsize * context -> image -> height;
+  if (imagesize > context -> size - offset) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  uint8_t * frame = ctxmalloc(context, (size_t) context -> image -> width * context -> image -> height);
+  if (inverted || (context -> image -> width & 3))
+    for (uint_fast32_t row = 0; row < context -> image -> height; row ++)
+      memcpy(frame + context -> image -> width * row,
+             context -> data + offset + rowsize * (inverted ? context -> image -> height - 1 - row : row),
+             context -> image -> width);
+  else
+    memcpy(frame, context -> data + offset, imagesize);
+  return frame;
+}
+
+uint8_t * load_halfbyte_compressed_BMP (struct context * context, size_t offset, bool inverted) {
+  if (!inverted) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  const unsigned char * data = context -> data + offset;
+  size_t remaining = context -> size - offset;
+  uint8_t * frame = ctxcalloc(context, (size_t) context -> image -> width * context -> image -> height);
+  uint_fast32_t row = context -> image -> height - 1, col = 0;
+  while (remaining >= 2) {
+    unsigned char length = *(data ++);
+    unsigned char databyte = *(data ++);
+    remaining -= 2;
+    if (length) {
+      if (col + length > context -> image -> width) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+      uint8_t * framedata = frame + (size_t) row * context -> image -> width + col;
+      col += length;
+      while (length) {
+        *(framedata ++) = databyte >> 4;
+        databyte = (databyte >> 4) | (databyte << 4);
+        length --;
+      }
+    } else switch (databyte) {
+      case 0:
+        if (row) {
+          row --;
+          col = 0;
+          break;
+        }
+      case 1:
+        return frame;
+      case 2:
+        if (remaining < 2 || col + *data > context -> image -> width || data[1] > row) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+        col += *(data ++);
+        row -= *(data ++);
+        remaining -= 2;
+        break;
+      default: {
+        if (col + databyte > context -> image -> width) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+        if (remaining < (((databyte + 3) & ~3u) >> 1)) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+        uint8_t * framedata = frame + (size_t) row * context -> image -> width + col;
+        uint_fast8_t pos;
+        for (pos = 0; pos < (databyte >> 1); pos ++) {
+          *(framedata ++) = data[pos] >> 4;
+          *(framedata ++) = data[pos] & 15;
+        }
+        if (databyte & 1) *framedata = data[pos] >> 4;
+        col += databyte;
+        data += ((databyte + 3) & ~3u) >> 1;
+        remaining -= ((databyte + 3) & ~3u) >> 1;
+      }
+    }
+  }
+  throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+}
+
+uint8_t * load_byte_compressed_BMP (struct context * context, size_t offset, bool inverted) {
+  if (!inverted) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  const unsigned char * data = context -> data + offset;
+  size_t remaining = context -> size - offset;
+  uint8_t * frame = ctxcalloc(context, (size_t) context -> image -> width * context -> image -> height);
+  uint_fast32_t row = context -> image -> height - 1, col = 0;
+  while (remaining >= 2) {
+    unsigned char length = *(data ++);
+    unsigned char databyte = *(data ++);
+    remaining -= 2;
+    if (length) {
+      if (col + length > context -> image -> width) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+      memset(frame + (size_t) row * context -> image -> width + col, databyte, length);
+      col += length;
+    } else switch (databyte) {
+      case 0:
+        if (row) {
+          row --;
+          col = 0;
+          break;
+        }
+      case 1:
+        return frame;
+      case 2:
+        if (remaining < 2 || col + *data > context -> image -> width || data[1] > row) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+        col += *(data ++);
+        row -= *(data ++);
+        remaining -= 2;
+        break;
+      default:
+        if (col + databyte > context -> image -> width) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+        if (remaining < ((databyte + 1) & ~1u)) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+        memcpy(frame + (size_t) row * context -> image -> width + col, data, databyte);
+        col += databyte;
+        data += (databyte + 1) & ~1u;
+        remaining -= (databyte + 1) & ~1u;
+    }
+  }
+  throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+}
+
+uint64_t * load_BMP_pixels (struct context * context, size_t offset, bool inverted, size_t bytes,
+                            uint64_t (* loader) (const unsigned char *, const void *), const void * loaderdata) {
+  size_t rowsize = (context -> image -> width * bytes + 3) & bitnegate(3);
+  size_t imagesize = rowsize * context -> image -> height;
+  if (imagesize > context -> size - offset) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  const unsigned char * rowdata = context -> data + offset + (inverted ? rowsize * (context -> image -> height - 1) : 0);
+  size_t cell = 0;
+  uint64_t * frame = ctxmalloc(context, sizeof *frame * context -> image -> width * context -> image -> height);
+  for (uint_fast32_t row = 0; row < context -> image -> height; row ++) {
+    const unsigned char * pixeldata = rowdata;
+    for (uint_fast32_t col = 0; col < context -> image -> width; col ++) {
+      frame[cell ++] = loader(pixeldata, loaderdata);
+      pixeldata += bytes;
+    }
+    if (inverted)
+      rowdata -= rowsize;
+    else
+      rowdata += rowsize;
+  }
+  return frame;
+}
+
+uint64_t load_BMP_halfword_pixel (const unsigned char * data, const void * bitmasks) {
+  return load_BMP_bitmasked_pixel(read_le16_unaligned(data), bitmasks);
+}
+
+uint64_t load_BMP_word_pixel (const unsigned char * data, const void * bitmasks) {
+  return load_BMP_bitmasked_pixel(read_le32_unaligned(data), bitmasks);
+}
+
+uint64_t load_BMP_RGB_pixel (const unsigned char * data, const void * bitmasks) {
+  (void) bitmasks;
+  return (((uint64_t) *data << 32) | ((uint64_t) data[1] << 16) | (uint64_t) data[2]) * 0x101;
+}
+
+uint64_t load_BMP_bitmasked_pixel (uint_fast32_t pixel, const uint8_t * bitmasks) {
+  uint64_t result = 0;
+  if (bitmasks[1]) result |= bitextend16((pixel >> *bitmasks) & (((uint64_t) 1 << bitmasks[1]) - 1), bitmasks[1]);
+  if (bitmasks[3]) result |= (uint64_t) bitextend16((pixel >> bitmasks[2]) & (((uint64_t) 1 << bitmasks[3]) - 1), bitmasks[3]) << 16;
+  if (bitmasks[5]) result |= (uint64_t) bitextend16((pixel >> bitmasks[4]) & (((uint64_t) 1 << bitmasks[5]) - 1), bitmasks[5]) << 32;
+  if (bitmasks[7]) result |= (~(uint64_t) bitextend16((pixel >> bitmasks[6]) & (((uint64_t) 1 << bitmasks[7]) - 1), bitmasks[7])) << 48;
+  return result;
+}
+
+void generate_BMP_data (struct context * context) {
+  if (context -> source -> frames > 1) throw(context, PLUM_ERR_NO_MULTI_FRAME);
+  if (context -> source -> width > 0x7fffffffu || context -> source -> height > 0x7fffffffu) throw(context, PLUM_ERR_IMAGE_TOO_LARGE);
+  unsigned char * header = append_output_node(context, 14);
+  bytewrite(header, 0x42, 0x4d, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00);
+  uint32_t depth = get_true_color_depth(context -> source);
+  if (depth >= 0x1000000u)
+    generate_BMP_bitmasked_data(context, depth, header + 10);
+  else if (context -> source -> palette)
+    if (context -> source -> max_palette_index < 16)
+      generate_BMP_palette_halfbyte_data(context, header + 10);
+    else
+      generate_BMP_palette_byte_data(context, header + 10);
+  else if (bit_depth_less_than(depth, 0x80808u))
+    generate_BMP_RGB_data(context, header + 10);
+  else
+    generate_BMP_bitmasked_data(context, depth, header + 10);
+  size_t filesize = get_total_output_size(context);
+  if (filesize <= 0x7fffffffu) write_le32_unaligned(header + 2, filesize);
+}
+
+void generate_BMP_bitmasked_data (struct context * context, uint32_t depth, unsigned char * offset_pointer) {
+  uint8_t reddepth = depth, greendepth = depth >> 8, bluedepth = depth >> 16, alphadepth = depth >> 24;
+  uint_fast8_t totaldepth = reddepth + greendepth + bluedepth + alphadepth;
+  if (totaldepth > 32) {
+    reddepth = ((reddepth << 6) / totaldepth + 1) >> 1;
+    greendepth = ((greendepth << 6) / totaldepth + 1) >> 1;
+    bluedepth = ((bluedepth << 6) / totaldepth + 1) >> 1;
+    alphadepth = ((alphadepth << 6) / totaldepth + 1) >> 1;
+    totaldepth = reddepth + greendepth + bluedepth + alphadepth;
+    while (totaldepth > 32) {
+      if (alphadepth > 2) totaldepth --, alphadepth --;
+      if (bluedepth > 2 && totaldepth > 32) totaldepth --, bluedepth --;
+      if (reddepth > 2 && totaldepth > 32) totaldepth --, reddepth --;
+      if (greendepth > 2 && totaldepth > 32) totaldepth --, greendepth --;
+    }
+  }
+  uint8_t blueshift = reddepth + greendepth, alphashift = blueshift + bluedepth;
+  unsigned char * attributes = append_output_node(context, 108);
+  memset(attributes, 0, 108);
+  write_le32_unaligned(offset_pointer, 122);
+  *attributes = 108;
+  write_le32_unaligned(attributes + 4, context -> source -> width);
+  write_le32_unaligned(attributes + 8, context -> source -> height);
+  attributes[12] = 1;
+  attributes[14] = (totaldepth <= 16) ? 16 : 32;
+  attributes[16] = 3;
+  write_le32_unaligned(attributes + 40, ((uint32_t) 1 << reddepth) - 1);
+  write_le32_unaligned(attributes + 44, (((uint32_t) 1 << greendepth) - 1) << reddepth);
+  write_le32_unaligned(attributes + 48, (((uint32_t) 1 << bluedepth) - 1) << blueshift);
+  write_le32_unaligned(attributes + 52, alphadepth ? (((uint32_t) 1 << alphadepth) - 1) << alphashift : 0);
+  write_le32_unaligned(attributes + 56, 0x73524742u); // 'sRGB'
+  size_t rowsize = (size_t) context -> source -> width * (attributes[14] >> 3);
+  if (totaldepth <= 16 && (context -> source -> width & 1)) rowsize += 2;
+  size_t imagesize = rowsize * context -> source -> height;
+  if (imagesize <= 0x7fffffffu) write_le32_unaligned(attributes + 20, imagesize);
+  unsigned char * data = append_output_node(context, imagesize);
+  uint_fast32_t row = context -> source -> height - 1;
+  do {
+    size_t pos = (size_t) row * context -> source -> width;
+    for (uint_fast32_t p = 0; p < context -> source -> width; p ++) {
+      uint64_t color;
+      const void * colordata = context -> source -> data;
+      size_t index = pos ++;
+      if (context -> source -> palette) {
+        index = context -> source -> data8[index];
+        colordata = context -> source -> palette;
+      }
+      switch (context -> source -> color_format & PLUM_COLOR_MASK) {
+        case PLUM_COLOR_16: color = index[(const uint16_t *) colordata]; break;
+        case PLUM_COLOR_64: color = index[(const uint64_t *) colordata]; break;
+        default: color = index[(const uint32_t *) colordata];
+      }
+      color = plum_convert_color(color, context -> source -> color_format, PLUM_COLOR_64 | PLUM_ALPHA_INVERT);
+      uint_fast32_t out = ((color & 0xffffu) >> (16 - reddepth)) | ((color & 0xffff0000u) >> (32 - greendepth) << reddepth) |
+                          ((color & 0xffff00000000u) >> (48 - bluedepth) << blueshift);
+      if (alphadepth) out |= color >> (64 - alphadepth) << alphashift;
+      if (totaldepth <= 16) {
+        write_le16_unaligned(data, out);
+        data += 2;
+      } else {
+        write_le32_unaligned(data, out);
+        data += 4;
+      }
+    }
+    if (totaldepth <= 16 && (context -> source -> width & 1)) data += byteappend(data, 0x00, 0x00);
+  } while (row --);
+}
+
+void generate_BMP_palette_halfbyte_data (struct context * context, unsigned char * offset_pointer) {
+  unsigned char * attributes = append_output_node(context, 40);
+  write_le32_unaligned(offset_pointer, 58 + 4 * context -> source -> max_palette_index);
+  memset(attributes, 0, 40);
+  *attributes = 40;
+  write_le32_unaligned(attributes + 4, context -> source -> width);
+  write_le32_unaligned(attributes + 8, context -> source -> height);
+  attributes[12] = 1;
+  attributes[14] = 4;
+  write_le32_unaligned(attributes + 32, context -> source -> max_palette_index + 1);
+  append_BMP_palette(context);
+  size_t rowsize = ((context -> source -> width + 7) & ~7u) >> 1;
+  if (context -> source -> max_palette_index < 2) rowsize = ((rowsize >> 2) + 3) & bitnegate(3);
+  size_t imagesize = rowsize * context -> source -> height;
+  unsigned char * data = append_output_node(context, imagesize);
+  size_t compressed = try_compress_BMP(context, imagesize, &compress_BMP_halfbyte_row);
+  if (compressed) {
+    attributes[16] = 2;
+    if (compressed <= 0x7fffffffu) write_le32_unaligned(attributes + 20, compressed);
+    context -> output -> size = compressed;
+    return;
+  }
+  uint_fast32_t row = context -> source -> height - 1;
+  uint_fast8_t padding = 3u & ~((context -> source -> width - 1) >> ((context -> source -> max_palette_index < 2) ? 3 : 1));
+  do {
+    const uint8_t * source = context -> source -> data8 + (size_t) row * context -> source -> width;
+    if (context -> source -> max_palette_index < 2) {
+      uint_fast8_t value = 0;
+      for (uint_fast32_t p = 0; p < context -> source -> width; p ++) {
+        value = (value << 1) | source[p];
+        if ((p & 7) == 7) {
+          *(data ++) = value;
+          value = 0;
+        }
+      }
+      if (context -> source -> width & 7) *(data ++) = value << (8 - (context -> source -> width & 7));
+      attributes[14] = 1;
+    } else {
+      for (uint_fast32_t p = 0; p < context -> source -> width - 1; p += 2) *(data ++) = (source[p] << 4) | source[p + 1];
+      if (context -> source -> width & 1) *(data ++) = source[context -> source -> width - 1] << 4;
+    }
+    for (uint_fast8_t value = 0; value < padding; value ++) *(data ++) = 0;
+  } while (row --);
+}
+
+void generate_BMP_palette_byte_data (struct context * context, unsigned char * offset_pointer) {
+  unsigned char * attributes = append_output_node(context, 40);
+  write_le32_unaligned(offset_pointer, 58 + 4 * context -> source -> max_palette_index);
+  memset(attributes, 0, 40);
+  *attributes = 40;
+  write_le32_unaligned(attributes + 4, context -> source -> width);
+  write_le32_unaligned(attributes + 8, context -> source -> height);
+  attributes[12] = 1;
+  attributes[14] = 8;
+  write_le32_unaligned(attributes + 32, context -> source -> max_palette_index + 1);
+  append_BMP_palette(context);
+  size_t rowsize = (context -> source -> width + 3) & bitnegate(3), imagesize = rowsize * context -> source -> height;
+  unsigned char * data = append_output_node(context, imagesize);
+  size_t compressed = try_compress_BMP(context, imagesize, &compress_BMP_byte_row);
+  if (compressed) {
+    attributes[16] = 1;
+    if (compressed <= 0x7fffffffu) write_le32_unaligned(attributes + 20, compressed);
+    context -> output -> size = compressed;
+    return;
+  }
+  uint_fast32_t row = context -> source -> height - 1;
+  do {
+    memcpy(data, context -> source -> data8 + row * context -> source -> width, context -> source -> width);
+    if (rowsize != context -> source -> width) memset(data + context -> source -> width, 0, rowsize - context -> source -> width);
+    data += rowsize;
+  } while (row --);
+}
+
+size_t try_compress_BMP (struct context * context, size_t size, size_t (* rowhandler) (uint8_t * restrict, const uint8_t * restrict, size_t)) {
+  uint8_t * rowdata = ctxmalloc(context, size * ((context -> source -> max_palette_index < 2) ? 8 : 2) + 2);
+  uint8_t * output = context -> output -> data;
+  size_t cumulative = 0;
+  uint_fast32_t row = context -> source -> height - 1;
+  do {
+    size_t rowsize = rowhandler(rowdata, context -> source -> data8 + (size_t) row * context -> source -> width, context -> source -> width);
+    cumulative += rowsize;
+    if (cumulative >= size) {
+      ctxfree(context, rowdata);
+      return 0;
+    }
+    if (!row) rowdata[rowsize - 1] = 1; // convert a 0x00, 0x00 (EOL) into 0x00, 0x01 (EOF)
+    memcpy(output, rowdata, rowsize);
+    output += rowsize;
+  } while (row --);
+  ctxfree(context, rowdata);
+  return cumulative;
+}
+
+size_t compress_BMP_halfbyte_row (uint8_t * restrict result, const uint8_t * restrict data, size_t count) {
+  size_t size = 2; // account for the terminator
+  while (count > 3)
+    if (*data == data[2] && data[1] == data[3]) {
+      uint_fast8_t length;
+      for (length = 4; length < 0xff && length < count && data[length] == data[length - 2]; length ++);
+      result += byteappend(result, length, (*data << 4) | data[1]);
+      size += 2;
+      data += length;
+      count -= length;
+    } else {
+      size_t length;
+      uint_fast8_t matches = 0;
+      for (length = 2; length < count; length ++) {
+        if (data[length] == data[length - 2])
+          matches ++;
+        else
+          matches = 0;
+        if (matches >= 5) {
+          length -= matches;
+          break;
+        }
+      }
+      while (length > 2) {
+        uint_fast8_t block = (length > 0xff) ? 0xfc : length;
+        result += byteappend(result, 0, block);
+        size += (block + 7) >> 2 << 1;
+        length -= block;
+        count -= block;
+        while (block >= 4) {
+          result += byteappend(result, (*data << 4) | data[1], (data[2] << 4) | data[3]);
+          data += 4;
+          block -= 4;
+        }
+        switch (block) {
+          case 1: result += byteappend(result, *data << 4, 0); break;
+          case 2: result += byteappend(result, (*data << 4) | data[1], 0); break;
+          case 3: result += byteappend(result, (*data << 4) | data[1], data[2] << 4);
+        }
+        data += block;
+      }
+      matches = emit_BMP_compressed_halfbyte_remainder(result, data, length);
+      result += matches;
+      size += matches;
+      data += length;
+      count -= length;
+    }
+  count = emit_BMP_compressed_halfbyte_remainder(result, data, count);
+  result[count] = result[count + 1] = 0;
+  return size + count;
+}
+
+unsigned emit_BMP_compressed_halfbyte_remainder (uint8_t * restrict result, const uint8_t * restrict data, unsigned count) {
+  switch (count) {
+    case 1:
+      bytewrite(result, 1, *data << 4);
+      return 2;
+    case 2:
+      bytewrite(result, 2, (*data << 4) | data[1]);
+      return 2;
+    case 3:
+      result += byteappend(result, 2 + (*data == data[2]), (*data << 4) | data[1]);
+      if (*data == data[2]) return 2;
+      bytewrite(result, 1, data[2] << 4);
+      return 4;
+    default:
+      return 0;
+  }
+}
+
+size_t compress_BMP_byte_row (uint8_t * restrict result, const uint8_t * restrict data, size_t count) {
+  size_t size = 2; // account for the terminator
+  while (count > 1)
+    if (*data == data[1]) {
+      uint_fast8_t length;
+      for (length = 2; length < 0xff && length < count && *data == data[length]; length ++);
+      result += byteappend(result, length, *data);
+      size += 2;
+      data += length;
+      count -= length;
+    } else {
+      size_t length;
+      uint_fast8_t matches = 0;
+      for (length = 1; length < count; length ++) {
+        if (data[length] == data[length - 1])
+          matches ++;
+        else
+          matches = 0;
+        if (matches >= 2) {
+          length -= matches;
+          break;
+        }
+      }
+      while (length > 2) {
+        uint_fast8_t block = (length > 0xff) ? 0xfe : length;
+        result += byteappend(result, 0, block);
+        memcpy(result, data, block);
+        result += block;
+        data += block;
+        size += 2 + block;
+        length -= block;
+        count -= block;
+        if (block & 1) {
+          *(result ++) = 0;
+          size ++;
+        }
+      }
+      if (length == 2) {
+        matches = 1 + (*data == data[1]);
+        result += byteappend(result, matches, *data);
+        size += 2;
+        data += matches;
+        count -= matches;
+        length -= matches;
+      }
+      if (length == 1) {
+        result += byteappend(result, 1, *data);
+        data ++;
+        size += 2;
+        count --;
+      }
+    }
+  if (count == 1) {
+    result += byteappend(result, 1, *data);
+    size += 2;
+  }
+  bytewrite(result, 0, 0);
+  return size;
+}
+
+void append_BMP_palette (struct context * context) {
+  unsigned char * data = append_output_node(context, 4 * (context -> source -> max_palette_index + 1));
+  uint32_t * colors = ctxmalloc(context, sizeof *colors * (context -> source -> max_palette_index + 1));
+  plum_convert_colors(colors, context -> source -> palette, context -> source -> max_palette_index + 1, PLUM_COLOR_32, context -> source -> color_format);
+  for (unsigned p = 0; p <= context -> source -> max_palette_index; p ++) data += byteappend(data, colors[p] >> 16, colors[p] >> 8, colors[p], 0);
+  ctxfree(context, colors);
+}
+
+void generate_BMP_RGB_data (struct context * context, unsigned char * offset_pointer) {
+  unsigned char * attributes = append_output_node(context, 40);
+  write_le32_unaligned(offset_pointer, 54);
+  memset(attributes, 0, 40);
+  *attributes = 40;
+  write_le32_unaligned(attributes + 4, context -> source -> width);
+  write_le32_unaligned(attributes + 8, context -> source -> height);
+  attributes[12] = 1;
+  attributes[14] = 24;
+  uint32_t * data;
+  if ((context -> source -> color_format & PLUM_COLOR_MASK) == PLUM_COLOR_32)
+    data = context -> source -> data;
+  else {
+    data = ctxmalloc(context, sizeof *data * context -> source -> width * context -> source -> height);
+    plum_convert_colors(data, context -> source -> data, (size_t) context -> source -> width * context -> source -> height,
+                        PLUM_COLOR_32, context -> source -> color_format);
+  }
+  size_t rowsize = (size_t) context -> source -> width * 3, padding = 0;
+  if (rowsize & 3) {
+    padding = 4 - (rowsize & 3);
+    rowsize += padding;
+  }
+  unsigned char * out = append_output_node(context, rowsize * context -> source -> height);
+  uint_fast32_t row = context -> source -> height - 1;
+  do {
+    size_t pos = (size_t) row * context -> source -> width;
+    for (uint_fast32_t remaining = context -> source -> width; remaining; pos ++, remaining --)
+      out += byteappend(out, data[pos] >> 16, data[pos] >> 8, data[pos]);
+    for (uint_fast32_t p = 0; p < padding; p ++) *(out ++) = 0;
+  } while (row --);
+  if (data != context -> source -> data) ctxfree(context, data);
 }
 
 uint32_t compute_PNG_CRC (const unsigned char * data, size_t size) {
@@ -2560,6 +3422,2092 @@ void generate_Huffman_codes (unsigned short * restrict codes, size_t count, cons
   }
 }
 
+void decompress_JPEG_arithmetic_scan (struct context * context, struct JPEG_decompressor_state * restrict state, const struct JPEG_decoder_tables * tables,
+                                      size_t rowunits, const struct JPEG_component_info * components, const size_t * restrict offsets, unsigned shift,
+                                      unsigned char first, unsigned char last, bool differential) {
+  for (size_t restart_interval = 0; restart_interval <= state -> restart_count; restart_interval ++) {
+    size_t units = (restart_interval == state -> restart_count) ? state -> last_size : state -> restart_size;
+    if (!units) break;
+    size_t offset = *(offsets ++);
+    size_t remaining = *(offsets ++);
+    size_t colcount = 0, rowcount = 0, skipunits = 0;
+    uint16_t accumulator = 0;
+    uint32_t current = 0;
+    unsigned char bits = 0;
+    initialize_JPEG_arithmetic_counters(context, &offset, &remaining, &current);
+    signed char indexesDC[4][49] = {0};
+    signed char indexesAC[4][245] = {0};
+    uint16_t prevDC[4] = {0};
+    uint16_t prevdiff[4] = {0};
+    while (units --) {
+      int16_t (* outputunit)[64];
+      for (const unsigned char * decodepos = state -> MCU; *decodepos != MCU_END_LIST; decodepos ++) switch (*decodepos) {
+        case MCU_ZERO_COORD:
+          outputunit = state -> current_block[decodepos[1]];
+          break;
+        case MCU_NEXT_ROW:
+          outputunit += state -> row_offset[decodepos[1]];
+          break;
+        default: {
+          bool prevzero = false; // was the previous coefficient zero?
+          for (uint_fast8_t p = first; p <= last; p ++) {
+            if (skipunits)
+              p[*outputunit] = 0;
+            else if (p) {
+              unsigned char conditioning = tables -> arithmetic[components[*decodepos].tableAC + 4];
+              signed char * index = indexesAC[components[*decodepos].tableAC] + 3 * (p - 1);
+              if (!prevzero && next_JPEG_arithmetic_bit(context, &offset, &remaining, index, &current, &accumulator, &bits)) {
+                p[*outputunit] = 0;
+                skipunits ++;
+              } else if (next_JPEG_arithmetic_bit(context, &offset, &remaining, index + 1, &current, &accumulator, &bits)) {
+                p[*outputunit] = next_JPEG_arithmetic_value(context, &offset, &remaining, &current, &accumulator, &bits, indexesAC[components[*decodepos].tableAC],
+                                                            1, p, conditioning);
+                prevzero = false;
+              } else {
+                p[*outputunit] = 0;
+                prevzero = true;
+              }
+            } else {
+              unsigned char conditioning = tables -> arithmetic[components[*decodepos].tableDC];
+              unsigned char category = classify_JPEG_arithmetic_value(prevdiff[*decodepos], conditioning);
+              if (next_JPEG_arithmetic_bit(context, &offset, &remaining, indexesDC[components[*decodepos].tableDC] + 4 * category, &current, &accumulator, &bits))
+                prevdiff[*decodepos] = next_JPEG_arithmetic_value(context, &offset, &remaining, &current, &accumulator, &bits,
+                                                                  indexesDC[components[*decodepos].tableDC], 0, category, conditioning);
+              else
+                prevdiff[*decodepos] = 0;
+              if (differential)
+                **outputunit = make_signed_16(prevdiff[*decodepos]);
+              else
+                prevDC[*decodepos] = **outputunit = make_signed_16(prevDC[*decodepos] + prevdiff[*decodepos]);
+            }
+            p[*outputunit] = make_signed_16((uint16_t) p[*outputunit] << shift);
+          }
+          outputunit ++;
+          if (skipunits) skipunits --;
+        }
+      }
+      if (++ colcount == rowunits) {
+        colcount = 0;
+        rowcount ++;
+        if (rowcount == state -> row_skip_index) skipunits += (rowunits - state -> column_skip_count) * state -> row_skip_count;
+      }
+      if (colcount == state -> column_skip_index) skipunits += state -> column_skip_count;
+      for (uint_fast8_t p = 0; p < 4; p ++) if (state -> current_block[p]) {
+        state -> current_block[p] += state -> unit_offset[p];
+        if (!colcount) state -> current_block[p] += state -> unit_row_offset[p];
+      }
+    }
+    if (remaining || skipunits) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  }
+}
+
+void decompress_JPEG_arithmetic_bit_scan (struct context * context, struct JPEG_decompressor_state * restrict state, size_t rowunits,
+                                          const struct JPEG_component_info * components, const size_t * restrict offsets, unsigned shift, unsigned char first,
+                                          unsigned char last) {
+  // this function is very similar to decompress_JPEG_arithmetic_scan, but it only decodes the next bit for already-initialized data
+  if (last && !first) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  for (size_t restart_interval = 0; restart_interval <= state -> restart_count; restart_interval ++) {
+    size_t units = (restart_interval == state -> restart_count) ? state -> last_size : state -> restart_size;
+    if (!units) break;
+    size_t offset = *(offsets ++);
+    size_t remaining = *(offsets ++);
+    size_t colcount = 0, rowcount = 0, skipunits = 0;
+    uint16_t accumulator = 0;
+    uint32_t current = 0;
+    unsigned char bits = 0;
+    initialize_JPEG_arithmetic_counters(context, &offset, &remaining, &current);
+    signed char indexes[4][189] = {0}; // most likely very few will be actually used, but allocate for the worst case
+    while (units --) {
+      int16_t (* outputunit)[64];
+      for (const unsigned char * decodepos = state -> MCU; *decodepos != MCU_END_LIST; decodepos ++) switch (*decodepos) {
+        case MCU_ZERO_COORD:
+          outputunit = state -> current_block[decodepos[1]];
+          break;
+        case MCU_NEXT_ROW:
+          outputunit += state -> row_offset[decodepos[1]];
+          break;
+        default:
+          if (skipunits)
+            skipunits --;
+          else if (first) {
+            unsigned char lastnonzero; // last non-zero coefficient up to the previous scan (for the same component)
+            for (lastnonzero = 63; lastnonzero; lastnonzero --) if (lastnonzero[*outputunit]) break;
+            bool prevzero = false; // was the previous coefficient zero?
+            for (uint_fast8_t p = first; p <= last; p ++) {
+              signed char * index = indexes[components[*decodepos].tableAC] + 3 * (p - 1);
+              if (!prevzero && p > lastnonzero && next_JPEG_arithmetic_bit(context, &offset, &remaining, index, &current, &accumulator, &bits)) break;
+              if (p[*outputunit]) {
+                prevzero = false;
+                if (next_JPEG_arithmetic_bit(context, &offset, &remaining, index + 2, &current, &accumulator, &bits))
+                  if (p[*outputunit] < 0)
+                    p[*outputunit] -= 1 << shift;
+                  else
+                    p[*outputunit] += 1 << shift;
+              } else if (next_JPEG_arithmetic_bit(context, &offset, &remaining, index + 1, &current, &accumulator, &bits)) {
+                prevzero = false;
+                p[*outputunit] = next_JPEG_arithmetic_bit(context, &offset, &remaining, NULL, &current, &accumulator, &bits) ?
+                                 make_signed_16(0xffffu << shift) : (1 << shift);
+              } else
+                prevzero = true;
+            }
+          } else if (next_JPEG_arithmetic_bit(context, &offset, &remaining, NULL, &current, &accumulator, &bits))
+            **outputunit += 1 << shift;
+          outputunit ++;
+      }
+      if (++ colcount == rowunits) {
+        colcount = 0;
+        rowcount ++;
+        if (rowcount == state -> row_skip_index) skipunits += (rowunits - state -> column_skip_count) * state -> row_skip_count;
+      }
+      if (colcount == state -> column_skip_index) skipunits += state -> column_skip_count;
+      for (uint_fast8_t p = 0; p < 4; p ++) if (state -> current_block[p]) {
+        state -> current_block[p] += state -> unit_offset[p];
+        if (!colcount) state -> current_block[p] += state -> unit_row_offset[p];
+      }
+    }
+    if (remaining || skipunits) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  }
+}
+
+void decompress_JPEG_arithmetic_lossless_scan (struct context * context, struct JPEG_decompressor_state * restrict state, const struct JPEG_decoder_tables * tables,
+                                               size_t rowunits, const struct JPEG_component_info * components, const size_t * restrict offsets,
+                                               unsigned char predictor, unsigned precision) {
+  bool scancomponents[4] = {0};
+  for (uint_fast8_t p = 0; state -> MCU[p] != MCU_END_LIST; p ++) if (state -> MCU[p] < 4) scancomponents[state -> MCU[p]] = true;
+  uint16_t * rowdifferences[4] = {0};
+  for (uint_fast8_t p = 0; p < 4; p ++) if (scancomponents[p])
+    rowdifferences[p] = ctxmalloc(context, sizeof **rowdifferences * rowunits * ((state -> component_count > 1) ? components[p].scaleH : 1));
+  for (size_t restart_interval = 0; restart_interval <= state -> restart_count; restart_interval ++) {
+    size_t units = (restart_interval == state -> restart_count) ? state -> last_size : state -> restart_size;
+    if (!units) break;
+    size_t offset = *(offsets ++);
+    size_t remaining = *(offsets ++);
+    size_t colcount = 0, rowcount = 0, skipunits = 0;
+    uint16_t accumulator = 0;
+    uint32_t current = 0;
+    unsigned char bits = 0;
+    initialize_JPEG_arithmetic_counters(context, &offset, &remaining, &current);
+    signed char indexes[4][158] = {0};
+    for (uint_fast8_t p = 0; p < 4; p ++) if (scancomponents[p])
+      for (uint_fast16_t x = 0; x < (rowunits * ((state -> component_count > 1) ? components[p].scaleH : 1)); x ++) rowdifferences[p][x] = 0;
+    uint16_t coldifferences[4][4] = {0};
+    while (units --) {
+      uint_fast16_t x, y;
+      uint16_t * outputpos;
+      for (const unsigned char * decodepos = state -> MCU; *decodepos != MCU_END_LIST; decodepos ++) switch (*decodepos) {
+        case MCU_ZERO_COORD:
+          outputpos = state -> current_value[decodepos[1]];
+          x = colcount * ((state -> component_count > 1) ? components[decodepos[1]].scaleH : 1);
+          y = 0;
+          break;
+        case MCU_NEXT_ROW:
+          outputpos += state -> row_offset[decodepos[1]];
+          x = colcount * ((state -> component_count > 1) ? components[decodepos[1]].scaleH : 1);
+          y ++;
+          break;
+        default:
+          if (skipunits) {
+            *(outputpos ++) = 0;
+            skipunits --;
+          } else {
+            unsigned char conditioning = tables -> arithmetic[components[*decodepos].tableDC];
+            size_t rowsize = rowunits * ((state -> component_count > 1) ? components[*decodepos].scaleH : 1);
+            uint16_t difference, predicted = predict_JPEG_lossless_sample(outputpos, rowsize, !x, !(y || rowcount), predictor, precision);
+            // the JPEG standard calculates this the other way around, but it makes no difference and doing it in this order enables an optimization
+            unsigned char reference = 5 * classify_JPEG_arithmetic_value(rowdifferences[*decodepos][x], conditioning) +
+                                      classify_JPEG_arithmetic_value(coldifferences[*decodepos][y], conditioning);
+            if (next_JPEG_arithmetic_bit(context, &offset, &remaining, indexes[components[*decodepos].tableDC] + 4 * reference, &current, &accumulator, &bits))
+              difference = next_JPEG_arithmetic_value(context, &offset, &remaining, &current, &accumulator, &bits, indexes[components[*decodepos].tableDC],
+                                                      2, reference, conditioning);
+            else
+              difference = 0;
+            rowdifferences[*decodepos][x] = coldifferences[*decodepos][y] = difference;
+            *(outputpos ++) = predicted + difference;
+          }
+          x ++;
+      }
+      if (++ colcount == rowunits) {
+        colcount = 0;
+        rowcount ++;
+        if (rowcount == state -> row_skip_index) skipunits += (rowunits - state -> column_skip_count) * state -> row_skip_count;
+        memset(coldifferences, 0, sizeof coldifferences);
+      }
+      if (colcount == state -> column_skip_index) skipunits += state -> column_skip_count;
+      for (uint_fast8_t p = 0; p < 4; p ++) if (state -> current_value[p]) {
+        state -> current_value[p] += state -> unit_offset[p];
+        if (!colcount) state -> current_value[p] += state -> unit_row_offset[p];
+      }
+    }
+    if (remaining || skipunits) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  }
+  for (uint_fast8_t p = 0; p < state -> component_count; p ++) ctxfree(context, rowdifferences[p]);
+}
+
+void initialize_JPEG_arithmetic_counters (struct context * context, size_t * restrict offset, size_t * restrict remaining, uint32_t * restrict current) {
+  for (uint_fast8_t loopcount = 0; loopcount < 2; loopcount ++) {
+    unsigned char data = 0;
+    if (*remaining) {
+      data = context -> data[(*offset) ++];
+      -- *remaining;
+    }
+    if (data == 0xff) while (*remaining) {
+      -- *remaining;
+      if (context -> data[(*offset) ++] != 0xff) break;
+    }
+    *current = (*current | data) << 8;
+  }
+}
+
+int16_t next_JPEG_arithmetic_value (struct context * context, size_t * restrict offset, size_t * restrict remaining, uint32_t * restrict current,
+                                    uint16_t * restrict accumulator, unsigned char * restrict bits, signed char * restrict indexes, unsigned mode,
+                                    unsigned reference, unsigned char conditioning) {
+  // mode = 0 for DC (reference = DC category), 1 for AC (reference = coefficient index), 2 for lossless (reference = 5 * top category + left category)
+  signed char * index = (mode == 1) ? NULL : (indexes + 4 * reference + 1);
+  bool negative = next_JPEG_arithmetic_bit(context, offset, remaining, index, current, accumulator, bits);
+  index = (mode == 1) ? indexes + 3 * reference - 1 : (index + 1 + negative);
+  uint_fast8_t size = next_JPEG_arithmetic_bit(context, offset, remaining, index, current, accumulator, bits);
+  uint16_t result = 0;
+  if (size) {
+    if (!mode)
+      index = indexes + 20;
+    else if (mode == 2)
+      index = indexes + 100 + 29 * (reference >= 15);
+    signed char * next_index = (mode == 1) ? indexes + 189 + 28 * (reference > conditioning) : (index + 1);
+    while (next_JPEG_arithmetic_bit(context, offset, remaining, index, current, accumulator, bits)) {
+      size ++;
+      if (size > 15) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+      index = next_index ++;
+    }
+    result = 1;
+    index += 14;
+    while (-- size) result = (result << 1) + next_JPEG_arithmetic_bit(context, offset, remaining, index, current, accumulator, bits);
+  }
+  result ++;
+  if (negative) result = -result;
+  return make_signed_16(result);
+}
+
+unsigned char classify_JPEG_arithmetic_value (uint16_t value, unsigned char conditioning) {
+  // 0-4 for zero, small positive, small negative, large positive, large negative
+  uint16_t absolute = (value >= 0x8000u) ? -value : value;
+  uint16_t low = 0, high = (uint16_t) 1 << (conditioning >> 4);
+  conditioning &= 15;
+  if (conditioning) low = 1 << (conditioning - 1);
+  if (absolute <= low) return 0;
+  return ((value >= 0x8000u) ? 2 : 1) + 2 * (absolute > high);
+}
+
+bool next_JPEG_arithmetic_bit (struct context * context, size_t * restrict offset, size_t * restrict remaining, signed char * restrict index,
+                               uint32_t * restrict current, uint16_t * restrict accumulator, unsigned char * restrict bits) {
+  // negative state index: MPS = 1; null state: use 0 and don't update
+  // index 0 implies MPS = 0; there's no way to encode index = 0 and MPS = 1 (because that'd be state = -0), but that state cannot happen
+  static const struct JPEG_arithmetic_decoder_state states[] = {
+    /*   0 */ {0x5a1d,  true,   1,   1}, {0x2586, false,   2,  14}, {0x1114, false,   3,  16}, {0x080b, false,   4,  18}, {0x03d8, false,   5,  20},
+    /*   5 */ {0x01da, false,   6,  23}, {0x00e5, false,   7,  25}, {0x006f, false,   8,  28}, {0x0036, false,   9,  30}, {0x001a, false,  10,  33},
+    /*  10 */ {0x000d, false,  11,  35}, {0x0006, false,  12,   9}, {0x0003, false,  13,  10}, {0x0001, false,  13,  12}, {0x5a7f,  true,  15,  15},
+    /*  15 */ {0x3f25, false,  16,  36}, {0x2cf2, false,  17,  38}, {0x207c, false,  18,  39}, {0x17b9, false,  19,  40}, {0x1182, false,  20,  42},
+    /*  20 */ {0x0cef, false,  21,  43}, {0x09a1, false,  22,  45}, {0x072f, false,  23,  46}, {0x055c, false,  24,  48}, {0x0406, false,  25,  49},
+    /*  25 */ {0x0303, false,  26,  51}, {0x0240, false,  27,  52}, {0x01b1, false,  28,  54}, {0x0144, false,  29,  56}, {0x00f5, false,  30,  57},
+    /*  30 */ {0x00b7, false,  31,  59}, {0x008a, false,  32,  60}, {0x0068, false,  33,  62}, {0x004e, false,  34,  63}, {0x003b, false,  35,  32},
+    /*  35 */ {0x002c, false,   9,  33}, {0x5ae1,  true,  37,  37}, {0x484c, false,  38,  64}, {0x3a0d, false,  39,  65}, {0x2ef1, false,  40,  67},
+    /*  40 */ {0x261f, false,  41,  68}, {0x1f33, false,  42,  69}, {0x19a8, false,  43,  70}, {0x1518, false,  44,  72}, {0x1177, false,  45,  73},
+    /*  45 */ {0x0e74, false,  46,  74}, {0x0bfb, false,  47,  75}, {0x09f8, false,  48,  77}, {0x0861, false,  49,  78}, {0x0706, false,  50,  79},
+    /*  50 */ {0x05cd, false,  51,  48}, {0x04de, false,  52,  50}, {0x040f, false,  53,  50}, {0x0363, false,  54,  51}, {0x02d4, false,  55,  52},
+    /*  55 */ {0x025c, false,  56,  53}, {0x01f8, false,  57,  54}, {0x01a4, false,  58,  55}, {0x0160, false,  59,  56}, {0x0125, false,  60,  57},
+    /*  60 */ {0x00f6, false,  61,  58}, {0x00cb, false,  62,  59}, {0x00ab, false,  63,  61}, {0x008f, false,  32,  61}, {0x5b12,  true,  65,  65},
+    /*  65 */ {0x4d04, false,  66,  80}, {0x412c, false,  67,  81}, {0x37d8, false,  68,  82}, {0x2fe8, false,  69,  83}, {0x293c, false,  70,  84},
+    /*  70 */ {0x2379, false,  71,  86}, {0x1edf, false,  72,  87}, {0x1aa9, false,  73,  87}, {0x174e, false,  74,  72}, {0x1424, false,  75,  72},
+    /*  75 */ {0x119c, false,  76,  74}, {0x0f6b, false,  77,  74}, {0x0d51, false,  78,  75}, {0x0bb6, false,  79,  77}, {0x0a40, false,  48,  77},
+    /*  80 */ {0x5832,  true,  81,  80}, {0x4d1c, false,  82,  88}, {0x438e, false,  83,  89}, {0x3bdd, false,  84,  90}, {0x34ee, false,  85,  91},
+    /*  85 */ {0x2eae, false,  86,  92}, {0x299a, false,  87,  93}, {0x2516, false,  71,  86}, {0x5570,  true,  89,  88}, {0x4ca9, false,  90,  95},
+    /*  90 */ {0x44d9, false,  91,  96}, {0x3e22, false,  92,  97}, {0x3824, false,  93,  99}, {0x32b4, false,  94,  99}, {0x2e17, false,  86,  93},
+    /*  95 */ {0x56a8,  true,  96,  95}, {0x4f46, false,  97, 101}, {0x47e5, false,  98, 102}, {0x41cf, false,  99, 103}, {0x3c3d, false, 100, 104},
+    /* 100 */ {0x375e, false,  93,  99}, {0x5231, false, 102, 105}, {0x4c0f, false, 103, 106}, {0x4639, false, 104, 107}, {0x415e, false,  99, 103},
+    /* 105 */ {0x5627,  true, 106, 105}, {0x50e7, false, 107, 108}, {0x4b85, false, 103, 109}, {0x5597, false, 109, 110}, {0x504f, false, 107, 111},
+    /* 110 */ {0x5a10,  true, 111, 110}, {0x5522, false, 109, 112}, {0x59eb,  true, 111, 112}
+  };
+  const struct JPEG_arithmetic_decoder_state * state = states + (index ? absolute_value(*index) : 0);
+  bool decoded, predicted = index && *index < 0; // predict the MPS; decode a 1 if the prediction is false
+  *accumulator -= state -> probability;
+  if (*accumulator > (*current >> 8)) {
+    if (*accumulator >= 0x8000u) return predicted;
+    decoded = *accumulator < state -> probability;
+  } else {
+    decoded = *accumulator >= state -> probability;
+    *current -= (uint32_t) *accumulator << 8;
+    *accumulator = state -> probability;
+  }
+  if (index)
+    if (decoded)
+      *index = (predicted != state -> switch_MPS) ? -state -> next_LPS : state -> next_LPS;
+    else
+      *index = predicted ? -state -> next_MPS : state -> next_MPS;
+  // normalize the counters, consuming new data if needed
+  do {
+    if (!*bits) {
+      unsigned char data = 0;
+      if (*remaining) {
+        data = context -> data[(*offset) ++];
+        -- *remaining;
+      }
+      if (data == 0xff) while (*remaining) {
+        -- *remaining;
+        if (context -> data[(*offset) ++] != 0xff) break;
+      }
+      *current |= data;
+      *bits = 8;
+    }
+    *accumulator <<= 1;
+    *current = (*current << 1) & 0xffffffu;
+    -- *bits;
+  } while (*accumulator < 0x8000u);
+  return predicted != decoded;
+}
+
+uint32_t determine_JPEG_components (struct context * context, size_t offset) {
+  uint_fast16_t size = read_be16_unaligned(context -> data + offset);
+  if (size < 8) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  uint_fast8_t count = context -> data[offset + 7];
+  if (!count || count > 4) throw(context, PLUM_ERR_INVALID_FILE_FORMAT); // only recognize up to four components
+  if (size != 8 + 3 * count) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  unsigned char components[4] = {0};
+  for (uint_fast8_t p = 0; p < count; p ++) components[p] = context -> data[offset + 8 + 3 * p];
+  switch (count) {
+    // since there's at most four components, a simple swap-based sort is the best implementation
+    case 4:
+      if (components[3] < *components) swap(uint_fast8_t, *components, components[3]);
+      if (components[3] < components[1]) swap(uint_fast8_t, components[1], components[3]);
+      if (components[3] < components[2]) swap(uint_fast8_t, components[2], components[3]);
+    case 3:
+      if (components[2] < *components) swap(uint_fast8_t, *components, components[2]);
+      if (components[2] < components[1]) swap(uint_fast8_t, components[1], components[2]);
+    case 2:
+      if (components[1] < *components) swap(uint_fast8_t, *components, components[1]);
+  }
+  for (uint_fast8_t p = 1; p < count; p ++) if (components[p - 1] == components[p]) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  return read_le32_unaligned(components);
+}
+
+unsigned get_JPEG_component_count (uint32_t components) {
+  if (components < 0x100)
+    return 1;
+  else if (components < 0x10000u)
+    return 2;
+  else if (components < 0x1000000u)
+    return 3;
+  else
+    return 4;
+}
+
+void (* get_JPEG_component_transfer_function (struct context * context, const struct JPEG_marker_layout * layout, uint32_t components))
+      (uint64_t * restrict, size_t, unsigned, const double **) {
+  /* The JPEG standard has a very large deficiency: it specifies how to encode an arbitrary set of components of an
+     image, but it doesn't specify what those components mean. Components have a single byte ID to identify them, but
+     beyond that, the standard just hopes that applications can somehow figure it all out.
+     Of course, this means that different extensions make different choices about what components an image can have
+     and what those components' IDs should be. Determining the components of an image largely becomes a guessing
+     process, typically based on what the IJG's libjpeg does (except that it's not even stable across versions...).
+     This function therefore attempts to guess what the image's components mean, and errors out if it can't. */
+  if (components < 0x100)
+    // if there's only one component, assume the image is just grayscale
+    return &JPEG_transfer_grayscale;
+  if (layout -> Adobe) {
+    if (read_be16_unaligned(context -> data + layout -> Adobe) < 14) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+    // Adobe stores a color format ID and specifies four possibilities based on it
+    switch (context -> data[layout -> Adobe + 13]) {
+      case 0:
+        // RGB or CMYK, so check the component count and try to detect the order
+        if (components < 0x10000u)
+          throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+        else if (components < 0x1000000u)
+          if (components == 0x524742u || components == 0x726762u) // 'R', 'G', 'B' (including lowercase)
+            return &JPEG_transfer_BGR;
+          else if (!((components + 0x102) % 0x10101u)) // any sequential IDs
+            return &JPEG_transfer_RGB;
+          else
+            throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+        else
+          if (components == 0x594d4b43u || components == 0x796d6b63u) // 'C', 'M', 'Y', 'K' (including lowercase)
+            return &JPEG_transfer_CKMY;
+          else if (!((components + 0x10203u) % 0x1010101u)) // any sequential IDs
+            return &JPEG_transfer_CMYK;
+          else
+            throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+      case 1:
+        // YCbCr: verify three components and detect the order
+        if (components < 0x10000u || components >= 0x1000000u) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+        if (components == 0x635943u) // 'Y', 'C', 'c'
+          return &JPEG_transfer_CbYCr;
+        else if (!((components + 0x102) % 0x10101u)) // any sequential IDs
+          return &JPEG_transfer_YCbCr;
+        else
+          throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+      case 2:
+        // YCbCrK: verify four components and detect the order
+        if (components < 0x1000000u) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+        if (components == 0x63594b43u) // 'Y', 'C', 'c', 'K'
+          return &JPEG_transfer_CbKYCr;
+        else if (!((components + 0x10203u) % 0x1010101u)) // any sequential IDs
+          return &JPEG_transfer_YCbCrK;
+      default:
+        throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+    }
+  }
+  if (layout -> JFIF) {
+    // JFIF mandates one of two possibilities: grayscale (handled already) or YCbCr with IDs of 1, 2, 3 (although some encoders also use 0, 1, 2)
+    if (components == 0x30201u || components == 0x20100u) return &JPEG_transfer_YCbCr;
+    throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  }
+  // below this line it's pure guesswork: there are no application headers hinting at components, so just guess from popular ID values
+  if ((*layout -> frametype & 3) == 3 && components >= 0x10000u && components < 0x1000000u && !((components + 0x102) % 0x10101u))
+    // lossless encoding, three sequential component IDs
+    return &JPEG_transfer_RGB;
+  switch (components) {
+    case 0x5941u: // 'Y', 'A'
+      return &JPEG_transfer_alpha_grayscale;
+    case 0x20100u: // 0, 1, 2: used by libjpeg sometimes
+    case 0x30201u: // 1, 2, 3: JFIF's standard IDs
+    case 0x232201u: // 1, 0x22, 0x23: used by some library for 'big gamut' colors
+      return &JPEG_transfer_YCbCr;
+    case 0x635943u: // 'Y', 'C', 'c'
+      return &JPEG_transfer_CbYCr;
+    case 0x524742u: // 'R', 'G', 'B'
+    case 0x726762u: // 'r', 'g', 'b'
+      return &JPEG_transfer_BGR;
+    case 0x4030201u: // 1, 2, 3, 4
+      return &JPEG_transfer_YCbCrK;
+    case 0x63594b43u: // 'Y', 'C', 'c', 'K'
+      return &JPEG_transfer_CbKYCr;
+    case 0x63594341u: // 'Y', 'C', 'c', 'A'
+      return &JPEG_transfer_ACbYCr;
+    case 0x52474241u: // 'R', 'G', 'B', 'A'
+    case 0x72676261u: // 'r', 'g', 'b', 'a'
+      return &JPEG_transfer_ABGR;
+    case 0x594d4b43u: // 'C', 'M', 'Y', 'K'
+    case 0x796d6b63u: // 'c', 'm', 'y', 'k'
+      return &JPEG_transfer_CKMY;
+    default:
+      throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  }
+}
+
+void append_JPEG_color_depth_metadata (struct context * context, void (* transfer) (uint64_t * restrict, size_t, unsigned, const double **), unsigned bitdepth) {
+  if (transfer == &JPEG_transfer_grayscale)
+    add_color_depth_metadata(context, 0, 0, 0, 0, bitdepth);
+  else if (transfer == &JPEG_transfer_alpha_grayscale)
+    add_color_depth_metadata(context, 0, 0, 0, bitdepth, bitdepth);
+  else if (transfer == &JPEG_transfer_ABGR || transfer == &JPEG_transfer_ACbYCr)
+    add_color_depth_metadata(context, bitdepth, bitdepth, bitdepth, bitdepth, 0);
+  else
+    add_color_depth_metadata(context, bitdepth, bitdepth, bitdepth, 0, 0);
+}
+
+void JPEG_transfer_RGB (uint64_t * restrict output, size_t count, unsigned limit, const double ** input) {
+  double factor = 65535.0 / limit;
+  const double * red = *input;
+  const double * green = input[1];
+  const double * blue = input[2];
+  while (count --) *(output ++) = color_from_floats(*(red ++) * factor, *(green ++) * factor, *(blue ++) * factor, 0);
+}
+
+void JPEG_transfer_BGR (uint64_t * restrict output, size_t count, unsigned limit, const double ** input) {
+  JPEG_transfer_RGB(output, count, limit, (const double * []) {input[2], input[1], *input});
+}
+
+void JPEG_transfer_ABGR (uint64_t * restrict output, size_t count, unsigned limit, const double ** input) {
+  double factor = 65535.0 / limit;
+  const double * red = input[3];
+  const double * green = input[2];
+  const double * blue = input[1];
+  const double * alpha = *input;
+  while (count --) *(output ++) = color_from_floats(*(red ++) * factor, *(green ++) * factor, *(blue ++) * factor, (limit - *(alpha ++)) * factor);
+}
+
+void JPEG_transfer_grayscale (uint64_t * restrict output, size_t count, unsigned limit, const double ** input) {
+  double factor = 65535.0 / limit;
+  const double * luma = *input;
+  while (count --) {
+    double scaled = *(luma ++) * factor;
+    *(output ++) = color_from_floats(scaled, scaled, scaled, 0);
+  }
+}
+
+void JPEG_transfer_alpha_grayscale (uint64_t * restrict output, size_t count, unsigned limit, const double ** input) {
+  double factor = 65535.0 / limit;
+  const double * luma = input[1];
+  const double * alpha = *input;
+  while (count --) {
+    double scaled = *(luma ++) * factor;
+    *(output ++) = color_from_floats(scaled, scaled, scaled, (limit - *(alpha ++)) * factor);
+  }
+}
+
+// all constants are defined to have exactly 53 bits of precision (matching IEEE 754 doubles)
+#define RED_COEF      0x0.b374bc6a7ef9d8p+0
+#define BLUE_COEF     0x0.e2d0e560418938p+0
+#define GREEN_CR_COEF 0x0.5b68d15d0f6588p+0
+#define GREEN_CB_COEF 0x0.2c0ca8674cd62ep+0
+
+void JPEG_transfer_YCbCr (uint64_t * restrict output, size_t count, unsigned limit, const double ** input) {
+  double factor = 65535.0 / limit;
+  const double * luma = *input;
+  const double * blue_chroma = input[1];
+  const double * red_chroma = input[2];
+  while (count --) {
+    double blue_offset = limit - *(blue_chroma ++) * 2;
+    double red_offset = limit - *(red_chroma ++) * 2;
+    double red = *luma - RED_COEF * red_offset, blue = *luma - BLUE_COEF * blue_offset;
+    double green = *luma + GREEN_CB_COEF * blue_offset + GREEN_CR_COEF * red_offset;
+    luma ++;
+    *(output ++) = color_from_floats(red * factor, green * factor, blue * factor, 0);
+  }
+}
+
+void JPEG_transfer_CbYCr (uint64_t * restrict output, size_t count, unsigned limit, const double ** input) {
+  JPEG_transfer_YCbCr(output, count, limit, (const double * []) {input[1], *input, input[2]});
+}
+
+void JPEG_transfer_YCbCrK (uint64_t * restrict output, size_t count, unsigned limit, const double ** input) {
+  // this function replicates the YCbCr transfer function, but then darkens each color by the K component
+  double factor = 65535.0 / ((uint32_t) limit * limit);
+  const double * luma = *input;
+  const double * blue_chroma = input[1];
+  const double * red_chroma = input[2];
+  const double * black = input[3];
+  while (count --) {
+    double blue_offset = limit - *(blue_chroma ++) * 2;
+    double red_offset = limit - *(red_chroma ++) * 2;
+    double red = *luma - RED_COEF * red_offset, blue = *luma - BLUE_COEF * blue_offset;
+    double green = *luma + GREEN_CB_COEF * blue_offset + GREEN_CR_COEF * red_offset;
+    luma ++;
+    double scale = *(black ++) * factor;
+    *(output ++) = color_from_floats(red * scale, green * scale, blue * scale, 0);
+  }
+}
+
+void JPEG_transfer_CbKYCr (uint64_t * restrict output, size_t count, unsigned limit, const double ** input) {
+  JPEG_transfer_YCbCrK(output, count, limit, (const double * []) {input[2], *input, input[3], input[1]});
+}
+
+void JPEG_transfer_ACbYCr (uint64_t * restrict output, size_t count, unsigned limit, const double ** input) {
+  // this function replicates the YCbCr transfer function and computes a separate alpha channel
+  double factor = 65535.0 / limit;
+  const double * luma = input[2];
+  const double * blue_chroma = input[1];
+  const double * red_chroma = input[3];
+  const double * alpha = *input;
+  while (count --) {
+    double blue_offset = limit - *(blue_chroma ++) * 2;
+    double red_offset = limit - *(red_chroma ++) * 2;
+    double red = *luma - RED_COEF * red_offset, blue = *luma - BLUE_COEF * blue_offset;
+    double green = *luma + GREEN_CB_COEF * blue_offset + GREEN_CR_COEF * red_offset;
+    luma ++;
+    *(output ++) = color_from_floats(red * factor, green * factor, blue * factor, (limit - *(alpha ++)) * factor);
+  }
+}
+
+#undef RED_COEF
+#undef BLUE_COEF
+#undef GREEN_CR_COEF
+#undef GREEN_CB_COEF
+
+void JPEG_transfer_CMYK (uint64_t * restrict output, size_t count, unsigned limit, const double ** input) {
+  double factor = 65535.0 / ((uint32_t) limit * limit);
+  const double * cyan = *input;
+  const double * magenta = input[1];
+  const double * yellow = input[2];
+  const double * black = input[3];
+  while (count --) {
+    double scale = *(black ++) * factor;
+    *(output ++) = color_from_floats(*(cyan ++) * scale, *(magenta ++) * scale, *(yellow ++) * scale, 0);
+  }
+}
+
+void JPEG_transfer_CKMY (uint64_t * restrict output, size_t count, unsigned limit, const double ** input) {
+  JPEG_transfer_CMYK(output, count, limit, (const double * []) {*input, input[2], input[3], input[1]});
+}
+
+struct JPEG_encoded_value * generate_JPEG_luminance_data_stream (struct context * context, double (* restrict data)[64], size_t units,
+                                                                 const uint8_t quantization[restrict static 64], size_t * restrict count) {
+  *count = 0;
+  size_t allocated = 3 * units + 64;
+  struct JPEG_encoded_value * result = ctxmalloc(context, sizeof *result * allocated);
+  double predicted = 0.0;
+  for (size_t unit = 0; unit < units; unit ++) {
+    if (allocated - *count < 64) {
+      size_t newsize = allocated + 3 * (units - unit) + 64;
+      if (newsize < allocated) throw(context, PLUM_ERR_IMAGE_TOO_LARGE);
+      result = ctxrealloc(context, result, sizeof *result * (allocated = newsize));
+    }
+    predicted = generate_JPEG_data_unit(result, count, data[unit], quantization, predicted);
+  }
+  return ctxrealloc(context, result, *count * sizeof *result);
+}
+
+struct JPEG_encoded_value * generate_JPEG_chrominance_data_stream (struct context * context, double (* restrict blue)[64], double (* restrict red)[64],
+                                                                   size_t units, const uint8_t quantization[restrict static 64], size_t * restrict count) {
+  *count = 0;
+  size_t allocated = 6 * units + 128;
+  struct JPEG_encoded_value * result = ctxmalloc(context, sizeof *result * allocated);
+  double predicted_blue = 0.0, predicted_red = 0.0;
+  for (size_t unit = 0; unit < units; unit ++) {
+    if (allocated - *count < 128) {
+      size_t newsize = allocated + 6 * (units - unit) + 128;
+      if (newsize < allocated) throw(context, PLUM_ERR_IMAGE_TOO_LARGE);
+      result = ctxrealloc(context, result, sizeof *result * (allocated = newsize));
+    }
+    predicted_blue = generate_JPEG_data_unit(result, count, blue[unit], quantization, predicted_blue);
+    predicted_red = generate_JPEG_data_unit(result, count, red[unit], quantization, predicted_red);
+  }
+  return ctxrealloc(context, result, *count * sizeof *result);
+}
+
+double generate_JPEG_data_unit (struct JPEG_encoded_value * data, size_t * restrict count, const double unit[restrict static 64],
+                                const uint8_t quantization[restrict static 64], double predicted) {
+  int16_t output[64];
+  predicted = apply_JPEG_DCT(output, unit, quantization, predicted);
+  uint_fast8_t last = 0;
+  encode_JPEG_value(data + (*count) ++, *output, 0, 0);
+  for (uint_fast8_t p = 1; p < 63; p ++) if (output[p]) {
+    for (; (p - last) > 16; last += 16) data[(*count) ++] = (struct JPEG_encoded_value) {.code = 0xf0, .bits = 0, .type = 1};
+    encode_JPEG_value(data + (*count) ++, output[p], 1, (p - last - 1) << 4);
+    last = p;
+  }
+  if (last != 63) data[(*count) ++] = (struct JPEG_encoded_value) {.code = 0, .bits = 0, .type = 1};
+  return predicted;
+}
+
+void encode_JPEG_value (struct JPEG_encoded_value * data, int16_t value, unsigned type, unsigned char addend) {
+  unsigned bits = bit_width(absolute_value(value));
+  if (value < 0) value += 0x7fff; // make it positive and subtract 1 from the significant bits
+  value &= (1u << bits) - 1;
+  *data = (struct JPEG_encoded_value) {.code = addend + bits, .bits = bits, .type = type, .value = value};
+}
+
+size_t generate_JPEG_Huffman_table (struct context * context, const struct JPEG_encoded_value * data, size_t count, unsigned char * restrict output,
+                                    unsigned char table[restrict static 0x100], unsigned char index) {
+  // returns the number of bytes spent encoding the table in the JPEG data (in output)
+  size_t counts[0x101] = {[0x100] = 1}; // use 0x100 as a dummy value to absorb the highest (invalid) code
+  unsigned char lengths[0x101];
+  *output = index;
+  index >>= 4;
+  for (size_t p = 0; p < count; p ++) if (data[p].type == index) counts[data[p].code] ++;
+  generate_Huffman_tree(context, counts, lengths, 0x101, 16);
+  unsigned char codecounts[16] = {0};
+  uint_fast8_t maxcode, maxlength = 0;
+  for (uint_fast16_t p = 0; p < 0x100; p ++) if (lengths[p]) {
+    codecounts[lengths[p] - 1] ++;
+    if (lengths[p] > maxlength) {
+      maxlength = lengths[p];
+      maxcode = p;
+    }
+  }
+  if (lengths[0x100] < maxlength) {
+    codecounts[maxlength] --;
+    codecounts[lengths[0x100]] ++;
+    lengths[maxcode] = lengths[0x100];
+  }
+  memcpy(table, lengths, 0x100);
+  memcpy(output + 1, codecounts, 16);
+  size_t outsize = 17;
+  for (uint_fast8_t length = 1; length <= 16; length ++) for (uint_fast16_t p = 0; p < 0x100; p ++) if (lengths[p] == length) output[outsize ++] = p;
+  return outsize;
+}
+
+void encode_JPEG_scan (struct context * context, const struct JPEG_encoded_value * data, size_t count, const unsigned char table[restrict static 0x200]) {
+  unsigned short codes[0x200]; // no need to create a dummy entry for the highest (invalid) code here: it simply won't be generated
+  generate_Huffman_codes(codes, 0x100, table, false);
+  generate_Huffman_codes(codes + 0x100, 0x100, table + 0x100, false);
+  unsigned char * node = append_output_node(context, 0x4000);
+  size_t size = 0;
+  uint_fast32_t output = 0;
+  unsigned char bits = 0;
+  for (size_t p = 0; p < count; p ++) {
+    if (size > 0x3ff8) {
+      context -> output -> size = size;
+      node = append_output_node(context, 0x4000);
+      size = 0;
+    }
+    unsigned short index = data[p].type * 0x100 + data[p].code;
+    output = (output << table[index]) | codes[index];
+    bits += table[index];
+    while (bits >= 8) {
+      node[size ++] = output >> (bits -= 8);
+      if (node[size - 1] == 0xff) node[size ++] = 0;
+    }
+    if (data[p].bits) {
+      output = (output << data[p].bits) | data[p].value;
+      bits += data[p].bits;
+      while (bits >= 8) {
+        node[size ++] = output >> (bits -= 8);
+        if (node[size - 1] == 0xff) node[size ++] = 0;
+      }
+    }
+  }
+  if (bits) node[size ++] = output << (8 - bits);
+  context -> output -> size = size;
+}
+
+// Cx = 0.5 * cos(x * pi / 16), rounded so that it fits exactly in 53 bits (standard precision for IEEE doubles)
+// note that C4 = 0.5 / sqrt(2), so this value is also used for that purpose
+#define C1 0x0.7d8a5f3fdd72c0p+0
+#define C2 0x0.7641af3cca3518p+0
+#define C3 0x0.6a6d98a43a868cp+0
+#define C4 0x0.5a827999fcef34p+0
+#define C5 0x0.471cece6b9a320p+0
+#define C6 0x0.30fbc54d5d52c6p+0
+#define C7 0x0.18f8b83c69a60bp+0
+
+// half the square root of 2
+#define HR2 0x0.b504f333f9de68p+0
+
+double apply_JPEG_DCT (int16_t output[restrict static 64], const double input[restrict static 64], const uint8_t quantization[restrict static 64], double prevDC) {
+  // coefficient(dst, src) = cos((2 * src + 1) * dst * pi / 16) / 2; this absorbs a leading factor of 1/4 (square rooted)
+  static const double coefficients[8][8] = {
+    {0.5,  C1,  C2,  C3,  C4,  C5,  C6,  C7},
+    {0.5,  C3,  C6, -C7, -C4, -C1, -C2, -C5},
+    {0.5,  C5, -C6, -C1, -C4,  C7,  C2,  C3},
+    {0.5,  C7, -C2, -C5,  C4,  C3, -C6, -C1},
+    {0.5, -C7, -C2,  C5,  C4, -C3, -C6,  C1},
+    {0.5, -C5, -C6,  C1, -C4, -C7,  C2, -C3},
+    {0.5, -C3,  C6,  C7, -C4,  C1, -C2,  C5},
+    {0.5, -C1,  C2, -C3,  C4, -C5,  C6, -C7}
+  };
+  // factor(row, col) = (row ? 1 : 1 / sqrt(2)) * (col ? 1 : 1 / sqrt(2)); converted into zigzag order
+  static const double factors[] = {
+    0.5, HR2, HR2, HR2, 1.0, HR2, HR2, 1.0, 1.0, HR2, HR2, 1.0, 1.0, 1.0, HR2, HR2, 1.0, 1.0, 1.0, 1.0, HR2, HR2, 1.0, 1.0, 1.0, 1.0, 1.0, HR2, HR2, 1.0, 1.0, 1.0,
+    1.0, 1.0, 1.0, HR2, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0
+  };
+  // zero-flushing threshold: for later coefficients, round some values slightly larger than 0.5 to 0 instead of +/- 1 for better compression
+  static const double zeroflush[] = {
+    0x0.80p+0, 0x0.80p+0, 0x0.80p+0, 0x0.80p+0, 0x0.81p+0, 0x0.80p+0, 0x0.84p+0, 0x0.85p+0, 0x0.85p+0, 0x0.84p+0,
+    0x0.88p+0, 0x0.89p+0, 0x0.8ap+0, 0x0.89p+0, 0x0.88p+0, 0x0.8cp+0, 0x0.8dp+0, 0x0.8ep+0, 0x0.8ep+0, 0x0.8dp+0,
+    0x0.8cp+0, 0x0.90p+0, 0x0.91p+0, 0x0.92p+0, 0x0.93p+0, 0x0.92p+0, 0x0.91p+0, 0x0.90p+0, 0x0.94p+0, 0x0.95p+0,
+    0x0.96p+0, 0x0.97p+0, 0x0.97p+0, 0x0.96p+0, 0x0.95p+0, 0x0.94p+0, 0x0.98p+0, 0x0.99p+0, 0x0.9ap+0, 0x0.9bp+0,
+    0x0.9ap+0, 0x0.99p+0, 0x0.98p+0, 0x0.9cp+0, 0x0.9dp+0, 0x0.9ep+0, 0x0.9ep+0, 0x0.9dp+0, 0x0.9cp+0, 0x0.a0p+0,
+    0x0.a1p+0, 0x0.a2p+0, 0x0.a1p+0, 0x0.a0p+0, 0x0.a4p+0, 0x0.a5p+0, 0x0.a5p+0, 0x0.a4p+0, 0x0.a8p+0, 0x0.a9p+0,
+    0x0.a8p+0, 0x0.acp+0, 0x0.acp+0, 0x0.b0p+0
+  };
+  for (uint_fast8_t index = 0; index < 64; index ++) {
+    uint_fast8_t p = 0;
+    double converted = 0.0;
+    for (uint_fast8_t row = 0; row < 8; row ++) for (uint_fast8_t col = 0; col < 8; col ++)
+      converted += input[p ++] * coefficients[col][JPEG_zigzag_columns[index]] * coefficients[row][JPEG_zigzag_rows[index]];
+    converted = converted * factors[index] / quantization[index];
+    if (index)
+      if (converted >= -zeroflush[index] && converted <= zeroflush[index])
+        output[index] = 0;
+      else if (converted > 1023.0)
+        output[index] = 1023;
+      else if (converted < -1023.0)
+        output[index] = -1023;
+      else if (converted < 0)
+        output[index] = converted - 0.5;
+      else
+        output[index] = converted + 0.5;
+    else {
+      converted -= prevDC;
+      if (converted > 2047.0)
+        *output = 2047;
+      else if (converted < -2047.0)
+        *output = -2047;
+      else if (converted < 0)
+        *output = converted - 0.5;
+      else
+        *output = converted + 0.5;
+    }
+  }
+  return prevDC + *output;
+}
+
+void apply_JPEG_inverse_DCT (double output[restrict static 64], const int16_t input[restrict static 64], const uint16_t quantization[restrict static 64]) {
+  // coefficient(dst, src) = 0.5 * (src ? cos((2 * dst + 1) * src * pi / 16) : 1 / sqrt(2)); this absorbs a leading factor of 1/4 (square rooted)
+  static const double coefficients[8][8] = {
+    {C4,  C1,  C2,  C3,  C4,  C5,  C6,  C7},
+    {C4,  C3,  C6, -C7, -C4, -C1, -C2, -C5},
+    {C4,  C5, -C6, -C1, -C4,  C7,  C2,  C3},
+    {C4,  C7, -C2, -C5,  C4,  C3, -C6, -C1},
+    {C4, -C7, -C2,  C5,  C4, -C3, -C6,  C1},
+    {C4, -C5, -C6,  C1, -C4, -C7,  C2, -C3},
+    {C4, -C3,  C6,  C7, -C4,  C1, -C2,  C5},
+    {C4, -C1,  C2, -C3,  C4, -C5,  C6, -C7}
+  };
+  double dequantized[64];
+  for (uint_fast8_t index = 0; index < 64; index ++) dequantized[index] = (double) input[index] * quantization[index];
+  uint_fast8_t p = 0;
+  for (uint_fast8_t row = 0; row < 8; row ++) for (uint_fast8_t col = 0; col < 8; col ++) {
+    output[p] = 0;
+    for (uint_fast8_t index = 0; index < 64; index ++)
+      output[p] += coefficients[col][JPEG_zigzag_columns[index]] * coefficients[row][JPEG_zigzag_rows[index]] * dequantized[index];
+    p ++;
+  }
+}
+
+#undef HR2
+#undef C7
+#undef C6
+#undef C5
+#undef C4
+#undef C3
+#undef C2
+#undef C1
+
+void initialize_JPEG_decompressor_state (struct context * context, struct JPEG_decompressor_state * restrict state, const struct JPEG_component_info * components,
+                                         const unsigned char * componentIDs, size_t * restrict unitsH, size_t unitsV, size_t width, size_t height,
+                                         unsigned char maxH, unsigned char maxV, const struct JPEG_decoder_tables * tables, const size_t * restrict offsets,
+                                         int16_t (* restrict * output)[64]) {
+  initialize_JPEG_decompressor_state_common(context, state, components, componentIDs, unitsH, unitsV, width, height, maxH, maxV, tables, offsets, 8);
+  for (uint_fast8_t p = 0; p < 4; p ++) state -> current_block[p] = NULL;
+  for (uint_fast8_t p = 0; p < state -> component_count; p ++) state -> current_block[componentIDs[p]] = output[componentIDs[p]];
+}
+
+void initialize_JPEG_decompressor_state_lossless (struct context * context, struct JPEG_decompressor_state * restrict state,
+                                                  const struct JPEG_component_info * components, const unsigned char * componentIDs, size_t * restrict unitsH,
+                                                  size_t unitsV, size_t width, size_t height, unsigned char maxH, unsigned char maxV,
+                                                  const struct JPEG_decoder_tables * tables, const size_t * restrict offsets, uint16_t * restrict * output) {
+  initialize_JPEG_decompressor_state_common(context, state, components, componentIDs, unitsH, unitsV, width, height, maxH, maxV, tables, offsets, 1);
+  for (uint_fast8_t p = 0; p < 4; p ++) state -> current_value[p] = NULL;
+  for (uint_fast8_t p = 0; p < state -> component_count; p ++) state -> current_value[componentIDs[p]] = output[componentIDs[p]];
+}
+
+void initialize_JPEG_decompressor_state_common (struct context * context, struct JPEG_decompressor_state * restrict state,
+                                                const struct JPEG_component_info * components, const unsigned char * componentIDs, size_t * restrict unitsH,
+                                                size_t unitsV, size_t width, size_t height, unsigned char maxH, unsigned char maxV,
+                                                const struct JPEG_decoder_tables * tables, const size_t * restrict offsets, unsigned char unit_dimensions) {
+  if (componentIDs[1] != 0xff) {
+    unsigned char * entry = state -> MCU;
+    uint_fast8_t component;
+    for (component = 0; component < 4 && componentIDs[component] != 0xff; component ++) {
+      uint_fast8_t p = componentIDs[component];
+      state -> unit_offset[p] = components[p].scaleH;
+      state -> row_offset[p] = *unitsH * state -> unit_offset[p];
+      state -> unit_row_offset[p] = (components[p].scaleV - 1) * state -> row_offset[p];
+      state -> row_offset[p] -= state -> unit_offset[p];
+      for (uint_fast8_t row = 0; row < components[p].scaleV; row ++) {
+        *(entry ++) = row ? MCU_NEXT_ROW : MCU_ZERO_COORD;
+        for (uint_fast8_t col = 0; col < components[p].scaleH; col ++) *(entry ++) = p;
+      }
+    }
+    *entry = MCU_END_LIST;
+    state -> component_count = component;
+    state -> row_skip_index = state -> row_skip_count = state -> column_skip_index = state -> column_skip_count = 0;
+  } else {
+    // if a scan contains a single component, it's considered a non-interleaved scan and the MCU is a single unit
+    state -> component_count = 1;
+    state -> unit_offset[*componentIDs] = 1;
+    state -> row_offset[*componentIDs] = state -> unit_row_offset[*componentIDs] = 0;
+    bytewrite(state -> MCU, MCU_ZERO_COORD, *componentIDs, MCU_END_LIST);
+    *unitsH *= components[*componentIDs].scaleH;
+    unitsV *= components[*componentIDs].scaleV;
+    state -> column_skip_index = 1 + (width * components[*componentIDs].scaleH - 1) / (unit_dimensions * maxH);
+    state -> column_skip_count = *unitsH - state -> column_skip_index;
+    state -> row_skip_index = 1 + (height * components[*componentIDs].scaleV - 1) / (unit_dimensions * maxV);
+    state -> row_skip_count = unitsV - state -> row_skip_index;
+  }
+  state -> last_size = *unitsH * unitsV;
+  if (state -> restart_size = tables -> restart) {
+    state -> restart_count = state -> last_size / state -> restart_size;
+    state -> last_size %= state -> restart_size;
+  } else
+    state -> restart_count = 0;
+  size_t true_restart_count = state -> restart_count + !!state -> last_size; // including the final restart interval
+  for (size_t index = 0; index < true_restart_count; index ++) if (!offsets[2 * index]) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  if (offsets[2 * true_restart_count]) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+}
+
+uint16_t predict_JPEG_lossless_sample (const uint16_t * next, ptrdiff_t rowsize, bool leftmost, bool topmost, unsigned predictor, unsigned precision) {
+  if (!predictor) return 0;
+  if (topmost && leftmost) return 1u << (precision - 1);
+  if (topmost) return next[-1];
+  if (leftmost) return next[-rowsize];
+  uint_fast32_t left = next[-1], top = next[-rowsize], corner = next[-1 - rowsize];
+  return predictor[(const uint16_t []) {0, left, top, corner, left + top - corner, left + ((top - corner) >> 1), top + ((left - corner) >> 1), (left + top) >> 1}];
+}
+
+unsigned load_hierarchical_JPEG (struct context * context, const struct JPEG_marker_layout * layout, uint32_t components, double ** output) {
+  unsigned component_count = get_JPEG_component_count(components);
+  unsigned char componentIDs[4];
+  write_le32_unaligned(componentIDs, components);
+  struct JPEG_decoder_tables tables;
+  initialize_JPEG_decoder_tables(context, &tables, layout);
+  unsigned precision = context -> data[layout -> hierarchical + 2];
+  if (precision < 2 || precision > 16) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  size_t metadata_index = 0;
+  uint16_t component_size[8] = {0}; // four widths followed by four heights
+  for (size_t frame = 0; layout -> frames[frame]; frame ++) {
+    if (context -> data[layout -> frames[frame] + 2] != precision) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+    uint32_t framecomponents = determine_JPEG_components(context, layout -> frames[frame]);
+    unsigned char frameIDs[4]; // IDs into the componentIDs array
+    unsigned char framecount = 0;
+    double * frameoutput[4] = {0};
+    do {
+      uint_fast8_t p;
+      for (p = 0; p < component_count; p ++) if (((framecomponents >> (8 * framecount)) & 0xff) == componentIDs[p]) break;
+      if (p == component_count) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+      frameoutput[framecount] = output[p];
+      frameIDs[framecount ++] = p;
+    } while (framecount < 4 && (framecomponents >> (8 * framecount)));
+    unsigned char expand = process_JPEG_metadata_until_offset(context, layout, &tables, &metadata_index, layout -> frames[frame]);
+    uint16_t framewidth = read_be16_unaligned(context -> data + layout -> frames[frame] + 5);
+    uint16_t frameheight = read_be16_unaligned(context -> data + layout -> frames[frame] + 3);
+    if (!(framewidth && frameheight) || framewidth > context -> image -> width || frameheight > context -> image -> height)
+      throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+    if (layout -> frametype[frame] & 4) {
+      for (uint_fast8_t p = 0; p < framecount; p ++) {
+        if (!component_size[frameIDs[p]] || framewidth < component_size[frameIDs[p]] || frameheight < component_size[frameIDs[p] + 4])
+          throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+        // round all components to integers, since hierarchical progressions expect to compute differences against integers
+        size_t limit = (size_t) component_size[frameIDs[p]] * component_size[frameIDs[p] + 4];
+        double * data = output[frameIDs[p]];
+        for (size_t index = 0; index < limit; index ++) data[index] = (uint16_t) (long) (data[index] + 65536.5); // avoid UB and round negative values correctly
+      }
+      if (expand) {
+        double * buffer = ctxmalloc(context, sizeof *buffer * framewidth * frameheight);
+        if (expand & 0x10) for (uint_fast8_t p = 0; p < framecount; p ++) {
+          expand_JPEG_component_horizontally(context, output[frameIDs[p]], component_size[frameIDs[p]], component_size[frameIDs[p] + 4], framewidth, buffer);
+          component_size[frameIDs[p]] = framewidth;
+        }
+        if (expand & 1) for (uint_fast8_t p = 0; p < framecount; p ++) {
+          expand_JPEG_component_vertically(context, output[frameIDs[p]], component_size[frameIDs[p]], component_size[frameIDs[p] + 4], frameheight, buffer);
+          component_size[frameIDs[p] + 4] = frameheight;
+        }
+        ctxfree(context, buffer);
+      }
+      for (uint_fast8_t p = 0; p < framecount; p ++) if (component_size[frameIDs[p]] != framewidth || component_size[frameIDs[p] + 4] != frameheight)
+        throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+    } else {
+      if (expand) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+      for (uint_fast8_t p = 0; p < framecount; p ++) {
+        if (component_size[frameIDs[p]]) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+        component_size[frameIDs[p]] = framewidth;
+        component_size[frameIDs[p] + 4] = frameheight;
+      }
+    }
+    if ((layout -> frametype[frame] & 3) == 3)
+      load_JPEG_lossless_frame(context, layout, framecomponents, frame, &tables, &metadata_index, frameoutput, precision, framewidth, frameheight);
+    else
+      load_JPEG_DCT_frame(context, layout, framecomponents, frame, &tables, &metadata_index, frameoutput, precision, framewidth, frameheight);
+  }
+  double normalization_offset;
+  if (precision < 15)
+    normalization_offset = 0.5;
+  else if (precision == 15)
+    normalization_offset = 0.25;
+  else
+    normalization_offset = 0.0;
+  for (uint_fast8_t p = 0; p < component_count; p ++) {
+    if (component_size[p] != context -> image -> width || component_size[p + 4] != context -> image -> height) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+    normalize_JPEG_component(output[p], (size_t) context -> image -> width * context -> image -> height, normalization_offset);
+  }
+  return precision;
+}
+
+void expand_JPEG_component_horizontally (struct context * context, double * restrict component, size_t width, size_t height, size_t target,
+                                         double * restrict buffer) {
+  if ((target >> 1) > width) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  size_t index = 0;
+  for (size_t row = 0; row < height; row ++) for (size_t col = 0; col < target; col ++)
+    if (col & 1)
+      if (((col + 1) >> 1) == width)
+        buffer[index ++] = component[(row + 1) * width - 1];
+      else
+        buffer[index ++] = (uint32_t) ((long) component[row * width + (col >> 1)] + (long) component[row * width + ((col + 1) >> 1)]) >> 1;
+    else
+      buffer[index ++] = component[row * width + (col >> 1)];
+  memcpy(component, buffer, index * sizeof *component);
+}
+
+void expand_JPEG_component_vertically (struct context * context, double * restrict component, size_t width, size_t height, size_t target,
+                                       double * restrict buffer) {
+  if ((target >> 1) > height) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  size_t index = 0;
+  for (size_t row = 0; row < target; row ++)
+    if (row & 1)
+      if (((row + 1) >> 1) == height) {
+        memcpy(buffer + index, component + (height - 1) * width, sizeof *component * width);
+        index += width;
+      } else
+        for (size_t col = 0; col < width; col ++)
+          buffer[index ++] = (uint32_t) ((long) component[(row >> 1) * width + col] + (long) component[((row + 1) >> 1) * width + col]) >> 1;
+    else {
+      memcpy(buffer + index, component + (row >> 1) * width, sizeof *component * width);
+      index += width;
+    }
+  memcpy(component, buffer, index * sizeof *component);
+}
+
+void normalize_JPEG_component (double * restrict component, size_t count, double offset) {
+  while (count --) {
+    double high = *component / 65536.0 + offset;
+    // this merely calculates adjustment = -floor(high); not using floor() directly to avoid linking in the math library just for a single function
+    int64_t adjustment = 0;
+    if (high < 0) {
+      adjustment = 1 + (int64_t) -high;
+      high += adjustment;
+    }
+    adjustment -= (int64_t) high;
+    *(component ++) += adjustment * 65536.0;
+  }
+}
+
+void decompress_JPEG_Huffman_scan (struct context * context, struct JPEG_decompressor_state * restrict state, const struct JPEG_decoder_tables * tables,
+                                   size_t rowunits, const struct JPEG_component_info * components, const size_t * restrict offsets, unsigned shift,
+                                   unsigned char first, unsigned char last, bool differential) {
+  for (size_t restart_interval = 0; restart_interval <= state -> restart_count; restart_interval ++) {
+    size_t units = (restart_interval == state -> restart_count) ? state -> last_size : state -> restart_size;
+    if (!units) break;
+    size_t colcount = 0, rowcount = 0, skipcount = 0, skipunits = 0;
+    const unsigned char * data = context -> data + *(offsets ++);
+    size_t count = *(offsets ++);
+    uint16_t prevDC[4] = {0};
+    int16_t nextvalue = 0;
+    uint32_t dataword = 0;
+    uint8_t bits = 0;
+    while (units --) {
+      int16_t (* outputunit)[64];
+      for (const unsigned char * decodepos = state -> MCU; *decodepos != MCU_END_LIST; decodepos ++) switch (*decodepos) {
+        case MCU_ZERO_COORD:
+          outputunit = state -> current_block[decodepos[1]];
+          break;
+        case MCU_NEXT_ROW:
+          outputunit += state -> row_offset[decodepos[1]];
+          break;
+        default:
+          for (uint_fast8_t p = first; p <= last; p ++) {
+            if (!(skipcount || nextvalue || skipunits)) {
+              unsigned char decompressed;
+              if (p) {
+                decompressed = next_JPEG_Huffman_value(context, &data, &count, &dataword, &bits, tables -> Huffman[components[*decodepos].tableAC + 4]);
+                if (decompressed & 15)
+                  skipcount = decompressed >> 4;
+                else if (decompressed == 0xf0)
+                  skipcount = 16;
+                else
+                  skipunits = (1u << (decompressed >> 4)) + shift_in_right_JPEG(context, decompressed >> 4, &dataword, &bits, &data, &count);
+                decompressed &= 15;
+              } else {
+                decompressed = next_JPEG_Huffman_value(context, &data, &count, &dataword, &bits, tables -> Huffman[components[*decodepos].tableDC]);
+                if (decompressed > 15) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+              }
+              if (decompressed) {
+                uint_fast16_t extrabits = shift_in_right_JPEG(context, decompressed, &dataword, &bits, &data, &count);
+                if (!(extrabits >> (decompressed - 1))) nextvalue = make_signed_16(1u - (1u << decompressed));
+                nextvalue = make_signed_16(nextvalue + extrabits);
+              }
+            }
+            if (skipcount || skipunits) {
+              p[*outputunit] = 0;
+              if (skipcount) skipcount --;
+            } else {
+              p[*outputunit] = nextvalue * (1 << shift);
+              nextvalue = 0;
+            }
+            if (!(p || differential)) prevDC[*decodepos] = **outputunit = make_signed_16(prevDC[*decodepos] + (uint16_t) **outputunit);
+          }
+          outputunit ++;
+          if (skipunits) skipunits --;
+      }
+      if (++ colcount == rowunits) {
+        colcount = 0;
+        rowcount ++;
+        if (rowcount == state -> row_skip_index) skipunits += (rowunits - state -> column_skip_count) * state -> row_skip_count;
+      }
+      if (colcount == state -> column_skip_index) skipunits += state -> column_skip_count;
+      for (uint_fast8_t p = 0; p < 4; p ++) if (state -> current_block[p]) {
+        state -> current_block[p] += state -> unit_offset[p];
+        if (!colcount) state -> current_block[p] += state -> unit_row_offset[p];
+      }
+    }
+    if (count || skipcount || skipunits || nextvalue) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  }
+}
+
+void decompress_JPEG_Huffman_bit_scan (struct context * context, struct JPEG_decompressor_state * restrict state, const struct JPEG_decoder_tables * tables,
+                                       size_t rowunits, const struct JPEG_component_info * components, const size_t * restrict offsets, unsigned shift,
+                                       unsigned char first, unsigned char last) {
+  // this function is essentially the same as decompress_JPEG_Huffman_scan, but it uses already-initialized component data, and it decodes one bit at a time
+  if (last && !first) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  for (size_t restart_interval = 0; restart_interval <= state -> restart_count; restart_interval ++) {
+    size_t units = (restart_interval == state -> restart_count) ? state -> last_size : state -> restart_size;
+    if (!units) break;
+    size_t colcount = 0, rowcount = 0, skipcount = 0, skipunits = 0;
+    const unsigned char * data = context -> data + *(offsets ++);
+    size_t count = *(offsets ++);
+    int16_t nextvalue = 0;
+    uint32_t dataword = 0;
+    uint8_t bits = 0;
+    while (units --) {
+      int16_t (* outputunit)[64];
+      for (const unsigned char * decodepos = state -> MCU; *decodepos != MCU_END_LIST; decodepos ++) switch (*decodepos) {
+        case MCU_ZERO_COORD:
+          outputunit = state -> current_block[decodepos[1]];
+          break;
+        case MCU_NEXT_ROW:
+          outputunit += state -> row_offset[decodepos[1]];
+          break;
+        default:
+          if (first) {
+            for (uint_fast8_t p = first; p <= last; p ++) {
+              if (!(skipcount || nextvalue || skipunits)) {
+                unsigned char decompressed = next_JPEG_Huffman_value(context, &data, &count, &dataword, &bits,
+                                                                     tables -> Huffman[components[*decodepos].tableAC + 4]);
+                if (decompressed & 15)
+                  skipcount = decompressed >> 4;
+                else if (decompressed == 0xf0)
+                  skipcount = 16;
+                else
+                  skipunits = (1u << (decompressed >> 4)) + shift_in_right_JPEG(context, decompressed >> 4, &dataword, &bits, &data, &count);
+                decompressed &= 15;
+                if (decompressed) {
+                  uint_fast16_t extrabits = shift_in_right_JPEG(context, decompressed, &dataword, &bits, &data, &count);
+                  if (!(extrabits >> (decompressed - 1))) nextvalue = make_signed_16(1u - (1u << decompressed));
+                  nextvalue = make_signed_16(nextvalue + extrabits);
+                }
+              }
+              if (p[*outputunit]) {
+                if (shift_in_right_JPEG(context, 1, &dataword, &bits, &data, &count))
+                  if (p[*outputunit] < 0)
+                    p[*outputunit] -= 1 << shift;
+                  else
+                    p[*outputunit] += 1 << shift;
+              } else if (skipcount || skipunits) {
+                if (skipcount) skipcount --;
+              } else {
+                p[*outputunit] = nextvalue * (1 << shift);
+                nextvalue = 0;
+              }
+            }
+          } else if (!skipunits)
+            **outputunit += shift_in_right_JPEG(context, 1, &dataword, &bits, &data, &count) << shift;
+          outputunit ++;
+          if (skipunits) skipunits --;
+      }
+      if (++ colcount == rowunits) {
+        colcount = 0;
+        rowcount ++;
+        if (rowcount == state -> row_skip_index) skipunits += (rowunits - state -> column_skip_count) * state -> row_skip_count;
+      }
+      if (colcount == state -> column_skip_index) skipunits += state -> column_skip_count;
+      for (uint_fast8_t p = 0; p < 4; p ++) if (state -> current_block[p]) {
+        state -> current_block[p] += state -> unit_offset[p];
+        if (!colcount) state -> current_block[p] += state -> unit_row_offset[p];
+      }
+    }
+    if (count || skipcount || skipunits || nextvalue) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  }
+}
+
+void decompress_JPEG_Huffman_lossless_scan (struct context * context, struct JPEG_decompressor_state * restrict state, const struct JPEG_decoder_tables * tables,
+                                            size_t rowunits, const struct JPEG_component_info * components, const size_t * restrict offsets,
+                                            unsigned char predictor, unsigned precision) {
+  for (size_t restart_interval = 0; restart_interval <= state -> restart_count; restart_interval ++) {
+    size_t units = (restart_interval == state -> restart_count) ? state -> last_size : state -> restart_size;
+    if (!units) break;
+    const unsigned char * data = context -> data + *(offsets ++);
+    size_t count = *(offsets ++);
+    size_t colcount = 0, rowcount = 0, skipunits = 0;
+    uint32_t dataword = 0;
+    uint8_t bits = 0;
+    while (units --) {
+      uint16_t * outputpos;
+      bool leftmost, topmost;
+      for (const unsigned char * decodepos = state -> MCU; *decodepos != MCU_END_LIST; decodepos ++) switch (*decodepos) {
+        case MCU_ZERO_COORD:
+          outputpos = state -> current_value[decodepos[1]];
+          leftmost = topmost = true;
+          break;
+        case MCU_NEXT_ROW:
+          outputpos += state -> row_offset[decodepos[1]];
+          leftmost = true;
+          topmost = false;
+          break;
+        default:
+          if (skipunits) {
+            *(outputpos ++) = 0;
+            skipunits --;
+          } else {
+            size_t rowsize = rowunits * ((state -> component_count > 1) ? components[*decodepos].scaleH : 1);
+            uint16_t difference, predicted = predict_JPEG_lossless_sample(outputpos, rowsize, leftmost && !colcount, topmost && !rowcount, predictor, precision);
+            unsigned char diffsize = next_JPEG_Huffman_value(context, &data, &count, &dataword, &bits, tables -> Huffman[components[*decodepos].tableDC]);
+            if (diffsize > 16) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+            switch (diffsize) {
+              case 0:
+                difference = 0;
+                break;
+              case 16:
+                difference = 0x8000u;
+                break;
+              default:
+                difference = shift_in_right_JPEG(context, diffsize, &dataword, &bits, &data, &count);
+                if (!(difference >> (diffsize - 1))) difference -= (1u << diffsize) - 1;
+            }
+            *(outputpos ++) = predicted + difference;
+          }
+          leftmost = false;
+      }
+      if (++ colcount == rowunits) {
+        colcount = 0;
+        rowcount ++;
+        if (rowcount == state -> row_skip_index) skipunits += (rowunits - state -> column_skip_count) * state -> row_skip_count;
+      }
+      if (colcount == state -> column_skip_index) skipunits += state -> column_skip_count;
+      for (uint_fast8_t p = 0; p < 4; p ++) if (state -> current_value[p]) {
+        state -> current_value[p] += state -> unit_offset[p];
+        if (!colcount) state -> current_value[p] += state -> unit_row_offset[p];
+      }
+    }
+    if (count || skipunits) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  }
+}
+
+unsigned char next_JPEG_Huffman_value (struct context * context, const unsigned char ** data, size_t * restrict count, uint32_t * restrict dataword,
+                                       uint8_t * restrict bits, const short * restrict tree) {
+  for (uint_fast16_t index = 0; index != 1; index = -tree[index]) {
+    index += shift_in_right_JPEG(context, 1, dataword, bits, data, count);
+    if (tree[index] >= 0) return tree[index];
+  }
+  throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+}
+
+void load_JPEG_data (struct context * context, unsigned flags, size_t limit) {
+  struct JPEG_marker_layout * layout = load_JPEG_marker_layout(context); // will be leaked (to be collected by context release)
+  uint32_t components = determine_JPEG_components(context, layout -> hierarchical ? layout -> hierarchical : *layout -> frames);
+  void (* transfer) (uint64_t * restrict, size_t, unsigned, const double **) = get_JPEG_component_transfer_function(context, layout, components);
+  context -> image -> type = PLUM_IMAGE_JPEG;
+  context -> image -> frames = 1;
+  if (layout -> hierarchical) {
+    context -> image -> width = read_be16_unaligned(context -> data + layout -> hierarchical + 5);
+    context -> image -> height = read_be16_unaligned(context -> data + layout -> hierarchical + 3);
+  } else {
+    if (layout -> frames[1]) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+    context -> image -> width = read_be16_unaligned(context -> data + *layout -> frames + 5);
+    context -> image -> height = read_be16_unaligned(context -> data + *layout -> frames + 3);
+    for (size_t p = 0; layout -> markers[p]; p ++) if (layout -> markertype[p] == 0xdc) { // DNL marker
+      if (read_be16_unaligned(context -> data + layout -> markers[p]) != 4) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+      uint_fast16_t markerheight = read_be16_unaligned(context -> data + layout -> markers[p] + 2);
+      if (!markerheight) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+      if (!context -> image -> height)
+        context -> image -> height = markerheight;
+      else if (context -> image -> height != markerheight)
+        throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+    }
+  }
+  validate_image_size(context, limit);
+  size_t count = (size_t) context -> image -> width * context -> image -> height;
+  double * component_data[4] = {0};
+  for (uint_fast8_t p = 0; p < get_JPEG_component_count(components); p ++) component_data[p] = ctxmalloc(context, sizeof **component_data * count);
+  unsigned bitdepth;
+  if (layout -> hierarchical)
+    bitdepth = load_hierarchical_JPEG(context, layout, components, component_data);
+  else
+    bitdepth = load_single_frame_JPEG(context, layout, components, component_data);
+  append_JPEG_color_depth_metadata(context, transfer, bitdepth);
+  allocate_framebuffers(context, flags, false);
+  unsigned maxvalue = ((uint32_t) 1 << bitdepth) - 1;
+  if ((flags & PLUM_COLOR_MASK) == PLUM_COLOR_64) {
+    transfer(context -> image -> data64, count, maxvalue, (const double **) component_data);
+    if (flags & PLUM_ALPHA_INVERT) for (size_t p = 0; p < count; p ++) context -> image -> data64[p] ^= 0xffff000000000000u;
+  } else {
+    uint64_t * buffer = ctxmalloc(context, count * sizeof *buffer);
+    transfer(buffer, count, maxvalue, (const double **) component_data);
+    plum_convert_colors(context -> image -> data, buffer, count, flags, PLUM_COLOR_64);
+    ctxfree(context, buffer);
+  }
+  for (uint_fast8_t p = 0; p < 4; p ++) ctxfree(context, component_data[p]); // unused components will be NULL anyway
+  if (layout -> Exif) {
+    unsigned rotation = get_JPEG_rotation(context, layout -> Exif);
+    if (rotation) {
+      unsigned error = plum_rotate_image(context -> image, rotation & 3, rotation & 4);
+      if (error) throw(context, error);
+    }
+  }
+}
+
+struct JPEG_marker_layout * load_JPEG_marker_layout (struct context * context) {
+  size_t offset = 1;
+  while (context -> data[offset ++] == 0xff); // the first marker must be SOI (from file type detection), so skip it
+  uint_fast8_t next_restart_marker = 0; // 0 if not in a scan
+  size_t restart_offset, restart_interval, scan, frame = SIZE_MAX, markers = 0;
+  struct JPEG_marker_layout * layout = ctxmalloc(context, sizeof *layout);
+  *layout = (struct JPEG_marker_layout) {0}; // ensure that integers and pointers are properly zero-initialized
+  while (offset < context -> size) {
+    size_t prev = offset;
+    if (context -> data[offset ++] != 0xff)
+      if (next_restart_marker)
+        continue;
+      else
+        throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+    while (offset < context -> size && context -> data[offset] == 0xff) offset ++;
+    if (offset >= context -> size) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+    uint_fast8_t marker = context -> data[offset ++];
+    if (!marker)
+      if (next_restart_marker)
+        continue;
+      else
+        throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+    if (marker < 0xc0 || marker == 0xc8 || marker == 0xd8 || (marker >= 0xf0 && marker != 0xfe)) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+    if (next_restart_marker) {
+      layout -> framedata[frame][scan] = ctxrealloc(context, layout -> framedata[frame][scan], sizeof ***layout -> framedata * (restart_interval + 2));
+      layout -> framedata[frame][scan][restart_interval ++] = restart_offset;
+      layout -> framedata[frame][scan][restart_interval ++] = prev - restart_offset;
+    }
+    if (marker == 0xd9) break;
+    if (marker == next_restart_marker) {
+      if (++ next_restart_marker == 0xd8) next_restart_marker = 0xd0;
+      restart_offset = offset;
+      continue;
+    } else if ((marker & ~7u) == 0xd0)
+      throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+    // if we find a marker other than RST, we're definitely ending the current scan, and the marker definitely has a size
+    if (next_restart_marker) {
+      layout -> framedata[frame][scan] = ctxrealloc(context, layout -> framedata[frame][scan], sizeof ***layout -> framedata * (restart_interval + 1));
+      layout -> framedata[frame][scan][restart_interval] = 0;
+      next_restart_marker = 0;
+    }
+    if (offset > context -> size - 2) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+    uint_fast16_t marker_size = read_be16_unaligned(context -> data + offset);
+    if (marker_size < 2 || marker_size > context -> size || offset > context -> size - marker_size) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+    switch (marker) {
+      case 0xc0: case 0xc1: case 0xc2: case 0xc3: case 0xc5: case 0xc6:
+      case 0xc7: case 0xc9: case 0xca: case 0xcb: case 0xcd: case 0xce: case 0xcf:
+        // start a new frame
+        if (frame != SIZE_MAX) {
+          if (scan == SIZE_MAX) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+          layout -> framescans[frame] = ctxrealloc(context, layout -> framescans[frame], sizeof **layout -> framescans * ((++ scan) + 1));
+          layout -> framescans[frame][scan] = 0;
+        }
+        layout -> frames = ctxrealloc(context, layout -> frames, sizeof *layout -> frames * ((size_t) (++ frame) + 1));
+        layout -> frames[frame] = offset;
+        layout -> framescans = ctxrealloc(context, layout -> framescans, sizeof *layout -> framescans * (frame + 1));
+        layout -> framescans[frame] = NULL;
+        layout -> framedata = ctxrealloc(context, layout -> framedata, sizeof *layout -> framedata * (frame + 1));
+        layout -> framedata[frame] = NULL;
+        layout -> frametype = ctxrealloc(context, layout -> frametype, sizeof *layout -> frametype * (frame + 1));
+        layout -> frametype[frame] = marker & 15;
+        scan = SIZE_MAX;
+        break;
+      case 0xda:
+        // start a new scan
+        if (frame == SIZE_MAX) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+        layout -> framescans[frame] = ctxrealloc(context, layout -> framescans[frame], sizeof **layout -> framescans * ((size_t) (++ scan) + 1));
+        layout -> framescans[frame][scan] = offset;
+        layout -> framedata[frame] = ctxrealloc(context, layout -> framedata[frame], sizeof **layout -> framedata * (scan + 1));
+        layout -> framedata[frame][scan] = NULL;
+        restart_interval = 0;
+        restart_offset = offset + marker_size;
+        next_restart_marker = 0xd0;
+        break;
+      case 0xde:
+        if (layout -> hierarchical || frame != SIZE_MAX) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+        layout -> hierarchical = offset;
+        break;
+      case 0xdf:
+        if (!layout -> hierarchical) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+      case 0xc4: case 0xcc: case 0xdb: case 0xdc: case 0xdd:
+        layout -> markers = ctxrealloc(context, layout -> markers, sizeof *layout -> markers * (markers + 1));
+        layout -> markers[markers] = offset;
+        layout -> markertype = ctxrealloc(context, layout -> markertype, sizeof *layout -> markertype * (markers + 1));
+        layout -> markertype[markers ++] = marker;
+        break;
+      // For JFIF, Exif and Adobe markers, all want to come "first", i.e., immediately after SOI. This is obviously impossible if more than one is present.
+      // Therefore, "first" is interpreted to mean "before any SOF/DHP marker" here.
+      case 0xe0:
+        if (layout -> JFIF || layout -> hierarchical || frame != SIZE_MAX) break;
+        if (marker_size >= 7 && bytematch(context -> data + offset + 2, 0x4a, 0x46, 0x49, 0x46, 0x00)) layout -> JFIF = offset;
+        break;
+      case 0xe1:
+        if (layout -> Exif || layout -> hierarchical || frame != SIZE_MAX) break;
+        if (marker_size >= 16 && bytematch(context -> data + offset + 2, 0x45, 0x78, 0x69, 0x66, 0x00, 0x00)) layout -> Exif = offset;
+        break;
+      case 0xee:
+        if (layout -> Adobe || layout -> hierarchical || frame != SIZE_MAX) break;
+        if (marker_size >= 9 && bytematch(context -> data + offset + 2, 0x41, 0x64, 0x6f, 0x62, 0x65, 0x00) &&
+            (context -> data[offset + 8] == 100 || context -> data[offset + 8] == 101))
+          layout -> Adobe = offset;
+    }
+    offset += marker_size;
+  }
+  if (frame == SIZE_MAX) throw(context, PLUM_ERR_NO_DATA);
+  if (scan == SIZE_MAX) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  layout -> markers = ctxrealloc(context, layout -> markers, sizeof *layout -> markers * (markers + 1));
+  layout -> markers[markers] = 0;
+  if (next_restart_marker) {
+    layout -> framedata[frame][scan] = ctxrealloc(context, layout -> framedata[frame][scan], sizeof ***layout -> framedata * (restart_interval + 1));
+    layout -> framedata[frame][scan][restart_interval] = 0;
+  }
+  layout -> framescans[frame] = ctxrealloc(context, layout -> framescans[frame], sizeof **layout -> framescans * (++ scan + 1));
+  layout -> framescans[frame][scan] = 0;
+  layout -> frames = ctxrealloc(context, layout -> frames, sizeof *layout -> frames * (++ frame + 1));
+  layout -> frames[frame] = 0;
+  return layout;
+}
+
+unsigned get_JPEG_rotation (struct context * context, size_t offset) {
+  // returns rotation count in bits 0-1 and vertical inversion in bit 2
+  uint_fast16_t size = read_be16_unaligned(context -> data + offset);
+  const unsigned char * data = context -> data + offset + 8;
+  size -= 8;
+  uint_fast16_t tag = read_le16_unaligned(data);
+  bool bigendian;
+  if (tag == 0x4949)
+    bigendian = false; // little endian
+  else if (tag == 0x4d4d)
+    bigendian = true;
+  else
+    return 0;
+  tag = bigendian ? read_be16_unaligned(data + 2) : read_le16_unaligned(data + 2);
+  if (tag != 42) return 0;
+  uint_fast32_t pos = bigendian ? read_be32_unaligned(data + 4) : read_le32_unaligned(data + 4);
+  if (pos > size - 2) return 0;
+  uint_fast16_t count = bigendian ? read_be16_unaligned(data + pos) : read_le16_unaligned(data + pos);
+  pos += 2;
+  if (size - pos < (uint_fast32_t) count * 12) return 0;
+  for (; count; pos += 12, count --) {
+    tag = bigendian ? read_be16_unaligned(data + pos) : read_le16_unaligned(data + pos);
+    if (tag == 0x112) break; // 0x112 = orientation data
+  }
+  if (!count) return 0;
+  tag = bigendian ? read_be16_unaligned(data + pos + 2) : read_le16_unaligned(data + pos + 2);
+  uint_fast32_t datasize = bigendian ? read_be32_unaligned(data + pos + 4) : read_le32_unaligned(data + pos + 4);
+  if (tag != 3 || datasize != 1) return 0;
+  tag = bigendian ? read_be16_unaligned(data + pos + 8) : read_le16_unaligned(data + pos + 8);
+  static const unsigned rotations[] = {0, 6, 2, 4, 7, 1, 5, 3};
+  if (-- tag >= sizeof rotations / sizeof *rotations) tag = 0;
+  return rotations[tag];
+}
+
+unsigned load_single_frame_JPEG (struct context * context, const struct JPEG_marker_layout * layout, uint32_t components, double ** output) {
+  if (*layout -> frametype & 4) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  struct JPEG_decoder_tables tables;
+  initialize_JPEG_decoder_tables(context, &tables, layout);
+  unsigned precision = context -> data[*layout -> frames + 2];
+  if (precision < 2 || precision > 16) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  size_t metadata_index = 0;
+  if (*layout -> frametype == 3 || *layout -> frametype == 11)
+    load_JPEG_lossless_frame(context, layout, components, 0, &tables, &metadata_index, output, precision, context -> image -> width, context -> image -> height);
+  else
+    load_JPEG_DCT_frame(context, layout, components, 0, &tables, &metadata_index, output, precision, context -> image -> width, context -> image -> height);
+  return precision;
+}
+
+unsigned char process_JPEG_metadata_until_offset (struct context * context, const struct JPEG_marker_layout * layout, struct JPEG_decoder_tables * tables,
+                                                  size_t * restrict index, size_t limit) {
+  unsigned char expansion = 0;
+  for (; layout -> markers[*index] && layout -> markers[*index] < limit; ++ *index) {
+    const unsigned char * markerdata = context -> data + layout -> markers[*index];
+    uint16_t markersize = read_be16_unaligned(markerdata) - 2;
+    markerdata += 2;
+    switch (layout -> markertype[*index]) {
+      case 0xc4: // DHT
+        while (markersize) {
+          if (*markerdata & ~0x13u) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+          unsigned char target = (*markerdata & 3) | (*markerdata >> 2);
+          markerdata ++;
+          markersize --;
+          if (tables -> Huffman[target]) ctxfree(context, tables -> Huffman[target]);
+          tables -> Huffman[target] = process_JPEG_Huffman_table(context, &markerdata, &markersize);
+        }
+        break;
+      case 0xcc: // DAC
+        if (markersize % 2) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+        for (uint_fast16_t count = markersize / 2; count; count --) {
+          unsigned char target = *(markerdata ++);
+          if (target & ~0x13u) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+          target = (target >> 2) | (target & 3);
+          if (target & 4) {
+            if (!*markerdata || *markerdata > 63) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+          } else
+            if ((*markerdata >> 4) < (*markerdata & 15)) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+          tables -> arithmetic[target] = *(markerdata ++);
+        }
+        break;
+      case 0xdb: // DQT
+        while (markersize) {
+          if (*markerdata & ~0x13u) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+          unsigned char target = *markerdata & 3, type = *markerdata >> 4, length = type ? 128 : 64;
+          markerdata ++;
+          if (-- markersize < length) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+          markersize -= length;
+          if (!tables -> quantization[target]) tables -> quantization[target] = ctxmalloc(context, 64 * sizeof *tables -> quantization[target]);
+          if (type)
+            for (uint_fast8_t p = 0; p < 64; p ++, markerdata += 2) tables -> quantization[target][p] = read_be16_unaligned(markerdata);
+          else
+            for (uint_fast8_t p = 0; p < 64; p ++) tables -> quantization[target][p] = *(markerdata ++);
+        }
+        break;
+      case 0xdd: // DRI
+        if (markersize != 2) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+        tables -> restart = read_be16_unaligned(markerdata);
+        break;
+      case 0xdf: // EXP
+        if (markersize != 1) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+        expansion = *markerdata;
+    }
+  }
+  return expansion;
+}
+
+void load_JPEG_DCT_frame (struct context * context, const struct JPEG_marker_layout * layout, uint32_t components, size_t frameindex,
+                          struct JPEG_decoder_tables * tables, size_t * restrict metadata_index, double ** output, unsigned precision, size_t width,
+                          size_t height) {
+  const size_t * scans = layout -> framescans[frameindex];
+  const size_t ** offsets = (const size_t **) layout -> framedata[frameindex];
+  // obtain this frame's components' parameters and compute the number of (non-subsampled) blocks per MCU (maximum scale factor for each dimension)
+  struct JPEG_component_info component_info[4];
+  uint_fast8_t maxH = 1, maxV = 1, count = get_JPEG_component_info(context, context -> data + layout -> frames[frameindex], component_info, components);
+  for (uint_fast8_t p = 0; p < count; p ++) {
+    if (component_info[p].scaleV > maxV) maxV = component_info[p].scaleV;
+    if (component_info[p].scaleH > maxH) maxH = component_info[p].scaleH;
+  }
+  // compute the image dimensions in MCUs and allocate space for that many coefficients for each component (including padding blocks to fill up edge MCUs)
+  size_t unitrow = (width - 1) / (8 * maxH) + 1, unitcol = (height - 1) / (8 * maxV) + 1, units = unitrow * unitcol;
+  int16_t (* restrict component_data[4])[64] = {0};
+  for (uint_fast8_t p = 0; p < count; p ++)
+    component_data[p] = ctxmalloc(context, sizeof **component_data * units * component_info[p].scaleH * component_info[p].scaleV);
+  unsigned char currentbits[4][64]; // successive approximation bit positions for each component and coefficient, for progressive scans
+  memset(currentbits, 0xff, sizeof currentbits); // 0xff = no data yet (i.e., the coefficient hasn't shown up yet in any scans)
+  for (; *scans; scans ++, offsets ++) {
+    if (process_JPEG_metadata_until_offset(context, layout, tables, metadata_index, **offsets)) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+    unsigned char scancomponents[4];
+    const unsigned char * progdata = get_JPEG_scan_components(context, *scans, component_info, count, scancomponents);
+    // validate the spectral selection parameters
+    uint_fast8_t first = *progdata, last = progdata[1];
+    if (first > last || last > 63) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+    // validate and update the successive approximation bit positions for each component and coefficient involved in the scan
+    uint_fast8_t bitstart = progdata[2] >> 4, bitend = progdata[2] & 15;
+    if ((bitstart && bitstart - 1 != bitend) || bitend > 13 || bitend >= precision) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+    if (!bitstart) bitstart = 0xff; // 0xff = not a progressive scan (intentionally matches the "no data yet" 0xff in currentbits)
+    for (uint_fast8_t p = 0; p < 4 && scancomponents[p] != 0xff; p ++) {
+      // check that all quantization and Huffman tables (when applicable) used by the scan have already been loaded
+      if (!tables -> quantization[component_info[scancomponents[p]].tableQ]) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+      if (!(layout -> frametype[frameindex] & 8)) {
+        if (!first && !tables -> Huffman[component_info[scancomponents[p]].tableDC]) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+        if (last && !tables -> Huffman[component_info[scancomponents[p]].tableAC + 4]) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+      }
+      // ensure that this scan's successive approximation bit parameters match what is expected based on previous scans, and update currentbits
+      for (uint_fast8_t coefficient = first; coefficient <= last; coefficient ++) {
+        if (currentbits[scancomponents[p]][coefficient] != bitstart) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+        currentbits[scancomponents[p]][coefficient] = bitend;
+      }
+    }
+    size_t scanunitrow = unitrow;
+    struct JPEG_decompressor_state state;
+    initialize_JPEG_decompressor_state(context, &state, component_info, scancomponents, &scanunitrow, unitcol, width, height, maxH, maxV, tables, *offsets,
+                                       component_data);
+    // call the decompression function, depending on the frame type (Huffman or arithmetic) and whether it is progressive or not
+    if (bitstart == 0xff)
+      if (layout -> frametype[frameindex] & 8)
+        decompress_JPEG_arithmetic_scan(context, &state, tables, scanunitrow, component_info, *offsets, bitend, first, last, layout -> frametype[frameindex] & 4);
+      else
+        decompress_JPEG_Huffman_scan(context, &state, tables, scanunitrow, component_info, *offsets, bitend, first, last, layout -> frametype[frameindex] & 4);
+    else
+      if (layout -> frametype[frameindex] & 8)
+        decompress_JPEG_arithmetic_bit_scan(context, &state, scanunitrow, component_info, *offsets, bitend, first, last);
+      else
+        decompress_JPEG_Huffman_bit_scan(context, &state, tables, scanunitrow, component_info, *offsets, bitend, first, last);
+  }
+  // ensure that the frame's scans contain all bits for all coefficients, for each one of its components
+  for (uint_fast8_t p = 0; p < count; p ++) for (uint_fast8_t coefficient = 0; coefficient < 64; coefficient ++)
+    if (currentbits[p][coefficient]) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  // if the frame is non-differential, initialize all components in the final image to the level shift value
+  if (!(layout -> frametype[frameindex] & 4)) {
+    double levelshift = 1u << (precision - 1);
+    for (uint_fast8_t p = 0; p < count; p ++) for (size_t i = 0; i < width * height; i ++) output[p][i] = levelshift;
+  }
+  // transform all blocks into component data and add it to the output (level shift value for non-differential frames, previous values for differential frames)
+  // loop backwards so DCT data is released in reverse allocation order after transforming it into output data
+  while (count --) {
+    size_t compwidth = unitrow * component_info[count].scaleH * 8 + 2, compheight = unitcol * component_info[count].scaleV * 8 + 2;
+    double * transformed = ctxmalloc(context, sizeof *transformed * compwidth * compheight); // component data buffer, plus a pixel of padding around the edges
+    for (size_t y = 0; y < unitcol * component_info[count].scaleV; y ++) for (size_t x = 0; x < unitrow * component_info[count].scaleH; x ++) {
+      // apply the reverse DCT to each block, transforming it into component data
+      double buffer[64];
+      apply_JPEG_inverse_DCT(buffer, component_data[count][y * unitrow * component_info[count].scaleH + x], tables -> quantization[component_info[count].tableQ]);
+      // copy the block's data to the correct location in the component data buffer (accounting for the padding)
+      double * current = transformed + (y * 8 + 1) * compwidth + x * 8 + 1;
+      for (uint_fast8_t row = 0; row < 8; row ++) memcpy(current + compwidth * row, buffer + 8 * row, sizeof *buffer * 8);
+    }
+    // scale up subsampled components and add them to the output
+    unpack_JPEG_component(output[count], transformed, width, height, compwidth, compheight, component_info[count].scaleH, component_info[count].scaleV, maxH, maxV);
+    ctxfree(context, transformed);
+    ctxfree(context, component_data[count]);
+  }
+}
+
+void load_JPEG_lossless_frame (struct context * context, const struct JPEG_marker_layout * layout, uint32_t components, size_t frameindex,
+                               struct JPEG_decoder_tables * tables, size_t * restrict metadata_index, double ** output, unsigned precision, size_t width,
+                               size_t height) {
+  const size_t * scans = layout -> framescans[frameindex];
+  const size_t ** offsets = (const size_t **) layout -> framedata[frameindex];
+  // obtain this frame's components' parameters and compute the number of pixels per MCU (maximum scale factor for each dimension)
+  struct JPEG_component_info component_info[4];
+  uint_fast8_t maxH = 1, maxV = 1, count = get_JPEG_component_info(context, context -> data + layout -> frames[frameindex], component_info, components);
+  for (uint_fast8_t p = 0; p < count; p ++) {
+    if (component_info[p].scaleV > maxV) maxV = component_info[p].scaleV;
+    if (component_info[p].scaleH > maxH) maxH = component_info[p].scaleH;
+  }
+  // compute the image dimensions in MCUs and allocate space for that many pixels for each component (including padding pixels to fill edge MCUs)
+  size_t unitrow = (width - 1) / maxH + 1, unitcol = (height - 1) / maxV + 1, units = unitrow * unitcol;
+  uint16_t * restrict component_data[4] = {0};
+  for (uint_fast8_t p = 0; p < count; p ++)
+    component_data[p] = ctxmalloc(context, sizeof **component_data * units * component_info[p].scaleH * component_info[p].scaleV);
+  double initial_value[4]; // offset to add to pixel data, to reduce rounding errors in shifted-down components (0 if no offset is needed)
+  int component_shift[4] = {-1, -1, -1, -1}; // shift amounts for each component (negative: the component hasn't shown up in any scans yet)
+  for (; *scans; scans ++, offsets ++) {
+    if (process_JPEG_metadata_until_offset(context, layout, tables, metadata_index, **offsets)) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+    unsigned char scancomponents[4];
+    const unsigned char * progdata = get_JPEG_scan_components(context, *scans, component_info, count, scancomponents);
+    uint_fast8_t predictor = *progdata, shift = progdata[2] & 15;
+    if (predictor > 7 || shift >= precision) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+    for (uint_fast8_t p = 0; p < 4 && scancomponents[p] != 0xff; p ++) {
+      // check that the components from this scan haven't already been decoded, and update the components' shift amount and initial value
+      if (component_shift[scancomponents[p]] >= 0) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+      component_shift[scancomponents[p]] = shift;
+      if (layout -> hierarchical)
+        initial_value[scancomponents[p]] = 0;
+      else
+        initial_value[scancomponents[p]] = shift ? 1u << (shift - 1) : 0;
+      // if the frame is a Huffman frame, ensure that all Huffman tables used by the scan have already been loaded
+      if (!((layout -> frametype[frameindex] & 8) || tables -> Huffman[component_info[scancomponents[p]].tableDC])) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+    }
+    size_t scanunitrow = unitrow;
+    struct JPEG_decompressor_state state;
+    initialize_JPEG_decompressor_state_lossless(context, &state, component_info, scancomponents, &scanunitrow, unitcol, width, height, maxH, maxV, tables,
+                                                *offsets, component_data);
+    // call the decompression function, depending on the frame type (Huffman or arithmetic) - lossless scans cannot be progressive
+    if (layout -> frametype[frameindex] & 8)
+      decompress_JPEG_arithmetic_lossless_scan(context, &state, tables, scanunitrow, component_info, *offsets, predictor, precision - shift);
+    else
+      decompress_JPEG_Huffman_lossless_scan(context, &state, tables, scanunitrow, component_info, *offsets, predictor, precision - shift);
+  }
+  // ensure that all components in the frame have appeared in some scan
+  for (uint_fast8_t p = 0; p < count; p ++) if (component_shift[p] < 0) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  // convert all decoded component data into actual component pixels; loop backwards so that temporary component data is released in reverse allocation order
+  while (count --) {
+    size_t compwidth = unitrow * component_info[count].scaleH + 2, compheight = unitcol * component_info[count].scaleV + 2;
+    double * converted = ctxmalloc(context, sizeof *converted * compwidth * compheight); // output data buffer, plus a pixel of padding around the edges
+    // shift up all component pixels as needed, and store them in the correct location in the output data buffer (accounting for the padding)
+    for (size_t y = 0; y < unitcol * component_info[count].scaleV; y ++) for (size_t x = 0; x < unitrow * component_info[count].scaleH; x ++)
+      converted[(y + 1) * compwidth + x + 1] = component_data[count][y * unitrow * component_info[count].scaleH + x] << component_shift[count];
+    // add the initial value to all component values and scale up subsampled components as needed
+    if (!(layout -> frametype[frameindex] & 4)) for (size_t p = 0; p < width * height; p ++) output[count][p] = initial_value[count];
+    unpack_JPEG_component(output[count], converted, width, height, compwidth, compheight, component_info[count].scaleH, component_info[count].scaleV, maxH, maxV);
+    ctxfree(context, converted);
+    ctxfree(context, component_data[count]);
+  }
+}
+
+unsigned get_JPEG_component_info (struct context * context, const unsigned char * frameheader, struct JPEG_component_info * restrict output, uint32_t components) {
+  // assumes the component list is correct - true by definition for single-frame images and checked elsewhere for hierarchical ones
+  unsigned char component_numbers[4];
+  write_le32_unaligned(component_numbers, components);
+  uint_fast8_t count = get_JPEG_component_count(components);
+  for (uint_fast8_t current = 0; current < count; current ++) {
+    uint_fast8_t index;
+    for (index = 0; index < count; index ++) if (component_numbers[index] == frameheader[8 + 3 * current]) break;
+    output[index].index = component_numbers[index];
+    uint_fast8_t p = frameheader[9 + 3 * current];
+    output[index].scaleH = p >> 4;
+    output[index].scaleV = p & 15;
+    output[index].tableQ = frameheader[10 + 3 * current];
+    if (!output[index].scaleH || output[index].scaleH > 4 || !output[index].scaleV || output[index].scaleV > 4 || output[index].tableQ > 3)
+      throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  }
+  return count;
+}
+
+const unsigned char * get_JPEG_scan_components (struct context * context, size_t offset, struct JPEG_component_info * restrict compinfo, unsigned framecount,
+                                                unsigned char * restrict output) {
+  uint_fast16_t headerlength = read_be16_unaligned(context -> data + offset);
+  if (headerlength < 8) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  uint_fast8_t count = context -> data[offset + 2];
+  if (headerlength != 6 + 2 * count) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  memset(output, 0xff, 4);
+  for (uint_fast8_t p = 0; p < count; p ++) {
+    uint_fast8_t index;
+    for (index = 0; index < framecount; index ++) if (compinfo[index].index == context -> data[offset + 3 + 2 * p]) break;
+    if (index == framecount) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+    output[p] = index;
+    compinfo[index].tableDC = context -> data[offset + 4 + 2 * p] >> 4;
+    compinfo[index].tableAC = context -> data[offset + 4 + 2 * p] & 15;
+    if (compinfo[index].tableDC > 3 || compinfo[index].tableAC > 3) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  }
+  return context -> data + offset + 3 + 2 * count;
+}
+
+void unpack_JPEG_component (double * restrict result, double * restrict source, size_t width, size_t height, size_t scaled_width, size_t scaled_height,
+                            unsigned char scaleH, unsigned char scaleV, unsigned char maxH, unsigned char maxV) {
+  // fill the border of the component data (one pixel of dummy values around the edges) by copying values from the true edges
+  size_t scaled_size = scaled_width * scaled_height;
+  for (size_t p = 1; p < scaled_width - 1; p ++) source[p] = source[p + scaled_width];
+  for (size_t p = 2; p < scaled_width; p ++) source[scaled_size - p] = source[scaled_size - p - scaled_width];
+  for (size_t p = 0; p < scaled_height; p ++) {
+    source[p * scaled_width] = source[p * scaled_width + 1];
+    source[(p + 1) * scaled_width - 1] = source[(p + 1) * scaled_width - 2];
+  }
+  // if the scaling parameters form a reducible fraction, reduce it
+  if (scaleH == maxH)
+    scaleH = maxH = 1;
+  else if (maxH == 4 && scaleH == 2) {
+    maxH = 2;
+    scaleH = 1;
+  }
+  if (scaleV == maxV)
+    scaleV = maxV = 1;
+  else if (maxV == 4 && scaleV == 2) {
+    maxV = 2;
+    scaleV = 1;
+  }
+  // indexes into the interpolation index lists: 1-4 for integer ratios (scale = 1 after normalization above), 0 for 3/2, 5 for 4/3
+  unsigned char indexH = (scaleH == 2) ? 0 : (scaleH == 3) ? 5 : maxH, indexV = (scaleV == 2) ? 0 : (scaleV == 3) ? 5 : maxV;
+  // weights for all possible scaling factors (3/2, 1 to 4, 4/3); a subset of these will be selected for each axis depending on the actual scale factor
+  static const double interpolation_weights[] = {0x0.55555555555558p+0, 0x0.aaaaaaaaaaaaa8p+0, 1.0, 0x0.aaaaaaaaaaaaa8p+0, 0x0.55555555555558p+0, 0.0,
+                                                 0x0.4p+0, 0x0.cp+0, 0x0.4p+0, 0x0.2aaaaaaaaaaaa8p+0, 0x0.8p+0, 0x0.d5555555555558p+0, 0x0.8p+0,
+                                                 0x0.2aaaaaaaaaaaa8p+0, 0x0.2p+0, 0x0.6p+0, 0x0.ap+0, 0x0.ep+0, 0x0.ap+0, 0x0.6p+0, 0x0.2p+0};
+  static const unsigned char first_interpolation_indexes[] = {9, 5, 7, 3, 17, 14};
+  static const unsigned char second_interpolation_indexes[] = {11, 2, 6, 0, 14, 17};
+  // actual interpolation weights for each pixel in a row/column of upscaled pixels
+  const double * firstH = interpolation_weights + first_interpolation_indexes[indexH];
+  const double * firstV = interpolation_weights + first_interpolation_indexes[indexV];
+  const double * secondH = interpolation_weights + second_interpolation_indexes[indexH];
+  const double * secondV = interpolation_weights + second_interpolation_indexes[indexV];
+  // scale up the component, as determined by the scale parameters, by interpolating the decoded data
+  unsigned char offsetV = maxV / (2 * scaleV), offsetH = maxH / (2 * scaleH);
+  for (size_t p = 0, sourceY = 0, row = 0; row < height; row ++) {
+    for (size_t sourceX = 0, col = 0; col < width; col ++) {
+      result[p ++] += source[sourceX + sourceY * scaled_width] * firstH[offsetH] * firstV[offsetV] +
+                      source[sourceX + 1 + sourceY * scaled_width] * secondH[offsetH] * firstV[offsetV] +
+                      source[sourceX + (sourceY + 1) * scaled_width] * firstH[offsetH] * secondV[offsetV] +
+                      source[sourceX + 1 + (sourceY + 1) * scaled_width] * secondH[offsetH] * secondV[offsetV];
+      if (++ offsetH == maxH) {
+        offsetH = 0;
+        if (scaleH == 1) sourceX ++;
+      } else if (scaleH != 1)
+        sourceX ++;
+    }
+    if (++ offsetV == maxV) {
+      offsetV = 0;
+      if (scaleV == 1) sourceY ++;
+    } else if (scaleV != 1)
+      sourceY ++;
+  }
+}
+
+void initialize_JPEG_decoder_tables (struct context * context, struct JPEG_decoder_tables * tables, const struct JPEG_marker_layout * layout) {
+  *tables = (struct JPEG_decoder_tables) {
+    .Huffman = {NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL},
+    .quantization = {NULL, NULL, NULL, NULL},
+    .arithmetic = {0x10, 0x10, 0x10, 0x10, 5, 5, 5, 5},
+    .restart = 0
+  };
+  // if the image doesn't define a Huffman table (no DHT markers), load the standard's recommended tables as "default" tables
+  for (size_t p = 0; layout -> markers[p]; p ++) if (layout -> markertype[p] == 0xc4) return;
+  load_default_JPEG_Huffman_tables(context, tables);
+}
+
+short * process_JPEG_Huffman_table (struct context * context, const unsigned char ** restrict markerdata, uint16_t * restrict markersize) {
+  if (*markersize < 16) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  uint_fast16_t totalsize = 0, tablesize = 16; // 16 so it counts the initial length bytes too
+  const unsigned char * lengths = *markerdata;
+  const unsigned char * data = *markerdata + 16;
+  for (uint_fast8_t size = 0; size < 16; size ++) {
+    tablesize += lengths[size];
+    totalsize += lengths[size] * (size + 1) * 2; // not necessarily the real size of the table, but an easily calculated upper bound
+  }
+  if (*markersize < tablesize) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  *markersize -= tablesize;
+  *markerdata += tablesize;
+  short * result = ctxmalloc(context, totalsize * sizeof *result);
+  for (uint_fast16_t p = 0; p < totalsize; p ++) result[p] = -1;
+  uint_fast16_t code = 0, next = 2, offset = 0x8000u;
+  // size is one less because we don't count the link to the leaf
+  for (uint_fast8_t size = 0; size < 16; size ++, offset >>= 1) for (uint_fast8_t count = lengths[size]; count; count --) {
+    uint_fast16_t current = 0x8000u, index = 0;
+    for (uint_fast8_t remainder = size; remainder; remainder --) {
+      if (code & current) index ++;
+      current >>= 1;
+      if (result[index] == -1) {
+        result[index] = -(short) next;
+        next += 2;
+      }
+      index = -result[index];
+    }
+    if (code & current) index ++;
+    result[index] = *(data ++);
+    if ((uint_fast32_t) code + offset > 0xffffu) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+    code += offset;
+  }
+  return ctxrealloc(context, result, next * sizeof *result);
+}
+
+void load_default_JPEG_Huffman_tables (struct context * context, struct JPEG_decoder_tables * restrict tables) {
+  /* default tables from the JPEG specification, already preprocessed into a tree, in the same format as other trees:
+     two values per node, non-negative values are leaves, negative values are array indexes where the next node is
+     found (always even, because each node takes up two entries), -1 is an empty branch; index 0 is the root node */
+  static const short luminance_DC_table[] = {
+    //           0     1     2     3     4     5     6     7     8     9    10    11    12    13    14    15    16    17    18    19
+    /*   0 */   -2,   -6, 0x00,   -4, 0x01, 0x02,   -8,  -10, 0x03, 0x04, 0x05,  -12, 0x06,  -14, 0x07,  -16, 0x08,  -18, 0x09,  -20,
+    /*  20 */ 0x0a,  -22, 0x0b,   -1
+  };
+  static const short chrominance_DC_table[] = {
+    //           0     1     2     3     4     5     6     7     8     9    10    11    12    13    14    15    16    17    18    19
+    /*   0 */   -2,   -4, 0x00, 0x01, 0x02,   -6, 0x03,   -8, 0x04,  -10, 0x05,  -12, 0x06,  -14, 0x07,  -16, 0x08,  -18, 0x09,  -20,
+    /*  20 */ 0x0a,  -22, 0x0b,   -1
+  };
+  static const short luminance_AC_table[] = {
+    //           0     1     2     3     4     5     6     7     8     9    10    11    12    13    14    15    16    17    18    19
+    /*   0 */   -2,   -4, 0x01, 0x02,   -6,  -10, 0x03,   -8, 0x00, 0x04,  -12,  -16, 0x11,  -14, 0x05, 0x12,  -18,  -22, 0x21,  -20,
+    /*  20 */ 0x31, 0x41,  -24,  -30,  -26,  -28, 0x06, 0x13, 0x51, 0x61,  -32,  -40,  -34,  -36, 0x07, 0x22, 0x71,  -38, 0x14, 0x32,
+    /*  40 */  -42,  -50,  -44,  -46, 0x81, 0x91, 0xa1,  -48, 0x08, 0x23,  -52,  -60,  -54,  -56, 0x42, 0xb1, 0xc1,  -58, 0x15, 0x52,
+    /*  60 */  -62,  -72,  -64,  -66, 0xd1, 0xf0,  -68,  -70, 0x24, 0x33, 0x62, 0x72,  -74, -198,  -76, -136,  -78, -106,  -80,  -92,
+    /*  80 */  -82,  -86, 0x82,  -84, 0x09, 0x0a,  -88,  -90, 0x16, 0x17, 0x18, 0x19,  -94, -100,  -96,  -98, 0x1a, 0x25, 0x26, 0x27,
+    /* 100 */ -102, -104, 0x28, 0x29, 0x2a, 0x34, -108, -122, -110, -116, -112, -114, 0x35, 0x36, 0x37, 0x38, -118, -120, 0x39, 0x3a,
+    /* 120 */ 0x43, 0x44, -124, -130, -126, -128, 0x45, 0x46, 0x47, 0x48, -132, -134, 0x49, 0x4a, 0x53, 0x54, -138, -168, -140, -154,
+    /* 140 */ -142, -148, -144, -146, 0x55, 0x56, 0x57, 0x58, -150, -152, 0x59, 0x5a, 0x63, 0x64, -156, -162, -158, -160, 0x65, 0x66,
+    /* 160 */ 0x67, 0x68, -164, -166, 0x69, 0x6a, 0x73, 0x74, -170, -184, -172, -178, -174, -176, 0x75, 0x76, 0x77, 0x78, -180, -182,
+    /* 180 */ 0x79, 0x7a, 0x83, 0x84, -186, -192, -188, -190, 0x85, 0x86, 0x87, 0x88, -194, -196, 0x89, 0x8a, 0x92, 0x93, -200, -262,
+    /* 200 */ -202, -232, -204, -218, -206, -212, -208, -210, 0x94, 0x95, 0x96, 0x97, -214, -216, 0x98, 0x99, 0x9a, 0xa2, -220, -226,
+    /* 220 */ -222, -224, 0xa3, 0xa4, 0xa5, 0xa6, -228, -230, 0xa7, 0xa8, 0xa9, 0xaa, -234, -248, -236, -242, -238, -240, 0xb2, 0xb3,
+    /* 240 */ 0xb4, 0xb5, -244, -246, 0xb6, 0xb7, 0xb8, 0xb9, -250, -256, -252, -254, 0xba, 0xc2, 0xc3, 0xc4, -258, -260, 0xc5, 0xc6,
+    /* 260 */ 0xc7, 0xc8, -264, -294, -266, -280, -268, -274, -270, -272, 0xc9, 0xca, 0xd2, 0xd3, -276, -278, 0xd4, 0xd5, 0xd6, 0xd7,
+    /* 280 */ -282, -288, -284, -286, 0xd8, 0xd9, 0xda, 0xe1, -290, -292, 0xe2, 0xe3, 0xe4, 0xe5, -296, -310, -298, -304, -300, -302,
+    /* 300 */ 0xe6, 0xe7, 0xe8, 0xe9, -306, -308, 0xea, 0xf1, 0xf2, 0xf3, -312, -318, -314, -316, 0xf4, 0xf5, 0xf6, 0xf7, -320, -322,
+    /* 320 */ 0xf8, 0xf9, 0xfa,   -1
+  };
+  static const short chrominance_AC_table[] = {
+    //           0     1     2     3     4     5     6     7     8     9    10    11    12    13    14    15    16    17    18    19
+    /*   0 */   -2,   -4, 0x00, 0x01,   -6,  -10, 0x02,   -8, 0x03, 0x11,  -12,  -18,  -14,  -16, 0x04, 0x05, 0x21, 0x31,  -20,  -26,
+    /*  20 */  -22,  -24, 0x06, 0x12, 0x41, 0x51,  -28,  -36,  -30,  -32, 0x07, 0x61, 0x71,  -34, 0x13, 0x22,  -38,  -48,  -40,  -42,
+    /*  40 */ 0x32, 0x81,  -44,  -46, 0x08, 0x14, 0x42, 0x91,  -50,  -58,  -52,  -54, 0xa1, 0xb1, 0xc1,  -56, 0x09, 0x23,  -60,  -68,
+    /*  60 */  -62,  -64, 0x33, 0x52, 0xf0,  -66, 0x15, 0x62,  -70,  -80,  -72,  -74, 0x72, 0xd1,  -76,  -78, 0x0a, 0x16, 0x24, 0x34,
+    /*  80 */  -82, -198,  -84, -136,  -86, -106,  -88,  -92, 0xe1,  -90, 0x25, 0xf1,  -94, -100,  -96,  -98, 0x17, 0x18, 0x19, 0x1a,
+    /* 100 */ -102, -104, 0x26, 0x27, 0x28, 0x29, -108, -122, -110, -116, -112, -114, 0x2a, 0x35, 0x36, 0x37, -118, -120, 0x38, 0x39,
+    /* 120 */ 0x3a, 0x43, -124, -130, -126, -128, 0x44, 0x45, 0x46, 0x47, -132, -134, 0x48, 0x49, 0x4a, 0x53, -138, -168, -140, -154,
+    /* 140 */ -142, -148, -144, -146, 0x54, 0x55, 0x56, 0x57, -150, -152, 0x58, 0x59, 0x5a, 0x63, -156, -162, -158, -160, 0x64, 0x65,
+    /* 160 */ 0x66, 0x67, -164, -166, 0x68, 0x69, 0x6a, 0x73, -170, -184, -172, -178, -174, -176, 0x74, 0x75, 0x76, 0x77, -180, -182,
+    /* 180 */ 0x78, 0x79, 0x7a, 0x82, -186, -192, -188, -190, 0x83, 0x84, 0x85, 0x86, -194, -196, 0x87, 0x88, 0x89, 0x8a, -200, -262,
+    /* 200 */ -202, -232, -204, -218, -206, -212, -208, -210, 0x92, 0x93, 0x94, 0x95, -214, -216, 0x96, 0x97, 0x98, 0x99, -220, -226,
+    /* 220 */ -222, -224, 0x9a, 0xa2, 0xa3, 0xa4, -228, -230, 0xa5, 0xa6, 0xa7, 0xa8, -234, -248, -236, -242, -238, -240, 0xa9, 0xaa,
+    /* 240 */ 0xb2, 0xb3, -244, -246, 0xb4, 0xb5, 0xb6, 0xb7, -250, -256, -252, -254, 0xb8, 0xb9, 0xba, 0xc2, -258, -260, 0xc3, 0xc4,
+    /* 260 */ 0xc5, 0xc6, -264, -294, -266, -280, -268, -274, -270, -272, 0xc7, 0xc8, 0xc9, 0xca, -276, -278, 0xd2, 0xd3, 0xd4, 0xd5,
+    /* 280 */ -282, -288, -284, -286, 0xd6, 0xd7, 0xd8, 0xd9, -290, -292, 0xda, 0xe2, 0xe3, 0xe4, -296, -310, -298, -304, -300, -302,
+    /* 300 */ 0xe5, 0xe6, 0xe7, 0xe8, -306, -308, 0xe9, 0xea, 0xf2, 0xf3, -312, -318, -314, -316, 0xf4, 0xf5, 0xf6, 0xf7, -320, -322,
+    /* 320 */ 0xf8, 0xf9, 0xfa,   -1
+  };
+  *tables -> Huffman = memcpy(ctxmalloc(context, sizeof luminance_DC_table), luminance_DC_table, sizeof luminance_DC_table);
+  tables -> Huffman[1] = memcpy(ctxmalloc(context, sizeof chrominance_DC_table), chrominance_DC_table, sizeof chrominance_DC_table);
+  tables -> Huffman[4] = memcpy(ctxmalloc(context, sizeof luminance_AC_table), luminance_AC_table, sizeof luminance_AC_table);
+  tables -> Huffman[5] = memcpy(ctxmalloc(context, sizeof chrominance_AC_table), chrominance_AC_table, sizeof chrominance_AC_table);
+}
+
+void generate_JPEG_data (struct context * context) {
+  if (context -> source -> frames > 1) throw(context, PLUM_ERR_NO_MULTI_FRAME);
+  if (context -> source -> width > 0xffffu || context -> source -> height > 0xffffu) throw(context, PLUM_ERR_IMAGE_TOO_LARGE);
+  byteoutput(context,
+             0xff, 0xd8, // SOI
+             0xff, 0xe0, 0x00, 0x10, 0x4a, 0x46, 0x49, 0x46, 0x00, 0x01, 0x02, 0x00, 0x00, 0x01, 0x00, 0x01, 0x00, 0x00, // JFIF marker (no thumbnail)
+             0xff, 0xee, 0x00, 0x0e, 0x41, 0x64, 0x6f, 0x62, 0x65, 0x00, 0x64, 0x00, 0x00, 0x00, 0x00, 0x01, // Adobe marker (YCbCr colorspace)
+             0xff, 0xc0, 0x00, 0x11, 0x08, // SOF, baseline DCT coding, 8 bits per component...
+             context -> source -> height >> 8, context -> source -> height, context -> source -> width >> 8, context -> source -> width, // dimensions...
+             0x03, 0x01, 0x22, 0x00, 0x02, 0x11, 0x01, 0x03, 0x11, 0x01 // 3 components, component 1 is 4:4:4, table 0, components 2-3 are 4:2:0, table 1
+            );
+  uint8_t luminance_table[64];
+  uint8_t chrominance_table[64];
+  calculate_JPEG_quantization_tables(context, luminance_table, chrominance_table);
+  unsigned char * node = append_output_node(context, 134);
+  bytewrite(node, 0xff, 0xdb, 0x00, 0x84, 0x00); // DQT, 132 bytes long, table 0 first
+  memcpy(node + 5, luminance_table, sizeof luminance_table);
+  node[69] = 1; // table 1 afterwards
+  memcpy(node + 70, chrominance_table, sizeof chrominance_table);
+  size_t unitsH = (context -> image -> width + 7) / 8, unitsV = (context -> image -> height + 7) / 8, units = unitsH * unitsV;
+  double (* luminance)[64] = ctxmalloc(context, units * sizeof *luminance);
+  double (* blue_chrominance)[64] = ctxmalloc(context, units * sizeof *blue_chrominance);
+  double (* red_chrominance)[64] = ctxmalloc(context, units * sizeof *red_chrominance);
+  convert_JPEG_components_to_YCbCr(context, luminance, blue_chrominance, red_chrominance);
+  size_t reduced_units = ((unitsH + 1) >> 1) * ((unitsV + 1) >> 1);
+  double (* buffer)[64] = ctxmalloc(context, reduced_units * sizeof *buffer);
+  subsample_JPEG_component(blue_chrominance, buffer, unitsH, unitsV);
+  ctxfree(context, blue_chrominance);
+  blue_chrominance = buffer;
+  buffer = ctxmalloc(context, reduced_units * sizeof *buffer);
+  subsample_JPEG_component(red_chrominance, buffer, unitsH, unitsV);
+  ctxfree(context, red_chrominance);
+  red_chrominance = buffer;
+  size_t luminance_count, chrominance_count;
+  // do chrominance first, since it will generally use less memory, so the chrominance data can be freed afterwards to reduce overall memory usage
+  struct JPEG_encoded_value * chrominance_data = generate_JPEG_chrominance_data_stream(context, blue_chrominance, red_chrominance, reduced_units,
+                                                                                       chrominance_table, &chrominance_count);
+  ctxfree(context, red_chrominance);
+  ctxfree(context, blue_chrominance);
+  struct JPEG_encoded_value * luminance_data = generate_JPEG_luminance_data_stream(context, luminance, units, luminance_table, &luminance_count);
+  ctxfree(context, luminance);
+  unsigned char Huffman_table_data[0x400]; // luminance DC, AC, chrominance DC, AC
+  node = append_output_node(context, 1096);
+  size_t size = 4;
+  size += generate_JPEG_Huffman_table(context, luminance_data, luminance_count, node + size, Huffman_table_data, 0x00);
+  size += generate_JPEG_Huffman_table(context, luminance_data, luminance_count, node + size, Huffman_table_data + 0x100, 0x10);
+  size += generate_JPEG_Huffman_table(context, chrominance_data, chrominance_count, node + size, Huffman_table_data + 0x200, 0x01);
+  size += generate_JPEG_Huffman_table(context, chrominance_data, chrominance_count, node + size, Huffman_table_data + 0x300, 0x11);
+  bytewrite(node, 0xff, 0xc4, (size - 2) >> 8, size - 2); // DHT
+  context -> output -> size = size;
+  byteoutput(context, 0xff, 0xda, 0x00, 0x08, 0x01, 0x01, 0x00, 0x00, 0x3f, 0x00); // SOS, component 1, table 0, not progressive
+  encode_JPEG_scan(context, luminance_data, luminance_count, Huffman_table_data);
+  ctxfree(context, luminance_data);
+  byteoutput(context, 0xff, 0xda, 0x00, 0x0a, 0x02, 0x02, 0x11, 0x03, 0x11, 0x00, 0x3f, 0x00); // SOS, components 2-3, table 1, not progressive
+  encode_JPEG_scan(context, chrominance_data, chrominance_count, Huffman_table_data + 0x200);
+  ctxfree(context, chrominance_data);
+  byteoutput(context, 0xff, 0xd9); // EOI
+}
+
+void calculate_JPEG_quantization_tables (struct context * context, uint8_t luminance_table[restrict static 64], uint8_t chrominance_table[restrict static 64]) {
+  // start with the standard's tables (reduced by 1, since that will be added back later)
+  static const uint8_t luminance_base[64] =   { 15,  10,  11,  13,  11,   9,  15,  13,  12,  13,  17,  16,  15,  18,  23,  39,  25,  23,  21,  21,  23,
+                                                48,  34,  36,  28,  39,  57,  50,  60,  59,  56,  50,  55,  54,  63,  71,  91,  77,  63,  67,  86,  68,
+                                                54,  55,  79, 108,  80,  86,  94,  97, 102, 103, 102,  61,  76, 112, 120, 111,  99, 119,  91, 100, 102,  98};
+  static const uint8_t chrominance_base[64] = { 16,  17,  17,  23,  20,  23,  46,  25,  25,  46,  98,  65,  55,  65,  98,  98,  98,  98,  98,  98,  98,
+                                                98,  98,  98,  98,  98,  98,  98,  98,  98,  98,  98,  98,  98,  98,  98,  98,  98,  98,  98,  98,  98,
+                                                98,  98,  98,  98,  98,  98,  98,  98,  98,  98,  98,  98,  98,  98,  98,  98,  98,  98,  98,  98,  98,  98};
+  // compute a score based on the logarithm of the image's dimensions (approximated using integer math)
+  uint_fast32_t current, score = 0;
+  for (current = context -> source -> width; current > 4; current >>= 1) score += 2;
+  score += current;
+  for (current = context -> source -> height; current > 4; current >>= 1) score += 2;
+  score += current;
+  score = (score > 24) ? score - 22 : 2;
+  // adjust the chrominance accuracy based on the color depth
+  uint_fast32_t depth = get_true_color_depth(context -> source);
+  uint_fast32_t adjustment = 72 - (depth & 0xff) - ((depth >> 8) & 0xff) - ((depth >> 16) & 0xff);
+  // compute the final quantization coefficients based on the scores above
+  for (uint_fast8_t p = 0; p < 64; p ++) {
+    luminance_table[p] = 1 + luminance_base[p] * score / 25;
+    chrominance_table[p] = 1 + chrominance_base[p] * score * adjustment / 1200;
+  }
+}
+
+void convert_JPEG_components_to_YCbCr (struct context * context, double (* restrict luminance)[64], double (* restrict blue)[64], double (* restrict red)[64]) {
+  const unsigned char * data = context -> source -> data;
+  size_t offset = context -> source -> palette ? 1 : plum_color_buffer_size(1, context -> source -> color_format), rowoffset = offset * context -> source -> width;
+  double palette_luminance[256];
+  double palette_blue[256];
+  double palette_red[256];
+  uint64_t * buffer = ctxmalloc(context, sizeof *buffer * ((context -> source -> palette && context -> source -> max_palette_index > 7) ?
+                                                           context -> source -> max_palette_index + 1 : 8));
+  // define macros to reduce repetition within the function
+  #define nextunit luminance ++, blue ++, red ++
+  #define convertblock(rows, cols) do                                                                                                                          \
+    if (context -> source -> palette)                                                                                                                          \
+      for (uint_fast8_t row = 0; row < (rows); row ++) for (uint_fast8_t col = 0; col < (cols); col ++) {                                                      \
+        unsigned char index = data[(unitrow * 8 + row) * context -> source -> width + unitcol * 8 + col], coord = row * 8 + col;                               \
+        coord[*luminance] = palette_luminance[index];                                                                                                          \
+        coord[*blue] = palette_blue[index];                                                                                                                    \
+        coord[*red] = palette_red[index];                                                                                                                      \
+      }                                                                                                                                                        \
+    else {                                                                                                                                                     \
+      size_t index = unitrow * 8 * rowoffset + unitcol * 8 * offset;                                                                                           \
+      for (uint_fast8_t row = 0; row < (rows); row ++, index += rowoffset)                                                                                     \
+        convert_JPEG_colors_to_YCbCr(data + index, cols, context -> source -> color_format, *luminance + 8 * row, *blue + 8 * row, *red + 8 * row, buffer);    \
+    }                                                                                                                                                          \
+  while (false)
+  #define copyvalues(index, offset) do {                     \
+    uint_fast8_t coord = (index), ref = coord - (offset);    \
+    coord[*luminance] = ref[*luminance];                     \
+    coord[*blue] = ref[*blue];                               \
+    coord[*red] = ref[*red];                                 \
+  } while (false)
+  // actually do the conversion
+  if (context -> source -> palette)
+    convert_JPEG_colors_to_YCbCr(context -> source -> palette, context -> source -> max_palette_index + 1, context -> source -> color_format, palette_luminance,
+                                 palette_blue, palette_red, buffer);
+  size_t unitrow, unitcol; // used by convertblock (and thus required to keep their values after the loops exit)
+  for (unitrow = 0; unitrow < (context -> source -> height >> 3); unitrow ++) {
+    for (unitcol = 0; unitcol < (context -> source -> width >> 3); unitcol ++) {
+      convertblock(8, 8);
+      nextunit;
+    }
+    if (context -> source -> width & 7) {
+      convertblock(8, context -> source -> width & 7);
+      for (uint_fast8_t row = 0; row < 8; row ++) for (uint_fast8_t col = context -> source -> width & 7; col < 8; col ++) copyvalues(row * 8 + col, 1);
+      nextunit;
+    }
+  }
+  if (context -> source -> height & 7) {
+    for (unitcol = 0; unitcol < (context -> source -> width >> 3); unitcol ++) {
+      convertblock(context -> source -> height & 7, 8);
+      for (uint_fast8_t p = 8 * (context -> source -> height & 7); p < 64; p ++) copyvalues(p, 8);
+      nextunit;
+    }
+    if (context -> source -> width & 7) {
+      convertblock(context -> source -> height & 7, context -> source -> width & 7);
+      for (uint_fast8_t row = 0; row < (context -> source -> height & 7); row ++) for (uint_fast8_t col = context -> source -> width & 7; col < 8; col ++)
+        copyvalues(row * 8 + col, 1);
+      for (uint_fast8_t p = 8 * (context -> source -> height & 7); p < 64; p ++) copyvalues(p, 8);
+    }
+  }
+  #undef copyvalues
+  #undef convertblock
+  #undef nextunit
+  ctxfree(context, buffer);
+}
+
+void convert_JPEG_colors_to_YCbCr (const void * restrict colors, size_t count, unsigned char flags, double * restrict luminance, double * restrict blue,
+                                   double * restrict red, uint64_t * restrict buffer) {
+  plum_convert_colors(buffer, colors, count, PLUM_COLOR_64, flags);
+  for (size_t p = 0; p < count; p ++) {
+    double R = (double) (buffer[p] & 0xffffu) / 257.0, G = (double) ((buffer[p] >> 16) & 0xffffu) / 257.0, B = (double) ((buffer[p] >> 32) & 0xffffu) / 257.0;
+    luminance[p] = 0x0.4c8b4395810628p+0 * R + 0x0.9645a1cac08310p+0 * G + 0x0.1d2f1a9fbe76c8p+0 * B - 128.0;
+    blue[p] = 0.5 * (B - 1.0) - 0x0.2b32468049f7e8p+0 * R - 0x0.54cdb97fb60818p+0 * G;
+    red[p] = 0.5 * (R - 1.0) - 0x0.6b2f1c1ead19ecp+0 * G - 0x0.14d0e3e152e614p+0 * B;
+  }
+}
+
+void subsample_JPEG_component (double (* restrict component)[64], double (* restrict output)[64], size_t unitsH, size_t unitsV) {
+  #define reduce(offset, shift, y, x) do {                                              \
+    uint_fast8_t index = (y) * 8 + (x);                                                 \
+    const double * ref = component[(offset) * unitsH] + (index * 2 - 64 * (offset));    \
+    (*output)[index + (shift)] = (*ref + ref[1] + ref[8] + ref[9]) * 0.25;              \
+  } while (false)
+  for (size_t unitrow = 0; unitrow < (unitsV >> 1); unitrow ++) {
+    for (size_t unitcol = 0; unitcol < (unitsH >> 1); unitcol ++) {
+      for (uint_fast8_t p = 0; p < 8; p += 4) {
+        for (uint_fast8_t row = 0; row < 4; row ++) for (uint_fast8_t col = 0; col < 4; col ++) {
+          reduce(0, p, row, col);
+          reduce(1, p, row + 4, col);
+        }
+        component ++;
+      }
+      output ++;
+    }
+    if (unitsH & 1) {
+      for (uint_fast8_t row = 0; row < 4; row ++) for (uint_fast8_t col = 0; col < 4; col ++) {
+        reduce(0, 0, row, col);
+        reduce(1, 0, row + 4, col);
+      }
+      component ++;
+      for (uint_fast8_t row = 0; row < 8; row ++) for (uint_fast8_t col = 4; col < 8; col ++) (*output)[row * 8 + col] = (*output)[row * 8 + col - 1];
+      output ++;
+    }
+    component += unitsH; // skip odd rows
+  }
+  if (unitsV & 1) {
+    for (size_t unitcol = 0; unitcol < (unitsH >> 1); unitcol ++) {
+      for (uint_fast8_t p = 0; p < 8; p += 4) {
+        for (uint_fast8_t row = 0; row < 4; row ++) for (uint_fast8_t col = 0; col < 4; col ++) reduce(0, p, row, col);
+        component ++;
+      }
+      for (uint_fast8_t p = 32; p < 64; p ++) (*output)[p] = (*output)[p - 8];
+      output ++;
+    }
+    if (unitsH & 1) {
+      for (uint_fast8_t row = 0; row < 4; row ++) for (uint_fast8_t col = 0; col < 4; col ++) {
+        reduce(0, 0, row, col);
+        (*output)[row * 8 + col + 4] = (*output)[row * 8 + col];
+      }
+      for (uint_fast8_t p = 32; p < 64; p ++) (*output)[p] = (*output)[p - 8];
+    }
+  }
+  #undef reduce
+}
+
 struct plum_image * plum_load_image (const void * restrict buffer, size_t size_mode, unsigned flags, unsigned * restrict error) {
   return plum_load_image_limited(buffer, size_mode, flags, SIZE_MAX, error);
 }
@@ -2610,6 +5558,8 @@ void load_image_buffer_data (struct context * context, unsigned flags, size_t li
     // empty GIF file
     throw(context, PLUM_ERR_NO_DATA);
   if (context -> size < 8) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  if (bytematch(context -> data, 0x42, 0x4d))
+    load_BMP_data(context, flags, limit);
   else if (bytematch(context -> data, 0x47, 0x49, 0x46, 0x38, 0x39, 0x61))
     load_GIF_data(context, flags, limit);
   else if (bytematch(context -> data, 0x47, 0x49, 0x46, 0x38, 0x37, 0x61))
@@ -2618,9 +5568,20 @@ void load_image_buffer_data (struct context * context, unsigned flags, size_t li
   else if (bytematch(context -> data, 0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a))
     // APNG files disguise as PNG files, so handle them all as PNG and split them later
     load_PNG_data(context, flags, limit);
+  else if (*context -> data == 0x50 && context -> data[1] >= 0x31 && context -> data[1] <= 0x37)
+    load_PNM_data(context, flags, limit);
+  else if (bytematch(context -> data, 0xef, 0xbb, 0xbf, 0x50) && context -> data[4] >= 0x31 && context -> data[4] <= 0x37)
+    // text-based PNM data destroyed by a UTF-8 BOM: load it anyway, just in case a broken text editor does this
+    load_PNM_data(context, flags, limit);
   else {
-    // all attempts to detect the file type failed
-    throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+    // JPEG detection: one or more 0xff bytes followed by 0xd8
+    size_t position;
+    for (position = 0; position < context -> size && context -> data[position] == 0xff; position ++);
+    if (position && position < context -> size && context -> data[position] == 0xd8)
+      load_JPEG_data(context, flags, limit);
+    else
+      // all attempts to detect the file type failed
+      throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
   }
 }
 
@@ -2859,8 +5820,12 @@ const char * plum_get_error_text (unsigned error) {
 const char * plum_get_file_format_name (unsigned format) {
   static const char * const formats[PLUM_NUM_IMAGE_TYPES] = {
     [PLUM_IMAGE_NONE] = NULL, // default for invalid formats
+    [PLUM_IMAGE_BMP]  = "BMP",
     [PLUM_IMAGE_GIF]  = "GIF",
     [PLUM_IMAGE_PNG]  = "PNG",
+    [PLUM_IMAGE_APNG] = "APNG",
+    [PLUM_IMAGE_JPEG] = "JPEG",
+    [PLUM_IMAGE_PNM]  = "PNM"
   };
   if (format >= PLUM_NUM_IMAGE_TYPES) format = PLUM_IMAGE_NONE;
   return formats[format];
@@ -3729,8 +6694,13 @@ uint16_t next_PNG_Huffman_code (struct context * context, const short * restrict
 void load_PNG_data (struct context * context, unsigned flags, size_t limit) {
   struct PNG_chunk_locations * chunks = load_PNG_chunk_locations(context); // also sets context -> image -> frames for APNGs
   // load basic header data
-  context -> image -> type = PLUM_IMAGE_PNG;
-  context -> image -> frames = 1;
+  if (chunks -> animation) {
+    context -> image -> type = PLUM_IMAGE_APNG;
+    if (*chunks -> data < *chunks -> frameinfo) context -> image -> frames ++; // first frame is not part of the animation
+  } else {
+    context -> image -> type = PLUM_IMAGE_PNG;
+    context -> image -> frames = 1;
+  }
   context -> image -> width = read_be32_unaligned(context -> data + 16);
   context -> image -> height = read_be32_unaligned(context -> data + 20);
   if (context -> image -> width > 0x7fffffffu || context -> image -> height > 0x7fffffffu) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
@@ -4379,6 +7349,56 @@ void generate_PNG_data (struct context * context) {
   output_PNG_chunk(context, 0x49454e44u, 0, NULL); // IEND
 }
 
+void generate_APNG_data (struct context * context) {
+  if (context -> source -> frames > 0x40000000u) throw(context, PLUM_ERR_IMAGE_TOO_LARGE);
+  struct plum_rectangle * boundaries = get_frame_boundaries(context, false);
+  unsigned type = generate_PNG_header(context, boundaries);
+  uint32_t loops = 1;
+  const struct plum_metadata * metadata = plum_find_metadata(context -> source, PLUM_METADATA_LOOP_COUNT);
+  if (metadata) {
+    loops = *(uint32_t *) metadata -> data;
+    if (loops > 0x7fffffffu) loops = 0; // too many loops, so just make it loop forever
+  }
+  const uint64_t * durations = NULL;
+  const uint8_t * disposals = NULL;
+  size_t duration_count = 0, disposal_count = 0;
+  if (metadata = plum_find_metadata(context -> source, PLUM_METADATA_FRAME_DURATION)) {
+    durations = metadata -> data;
+    duration_count = metadata -> size / sizeof(uint64_t);
+  }
+  if (metadata = plum_find_metadata(context -> source, PLUM_METADATA_FRAME_DISPOSAL)) {
+    disposals = metadata -> data;
+    disposal_count = metadata -> size;
+  }
+  uint32_t chunkID = 0;
+  uint_fast8_t last_disposal = (disposal_count >= context -> source -> frames) ? disposals[context -> source -> frames - 1] : 0;
+  unsigned char animation_data[8];
+  write_be32_unaligned(animation_data + 4, loops);
+  int64_t duration_remainder = 0;
+  if ((duration_count && *durations) || context -> source -> frames == 1) {
+    write_be32_unaligned(animation_data, context -> source -> frames);
+    output_PNG_chunk(context, 0x6163544cu, sizeof animation_data, animation_data); // acTL
+    uint_fast8_t disposal = disposal_count ? *disposals : 0;
+    append_APNG_frame_header(context, duration_count ? *durations : 0, disposal, last_disposal, &chunkID, &duration_remainder, NULL);
+    last_disposal = disposal;
+  } else {
+    write_be32_unaligned(animation_data, context -> source -> frames - 1);
+    output_PNG_chunk(context, 0x6163544cu, sizeof animation_data, animation_data); // acTL
+  }
+  append_PNG_image_data(context, context -> source -> data, type, NULL, NULL);
+  size_t framesize = (size_t) context -> source -> width * context -> source -> height;
+  if (!context -> source -> palette) framesize = plum_color_buffer_size(framesize, context -> source -> color_format);
+  for (uint_fast32_t frame = 1; frame < context -> source -> frames; frame ++) {
+    const struct plum_rectangle * rectangle = boundaries ? boundaries + frame : NULL;
+    uint_fast8_t disposal = (disposal_count > frame) ? disposals[frame] : 0;
+    append_APNG_frame_header(context, (duration_count > frame) ? durations[frame] : 0, disposal, last_disposal, &chunkID, &duration_remainder, rectangle);
+    last_disposal = disposal;
+    append_PNG_image_data(context, context -> source -> data8 + framesize * frame, type, &chunkID, rectangle);
+  }
+  ctxfree(context, boundaries);
+  output_PNG_chunk(context, 0x49454e44u, 0, NULL); // IEND
+}
+
 unsigned generate_PNG_header (struct context * context, struct plum_rectangle * restrict boundaries) {
   // returns the selected type of image: 0, 1, 2, 3: paletted (1 << type bits), 4, 5: 8-bit RGB (without and with alpha), 6, 7: 16-bit RGB
   // also updates the frame boundaries for APNG images (ensuring that frame 0 and frames with nonempty pixels outside their boundaries become full size)
@@ -4500,6 +7520,44 @@ void append_PNG_image_data (struct context * context, const void * restrict data
     if (size) output_PNG_chunk(context, 0x49444154u, size, current); // IDAT
   }
   ctxfree(context, compressed);
+}
+
+void append_APNG_frame_header (struct context * context, uint64_t duration, uint8_t disposal, uint8_t previous, uint32_t * restrict chunkID,
+                               int64_t * restrict duration_remainder, const struct plum_rectangle * boundaries) {
+  if (*chunkID > 0x7fffffffu) throw(context, PLUM_ERR_IMAGE_TOO_LARGE);
+  uint32_t numerator = 0, denominator = 0;
+  if (duration) {
+    if (duration == 1) duration = 0;
+    duration = adjust_frame_duration(duration, duration_remainder);
+    calculate_frame_duration_fraction(duration, 0xffffu, &numerator, &denominator);
+    if (!numerator) {
+      denominator = 0;
+      update_frame_duration_remainder(duration, 0, duration_remainder);
+    } else {
+      if (!denominator) {
+        // duration too large (calculation returned infinity), so max it out
+        numerator = 0xffffu;
+        denominator = 1;
+      }
+      update_frame_duration_remainder(duration, ((uint64_t) 1000000000u * numerator + denominator / 2) / denominator, duration_remainder);
+    }
+  }
+  unsigned char data[26];
+  write_be32_unaligned(data, (*chunkID) ++);
+  if (boundaries) {
+    write_be32_unaligned(data + 4, boundaries -> width);
+    write_be32_unaligned(data + 8, boundaries -> height);
+    write_be32_unaligned(data + 12, boundaries -> left);
+    write_be32_unaligned(data + 16, boundaries -> top);
+  } else {
+    write_be32_unaligned(data + 4, context -> source -> width);
+    write_be32_unaligned(data + 8, context -> source -> height);
+    memset(data + 12, 0, 8);
+  }
+  write_be16_unaligned(data + 20, numerator);
+  write_be16_unaligned(data + 22, denominator);
+  bytewrite(data + 24, disposal % PLUM_DISPOSAL_REPLACE, previous < PLUM_DISPOSAL_REPLACE);
+  output_PNG_chunk(context, 0x6663544cu, sizeof data, data); // fcTL
 }
 
 void output_PNG_chunk (struct context * context, uint32_t type, uint32_t size, const void * restrict data) {
@@ -4626,6 +7684,528 @@ unsigned char select_PNG_filtered_row (const unsigned char * rowdata, size_t row
     }
   }
   return best;
+}
+
+void load_PNM_data (struct context * context, unsigned flags, size_t limit) {
+  struct PNM_image_header * headers = NULL;
+  size_t offset = 0;
+  context -> image -> type = PLUM_IMAGE_PNM;
+  // all image fields are zero-initialized, so the sizes are set to 0
+  do {
+    if (context -> image -> frames == 0xffffffffu) throw(context, PLUM_ERR_IMAGE_TOO_LARGE);
+    headers = ctxrealloc(context, headers, (context -> image -> frames + 1) * sizeof *headers);
+    struct PNM_image_header * header = headers + (context -> image -> frames ++);
+    load_PNM_header(context, offset, header);
+    if (context -> size - header -> datastart < header -> datalength) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+    if (header -> width > context -> image -> width) context -> image -> width = header -> width;
+    if (header -> height > context -> image -> height) context -> image -> height = header -> height;
+    validate_image_size(context, limit);
+    offset = header -> datastart + header -> datalength;
+    skip_PNM_whitespace(context, &offset);
+  } while (offset < context -> size);
+  allocate_framebuffers(context, flags, false);
+  add_PNM_bit_depth_metadata(context, headers);
+  struct plum_rectangle * frameareas = add_frame_area_metadata(context);
+  uint64_t * buffer = ctxmalloc(context, sizeof *buffer * context -> image -> width * context -> image -> height);
+  offset = plum_color_buffer_size((size_t) context -> image -> width * context -> image -> height, flags);
+  for (uint_fast32_t frame = 0; frame < context -> image -> frames; frame ++) {
+    load_PNM_frame(context, headers + frame, buffer);
+    frameareas[frame] = (struct plum_rectangle) {.left = 0, .top = 0, .width = headers[frame].width, .height = headers[frame].height};
+    plum_convert_colors(context -> image -> data8 + offset * frame, buffer, (size_t) context -> image -> width * context -> image -> height, flags,
+                        PLUM_COLOR_64 | PLUM_ALPHA_INVERT);
+  }
+  ctxfree(context, buffer);
+  ctxfree(context, headers);
+}
+
+void load_PNM_header (struct context * context, size_t offset, struct PNM_image_header * restrict header) {
+  if (context -> size - offset < 8) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  if (bytematch(context -> data, 0xef, 0xbb, 0xbf)) offset += 3; // if a broken text editor somehow inserted a UTF-8 BOM, skip it
+  if (context -> data[offset ++] != 0x50) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  header -> type = context -> data[offset ++] - 0x30;
+  if (!header -> type || header -> type > 7 || !is_whitespace(context -> data[offset])) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  if (header -> type == 7) {
+    load_PAM_header(context, offset, header);
+    return;
+  }
+  uint32_t dimensions[3];
+  dimensions[2] = 1;
+  read_PNM_numbers(context, &offset, dimensions, 2 + (header -> type != 1 && header -> type != 4));
+  if (!(*dimensions && dimensions[1] && dimensions[2]) || dimensions[2] > 0xffffu || offset == context -> size) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  header -> width = *dimensions;
+  header -> height = dimensions[1];
+  header -> maxvalue = dimensions[2];
+  header -> datastart = ++ offset;
+  if (!plum_check_valid_image_size(header -> width, header -> height, 1)) throw(context, PLUM_ERR_IMAGE_TOO_LARGE);
+  switch (header -> type) {
+    case 5: case 6:
+      header -> datalength = (size_t) header -> width * header -> height * (1 + (header -> maxvalue > 0xff));
+      if (header -> type == 6) header -> datalength *= 3;
+      break;
+    case 4:
+      header -> datalength = (size_t) ((header -> width - 1) / 8 + 1) * header -> height;
+      break;
+    default: {
+      header -> datalength = context -> size - offset;
+      size_t minchars = (header -> type == 3) ? 6 : header -> type; // minimum characters per pixel for each type
+      if (header -> datalength < minchars * header -> width * header -> height - 1) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+    }
+  }
+}
+
+void load_PAM_header (struct context * context, size_t offset, struct PNM_image_header * restrict header) {
+  unsigned fields = 15; // bits 0-3: width, height, max, depth (bit set indicates the field hasn't been read yet)
+  uint32_t value, depth;
+  while (true) {
+    skip_PNM_line(context, &offset);
+    skip_PNM_whitespace(context, &offset);
+    unsigned length = next_PNM_token_length(context, offset);
+    if (length == 6 && bytematch(context -> data + offset, 0x45, 0x4e, 0x44, 0x48, 0x44, 0x52)) { // ENDHDR
+      offset += 6;
+      break;
+    } else if (length == 5 && bytematch(context -> data + offset, 0x57, 0x49, 0x44, 0x54, 0x48)) { // WIDTH
+      offset += 5;
+      if (!(fields & 1)) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+      read_PNM_numbers(context, &offset, &value, 1);
+      if (!value) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+      header -> width = value;
+      fields &= ~1u;
+    } else if (length == 6 && bytematch(context -> data + offset, 0x48, 0x45, 0x49, 0x47, 0x48, 0x54)) { // HEIGHT
+      offset += 6;
+      if (!(fields & 2)) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+      read_PNM_numbers(context, &offset, &value, 1);
+      if (!value) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+      header -> height = value;
+      fields &= ~2u;
+    } else if (length == 6 && bytematch(context -> data + offset, 0x4d, 0x41, 0x58, 0x56, 0x41, 0x4c)) { // MAXVAL
+      offset += 6;
+      if (!(fields & 4)) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+      read_PNM_numbers(context, &offset, &value, 1);
+      if (!value || value > 0xffffu) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+      header -> maxvalue = value;
+      fields &= ~4u;
+    } else if (length == 5 && bytematch(context -> data + offset, 0x44, 0x45, 0x50, 0x54, 0x48)) { // DEPTH
+      offset += 5;
+      if (!(fields & 8)) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+      read_PNM_numbers(context, &offset, &depth, 1);
+      fields &= ~8u;
+    } else if (length == 8 && bytematch(context -> data + offset, 0x54, 0x55, 0x50, 0x4c, 0x54, 0x59, 0x50, 0x45)) { // TUPLTYPE
+      if (header -> type != 7) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+      offset += 8;
+      skip_PNM_whitespace(context, &offset);
+      // while the TUPLTYPE line is, by the spec, not tokenized, the only recognized tuple types are a single token
+      length = next_PNM_token_length(context, offset);
+      if (length == 13 && bytematch(context -> data + offset, 0x42, 0x4c, 0x41, 0x43, 0x4b, 0x41, 0x4e, 0x44, 0x57, 0x48, 0x49, 0x54, 0x45)) // BLACKANDWHITE
+        header -> type = 11;
+      else if (length == 9 && bytematch(context -> data + offset, 0x47, 0x52, 0x41, 0x59, 0x53, 0x43, 0x41, 0x4c, 0x45)) // GRAYSCALE
+        header -> type = 12;
+      else if (length == 3 && bytematch(context -> data + offset, 0x52, 0x47, 0x42)) // RGB
+        header -> type = 13;
+      else if (length == 19 && bytematch(context -> data + offset, 0x42, 0x4c, 0x41, 0x43, 0x4b, 0x41, 0x4e, 0x44, 0x57, 0x48,
+                                                                   0x49, 0x54, 0x45, 0x5f, 0x41, 0x4c, 0x50, 0x48, 0x41)) // BLACKANDWHITE_ALPHA
+        header -> type = 14;
+      else if (length == 15 && bytematch(context -> data + offset, 0x47, 0x52, 0x41, 0x59, 0x53, 0x43, 0x41, 0x4c, 0x45, 0x5f,
+                                                                   0x41, 0x4c, 0x50, 0x48, 0x41)) // GRAYSCALE_ALPHA
+        header -> type = 15;
+      else if (length == 9 && bytematch(context -> data + offset, 0x52, 0x47, 0x42, 0x5f, 0x41, 0x4c, 0x50, 0x48, 0x41)) // RGB_ALPHA
+        header -> type = 16;
+      else
+        throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+      offset += length;
+    } else
+      throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  }
+  if (fields || header -> type == 7) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  if (!plum_check_valid_image_size(header -> width, header -> height, 1)) throw(context, PLUM_ERR_IMAGE_TOO_LARGE);
+  static const unsigned char components[] = {1, 1, 3, 2, 2, 4};
+  if (depth != components[header -> type - 11]) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  if (header -> maxvalue != 1 && (header -> type == 11 || header -> type == 14)) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  skip_PNM_line(context, &offset);
+  header -> datastart = offset;
+  header -> datalength = (size_t) header -> width * header -> height * depth;
+  if (header -> maxvalue > 0xff) header -> datalength *= 2;
+}
+
+void skip_PNM_whitespace (struct context * context, size_t * restrict offset) {
+  while (*offset < context -> size)
+    if (context -> data[*offset] == 0x23) // '#'
+      while (*offset < context -> size && context -> data[*offset] != 10) ++ *offset;
+    else if (is_whitespace(context -> data[*offset]))
+      ++ *offset;
+    else
+      break;
+}
+
+void skip_PNM_line (struct context * context, size_t * restrict offset) {
+  for (bool comment = false; *offset < context -> size && context -> data[*offset] != 10; ++ *offset)
+    if (!comment)
+      if (context -> data[*offset] == 0x23) // '#'
+        comment = true;
+      else if (!is_whitespace(context -> data[*offset]))
+        throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+  if (*offset < context -> size) ++ *offset;
+}
+
+unsigned next_PNM_token_length (struct context * context, size_t offset) {
+  // stops at 20 because the longest recognized token is 19 characters long
+  unsigned result = 0;
+  while (offset < context -> size && result < 20 && !is_whitespace(context -> data[offset])) result ++, offset ++;
+  return (result == 20) ? 0 : result;
+}
+
+void read_PNM_numbers (struct context * context, size_t * restrict offset, uint32_t * restrict result, size_t count) {
+  while (count --) {
+    skip_PNM_whitespace(context, offset);
+    if (*offset >= context -> size || context -> data[*offset] < 0x30 || context -> data[*offset] > 0x39) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+    uint_fast64_t current = context -> data[(*offset) ++] - 0x30; // 64-bit so it can catch overflows
+    while (*offset < context -> size && context -> data[*offset] >= 0x30 && context -> data[*offset] <= 0x39) {
+      current = current * 10 + context -> data[(*offset) ++] - 0x30;
+      if (current > 0xffffffffu) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+    }
+    if (*offset < context -> size && !is_whitespace(context -> data[*offset])) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+    *(result ++) = current;
+  }
+}
+
+void add_PNM_bit_depth_metadata (struct context * context, const struct PNM_image_header * headers) {
+  uint_fast8_t colordepth = 0, alphadepth = 0;
+  bool colored = false;
+  for (uint_fast32_t frame = 0; frame < context -> image -> frames; frame ++) {
+    uint_fast8_t depth = bit_width(headers[frame].maxvalue);
+    if (headers[frame].type == 3 || headers[frame].type == 6 || headers[frame].type == 13 || headers[frame].type == 16) colored = true;
+    if (colordepth < depth) colordepth = depth;
+    if (headers[frame].type >= 14 && alphadepth < depth) alphadepth = depth;
+  }
+  if (colored)
+    add_color_depth_metadata(context, colordepth, colordepth, colordepth, alphadepth, 0);
+  else
+    add_color_depth_metadata(context, 0, 0, 0, alphadepth, colordepth);
+}
+
+void load_PNM_frame (struct context * context, const struct PNM_image_header * restrict header, uint64_t * restrict buffer) {
+  size_t offset = header -> datastart, imagewidth = context -> image -> width, imageheight = context -> image -> height;
+  if (header -> width < imagewidth)
+    for (uint_fast32_t row = 0; row < header -> height; row ++)
+      for (size_t p = imagewidth * row + header -> width; p < imagewidth * (row + 1); p ++) buffer[p] = 0;
+  if (header -> height < imageheight)
+    for (size_t p = imagewidth * header -> height; p < imagewidth * imageheight; p ++) buffer[p] = 0;
+  if (header -> type == 4) {
+    load_PNM_bit_frame(context, header -> width, header -> height, offset, buffer);
+    return;
+  }
+  uint32_t values[4];
+  values[3] = header -> maxvalue;
+  uint_fast8_t bits = bit_width(header -> maxvalue);
+  if (((header -> maxvalue + 1) >> (bits - 1)) == 1) bits = 0; // check if header -> maxvalue isn't (1 << bits) - 1, avoiding UB
+  for (uint_fast32_t row = 0; row < header -> height; row ++) for (size_t p = imagewidth * row; p < imagewidth * row + header -> width; p ++) {
+    switch (header -> type) {
+      case 1:
+        // sometimes the 0s and 1s are not delimited at all here, so it needs a special parser
+        while (offset < context -> size && (context -> data[offset] & ~1u) != 0x30) offset ++;
+        if (offset >= context -> size) throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
+        values[2] = values[1] = *values = ~context -> data[offset ++] & 1;
+        break;
+      case 2:
+        read_PNM_numbers(context, &offset, values, 1);
+        values[2] = values[1] = *values;
+        break;
+      case 3:
+        read_PNM_numbers(context, &offset, values, 3);
+        break;
+      case 6: case 13: case 16:
+        if (header -> maxvalue > 0xff) {
+          *values = read_be16_unaligned(context -> data + offset);
+          offset += 2;
+          values[1] = read_be16_unaligned(context -> data + offset);
+          offset += 2;
+          values[2] = read_be16_unaligned(context -> data + offset);
+          offset += 2;
+          if (header -> type >= 14) {
+            values[3] = read_be16_unaligned(context -> data + offset);
+            offset += 2;
+          }
+        } else {
+          *values = context -> data[offset ++];
+          values[1] = context -> data[offset ++];
+          values[2] = context -> data[offset ++];
+          if (header -> type >= 14) values[3] = context -> data[offset ++];
+        }
+        break;
+      default:
+        if (header -> maxvalue > 0xff) {
+          *values = read_be16_unaligned(context -> data + offset);
+          offset += 2;
+          if (header -> type >= 14) {
+            values[3] = read_be16_unaligned(context -> data + offset);
+            offset += 2;
+          }
+        } else {
+          *values = context -> data[offset ++];
+          if (header -> type >= 14) values[3] = context -> data[offset ++];
+        }
+        values[2] = values[1] = *values;
+    }
+    buffer[p] = 0;
+    for (uint_fast8_t color = 0; color < 4; color ++) {
+      uint64_t converted;
+      if (bits)
+        converted = bitextend16(values[color], bits);
+      else
+        converted = (values[color] * 0xffffu + header -> maxvalue / 2) / header -> maxvalue;
+      buffer[p] |= converted << (color * 16);
+    }
+  }
+}
+
+void load_PNM_bit_frame (struct context * context, size_t width, size_t height, size_t offset, uint64_t * restrict buffer) {
+  for (size_t row = 0; row < height; row ++) {
+    size_t p = row * context -> image -> width;
+    for (size_t col = 0; col < (width & bitnegate(7)); col += 8) {
+      uint_fast8_t value = context -> data[offset ++];
+      for (uint_fast8_t bit = 0; bit < 8; bit ++) {
+        buffer[p ++] = (value & 0x80) ? 0xffff000000000000u : 0xffffffffffffffffu;
+        value <<= 1;
+      }
+    }
+    if (width & 7) {
+      uint_fast8_t value = context -> data[offset ++];
+      for (uint_fast8_t bit = 0; bit < (width & 7); bit ++) {
+        buffer[p ++] = (value & 0x80) ? 0xffff000000000000u : 0xffffffffffffffffu;
+        value <<= 1;
+      }
+    }
+  }
+}
+
+void generate_PNM_data (struct context * context) {
+  struct plum_rectangle * boundaries = get_frame_boundaries(context, true);
+  uint32_t depth = get_color_depth(context -> source);
+  bool transparency;
+  if (boundaries) {
+    adjust_frame_boundaries(context -> source, boundaries);
+    bool extendwidth = true, extendheight = true;
+    for (uint_fast32_t frame = 0; (extendwidth || extendheight) && frame < context -> source -> frames; frame ++) {
+      if (boundaries[frame].width == context -> source -> width) extendwidth = false;
+      if (boundaries[frame].height == context -> source -> height) extendheight = false;
+    }
+    if (extendwidth) boundaries -> width = context -> source -> width;
+    if (extendheight) boundaries -> height = context -> source -> height;
+    transparency = image_rectangles_have_transparency(context -> source, boundaries);
+  } else
+    transparency = image_has_transparency(context -> source);
+  if (!transparency) depth &= 0xffffffu;
+  uint_fast8_t max = 0;
+  for (uint_fast8_t p = 0; p < 32; p += 8) if (((depth >> p) & 0xff) > max) max = (depth >> p) & 0xff;
+  uint64_t * buffer;
+  if (context -> source -> palette) {
+    buffer = ctxmalloc(context, sizeof *buffer * (context -> source -> max_palette_index + 1));
+    plum_convert_colors(buffer, context -> source -> palette, context -> source -> max_palette_index + 1, PLUM_COLOR_64 | PLUM_ALPHA_INVERT,
+                        context -> source -> color_format);
+  } else
+    buffer = ctxmalloc(context, sizeof *buffer * context -> source -> width * context -> source -> height);
+  uint32_t * sizes = NULL;
+  if (boundaries) {
+    sizes = ctxmalloc(context, sizeof *sizes * 2 * context -> source -> frames);
+    for (size_t frame = 0; frame < context -> source -> frames; frame ++) {
+      sizes[frame * 2] = boundaries[frame].width;
+      sizes[frame * 2 + 1] = boundaries[frame].height;
+    }
+    ctxfree(context, boundaries);
+  } else if (transparency && context -> source -> frames > 1) {
+    sizes = get_true_PNM_frame_sizes(context);
+    transparency = !sizes;
+  }
+  if (transparency)
+    generate_PAM_data(context, sizes, max, buffer);
+  else
+    generate_PPM_data(context, sizes, max, buffer);
+  ctxfree(context, sizes);
+  ctxfree(context, buffer);
+}
+
+uint32_t * get_true_PNM_frame_sizes (struct context * context) {
+  // returns width, height pairs for each frame if the only transparency in those frames is an empty border on the bottom and right edges
+  unsigned char format = context -> source -> color_format & PLUM_COLOR_MASK;
+  uint64_t mask = alpha_component_masks[format], check = 0, color = get_empty_color(context -> source);
+  if (context -> source -> color_format & PLUM_ALPHA_INVERT) check = mask;
+  uint32_t * result = ctxmalloc(context, sizeof *result * 2 * context -> source -> frames);
+  size_t width, height, offset = (size_t) context -> source -> width * context -> source -> height;
+  if (context -> source -> palette) {
+    unsigned char colorclass[0x100]; // 0 for a solid color, 1 for empty pixels (fully transparent background), 2 for everything else
+    #define checkclasses(bits) do                                                     \
+      for (uint_fast16_t p = 0; p <= context -> source -> max_palette_index; p ++)    \
+        if (context -> source -> palette ## bits[p] == color)                         \
+          colorclass[p] = 1;                                                          \
+        else if ((context -> source -> palette ## bits[p] & mask) == check)           \
+          colorclass[p] = 0;                                                          \
+        else                                                                          \
+          colorclass[p] = 2;                                                          \
+    while (false)
+    if (format == PLUM_COLOR_16)
+      checkclasses(16);
+    else if (format == PLUM_COLOR_64)
+      checkclasses(64);
+    else
+      checkclasses(32);
+    #undef checkclasses
+    for (size_t frame = 0; frame < context -> source -> frames; frame ++) {
+      const uint8_t * data = context -> source -> data8 + offset * frame;
+      if (colorclass[*data]) goto fail;
+      for (width = 1; width < context -> source -> width; width ++) if (colorclass[data[width]]) break;
+      for (height = 1; height < context -> source -> height; height ++) if (colorclass[data[height * context -> source -> width]]) break;
+      for (size_t row = 0; row < context -> source -> height; row ++) for (size_t col = 0; col < context -> source -> width; col ++)
+        if (colorclass[data[row * context -> source -> width + col]] != (row >= height || col >= width)) goto fail;
+      result[frame * 2] = width;
+      result[frame * 2 + 1] = height;
+    }
+  } else {
+    #define checkframe(bits) do                                                                                                             \
+      for (uint_fast32_t frame = 0; frame < context -> source -> frames; frame ++) {                                                        \
+        const uint ## bits ## _t * data = context -> source -> data ## bits + offset * frame;                                               \
+        if (*data == color) goto fail;                                                                                                      \
+        for (width = 1; width < context -> source -> width; width ++) if (data[width] == color) break;                                      \
+        for (height = 1; height < context -> source -> height; height ++) if (data[height * context -> source -> width] == color) break;    \
+        for (size_t row = 0; row < height; row ++) for (size_t col = 0; col < width; col ++)                                                \
+          if ((data[row * context -> source -> width + col] & mask) != check) goto fail;                                                    \
+        for (size_t row = 0; row < context -> source -> height; row ++)                                                                     \
+          for (size_t col = (row < height) ? width : 0; col < context -> source -> width; col ++)                                           \
+            if (data[row * context -> source -> width + col] != color) goto fail;                                                           \
+        result[frame * 2] = width;                                                                                                          \
+        result[frame * 2 + 1] = height;                                                                                                     \
+      }                                                                                                                                     \
+    while (false)
+    if (format == PLUM_COLOR_16)
+      checkframe(16);
+    else if (format == PLUM_COLOR_64)
+      checkframe(64);
+    else
+      checkframe(32);
+    #undef checkframe
+  }
+  bool fullwidth = false, fullheight = false;
+  for (size_t frame = 0; frame < context -> source -> frames && !(fullwidth && fullheight); frame ++) {
+    if (result[frame * 2] == context -> source -> width) fullwidth = true;
+    if (result[frame * 2 + 1] == context -> source -> height) fullheight = true;
+  }
+  if (fullwidth && fullheight) return result;
+  fail:
+  ctxfree(context, result);
+  return NULL;
+}
+
+void generate_PPM_data (struct context * context, const uint32_t * restrict sizes, unsigned bitdepth, uint64_t * restrict buffer) {
+  size_t offset = (size_t) context -> source -> width * context -> source -> height;
+  if (!context -> source -> palette) offset = plum_color_buffer_size(offset, context -> source -> color_format);
+  for (size_t frame = 0; frame < context -> source -> frames; frame ++) {
+    size_t width = sizes ? sizes[frame * 2] : context -> source -> width;
+    size_t height = sizes ? sizes[frame * 2 + 1] : context -> source -> height;
+    generate_PPM_header(context, width, height, bitdepth);
+    if (context -> source -> palette)
+      generate_PNM_frame_data_from_palette(context, context -> source -> data8 + offset * frame, buffer, width, height, bitdepth, false);
+    else {
+      plum_convert_colors(buffer, context -> source -> data8 + offset * frame, height * context -> source -> width, PLUM_COLOR_64 | PLUM_ALPHA_INVERT,
+                          context -> source -> color_format);
+      generate_PNM_frame_data(context, buffer, width, height, bitdepth, false);
+    }
+  }
+}
+
+void generate_PPM_header (struct context * context, uint32_t width, uint32_t height, unsigned bitdepth) {
+  unsigned char * node = append_output_node(context, 32);
+  size_t offset = byteappend(node, 0x50, 0x36, 0x0a); // P6<newline>
+  offset += write_PNM_number(node + offset, width);
+  node[offset ++] = 0x20; // space
+  offset += write_PNM_number(node + offset, height);
+  node[offset ++] = 0x0a; // newline
+  offset += write_PNM_number(node + offset, ((uint32_t) 1 << bitdepth) - 1);
+  node[offset ++] = 0x0a; // newline
+  context -> output -> size = offset;
+}
+
+void generate_PAM_data (struct context * context, const uint32_t * restrict sizes, unsigned bitdepth, uint64_t * restrict buffer) {
+  size_t size = (size_t) context -> source -> width * context -> source -> height, offset = plum_color_buffer_size(size, context -> source -> color_format);
+  for (uint_fast32_t frame = 0; frame < context -> source -> frames; frame ++) {
+    size_t width = sizes ? sizes[frame * 2] : context -> source -> width;
+    size_t height = sizes ? sizes[frame * 2 + 1] : context -> source -> height;
+    generate_PAM_header(context, width, height, bitdepth);
+    if (context -> source -> palette)
+      generate_PNM_frame_data_from_palette(context, context -> source -> data8 + size * frame, buffer, width, height, bitdepth, true);
+    else {
+      plum_convert_colors(buffer, context -> source -> data8 + offset * frame, size, PLUM_COLOR_64 | PLUM_ALPHA_INVERT, context -> source -> color_format);
+      generate_PNM_frame_data(context, buffer, width, height, bitdepth, true);
+    }
+  }
+}
+
+void generate_PAM_header (struct context * context, uint32_t width, uint32_t height, unsigned bitdepth) {
+  unsigned char * node = append_output_node(context, 96);
+  size_t offset = byteappend(node,
+                             0x50, 0x37, 0x0a, // P7<newline>
+                             0x54, 0x55, 0x50, 0x4c, 0x54, 0x59, 0x50, 0x45, 0x20, // TUPLTYPE<space>
+                             0x52, 0x47, 0x42, 0x5f, 0x41, 0x4c, 0x50, 0x48, 0x41, 0x0a, // RGB_ALPHA<newline>
+                             0x57, 0x49, 0x44, 0x54, 0x48, 0x20 // WIDTH<space>
+                            );
+  offset += write_PNM_number(node + offset, width);
+  offset += byteappend(node + offset, 0x0a, 0x48, 0x45, 0x49, 0x47, 0x48, 0x54, 0x20); // <newline>HEIGHT<space>
+  offset += write_PNM_number(node + offset, height);
+  offset += byteappend(node + offset, 0x0a, 0x4d, 0x41, 0x58, 0x56, 0x41, 0x4c, 0x20); // <newline>MAXVAL<space>
+  offset += write_PNM_number(node + offset, ((uint32_t) 1 << bitdepth) - 1);
+  offset += byteappend(node + offset,
+                       0x0a, // <newline>
+                       0x44, 0x45, 0x50, 0x54, 0x48, 0x20, 0x34, 0x0a, // DEPTH 4<newline>
+                       0x45, 0x4e, 0x44, 0x48, 0x44, 0x52, 0x0a // ENDHDR<newline>
+                      );
+  context -> output -> size = offset;
+}
+
+size_t write_PNM_number (unsigned char * restrict buffer, uint32_t number) {
+  // won't work for 0, but there's no need to write a 0 anywhere
+  unsigned char data[10];
+  uint_fast8_t size = 0;
+  while (number) {
+    data[size ++] = 0x30 + number % 10;
+    number /= 10;
+  }
+  for (uint_fast8_t p = size; p; *(buffer ++) = data[-- p]);
+  return size;
+}
+
+void generate_PNM_frame_data (struct context * context, const uint64_t * data, uint32_t width, uint32_t height, unsigned bitdepth, bool alpha) {
+  uint_fast8_t shift = 16 - bitdepth, mask = (1 << ((bitdepth > 8) ? bitdepth - 8 : bitdepth)) - 1;
+  const uint64_t * rowdata = data;
+  unsigned char * output = append_output_node(context, (size_t) (3 + alpha) * ((bitdepth + 7) / 8) * width * height);
+  if (shift >= 8)
+    for (uint_fast32_t row = 0; row < height; row ++, rowdata += context -> source -> width) for (uint_fast32_t col = 0; col < width; col ++) {
+      output += byteappend(output, (rowdata[col] >> shift) & mask, (rowdata[col] >> (shift + 16)) & mask, (rowdata[col] >> (shift + 32)) & mask);
+      if (alpha) *(output ++) = rowdata[col] >> (shift + 48);
+    }
+  else
+    for (uint_fast32_t row = 0; row < height; row ++, rowdata += context -> source -> width) for (uint_fast32_t col = 0; col < width; col ++) {
+      output += byteappend(output, (rowdata[col] >> (shift + 8)) & mask, rowdata[col] >> shift, (rowdata[col] >> (shift + 24)) & mask,
+                                   rowdata[col] >> (shift + 16), (rowdata[col] >> (shift + 40)) & mask, rowdata[col] >> (shift + 32));
+      if (alpha) output += byteappend(output, rowdata[col] >> (shift + 56), rowdata[col] >> (shift + 48));
+    }
+}
+
+void generate_PNM_frame_data_from_palette (struct context * context, const uint8_t * data, const uint64_t * palette, uint32_t width, uint32_t height,
+                                           unsigned bitdepth, bool alpha) {
+  // very similar to the previous function, but adjusted to use the color from the palette and to read 8-bit data
+  uint_fast8_t shift = 16 - bitdepth, mask = (1 << ((bitdepth > 8) ? bitdepth - 8 : bitdepth)) - 1;
+  const uint8_t * rowdata = data;
+  unsigned char * output = append_output_node(context, (size_t) (3 + alpha) * ((bitdepth + 7) / 8) * width * height);
+  if (shift >= 8)
+    for (uint_fast32_t row = 0; row < height; row ++, rowdata += context -> source -> width) for (uint_fast32_t col = 0; col < width; col ++) {
+      uint64_t color = palette[rowdata[col]];
+      output += byteappend(output, (color >> shift) & mask, (color >> (shift + 16)) & mask, (color >> (shift + 32)) & mask);
+      if (alpha) *(output ++) = color >> (shift + 48);
+    }
+  else
+    for (uint_fast32_t row = 0; row < height; row ++, rowdata += context -> source -> width) for (uint_fast32_t col = 0; col < width; col ++) {
+      uint64_t color = palette[rowdata[col]];
+      output += byteappend(output, (color >> (shift + 8)) & mask, color >> shift, (color >> (shift + 24)) & mask, color >> (shift + 16),
+                                   (color >> (shift + 40)) & mask, color >> (shift + 32));
+      if (alpha) output += byteappend(output, color >> (shift + 56), color >> (shift + 48));
+    }
 }
 
 void sort_values (uint64_t * restrict data, uint64_t count) {
@@ -4817,8 +8397,12 @@ size_t plum_store_image (const struct plum_image * image, void * restrict buffer
     if (rv) throw(context, rv);
     if (plum_validate_palette_indexes(image)) throw(context, PLUM_ERR_INVALID_COLOR_INDEX);
     switch (image -> type) {
+      case PLUM_IMAGE_BMP: generate_BMP_data(context); break;
       case PLUM_IMAGE_GIF: generate_GIF_data(context); break;
       case PLUM_IMAGE_PNG: generate_PNG_data(context); break;
+      case PLUM_IMAGE_APNG: generate_APNG_data(context); break;
+      case PLUM_IMAGE_JPEG: generate_JPEG_data(context); break;
+      case PLUM_IMAGE_PNM: generate_PNM_data(context); break;
       default: throw(context, PLUM_ERR_INVALID_FILE_FORMAT);
     }
     size_t output_size = get_total_output_size(context);

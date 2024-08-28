@@ -1,112 +1,208 @@
-import ./libplum/plum
+# Let's rely on the standard library
+import std/paths
 import std/hashes
 import std/tables
-import std/sugar
-import std/strformat
-import std/paths
-import docopt
+import std/syncio
+import std/strutils
+import std/os
 
-{.push raises: [].}
+import results
 
-let doc = """
-gif2anim - converts gif animations into Pokemon Crystal
-           animation files.
+# Wrappers for libplum
+import ./plum/plum
 
-Usage:
-  gif2anim <input_file> <target_directory>
+# Nim has a qualified import option (from .. as .. import nil), but it performs
+# horribly with operators, so we have to at least import them in.
+from ./plum/consts as pf import `or`
 
-Options:
-  -h --help     Show usage directions.
-"""
+type
+  ConversionError {.size: sizeof(int).} = enum
+    Success = 0
+    `Error loading image`
+    `Error mapping new frame`
+    `Error saving image`
+    `Error saving animation`
 
-proc saveAnimAsm(imgSequence: seq[int], frameDurations: seq[uint64], filename: Path): Result[void, string] =
-  try:
-    let f = open(filename.string, fmWrite)
-    defer: f.close()
+  ConversionErrorTuple = tuple[kind: ConversionError, message: string]
+  ConversionResult = Result[void, ConversionErrorTuple]
 
-    for i in 0..<imgSequence.len:
-      f.writeLine "\t" & fmt"frame {imgSequence[i]:2}, {frameDurations[i]:02}"
-    f.writeLine "\tendanim"
-    return ok()
-  except ValueError as e:
-    return err(e.msg)
-  except IOError as e:
-    return err(e.msg)
+# bypass cmdline
+let `param count` {.importc: "cmdCount".}: cint
+let `param str` {.importc: "cmdLine".}: ptr UncheckedArray[cstring]
 
-proc makeAnimFrames(myImage: Image, basedir: Path): Result[void, string] {.raises: [KeyError].} =
-  # Hash, [sorted frame position, frame number in original]
-  var imgMap = initTable[Hash, array[2, int]]()
-  var imgSequence: seq[int] = @[]
-  var counter = 0
-  for i in 0..<myImage.numFrames.int:
-    let hash = myImage.getFrameData(i).hash()
-    if imgMap.hasKey(hash):
-      imgSequence.add imgMap[hash][0]
-    else:
-      imgMap[hash] = [counter, i]
-      imgSequence.add counter
-      counter += 1
+proc main(
+    `file name`, `output directory`: Path
+): ConversionResult {.raises: [KeyError].} =
+  # Load the image
+  const `load flags` =
+    pf.PaletteLoad or pf.PaletteGenerate or pf.LightFirst or pf.SortExisting or
+    pf.PaletteReduce
 
-  var animImage = Image(
-    imageType: ImagePng,
-    format: Color32,
-    numFrames: 1'u32,
-    dimensions: (
-      myImage.dimensions.width,
-      myImage.dimensions.height * imgMap.len.uint32
-    ),
-    imagePalettes: myImage.imagePalettes,
-    imageData: newSeq[uint64](
-      imgMap.len *
-      myImage.dimensions.width.int *
-      myImage.dimensions.height.int
+  let `image result` = loadImage(`file name`, `load flags`)
+  if `image result`.`is err`():
+    return err(
+      (kind: `Error loading image`, message: $(`image result`.error()))
     )
-  )
 
-  # Reorder images in target file
-  for k, v in imgMap:
-    animImage.imageData[
-      myImage.getFrameOffset(v[0])..<myImage.getFrameOffset(v[0]+1)
-    ] = myImage.getFrameData(v[1])
+  let `image` = `image result`.get()
+  defer:
+    # Since this image is managed by Plum, and there are no hooks available
+    # for the Nim compiler to automatically free this object, we have to do
+    # it ourselves.
+    `image`.freeImage()
 
-  let frameDurations = collect(newSeq):
-    for mt in myImage.metadata:
-      if mt.metaType == FrameDuration:
-        for i in mt.frameDurations:
-          (i.float / 1_000_000 / (1000 / 60)).uint64
+  let `frame durations result` = image.getFrameDurations()
+  if `frame durations result`.`is err`():
+    return err(
+      (kind: `Error loading image`, message: $(`image result`.error()))
+    )
+  let `frame durations` = `frame durations result`.get()
 
-  assert imgSequence.len == frameDurations.len
+  var
+    `hash to orig frame num mapping` = `init ordered table`[Hash, int]()
+      ## "original" here referring to the frame number of the source gif
+    `new frame number` = 0
+      ## "new" here referring to frame numbers in the final animation
+    `sequence of new frame nums`: seq[int] = @[]
 
-  if (
-    let animImageFile = animImage.saveAs(basedir/Path"front.png")
-    animImageFile.isErr
-  ): return animImageFile.error.err()
+  #[ Extract unique animation frames and also create a frame index sequence ]#
+  for i in 0 ..< `image`.frames.int:
+    let hash = `image`[i].hash()
+    if hash in `hash to orig frame num mapping`:
+      # Have already seen this frame before, so just add that
+      `sequence of new frame nums`.add `hash to orig frame num mapping`[
+        hash
+      ]
+    else:
+      # See a new frame, add a new entry
+      `hash to orig frame num mapping`[hash] = i
+      `sequence of new frame nums`.add `new frame number`
+      `new frame number` += 1
 
-  if (
-    let animAsmFile = saveAnimAsm(imgSequence, frameDurations, basedir/Path"anim.asm")
-    animAsmFile.isErr
-  ): return animAsmFile.error.err()
+  #[ Make a new image containing all the unique frames ]#
+  var
+    `output png` = makeImage()
+    `output png size` = (
+      width: `image`.width.int,
+      height: `image`.height.int * `hash to orig frame num mapping`.len,
+    )
+    canvas: seq[uint8] = `new seq uninitialized`[uint8](
+      `output png size`.width * `output png size`.height
+    )
+  `output png`.type = pf.Png
+  `output png`.max_palette_index = `image`.max_palette_index
+  `output png`.color_format = `image`.color_format
+  `output png`.palette = `image`.palette
+  `output png`.frames = 1
+  `output png`.width = `output png size`.width.uint32
+  `output png`.height = `output png size`.height.uint32
 
+  #[ Copy only the unique frames in order to the new image` ]#
+  var `png frame index` = 0
+  for i in `hash to orig frame num mapping`.keys:
+    let
+      `got png frame number` = `hash to orig frame num mapping`[i].int
+      `extract result` = `image`[`got png frame number`]
+    if `extract result`.`is err`():
+      # We must have fucked up, somehow
+      return err(
+        (
+          kind: `Error mapping new frame`,
+          message: $(`extract result`.error()),
+        )
+      )
+    let extract: seq[uint8] = `extract result`.get()
+    # Performing a raw memory copy seems to be more efficient than making
+    # a new sequence and then playing conversion games, so I take the
+    # addresses of each starting point
+    copyMem(
+      canvas[`png frame index` * extract.len].addr,
+      extract[0].addr,
+      extract.len,
+    )
+    `png frame index` += 1
+
+  #[ Save the new image ]#
+  `output png`.data = cast[ptr UncheckedArray[uint8]](canvas[0].addr)
+
+  if not `dir exists`(`output directory`.string):
+    return err(
+      (
+        kind: `Error saving image`,
+        message:
+          "directory " & `output directory`.string & " does not exist",
+      )
+    )
+
+  let `image export result` =
+    `output png`.saveImageAs(`output directory` / Path("front.png"))
+
+  if `image export result`.`is err`():
+    return err(
+      (
+        kind: `Error saving image`,
+        message:
+          "error saving front.png: " & $(`image export result`.error()),
+      )
+    )
+
+  #[ Save the accompanying anim.asm ]#
+  try:
+    const
+      `frames per second` = 1000 / 60
+      `nanoseconds per second` = 1_000_000
+    let
+      `asm file name` = `output directory` / Path("anim.asm")
+      `asm file` = open(`asm file name`.string, fmWrite)
+    defer:
+      `asm file`.close()
+    for index, item in `sequence of new frame nums`.pairs():
+      let `frame length` =
+        `frame durations`[index].float / `nanoseconds per second` /
+        `frames per second`
+      `asm file`.`write line`(
+        "\t" & "frame " & align($item, 2) & ", " &
+          align($(`frame length`.uint64), 2, '0')
+      )
+    `asm file`.`write line` "\tendanim"
+  except ValueError as e:
+    return err((kind: `Error saving animation`, message: e.msg))
+  except IOError as e:
+    return err((kind: `Error saving animation`, message: e.msg))
+
+  # All done
   return ok()
 
-when isMainModule:
-  let args = docopt(doc)
-  let origImage = loadImage(
-    Path($args["<input_file>"]),
-    Color32.int or PaletteLoad.int or PaletteGenerate.int or
-    SortExisting.int or PaletteReduce.int
-  )
+when `is main module`:
+  if `param count`.int < 3:
+    stderr.`write line` "gif2anim source.gif output_path/"
+    quit(0)
 
-  if origImage.isErr:
-    debugEcho origImage.error
-    quit(1)
-
-  if (
-    let animFrames = origImage.value.makeAnimFrames(
-      Path($args["<target_directory>"])
-    )
-    animFrames.isErr
-  ):
-    debugEcho animFrames.error
-    quit(1)
-
+  var result = 0
+  block:
+    # Having this "naked" isn't recommended, since there's a risk of memory
+    # leaks when we quit() early.
+    let
+      `input file` = Path($`param str`[1])
+      `output directory` = Path($`param str`[2])
+      `program result` = main(`input file`, `output directory`)
+    if `program result`.`is err`():
+      let error = `program result`.error()
+      let preamble = (
+        case error.kind
+        of Success:
+          ""
+        of `Error loading image`:
+          "while loading image " & `input file`.string
+        of `Error mapping new frame`:
+          "while creating image"
+        of `Error saving image`:
+          "while saving image"
+        of `Error saving animation`:
+          "while saving frame order"
+      )
+      stderr.`write line` preamble & ": " & error.message
+      result = cast[int](error.kind)
+    else:
+      result = 0
+  quit(result)
