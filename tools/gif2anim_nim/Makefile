@@ -14,4 +14,4 @@ clean:
 
 test:
 	mkdir -p test
-	./gif2anim ../../gifs/aggroswine.gif test
+	./gif2anim ../../gifs/necrorex.gif test

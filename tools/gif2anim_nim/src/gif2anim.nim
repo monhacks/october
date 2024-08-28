@@ -84,11 +84,12 @@ proc main(
       `new frame number` += 1
 
   #[ Make a new image containing all the unique frames ]#
+  let `number of unique frames` = `hash to orig frame num mapping`.len
   var
     `output png` = makeImage()
     `output png size` = (
       width: `image`.width.int,
-      height: `image`.height.int * `hash to orig frame num mapping`.len,
+      height: `image`.height.int * `number of unique frames`,
     )
     canvas: seq[uint8] = `new seq uninitialized`[uint8](
       `output png size`.width * `output png size`.height
@@ -101,7 +102,16 @@ proc main(
   `output png`.width = `output png size`.width.uint32
   `output png`.height = `output png size`.height.uint32
 
-  #[ Copy only the unique frames in order to the new image` ]#
+  # Check if the image has a transparent color...
+  var `transparent color result`: Opt[int] = Opt[int].none(int)
+  for i in 0 .. `image`.max_palette_index.int:
+    if (`image`.color_format == pf.Color32) and (
+      (
+        cast[ptr UncheckedArray[uint32]](`image`.palette)[i] shr 24 and 0xff
+      ) == 0xff
+    ):
+      `transparent color result` = Opt[int].some(i)
+
   var `png frame index` = 0
   for i in `hash to orig frame num mapping`.keys:
     let
@@ -117,14 +127,26 @@ proc main(
         )
       )
     let extract: seq[uint8] = `extract result`.get()
-    # Performing a raw memory copy seems to be more efficient than making
-    # a new sequence and then playing conversion games, so I take the
-    # addresses of each starting point
-    copyMem(
-      canvas[`png frame index` * extract.len].addr,
-      extract[0].addr,
-      extract.len,
-    )
+    if `transparent color result`.`is ok`():
+      # There exists a transparent color that we need to keep in mind,
+      # so let's be paranoid and bring on the replacing
+      let `transparent color` = `transparent color result`.get()
+
+      # Copy this frame repeatedly up until the end of the array, keeping
+      # in mind not to transfer the transparent color.
+      for i in `png frame index` ..< `number of unique frames`:
+        for j in 0 ..< extract.len:
+          if extract[j].int != `transparent color`:
+            canvas[(i * extract.len) + j] = extract[j]
+    else:
+      # Performing a raw memory copy seems to be more efficient than making
+      # a new sequence and then playing conversion games, so I take the
+      # addresses of each starting point
+      copyMem(
+        canvas[`png frame index` * extract.len].addr,
+        extract[0].addr,
+        extract.len,
+      )
     `png frame index` += 1
 
   #[ Save the new image ]#
