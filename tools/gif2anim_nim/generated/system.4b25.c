@@ -1369,7 +1369,7 @@ N_LIB_PRIVATE N_NIMCALL(void, eqdestroy___plumZplum_u233)(tyObject_Image__rM6yxD
 	}
 LA4_: ;
 }
-N_LIB_PRIVATE N_NIMCALL(void, eqdestroy___gif50anim_u3187)(tySequence__qwqHTkRvwhrRyENtudHQ7g dest_p0) {
+N_LIB_PRIVATE N_NIMCALL(void, eqdestroy___gif50anim_u3289)(tySequence__qwqHTkRvwhrRyENtudHQ7g dest_p0) {
 	if (dest_p0.p && !(dest_p0.p->cap & NIM_STRLIT_FLAG)) {
  alignedDealloc(dest_p0.p, NIM_ALIGNOF(NI));
 }
@@ -1576,7 +1576,7 @@ NIM_BOOL* nimErr_;
 N_LIB_PRIVATE N_NIMCALL(void, eqcopy___stdZassertions_u16)(NimStringV2* dest_p0, NimStringV2 src_p1) {
 	nimAsgnStrV2(dest_p0, src_p1);
 }
-N_LIB_PRIVATE N_NIMCALL(void, addQuoted__gif50anim_u2962)(NimStringV2* s_p0, NU8 x_p1) {
+N_LIB_PRIVATE N_NIMCALL(void, addQuoted__gif50anim_u2998)(NimStringV2* s_p0, NU8 x_p1) {
 	addInt__stdZprivateZdigitsutils_u175(s_p0, ((NU64) (x_p1)));
 }
 N_LIB_PRIVATE N_NIMCALL(void, shrink__pureZtimes_u2324)(tySequence__6H5Oh5UUvVCLiakt9aTwtUQ* x_p0, NI newLen_p1) {

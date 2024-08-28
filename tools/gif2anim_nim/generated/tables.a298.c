@@ -141,7 +141,7 @@ N_LIB_PRIVATE N_NIMCALL(void, eqdestroy___gif50anim_u298)(tySequence__yG0TUOfnWu
  alignedDealloc(dest_p0.p, NIM_ALIGNOF(tyTuple__P2Sbz31FZcFybWKcK3NeNg));
 }
 }
-N_LIB_PRIVATE N_NIMCALL(void, eqdestroy___gif50anim_u3167)(tyObject_OrderedTable__uinGzf9aWpGdBVWVMTSpy9aA* dest_p0) {
+N_LIB_PRIVATE N_NIMCALL(void, eqdestroy___gif50anim_u3269)(tyObject_OrderedTable__uinGzf9aWpGdBVWVMTSpy9aA* dest_p0) {
 	eqdestroy___gif50anim_u298((*dest_p0).data);
 }
 static N_INLINE(void, nimSetMem__systemZmemory_u7)(void* a_p0, int v_p1, NI size_p2) {
