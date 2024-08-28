@@ -26,6 +26,8 @@ type
   ConversionErrorTuple = tuple[kind: ConversionError, message: string]
   ConversionResult = Result[void, ConversionErrorTuple]
 
+  FrameIndex = tuple[`old index`: int, `new index`: int]
+
 # bypass cmdline
 let `param count` {.importc: "cmdCount".}: cint
 let `param str` {.importc: "cmdLine".}: ptr UncheckedArray[cstring]
@@ -59,7 +61,8 @@ proc main(
   let `frame durations` = `frame durations result`.get()
 
   var
-    `hash to orig frame num mapping` = `init ordered table`[Hash, int]()
+    `hash to orig frame num mapping` =
+      `init ordered table`[Hash, FrameIndex]()
       ## "original" here referring to the frame number of the source gif
     `new frame number` = 0
       ## "new" here referring to frame numbers in the final animation
@@ -72,10 +75,11 @@ proc main(
       # Have already seen this frame before, so just add that
       `sequence of new frame nums`.add `hash to orig frame num mapping`[
         hash
-      ]
+      ].`new index`
     else:
       # See a new frame, add a new entry
-      `hash to orig frame num mapping`[hash] = i
+      `hash to orig frame num mapping`[hash] =
+        (`old index`: i, `new index`: `new frame number`)
       `sequence of new frame nums`.add `new frame number`
       `new frame number` += 1
 
@@ -101,7 +105,8 @@ proc main(
   var `png frame index` = 0
   for i in `hash to orig frame num mapping`.keys:
     let
-      `got png frame number` = `hash to orig frame num mapping`[i].int
+      `got png frame number` =
+        `hash to orig frame num mapping`[i].`old index`.int
       `extract result` = `image`[`got png frame number`]
     if `extract result`.`is err`():
       # We must have fucked up, somehow
