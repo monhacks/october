@@ -376,7 +376,6 @@ SmujjFrontpicAnim:	INCBIN "gfx/pokemon/smujj/front.animated.2bpp.lz"
 KotoraFrontpicAnim:	INCBIN "gfx/pokemon/kotora/front.animated.2bpp.lz"
 RaitoraFrontpicAnim:	INCBIN "gfx/pokemon/raitora/front.animated.2bpp.lz"
 GorotoraFrontpicAnim:	INCBIN "gfx/pokemon/gorotora/front.animated.2bpp.lz"
-KoalyptusFrontpicAnim:	INCBIN "gfx/pokemon/koalyptus/front.animated.2bpp.lz"
 
 SECTION "Pics 23 Animated", ROMX
 
@@ -395,3 +394,4 @@ SnouwrbunFrontpicAnim:	INCBIN "gfx/pokemon/snouwrbun/front.animated.2bpp.lz"
 NecrorexFrontpicAnim:	INCBIN "gfx/pokemon/necrorex/front.animated.2bpp.lz"
 PhandarinFrontpicAnim:	INCBIN "gfx/pokemon/phandarin/front.animated.2bpp.lz"
 StromenFrontpicAnim:	INCBIN "gfx/pokemon/stromen/front.animated.2bpp.lz"
+KoalyptusFrontpicAnim:  INCBIN "gfx/pokemon/koalyptus/front.animated.2bpp.lz"
