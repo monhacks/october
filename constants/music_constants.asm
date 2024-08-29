@@ -2,7 +2,7 @@
 ; Music indexes (see audio/music_pointers.asm)
 	const_def
 	const MUSIC_NONE                         ; 00
-INCLUDE "music_id_constants.asm"
+INCLUDE "constants/music_id_constants.asm"
 NUM_MUSIC_TRACKS EQU const_value
 
 ; GetMapMusic picks music for this value (see home/map.asm)
