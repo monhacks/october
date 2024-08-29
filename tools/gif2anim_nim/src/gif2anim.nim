@@ -71,7 +71,7 @@ proc main(
         kind: `Image is not acceptable`,
         message:
           "the image's size must be divisible by 8, currently " &
-          $`image size` & " (closest: " & $((`image size` div 8) * 8) & ")",
+          $`image size` & " (closest: " & $(((`image size` div 8) + 1) * 8) & ")",
       )
     )
 
