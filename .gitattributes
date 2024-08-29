@@ -33,3 +33,4 @@
 *.lz binary   diff=hex
 *.2bpp binary diff=hex
 *.1bpp binary diff=hex
+*.exe binary diff=hex

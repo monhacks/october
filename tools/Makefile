@@ -28,7 +28,5 @@ gfx md5: common.h
 	$(CC) $(CFLAGS) -o $@ $<
 
 gif2anim:
-ifneq ($(shell uname), MINGW_NT-5.1)
 	cd gif2anim_nim/generated && ./compile_gif2anim.sh
 	mv gif2anim_nim/generated/gif2anim ./gif2anim
-endif
