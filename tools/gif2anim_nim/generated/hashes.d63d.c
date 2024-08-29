@@ -34,7 +34,7 @@ struct {	tySequence__6H5Oh5UUvVCLiakt9aTwtUQ vResultPrivate;
 };
 struct tySequence__6H5Oh5UUvVCLiakt9aTwtUQ_Content { NI cap; NU8 data[SEQ_DECL_SIZE]; };
 static N_INLINE(NI, emarkamp___pureZhashes_u4)(NI h_p0, NI val_p1);
-static N_INLINE(NI, hash__gif50anim_u371)(NIM_BOOL x_p0);
+static N_INLINE(NI, hash__gif50anim_u389)(NIM_BOOL x_p0);
 static N_INLINE(NI, hashWangYi1__pureZhashes_u139)(NU64 x_p0);
 static N_INLINE(NU64, hiXorLo__pureZhashes_u80)(NU64 a_p0, NU64 b_p1);
 N_LIB_PRIVATE N_NIMCALL(NI, hash__pureZhashes_u303)(NCSTRING x_p0);
@@ -43,7 +43,7 @@ static N_INLINE(void, copyMem__system_u1740)(void* dest_p0, void* source_p1, NI 
 static N_INLINE(void, nimCopyMem)(void* dest_p0, void* source_p1, NI size_p2);
 static N_INLINE(NU32, rotl32__pureZhashes_u183)(NU32 x_p0, NI r_p1);
 static N_INLINE(NI, nimCStrLen)(NCSTRING a_p0);
-N_LIB_PRIVATE N_NIMCALL(NI, hash__gif50anim_u381)(NU8* x_p0, NI x_p0Len_0);
+N_LIB_PRIVATE N_NIMCALL(NI, hash__gif50anim_u399)(NU8* x_p0, NI x_p0Len_0);
 static N_INLINE(NI, emarkdollar___pureZhashes_u19)(NI h_p0);
 static N_INLINE(NI, emarkamp___pureZhashes_u4)(NI h_p0, NI val_p1) {
 	NI result;
@@ -76,7 +76,7 @@ static N_INLINE(NI, hashWangYi1__pureZhashes_u139)(NU64 x_p0) {
 	result = ((NI) (T2_));
 	return result;
 }
-static N_INLINE(NI, hash__gif50anim_u371)(NIM_BOOL x_p0) {
+static N_INLINE(NI, hash__gif50anim_u389)(NIM_BOOL x_p0) {
 	NI result;
 	result = hashWangYi1__pureZhashes_u139(((NU64) (x_p0)));
 	return result;
@@ -160,7 +160,7 @@ N_LIB_PRIVATE N_NIMCALL(NI, hash__pureZhashes_u303)(NCSTRING x_p0) {
 	result = murmurHash__pureZhashes_u195((NU8*)(x_p0)+(((NI)0)), ((x_p0 ? (nimCStrLen(x_p0)-1) : -1))-(((NI)0))+1);
 	return result;
 }
-N_LIB_PRIVATE N_NIMCALL(NI, hash__gif50anim_u381)(NU8* x_p0, NI x_p0Len_0) {
+N_LIB_PRIVATE N_NIMCALL(NI, hash__gif50anim_u399)(NU8* x_p0, NI x_p0Len_0) {
 	NI result;
 	result = murmurHash__pureZhashes_u195(x_p0, x_p0Len_0);
 	return result;
@@ -176,12 +176,12 @@ static N_INLINE(NI, emarkdollar___pureZhashes_u19)(NI h_p0) {
 	result = ((NI) (res));
 	return result;
 }
-N_LIB_PRIVATE N_NIMCALL(NI, hash__gif50anim_u363)(tyObject_Result__GLXz9aENXQdHR5vUaWfCInQ x_p0) {
+N_LIB_PRIVATE N_NIMCALL(NI, hash__gif50anim_u381)(tyObject_Result__GLXz9aENXQdHR5vUaWfCInQ x_p0) {
 	NI result;
 	NI T1_;
 	result = ((NI)0);
 	T1_ = (NI)0;
-	T1_ = hash__gif50anim_u371(x_p0.oResultPrivate);
+	T1_ = hash__gif50anim_u389(x_p0.oResultPrivate);
 	result = emarkamp___pureZhashes_u4(result, T1_);
 	switch (x_p0.oResultPrivate) {
 	case NIM_FALSE:
@@ -196,7 +196,7 @@ N_LIB_PRIVATE N_NIMCALL(NI, hash__gif50anim_u363)(tyObject_Result__GLXz9aENXQdHR
 	{
 		NI T5_;
 		T5_ = (NI)0;
-		T5_ = hash__gif50anim_u381(((x_p0._oResultPrivate_2.vResultPrivate).p) ? (x_p0._oResultPrivate_2.vResultPrivate.p->data) : NIM_NIL, x_p0._oResultPrivate_2.vResultPrivate.len);
+		T5_ = hash__gif50anim_u399(((x_p0._oResultPrivate_2.vResultPrivate).p) ? (x_p0._oResultPrivate_2.vResultPrivate.p->data) : NIM_NIL, x_p0._oResultPrivate_2.vResultPrivate.len);
 		result = emarkamp___pureZhashes_u4(result, T5_);
 	}
 	break;
