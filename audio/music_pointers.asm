@@ -1,13 +1,3 @@
-; See song sections in audio.asm.
-
-Music:
-if def(_NO_MUSIC)
-rept NUM_MUSIC_TRACKS
-	dba Music_Nothing
-endr
-else
-; entries correspond to MUSIC_* constants
-	dba Music_Nothing
 	dba Music_TitleScreen
 	dba Music_Route1
 	dba Music_Route3
@@ -100,8 +90,7 @@ else
 	dba Music_LakeOfRageRocketRadio
 	dba Music_Printer
 	dba Music_PostCredits
-; new to Crystal
-	dba Music_Clair
+	dba Music_Clair ; new to Crystal
 	dba Music_MobileAdapterMenu
 	dba Music_MobileAdapter
 	dba Music_BuenasPassword
@@ -137,4 +126,3 @@ else
 	dba Music_KantoLegendBattleXY
 	dba Music_ImakuniTheme
 	dba Music_EliteFourBattle
-endc

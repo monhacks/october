@@ -1,5 +1,3 @@
-Debug_MusicNames::
-	db "None@@@@@@@@@@@@@@"
 	db "Title@@@@@@@@@@@@@"
 	db "Route 1@@@@@@@@@@@"
 	db "Route 3@@@@@@@@@@@"
@@ -124,7 +122,7 @@ Debug_MusicNames::
 	db "Mewtwo Battle@@@@@"
 	db "Ho-Oh Battle@@@@@@"
 	db "Lugia Battle@@@@@@"
-	db "Lugia's Song@@@@@@"
-	db "      Kanto Birds@"
-	db " Imakuni theme @@@"
-	db " Elite Four Battle@" 
+	db "Lugia's Song@@@@@@@"
+	db "Kanto Birds@@@@@@@"
+	db "Imakuni?@@@@@@@@@@"
+	db "Elite Four Battle@" 

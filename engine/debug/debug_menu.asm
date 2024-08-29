@@ -928,7 +928,9 @@ Debug_SoundTest:
 	ld [hl], e
 	ret
 
-INCLUDE "engine/debug/music_names.asm"
+Debug_MusicNames::
+	db "None@@@@@@@@@@@@@@"
+INCLUDE "audio/music_names.asm"
 
 Debug_SubgameMenu:
 	ret ; TODO

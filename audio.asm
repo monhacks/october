@@ -5,7 +5,16 @@ SECTION "Audio", ROMX
 
 INCLUDE "audio/engine.asm"
 INCLUDE "data/trainers/encounter_music.asm"
+Music:
+if def(_NO_MUSIC)
+rept NUM_MUSIC_TRACKS
+	dba Music_Nothing
+endr
+else
+; entries correspond to MUSIC_* constants in music_id_constants.asm
+	dba Music_Nothing
 INCLUDE "audio/music_pointers.asm"
+endc
 INCLUDE "audio/music/nothing.asm"
 INCLUDE "audio/cry_pointers.asm"
 INCLUDE "audio/sfx_pointers.asm"
