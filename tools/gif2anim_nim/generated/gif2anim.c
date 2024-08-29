@@ -661,7 +661,7 @@ LA10_: ;
 		(*Result)._oResultPrivate_1.eResultPrivate.Field0 = ((tyEnum_ConversionError__NcP8ND4a88eXtrDAVzG3hg)5);
 		T25_.len = 0; T25_.p = NIM_NIL;
 		colontmpD__4 = dollar___systemZdollars_u3(imagesize);
-		colontmpD__5 = dollar___systemZdollars_u3((NI)((NI)(imagesize / ((NI)8)) * ((NI)8)));
+		colontmpD__5 = dollar___systemZdollars_u3((NI)((NI)((NI)(imagesize / ((NI)8)) + ((NI)1)) * ((NI)8)));
 		T25_ = rawNewString(colontmpD__4.len + colontmpD__5.len + 63);
 appendString((&T25_), TM__V84sYTa2XfwkRnO1E5HVXQ_15);
 appendString((&T25_), colontmpD__4);
