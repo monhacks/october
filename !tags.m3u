@@ -1,0 +1,38 @@
+# See https://github.com/zoomten/game-music-tagging for details on this file.
+
+# @album     Pokémon October
+# @company   AchromicDevs
+# @publisher AchromicDevs
+# @artist    AchromicDevs
+# @date      2024-07-17
+# @fade      5
+
+# %title     Last Pokémon
+# %arranger  Zumi
+# %sequencer Zumi
+pokeoctober.gbs?121
+
+# %title     Credits (Gen 1-ized)
+# %arranger  Zumi
+# %sequencer Zumi
+pokeoctober.gbs?119
+
+# %title     Safari Zone (HG/SS)
+# %arranger  Zumi
+# %sequencer Zumi
+pokeoctober.gbs?118
+
+# %title     Friendly Mart
+pokeoctober.gbs?116
+
+# %title     Route 32
+# %arranger  celadonk, Zumi
+# %comment   Original arrangement for Pokémon Fools' Gold
+pokeoctober.gbs?116
+
+# %title     Silent Town
+# %composer  Junichi Masuda
+# %arranger  Junichi Masuda
+# %date      1999-03-01
+# %comment   From the Pokémon Gold/Silver source code leaks
+pokeoctober.gbs?60
