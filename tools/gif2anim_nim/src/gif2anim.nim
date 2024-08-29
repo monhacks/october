@@ -22,6 +22,7 @@ type
     `Error mapping new frame`
     `Error saving image`
     `Error saving animation`
+    `Image is not acceptable`
 
   ConversionErrorTuple = tuple[kind: ConversionError, message: string]
   ConversionResult = Result[void, ConversionErrorTuple]
@@ -52,6 +53,27 @@ proc main(
     # for the Nim compiler to automatically free this object, we have to do
     # it ourselves.
     `image`.freeImage()
+
+  if `image`.width != `image`.height:
+    return err(
+      (
+        kind: `Image is not acceptable`,
+        message:
+          "the loaded image is not square-sized (" & $`image`.width & " x " &
+          $`image`.height & ")",
+      )
+    )
+
+  let `image size` = `image`.width.int
+  if `image size` mod 8 != 0:
+    return err(
+      (
+        kind: `Image is not acceptable`,
+        message:
+          "the image's size must be divisible by 8, currently " &
+          $`image size` & " (closest: " & $((`image size` div 8) * 8) & ")",
+      )
+    )
 
   let `frame durations result` = image.getFrameDurations()
   if `frame durations result`.`is err`():
@@ -88,8 +110,7 @@ proc main(
   var
     `output png` = makeImage()
     `output png size` = (
-      width: `image`.width.int,
-      height: `image`.height.int * `number of unique frames`,
+      width: `image size`, height: `image size` * `number of unique frames`
     )
     canvas: seq[uint8] = `new seq uninitialized`[uint8](
       `output png size`.width * `output png size`.height
@@ -227,6 +248,8 @@ when `is main module`:
           "while saving image"
         of `Error saving animation`:
           "while saving frame order"
+        of `Image is not acceptable`:
+          "image " & `input file`.string & " not acceptable"
       )
       stderr.`write line` preamble & ": " & error.message
       result = cast[int](error.kind)
