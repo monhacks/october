@@ -1,38 +1,132 @@
-# See https://github.com/zoomten/game-music-tagging for details on this file.
+# See https://github.com/zoomten/game-music-tagging
+# for details on this file.
 
 # @album     Pokémon October
 # @company   AchromicDevs
 # @publisher AchromicDevs
 # @artist    AchromicDevs
-# @date      2024-07-17
+# @date      2024
 # @fade      5
 
-# %title     Last Pokémon
-# %arranger  Zumi
-# %sequencer Zumi
-pokeoctober.gbs?121
-
-# %title     Credits (Gen 1-ized)
-# %arranger  Zumi
-# %sequencer Zumi
-pokeoctober.gbs?119
-
-# %title     Safari Zone (HG/SS)
-# %arranger  Zumi
-# %sequencer Zumi
-pokeoctober.gbs?118
-
-# %title     Friendly Mart
-pokeoctober.gbs?116
-
-# %title     Route 32
-# %arranger  celadonk, Zumi
-# %comment   Original arrangement for Pokémon Fools' Gold
-pokeoctober.gbs?116
-
-# %title     Silent Town
+# %title     Title Screen
+# %artist    Junichi Masuda
 # %composer  Junichi Masuda
 # %arranger  Junichi Masuda
+# %sequencer Junichi Masuda
+# %length    1:16
+# %fade      0
+# %date      1999-08-17
+# %comment   From the Pokémon Gold & Silver source code leaks.
+pokeoctober.gbs?1
+
+# %title     Silent Town
+# %artist    Junichi Masuda
+# %composer  Junichi Masuda
+# %arranger  Junichi Masuda
+# %sequencer Junichi Masuda
+# %length    1:08
 # %date      1999-03-01
-# %comment   From the Pokémon Gold/Silver source code leaks
+# %comment   From the Pokémon Gold & Silver source code leaks.
 pokeoctober.gbs?60
+
+# %title     Silver's Theme
+# %artist    Mmmmmmmmmmmmmmmmm
+# %composer  Shota Kageyama
+# %arranger  Mmmmmmmmmmmmmmmmm
+# %sequencer Mmmmmmmmmmmmmmmmm
+# %length    0:57
+# %comment   Originally Ethan/Lyra's theme from Pokémon HeartGold & SoulSilver.
+pokeoctober.gbs?31
+
+# %title     Silver's Theme (Reprise)
+# %artist    Mmmmmmmmmmmmmmmmm
+# %composer  Shota Kageyama
+# %arranger  Mmmmmmmmmmmmmmmmm
+# %sequencer Mmmmmmmmmmmmmmmmm
+# %length    0:55
+# %comment   Originally Ethan/Lyra's theme from Pokémon HeartGold & SoulSilver.
+pokeoctober.gbs?32
+
+# %title     Cherrygrove City
+# %artist    Junichi Masuda
+# %composer  Junichi Masuda
+# %arranger  Junichi Masuda
+# %sequencer Junichi Masuda
+# %length    0:48
+# %comment   From the Pokémon Gold & Silver source code leaks.
+# %date      1999-08-17
+pokeoctober.gbs?38
+
+# %title     Route 33 / Mt. Hive
+# %artist    celadonk
+# %composer  Hitomi Sato
+# %arranger  celadonk, Zumi
+# %sequencer celadonk, Zumi
+# %length    1:58
+# %comment   Arrangement of Route 47 from Pokémon HeartGold & SoulSilver originally for Pokémon Fools' Gold, edited for Pokémon October.
+pokeoctober.gbs?110
+
+# %title     Azalea Town
+# %artist    Go Ichinose
+# %composer  Go Ichinose
+# %arranger  Go Ichinose
+# %sequencer Go Ichinose
+# %length    1:40
+# %comment   From the Pokémon Gold & Silver source code leaks.
+# %date      1999-08-17
+pokeoctober.gbs?37
+
+# %title     Friendly Mart
+# %artist    Zumi
+# %composer  Go Ichinose, Shota Kageyama
+# %arranger  Zumi
+# %sequencer Zumi
+# %length    1:40
+# %comment   Originally the Pokémon Mart theme from Pokémon HeartGold & SoulSilver.
+pokeoctober.gbs?116
+
+# %title     Vs. Silver
+# %artist    Mmmmmmmmmmmmmmmmm
+# %composer  Shota Kageyama
+# %arranger  Mmmmmmmmmmmmmmmmm
+# %sequencer Mmmmmmmmmmmmmmmmm
+# %length    1:46
+# %comment   Originally “Battle! (Friend)” from Pokémon X & Y.
+pokeoctober.gbs?48
+
+# %title     Vs. Johto Trainer
+# %artist    FroggestSpirit
+# %composer  Junichi Masuda
+# %arranger  FroggestSpirit
+# %sequencer FroggestSpirit
+# %length    3:22
+# %comment   From Pokémon Prism.
+pokeoctober.gbs?42
+
+# %title     Last Pokémon
+# %artist    Zumi
+# %composer  Junichi Masuda, Go Ichinose
+# %arranger  Zumi
+# %sequencer Zumi
+# %length    1:32
+# %comment   Originally “Victory Lies Before You!” from Pokémon Black 2 & White 2.
+pokeoctober.gbs?121
+
+# %title     Credits
+# %artist    Zumi
+# %composer  Go Ichinose
+# %arranger  Zumi
+# %sequencer Zumi
+# %comment   Originally the credits theme from Pokémon Gold, Silver & Crystal. Rearranged in the style of Pokémon Red & Blue.
+# %length    1:46
+# %fade      0
+pokeoctober.gbs?119
+
+# %title     Safari Zone
+# %artist    Zumi
+# %composer  Hitomi Sato
+# %arranger  Zumi
+# %sequencer Zumi
+# %comment   Originally Safari Zone from Pokémon HeartGold & SoulSilver.
+# %length    1:55
+pokeoctober.gbs?118
