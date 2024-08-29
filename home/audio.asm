@@ -95,6 +95,7 @@ PlayMusic::
 	pop hl
 	ret
 
+IF !DEF(_GBS)
 PlayMusic2::
 ; Stop playing music, then play music de.
 
@@ -125,6 +126,7 @@ PlayMusic2::
 	pop de
 	pop hl
 	ret
+ENDC
 
 PlayCry::
 ; Play cry de.
@@ -299,6 +301,7 @@ SkipMusic::
 	call UpdateSound
 	jr .loop
 
+IF !DEF(_GBS)
 FadeToMapMusic::
 	push hl
 	push de
@@ -458,6 +461,7 @@ GetMapMusic_MaybeSpecial::
 	call SpecialMapMusic
 	ret c
 	jp GetMapMusic
+ENDC
 
 CheckSFX::
 ; Return carry if any SFX channels are active.

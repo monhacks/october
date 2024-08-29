@@ -2829,6 +2829,7 @@ ClearChannel:
 	ld [hli], a ; rNR14, rNR24, rNR34, rNR44 ; restart sound (freq hi = 0)
 	ret
 
+IF !DEF(_GBS)
 PlayTrainerEncounterMusic::
 ; input: e = trainer type
 	; turn fade off
@@ -2848,3 +2849,4 @@ PlayTrainerEncounterMusic::
 	ld e, [hl]
 	call PlayMusic
 	ret
+ENDC

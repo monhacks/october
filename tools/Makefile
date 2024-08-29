@@ -13,7 +13,8 @@ tools := \
 	gfx \
 	ipspatch \
 	md5 \
-	gif2anim
+	gif2anim \
+	gbstrim
 all: $(tools)
 	@:
 

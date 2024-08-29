@@ -1,0 +1,7 @@
+ROMX $01
+	"Audio"
+WRAM0
+	"Stack"
+	"Audio RAM"
+HRAM
+	"HRAM"

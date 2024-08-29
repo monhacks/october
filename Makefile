@@ -18,6 +18,11 @@ gfx/sprites.o
 october_obj       := $(rom_obj:.o=.o)
 october_debug_obj := $(rom_obj:.o=_debug.o)
 
+soundtrack_obj := \
+audio_gbs.o \
+wram_gbs.o \
+gbs_gbs.o
+
 ### Build tools
 
 ifeq (,$(shell which sha1sum))
@@ -48,7 +53,8 @@ IPSPATCH_COMMAND ?= create
 # music pointers is always rebuilt for the _NO_MUSIC build flag
 .PHONY: all clean tidy tools \
 	engine/menus/main_menu.asm \
-	audio/music_pointers.asm
+	audio/music_pointers.asm \
+	main debug gbs
 .SECONDEXPANSION:
 .PRECIOUS:
 .SECONDARY:
@@ -57,13 +63,14 @@ all: main
 
 main: pokeoctober.gbc
 debug: pokeoctober_debug.gbc
+gbs: pokeoctober.gbs
 
 clean: tidy
 	find gfx \( -name "*.[12]bpp" -o -name "*.lz" -o -name "*.gbcpal" \) -delete
 	find gfx/pokemon -mindepth 1 ! -path "gfx/pokemon/unown/*" \( -name "bitmask.asm" -o -name "frames.asm" -o -name "front.animation.tilemap" -o -name "front.dimensions" \) -delete
 
 tidy:
-	rm -f $(roms) $(october_obj) $(october_debug_obj) $(roms:.gbc=.map) $(roms:.gbc=.sym) *.ips
+	rm -f $(roms) $(october_obj) $(october_debug_obj) $(soundtrack_obj) $(roms:.gbc=.map) $(roms:.gbc=.sym) *.ips
 	$(MAKE) clean -C tools/
 
 tools:
@@ -79,6 +86,7 @@ RGBASMFLAGS = -DGIT_VERSION="\"$(GIT_VERSION)"\" -DGIT_OFFSET="\"$(GIT_OFFSET)"\
 
 $(october_obj): RGBASMFLAGS +=
 $(october_debug_obj): RGBASMFLAGS += -D_DEBUG
+$(soundtrack_obj): RGBASMFLAGS += -D_GBS
 
 # The dep rules have to be explicit or else missing files won't be reported.
 # As a side effect, they're evaluated immediately instead of when the rule is invoked.
@@ -96,6 +104,7 @@ $(info $(shell $(MAKE) -C tools))
 
 $(foreach obj, $(october_obj), $(eval $(call DEP,$(obj),$(obj:.o=.asm))))
 $(foreach obj, $(october_debug_obj), $(eval $(call DEP,$(obj),$(obj:_debug.o=.asm))))
+$(foreach obj, $(soundtrack_obj), $(eval $(call DEP,$(obj),$(obj:_gbs.o=.asm))))
 
 endif
 
@@ -110,6 +119,10 @@ poke%.gbc: $$(%_obj) pokeoctober.link
 	$(RGBLINK) -n poke$*.sym -m poke$*.map -l pokeoctober.link -o $@ $(filter %.o,$^)
 	$(RGBFIX) -Cjv -i BETA -k 01 -l 0x33 -m 0x10 -p 0 -r 3 -t PM_OCTOBER $@
 	tools/sort_symfile.sh pokeoctober.sym
+
+pokeoctober.gbs: $(soundtrack_obj) gbs.link
+	$(RGBLINK) -n gbs.sym -m gbs.map -l gbs.link -o $@ $(filter %.o,$^)
+	tools/gbstrim $@
 
 %.lz: %
 	tools/lzcomp -- $< $@
