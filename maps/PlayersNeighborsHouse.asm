@@ -41,11 +41,11 @@ PlayersNeighborsHouseRadioScript:
 	end
 
 PlayersNeighborsDaughterText:
-	text "The other day,"
-	line "I encountered"
+	text "The other day, I"
+	line "encountered a"
 	
-	para "a strangly-"
-	line "colored PIDGEY!"
+	para "strangely-colored"
+	line "PIDGEY!"
 	
 	para "It took my"
 	line "breath away!"
