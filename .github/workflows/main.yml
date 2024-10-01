@@ -1,0 +1,79 @@
+name: Prepare release
+on:
+  push:
+    tags:
+      - "[0-9]*"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main repo
+        run: |
+          git clone ${{ github.server_url }}/${{ github.repository }}
+      - name: Checkout an old pokecrystal commit
+        # can't get actions/checkout to check an old commit...
+        run: |
+          git clone https://github.com/pret/pokecrystal
+          cd pokecrystal
+          git checkout 6f226f584c
+      - name: Checkout rgbds
+        uses: actions/checkout@v4
+        with:
+          path: rgbds
+          ref: v0.4.1
+          repository: gbdev/rgbds
+      - name: Shoutout to SimpleFLIPS
+        uses: actions/checkout@v4
+        with:
+          path: flips
+          repository: Alcaro/Flips
+      - name: Install rgbds
+        working-directory: rgbds
+        run: |
+          sudo make install
+      - name: Build FLIPS
+        working-directory: flips
+        run: |
+          bash make-linux.sh
+        env:
+          TARGET: cli
+      - name: Make pokecrystal (as baserom)
+        working-directory: pokecrystal
+        run: |
+          make -j$(nproc) pokecrystal11.gbc
+      - name: Make pokeoctober
+        working-directory: pokeoctober
+        run: |
+          bash .github/scripts/build-patch.sh
+      - name: Make pokeoctober debug
+        working-directory: pokeoctober
+        if: ${{ contains(github.ref, '.pre') }}
+        run: |
+          bash .github/scripts/build-debug-patch.sh
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: patch
+          path: |
+            pokeoctober/*.ips
+  release:
+    runs-on: ubuntu-latest
+    needs: [build]
+    permissions:
+      contents: write
+    steps:
+      - name: Download generated patch
+        uses: actions/download-artifact@v4
+      - name: Make a release
+        uses: softprops/action-gh-release@v2
+        with:
+          body: |
+            Describe the changes since the previous (pre-)release
+            here.
+          draft: true
+          prerelease: ${{ contains(github.ref, '.pre') }}
+          files: |
+            patch/*.ips
+          fail_on_unmatched_files: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
