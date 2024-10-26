@@ -39,6 +39,7 @@ HabitatPokedexOrder:
 	dw CYNDAQUIL
 	dw QUILAVA
 	dw TYPHLOSION ; XXX put Cubburn line after this once in
+	dw CUBBURN
 	dw SANDSLASH
 	dw PHANPY
 	dw DONPHAN
@@ -125,7 +126,6 @@ HabitatPokedexOrder:
 	dw GLIGAR
 	dw DELIBIRD
 	dw STANTLER
-	dw NECROREX ; TODO: place necrorex in correct habitat order
 
 ; WATER/PLANT
 	dw SQUIRTLE
@@ -285,6 +285,7 @@ HabitatPokedexOrder:
 	dw OMASTAR
 	dw KABUTO
 	dw KABUTOPS
+	dw NECROREX
 
 ; LEGENDARIES
 	dw UNOWN

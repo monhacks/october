@@ -10,6 +10,7 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
+	dw CubburnEggMoves
 	dw SentretEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
@@ -168,6 +169,16 @@ TotodileEggMoves:
 	dw RAZOR_WIND
 	dw ROCK_SLIDE
 	dw -1 ; end
+	
+CubburnEggMoves:
+	db FAINT_ATTACK
+	db FORESIGHT
+	db FURY_SWIPES
+	db QUICK_ATTACK
+	db REVERSAL
+	db SUBMISSION
+	db THRASH
+	db -1 ; end
 
 SentretEggMoves:
 	dw DOUBLE_EDGE

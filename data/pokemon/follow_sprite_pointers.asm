@@ -285,6 +285,7 @@ FollowSpritePointers::
 	follow_sprite CroconawSpriteGFX, PAL_FOLLOWER_BLUE ;CROCONAW
 	follow_sprite FeraligatrSpriteGFX, PAL_FOLLOWER_BLUE ;FERALIGATR
 	follow_sprite BayleefSpriteGFX, PAL_FOLLOWER_GREEN ;BAYLEEF
+	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_RED ;CUBBURN
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BROWN ;SENTRET
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BROWN ;FURRET
 	follow_sprite CleflingSpriteGFX, PAL_FOLLOWER_RED ;CLEFLING

@@ -38,3 +38,5 @@ VegelancheFrames: INCLUDE "gfx/pokemon/vegelanche/frames.asm"
 SnouwrbunFrames:  INCLUDE "gfx/pokemon/snouwrbun/frames.asm"
 NecrorexFrames:  INCLUDE "gfx/pokemon/necrorex/frames.asm"
 StromenFrames:  INCLUDE "gfx/pokemon/stromen/frames.asm"
+CubburnFrames:  INCLUDE "gfx/pokemon/cubburn/frames.asm"
+

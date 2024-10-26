@@ -182,6 +182,7 @@ JOHTO_POKEMON EQU const_value
 	const CROCONAW   ; 9f
 	const FERALIGATR ; a0
 	const BAYLEEF
+	const CUBBURN 
 	const SENTRET    ; a1
 	const FURRET     ; a2
 	const CLEFLING

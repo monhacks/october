@@ -11,6 +11,7 @@ NewPokedexOrder:
 	dw CROCONAW
 	dw FERALIGATR
 	dw BAYLEEF
+	dw CUBBURN
 	dw PIDGEY
 	dw PIDGEOTTO
 	dw PIDGEOT

@@ -84,6 +84,7 @@ CantFollowList:
 	dw DRAGONITE
 	dw MEWTWO
 	dw MEW
+	dw CUBBURN
 	dw SENTRET
 	dw FURRET
 	dw HOOTHOOT

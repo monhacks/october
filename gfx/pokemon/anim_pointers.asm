@@ -160,6 +160,7 @@ AnimationPointers:
 	dw CroconawAnimation
 	dw FeraligatrAnimation
 	dw BayleefAnimation
+	dw CubburnAnimation
 	dw SentretAnimation
 	dw FurretAnimation
 	dw CleflingAnimation

@@ -160,6 +160,7 @@ AnimationIdlePointers:
 	dw CroconawAnimationIdle
 	dw FeraligatrAnimationIdle
 	dw BayleefAnimationIdle
+	dw CubburnAnimationIdle
 	dw SentretAnimationIdle
 	dw FurretAnimationIdle
 	dw CleflingAnimationIdle

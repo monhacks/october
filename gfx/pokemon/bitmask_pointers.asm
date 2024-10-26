@@ -160,6 +160,7 @@ BitmasksPointers:
 	dw CroconawBitmasks
 	dw FeraligatrBitmasks
 	dw BayleefBitmasks
+	dw CubburnBitmasks
 	dw SentretBitmasks
 	dw FurretBitmasks
 	dw CleflingBitmasks

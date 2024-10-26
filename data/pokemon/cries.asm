@@ -168,6 +168,7 @@ PokemonCries::
 	mon_cry CRY_TOTODILE,      0,  $130 ; CROCONAW
 	mon_cry CRY_TOTODILE,   -232,  $1c0 ; FERALIGATR
 	mon_cry CRY_CHIKORITA,  -$022,  $120 ; BAYLEEF
+	mon_cry CRY_MARILL,      $0a0,  $080 ; CUBBURN
 	mon_cry CRY_SENTRET,     $08a,  $0b8 ; SENTRET
 	mon_cry CRY_SENTRET,     $06b,  $102 ; FURRET
 	mon_cry CRY_HOOTHOOT_2CH,    $000,  $0a0 ; CLEFLING
@@ -289,7 +290,7 @@ PokemonCries::
 	mon_cry CRY_MOLAMBINO,    $043,  $050 ; MOLAMBINO
 	mon_cry CRY_CHIKORITA,    $040,    $200 ; KIWACKI
  	mon_cry CRY_DIGLETT,     $010,   $010 ; MORPHOBIA
- 	mon_cry CRY_DIGLETT,     $020,   $040 ; MORPHOBIA
+ 	mon_cry CRY_DIGLETT,     $020,   $040 ; MORPHOBIA EVO
 	mon_cry CRY_GLIGAR,     -$045,  $120  ; TERRACHNID
 	mon_cry CRY_GRIMER,      $100,  $100 ; SMUJJ
 	mon_cry CRY_PICHU,       $f60,  $200 ; KOTORA

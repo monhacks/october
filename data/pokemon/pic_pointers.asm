@@ -175,6 +175,7 @@ PokemonPicPointers::
 	mon_pic Croconaw
 	mon_pic Feraligatr
 	mon_pic Bayleef
+	mon_pic Cubburn
 	mon_pic Sentret
 	mon_pic Furret
 	mon_pic Clefling

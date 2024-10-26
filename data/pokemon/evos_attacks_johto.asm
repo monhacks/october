@@ -11,6 +11,7 @@ EvosAttacksPointers2::
 	dw CroconawEvosAttacks
 	dw FeraligatrEvosAttacks
 	dw BayleefEvosAttacks
+	dw CubburnEvosAttacks
 	dw SentretEvosAttacks
 	dw FurretEvosAttacks
 	dw CleflingEvosAttacks
@@ -118,7 +119,6 @@ EvosAttacksPointers2::
 	dw TyranitarEvosAttacks
 	dw LugiaEvosAttacks
 	dw HoOhEvosAttacks
-	dw CelebiEvosAttacks
 .End:
 
 ChikoritaEvosAttacks:
@@ -285,6 +285,21 @@ BayleefEvosAttacks:
 	dbw 39, LIGHT_SCREEN
 	dbw 47, SAFEGUARD
 	dbw 55, SOLARBEAM
+	db 0 ; no more level-up moves
+
+CubburnEvosAttacks:
+	db 0 ; no more evolutions for now
+	db 1, SCRATCH
+	db 1, LEER
+	db 6, EMBER
+	db 11, SAND_ATTACK
+	db 17, BITE
+	db 22, SCARY_FACE
+	db 27, FLAME_WHEEL
+	db 33, FURY_SWIPES
+	db 38, REST
+	db 43, SLASH
+	db 49, FLAMETHROWER
 	db 0 ; no more level-up moves
 
 SentretEvosAttacks:
@@ -1842,18 +1857,6 @@ HoOhEvosAttacks:
 	dbw 99, FUTURE_SIGHT
 	db 0 ; no more level-up moves
 
-CelebiEvosAttacks:
-	db 0 ; no more evolutions
-	dbw 1, LEECH_SEED
-	dbw 1, CONFUSION
-	dbw 1, RECOVER
-	dbw 1, HEAL_BELL
-	dbw 10, SAFEGUARD
-	dbw 20, ANCIENTPOWER
-	dbw 30, FUTURE_SIGHT
-	dbw 40, BATON_PASS
-	dbw 50, PERISH_SONG
-	db 0 ; no more level-up moves
 
 ;-------------------------------------------------------------------------------------------
 _NUM_EVOS_ATTACKS = _NUM_EVOS_ATTACKS + (EvosAttacksPointers2.End  - EvosAttacksPointers2)/2

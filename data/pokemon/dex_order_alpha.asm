@@ -46,6 +46,7 @@ AlphabeticalPokedexOrder:
 	dw CORSOLA
 	dw CROBAT
 	dw CROCONAW
+	dw CUBBURN
 	dw CUBONE
 	dw CYNDAQUIL
 	dw DELIBIRD

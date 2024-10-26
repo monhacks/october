@@ -165,6 +165,7 @@ PokemonNames::
 	db "CROCONAW@@"
 	db "FERALIGATR"
 	db "BAYLEEF@@@"
+	db "CUBBURN@@@"
 	db "SENTRET@@@"
 	db "FURRET@@@@"
 	db "CLEFLING@@"

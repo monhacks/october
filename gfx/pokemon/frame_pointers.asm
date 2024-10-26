@@ -160,6 +160,7 @@ FramesPointers:
 	dba CroconawFrames
 	dba FeraligatrFrames
 	dba BayleefFrames
+	dba CubburnFrames
 	dba SentretFrames
 	dba FurretFrames
 	dba CleflingFrames
