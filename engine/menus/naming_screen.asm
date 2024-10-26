@@ -82,6 +82,7 @@ NamingScreen:
 	dw .Tomodachi
 	dw .Pokemon
 	dw .Pokemon
+	dw .Password
 
 .Pokemon:
 	ld a, [wCurPartySpecies]
@@ -189,6 +190,16 @@ NamingScreen:
 
 .oTomodachi_no_namae_sutoringu
 	db "おともだち　の　なまえは？@"
+	
+.Password:
+	hlcoord 5, 2
+	ld de, .PasswordString
+	call PlaceString
+	call .StoreMonIconParams
+	ret
+
+.PasswordString:
+	db "PASSWORD?@"
 
 .LoadSprite:
 	push de

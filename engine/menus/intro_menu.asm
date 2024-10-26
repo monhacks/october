@@ -78,6 +78,17 @@ NewGame:
 
 AreYouABoyOrAreYouAGirl:
 	farcall InitGender
+	ld hl, TextJump_PasswordOption
+	call PrintText
+	call YesNoBox
+	ret c
+	
+	call RotateFourPalettesLeft
+	call ClearTileMap
+	
+	ld b, NAME_PASSWORD
+	ld de, wGreensName
+	farcall NamingScreen
 	ret
 
 ResetWRAM:
@@ -85,6 +96,10 @@ ResetWRAM:
 	ldh [hBGMapMode], a
 	call _ResetWRAM
 	ret
+	
+TextJump_PasswordOption:
+	text_far Text_PasswordOption
+	text_end
 
 _ResetWRAM:
 	ld a, BANK("16-bit WRAM tables")

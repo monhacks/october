@@ -170,6 +170,8 @@ CyndaquilPokeBallScript:
 	iftrue LookAtElmPokeBallScript
 	turnobject ELMSLAB_ELM, DOWN
 	refreshscreen
+	checkevent EVENT_PASSWORD_NIHON
+	iftrue CubburnPokeBallScript
 	pokepic CYNDAQUIL
 	cry CYNDAQUIL
 	waitbutton
@@ -204,6 +206,42 @@ CyndaquilPokeBallScript:
 	closetext
 	readvar VAR_FACING
 	ifequal RIGHT, ElmDirectionsScript
+	applymovement PLAYER, AfterCyndaquilMovement
+	sjump ElmDirectionsScript
+
+CubburnPokeBallScript:
+	pokepic CUBBURN
+	cry CUBBURN
+	waitbutton
+	closepokepic
+	opentext
+	writetext TakeCubburnText
+	yesorno
+	iffalse DidntChooseStarterScript
+	disappear ELMSLAB_POKE_BALL1
+	setevent EVENT_GOT_CYNDAQUIL_FROM_ELM
+	writetext ChoseStarterText
+	buttonsound
+	waitsfx
+	getmonname STRING_BUFFER_3, CUBBURN
+	writetext ReceivedStarterText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	buttonsound
+	givepoke CUBBURN, 5, BERRY
+	closetext
+	applymovement ELMENTRANCE_SILVER, SilverGetTotodileMovement
+	opentext
+	writetext Text_SilverTakeThisOne
+	waitbutton
+	closetext
+	disappear ELMSLAB_POKE_BALL2
+	opentext
+	writetext Text_SilverGetTotodile
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	buttonsound
+	closetext
 	applymovement PLAYER, AfterCyndaquilMovement
 	sjump ElmDirectionsScript
 
@@ -1075,6 +1113,12 @@ LabWhereGoingText:
 TakeCyndaquilText:
 	text "ELM: You'll take"
 	line "CYNDAQUIL, the"
+	cont "fire #MON?"
+	done
+	
+TakeCubburnText:
+	text "ELM: You'll take"
+	line "CUBBURN, the"
 	cont "fire #MON?"
 	done
 

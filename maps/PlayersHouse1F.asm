@@ -33,6 +33,7 @@ MeetMomRightScript:
 .OnRight:
 	applymovement PLAYERSHOUSE1F_MOM1, MomWalksToPlayerMovement
 MeetMomScript:
+	scall MomScriptPasswordCheck
 	opentext
 	writetext ElmsLookingForYouText
 	buttonsound
@@ -109,6 +110,34 @@ GearName:
 PlayersHouse1FReceiveItemStd:
 	jumpstd receiveitem
 	end
+	
+MomScriptPasswordCheck:
+	checkevent EVENT_PASSWORD_SET
+	iftrue .stop
+	setevent EVENT_PASSWORD_SET
+	callasm .nihon
+	iftrue .nihon2
+.stop
+	end
+
+.nihon
+	xor a
+	ld [wScriptVar], a
+	ld de, NihonPassword
+	ld hl, wGreensName ; check inputted password
+	ld c, 4
+	call CompareBytes
+	ret nz
+	ld a, 1
+	ld [wScriptVar], a
+	ret
+
+.nihon2
+	setevent EVENT_PASSWORD_NIHON
+	end
+	
+NihonPassword:
+    db "NIHON"
 
 MomScript:
 	faceplayer

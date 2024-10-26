@@ -414,8 +414,8 @@
 	const EVENT_BEAT_SAGE_TAKAO
 	const EVENT_GAVE_FRESH_WATER ; route 46 hiker
 	const EVENT_BEAT_PRODIGY_AXEL
-	const EVENT_1a7
-	const EVENT_1a8
+	const EVENT_PASSWORD_NIHON
+	const EVENT_PASSWORD_SET
 	const EVENT_1a9
 	const EVENT_1aa
 	const EVENT_1ab
