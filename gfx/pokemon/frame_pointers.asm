@@ -297,3 +297,4 @@ FramesPointers:
 	dba VegelancheFrames
 	dba SnouwrbunFrames
 	dba NecrorexFrames
+	dba NurssumFrames

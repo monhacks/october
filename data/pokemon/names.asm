@@ -277,7 +277,7 @@ PokemonNames::
 	db "ADBARSTORK"
 	db "PUPPERON@@"
 	db "CAMOUFLAKE"
-	db "COALTA@@@@"
+	db "KOLTA@@@@@"
 	db "BURGELA@@@"
 	db "VULPIII@@@"
 	db "WORFURS@@@"
@@ -302,6 +302,7 @@ PokemonNames::
 	db "VEGELANCHE"
 	db "SNOUWRBUN@"
 	db "NECROREX@@"
+	db "NURSSUM@@@"
 
 ;--------------------------------------------------------------
 _NUM_POKEMON_NAMES = (@ - PokemonNames) / (MON_NAME_LENGTH - 1)

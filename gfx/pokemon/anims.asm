@@ -296,6 +296,7 @@ GermifrostAnimation: INCLUDE "gfx/pokemon/germifrost/anim.asm"
 VegelancheAnimation: INCLUDE "gfx/pokemon/vegelanche/anim.asm"
 SnouwrbunAnimation:  INCLUDE "gfx/pokemon/snouwrbun/anim.asm"
 NecrorexAnimation:  INCLUDE "gfx/pokemon/necrorex/anim.asm"
+NurssumAnimation:    INCLUDE "gfx/pokemon/nurssum/anim.asm"
 
 ;------------------------------------------------------
 EggAnimation:        INCLUDE "gfx/pokemon/egg/anim.asm"

@@ -296,6 +296,7 @@ GermifrostBitmasks: INCLUDE "gfx/pokemon/germifrost/bitmask.asm"
 VegelancheBitmasks: INCLUDE "gfx/pokemon/vegelanche/bitmask.asm"
 SnouwrbunBitmasks:  INCLUDE "gfx/pokemon/snouwrbun/bitmask.asm"
 NecrorexBitmasks:  INCLUDE "gfx/pokemon/necrorex/bitmask.asm"
+NurssumBitmasks:  INCLUDE "gfx/pokemon/nurssum/bitmask.asm"
 
 ;--------------------------------------------------------
 EggBitmasks:        INCLUDE "gfx/pokemon/egg/bitmask.asm"

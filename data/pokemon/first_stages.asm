@@ -298,6 +298,7 @@ FirstEvoStages::
 	dw CAMOUFLAKE
 	dw NECROREX
 	dw CUBBURN
+	dw NURSSUM
 
 
 

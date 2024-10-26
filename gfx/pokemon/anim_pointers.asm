@@ -297,3 +297,4 @@ AnimationPointers:
 	dw VegelancheAnimation
 	dw SnouwrbunAnimation
 	dw NecrorexAnimation
+	dw NurssumAnimation

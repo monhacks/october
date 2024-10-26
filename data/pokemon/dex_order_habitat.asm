@@ -177,6 +177,7 @@ HabitatPokedexOrder:
 	dw VENOMOTH
 	dw RATICATE
 	dw FURRET
+	dw NURSSUM
 	dw PICHU
 	dw PIKACHU
 	dw RAICHU

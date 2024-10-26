@@ -30,6 +30,7 @@ EvosAttacksPointers3::
 	dw VegelancheEvosAttacks
 	dw SnouwrbunEvosAttacks
 	dw NecrorexEvosAttacks
+	dw NurssumEvosAttacks
 .End:
 
 CelebiEvosAttacks:
@@ -489,6 +490,22 @@ SnouwrbunEvosAttacks:
 	dbw 40, MIST
 	dbw 44, FAINT_ATTACK
 	dbw 49, GIGA_DRAIN
+	db 0 ; no more level-up moves
+	
+NurssumEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	dbw 1, GROWL
+	dbw 4, DOUBLE_KICK
+	dbw 9, DEFENSE_CURL
+	dbw 13, QUICK_ATTACK
+	dbw 18, BARRAGE
+	dbw 26, CHARM
+	dbw 31, EXTREMESPEED
+	dbw 35, RECOVER
+	dbw 40, TAKE_DOWN
+	dbw 44, FAINT_ATTACK
+	dbw 49, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
 

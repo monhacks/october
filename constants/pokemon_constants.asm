@@ -319,6 +319,7 @@ JOHTO_POKEMON EQU const_value
 	const VEGELANCHE
 	const SNOUWRBUN
 	const NECROREX ; sans undertale
+	const NURSSUM ; teraleak beytah
 
 NUM_POKEMON EQU const_value + -1
 

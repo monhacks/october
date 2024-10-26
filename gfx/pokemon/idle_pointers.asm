@@ -297,3 +297,5 @@ AnimationIdlePointers:
 	dw VegelancheAnimationIdle
 	dw SnouwrbunAnimationIdle
 	dw NecrorexAnimationIdle
+	dw NurssumAnimationIdle
+

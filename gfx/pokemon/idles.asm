@@ -296,6 +296,7 @@ GermifrostAnimationIdle: INCLUDE "gfx/pokemon/germifrost/anim_idle.asm"
 VegelancheAnimationIdle: INCLUDE "gfx/pokemon/vegelanche/anim_idle.asm"
 SnouwrbunAnimationIdle:  INCLUDE "gfx/pokemon/snouwrbun/anim_idle.asm"
 NecrorexAnimationIdle:  INCLUDE "gfx/pokemon/necrorex/anim_idle.asm"
+NurssumAnimationIdle:   INCLUDE "gfx/pokemon/nurssum/anim_idle.asm"
 
 ;---------------------------------------------------------------
 EggAnimationIdle:        INCLUDE "gfx/pokemon/egg/anim_idle.asm"

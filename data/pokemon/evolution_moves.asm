@@ -160,6 +160,7 @@ EvolutionMoves::
 	dw NO_MOVE      ; CROCONAW
 	dw WATERFALL    ; FERALIGATR
 	dw NO_MOVE      ; BAYLEEF
+	dw NO_MOVE      ; CUBBURN
 	dw NO_MOVE      ; SENTRET
 	dw AGILITY      ; FURRET
 	dw NO_MOVE      ; CLEFLING
@@ -295,7 +296,8 @@ EvolutionMoves::
 	dw NO_MOVE		; GERMIFROST
 	dw PETAL_DANCE	; VEGELANCHE
 	dw LEECH_SEED	; SNOUWRBUN
-	dw NO_MOVE	; NECROREX ; TODO: necro's evo moves
+	dw NO_MOVE	    ; NECROREX
+	dw NO_MOVE      ; NURSSUM
 
 ;----------------------------------
 _NUM_EVO_MOVES = (@ - EvolutionMoves) / 2

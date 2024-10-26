@@ -315,6 +315,7 @@ PokemonPicPointers::
 	mon_pic Vegelanche
 	mon_pic Snouwrbun
 	mon_pic Necrorex
+	mon_pic Nurssum
 
 ;------------------------------------------------
 _NUM_POKEMON_PICS = (@ - PokemonPicPointers) / 9 - 1

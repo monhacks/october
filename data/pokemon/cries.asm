@@ -305,6 +305,8 @@ PokemonCries::
 	mon_cry CRY_PICHU,       $060,  $140 ; TODO: VEGELANCHE
 	mon_cry CRY_PICHU,       $070,  $140 ; TODO: SNOUWRBUN
 	mon_cry CRY_PICHU,       $000,  $150 ; TODO: NECROREX
+	mon_cry CRY_PICHU,       $077,  $100 ; TODO: NURSSUM
+
 
 	;Beytah/new cries: Typhlosion, Pichu, Quagsire, Umbreon, Dunsparce, Sneasel, Houndour/Houndoom, Donphan, Coinpur, Katu, Adbarstork, Clefling, Mallody, Camouflake
 	;test pitches Adbarstork: Entei, Sunflora, Swinub, Squirtle

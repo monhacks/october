@@ -27,6 +27,7 @@ NewPokedexOrder:
 	dw RATICATE
 	dw SENTRET
 	dw FURRET
+	dw NURSSUM
 	dw PICHU
 	dw PIKACHU
 	dw RAICHU

@@ -297,3 +297,5 @@ BitmasksPointers:
 	dw VegelancheBitmasks
 	dw SnouwrbunBitmasks
 	dw NecrorexBitmasks
+	dw NurssumBitmasks
+

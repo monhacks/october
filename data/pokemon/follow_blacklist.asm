@@ -201,4 +201,5 @@ CantFollowList:
 	dw ORIJOEY
 	dw AGGROSWINE
 	dw NECROREX
+	dw NURSSUM
 	dw -1

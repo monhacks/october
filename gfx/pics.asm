@@ -816,5 +816,7 @@ StromenFrontpic:	INCBIN "gfx/pokemon/stromen/front.static.2bpp.lz"
 StromenBackpic:	    INCBIN "gfx/pokemon/stromen/back.2bpp.lz"
 CubburnFrontpic:	INCBIN "gfx/pokemon/cubburn/front.static.2bpp.lz"
 CubburnBackpic:	    INCBIN "gfx/pokemon/cubburn/back.2bpp.lz"
+NurssumFrontpic:	INCBIN "gfx/pokemon/nurssum/front.static.2bpp.lz"
+NurssumBackpic:	    INCBIN "gfx/pokemon/nurssum/back.2bpp.lz"
 
 INCLUDE "gfx/pics_animated.asm"

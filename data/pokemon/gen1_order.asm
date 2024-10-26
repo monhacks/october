@@ -253,3 +253,4 @@ Pokered_MonIndices:
 	db WOBBUFFET
 	db WOBBUFFET
 	db CUBBURN
+	db NURSSUM
