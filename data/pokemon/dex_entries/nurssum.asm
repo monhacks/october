@@ -7,4 +7,4 @@
 
 	page "If it has no baby,"
 	next "it will raise"
-	next "orphaned #MON."
+	next "orphaned #MON.@"
