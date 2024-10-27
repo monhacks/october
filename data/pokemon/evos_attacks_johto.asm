@@ -334,17 +334,17 @@ BruinusEvosAttacks:
 	
 PalssioEvosAttacks:
 	db 0 ; no more evolutions for now
-	db 1, TACKLE
-	db 1, GROWL
-	db 7, BITE
-	db 13, WATER_GUN
-	db 17, POWDER_SNOW
-	db 20, MIST
-	db 27, SAFEGUARD
-	db 35, BUBBLEBEAM
-	db 43, AURORA_BEAM
-	db 46, BODY_SLAM
-	db 52, HYDRO_PUMP
+	dbw 1, TACKLE
+	dbw 1, GROWL
+	dbw 7, BITE
+	dbw 13, WATER_GUN
+	dbw 17, POWDER_SNOW
+	dbw 20, MIST
+	dbw 27, SAFEGUARD
+	dbw 35, BUBBLEBEAM
+	dbw 43, AURORA_BEAM
+	dbw 46, BODY_SLAM
+	dbw 52, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 SentretEvosAttacks:

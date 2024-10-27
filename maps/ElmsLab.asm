@@ -252,6 +252,8 @@ TotodilePokeBallScript:
 	iftrue LookAtElmPokeBallScript
 	turnobject ELMSLAB_ELM, DOWN
 	refreshscreen
+	checkevent EVENT_PASSWORD_NIHON
+	iftrue PalssioPokeBallScript
 	pokepic TOTODILE
 	cry TOTODILE
 	waitbutton
@@ -271,6 +273,42 @@ TotodilePokeBallScript:
 	waitsfx
 	buttonsound
 	givepoke TOTODILE, 5, BERRY
+	closetext
+	applymovement ELMENTRANCE_SILVER, SilverGetChikoritaMovement
+	opentext
+	writetext Text_SilverTakeThisOne
+	waitbutton
+	closetext
+	disappear ELMSLAB_POKE_BALL3
+	opentext
+	writetext Text_SilverGetChikorita
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	buttonsound
+	closetext
+	applymovement PLAYER, AfterTotodileMovement
+	sjump ElmDirectionsScript
+	
+PalssioPokeBallScript:
+	pokepic PALSSIO
+	cry PALSSIO
+	waitbutton
+	closepokepic
+	opentext
+	writetext TakePalssioText
+	yesorno
+	iffalse DidntChooseStarterScript
+	disappear ELMSLAB_POKE_BALL2
+	setevent EVENT_GOT_TOTODILE_FROM_ELM
+	writetext ChoseStarterText
+	buttonsound
+	waitsfx
+	getmonname STRING_BUFFER_3, PALSSIO
+	writetext ReceivedStarterText
+	playsound SFX_CAUGHT_MON
+	waitsfx
+	buttonsound
+	givepoke PALSSIO, 5, BERRY
 	closetext
 	applymovement ELMENTRANCE_SILVER, SilverGetChikoritaMovement
 	opentext
@@ -1125,6 +1163,12 @@ TakeCubburnText:
 TakeTotodileText:
 	text "ELM: Do you want"
 	line "TOTODILE, the"
+	cont "water #MON?"
+	done
+	
+TakePalssioText:
+	text "ELM: Do you want"
+	line "PALSSIO, the"
 	cont "water #MON?"
 	done
 
