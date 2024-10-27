@@ -13,6 +13,7 @@ EggMovePointers2::
 	dw CubburnEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
+	dw PalssioEggMoves
 	dw SentretEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
@@ -181,6 +182,15 @@ CubburnEggMoves:
 	db REVERSAL
 	db SUBMISSION
 	db THRASH
+	db -1 ; end
+	
+PalssioEggMoves:
+	db AMNESIA
+	db ANCIENTPOWER
+	db DISABLE
+	db ENCORE
+	db PERISH_SONG
+	db PSYBEAM
 	db -1 ; end
 
 SentretEggMoves:

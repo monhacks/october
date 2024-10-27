@@ -163,6 +163,7 @@ AnimationPointers:
 	dw CubburnAnimation
 	dw FlambearAnimation
 	dw BruinusAnimation
+	dw PalssioAnimation
 	dw SentretAnimation
 	dw FurretAnimation
 	dw CleflingAnimation

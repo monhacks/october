@@ -185,6 +185,7 @@ AlphabeticalPokedexOrder:
 	dw ONIX
 	dw OREFRY
 	dw ORIJOEY
+	dw PALSSIO
 	dw PARAS
 	dw PARASECT
 	dw PARASPOR

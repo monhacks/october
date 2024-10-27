@@ -14,6 +14,7 @@ EvosAttacksPointers2::
 	dw CubburnEvosAttacks
 	dw FlambearEvosAttacks
 	dw BruinusEvosAttacks
+	dw PalssioEvosAttacks
 	dw SentretEvosAttacks
 	dw FurretEvosAttacks
 	dw CleflingEvosAttacks
@@ -116,9 +117,6 @@ EvosAttacksPointers2::
 	dw RaikouEvosAttacks
 	dw EnteiEvosAttacks
 	dw SuicuneEvosAttacks
-	dw LarvitarEvosAttacks
-	dw PupitarEvosAttacks
-	dw TyranitarEvosAttacks
 .End:
 
 ChikoritaEvosAttacks:
@@ -332,6 +330,21 @@ BruinusEvosAttacks:
 	dbw 41, CRUNCH
 	dbw 44, REST
 	dbw 52, FLAMETHROWER
+	db 0 ; no more level-up moves
+	
+PalssioEvosAttacks:
+	db 0 ; no more evolutions for now
+	db 1, TACKLE
+	db 1, GROWL
+	db 7, BITE
+	db 13, WATER_GUN
+	db 17, POWDER_SNOW
+	db 20, MIST
+	db 27, SAFEGUARD
+	db 35, BUBBLEBEAM
+	db 43, AURORA_BEAM
+	db 46, BODY_SLAM
+	db 52, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 SentretEvosAttacks:
@@ -1812,55 +1825,6 @@ SuicuneEvosAttacks:
 	dbw 61, MIRROR_COAT
 	dbw 71, HYDRO_PUMP
 	db 0 ; no more level-up moves
-
-LarvitarEvosAttacks:
-	dbbw EVOLVE_LEVEL, 30, PUPITAR
-	db 0 ; no more evolutions
-	dbw 1, BITE
-	dbw 1, LEER
-	dbw 8, SANDSTORM
-	dbw 15, SCREECH
-	dbw 22, ROCK_SLIDE
-	dbw 29, THRASH
-	dbw 36, SCARY_FACE
-	dbw 43, CRUNCH
-	dbw 50, EARTHQUAKE
-	dbw 57, HYPER_BEAM
-	db 0 ; no more level-up moves
-
-PupitarEvosAttacks:
-	dbbw EVOLVE_LEVEL, 55, TYRANITAR
-	db 0 ; no more evolutions
-	dbw 1, BITE
-	dbw 1, LEER
-	dbw 1, SANDSTORM
-	dbw 1, SCREECH
-	dbw 8, SANDSTORM
-	dbw 15, SCREECH
-	dbw 22, ROCK_SLIDE
-	dbw 29, THRASH
-	dbw 38, SCARY_FACE
-	dbw 47, CRUNCH
-	dbw 56, EARTHQUAKE
-	dbw 65, HYPER_BEAM
-	db 0 ; no more level-up moves
-
-TyranitarEvosAttacks:
-	db 0 ; no more evolutions
-	dbw 1, BITE
-	dbw 1, LEER
-	dbw 1, SANDSTORM
-	dbw 1, SCREECH
-	dbw 8, SANDSTORM
-	dbw 15, SCREECH
-	dbw 22, ROCK_SLIDE
-	dbw 29, THRASH
-	dbw 38, SCARY_FACE
-	dbw 47, CRUNCH
-	dbw 61, EARTHQUAKE
-	dbw 75, HYPER_BEAM
-	db 0 ; no more level-up moves
-
 
 ;-------------------------------------------------------------------------------------------
 _NUM_EVOS_ATTACKS = _NUM_EVOS_ATTACKS + (EvosAttacksPointers2.End  - EvosAttacksPointers2)/2

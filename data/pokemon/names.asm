@@ -168,6 +168,7 @@ PokemonNames::
 	db "CUBBURN@@@"
 	db "FLAMBEAR@@"
 	db "BRUINUS@@@"
+	db "PALSSIO@@@"
 	db "SENTRET@@@"
 	db "FURRET@@@@"
 	db "CLEFLING@@"

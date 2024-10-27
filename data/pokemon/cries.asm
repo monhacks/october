@@ -170,7 +170,8 @@ PokemonCries::
 	mon_cry CRY_CHIKORITA,  -$022,  $120 ; BAYLEEF
 	mon_cry CRY_MARILL,      $0a0,  $080 ; CUBBURN
 	mon_cry CRY_MARILL,      $2f0,  $0a0 ; FLAMBEAR
-	mon_cry CRY_BULBASAUR,      $de0,  $1a0 ; BRUINUS
+	mon_cry CRY_BULBASAUR,   $de0,  $1a0 ; BRUINUS
+	mon_cry CRY_MANTINE,     $f90,  $090 ; PALSSIO
 	mon_cry CRY_SENTRET,     $08a,  $0b8 ; SENTRET
 	mon_cry CRY_SENTRET,     $06b,  $102 ; FURRET
 	mon_cry CRY_HOOTHOOT_2CH,    $000,  $0a0 ; CLEFLING

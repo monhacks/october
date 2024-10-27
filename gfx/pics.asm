@@ -822,6 +822,7 @@ FlambearFrontpic:	INCBIN "gfx/pokemon/flambear/front.static.2bpp.lz"
 FlambearBackpic:	INCBIN "gfx/pokemon/flambear/back.2bpp.lz"
 BruinusFrontpic:	INCBIN "gfx/pokemon/bruinus/front.static.2bpp.lz"
 BruinusBackpic:	    INCBIN "gfx/pokemon/bruinus/back.2bpp.lz"
-
+PalssioFrontpic:	INCBIN "gfx/pokemon/palssio/front.static.2bpp.lz"
+PalssioBackpic:	    INCBIN "gfx/pokemon/palssio/back.2bpp.lz"
 
 INCLUDE "gfx/pics_animated.asm"

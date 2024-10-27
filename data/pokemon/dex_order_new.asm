@@ -14,6 +14,7 @@ NewPokedexOrder:
 	dw CUBBURN
 	dw FLAMBEAR 
 	dw BRUINUS
+	dw PALSSIO
 	dw PIDGEY
 	dw PIDGEOTTO
 	dw PIDGEOT

@@ -163,6 +163,7 @@ AnimationIdlePointers:
 	dw CubburnAnimationIdle
 	dw FlambearAnimationIdle
 	dw BruinusAnimationIdle
+	dw PalssioAnimationIdle
 	dw SentretAnimationIdle
 	dw FurretAnimationIdle
 	dw CleflingAnimationIdle

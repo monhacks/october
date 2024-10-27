@@ -1,6 +1,9 @@
 SECTION "Evolutions and Attacks 3", ROMX
 
 EvosAttacksPointers3::
+	dw LarvitarEvosAttacks
+	dw PupitarEvosAttacks
+	dw TyranitarEvosAttacks
 	dw LugiaEvosAttacks
 	dw HoOhEvosAttacks
 	dw CelebiEvosAttacks
@@ -35,6 +38,54 @@ EvosAttacksPointers3::
 	dw NurssumEvosAttacks
 .End:
 
+LarvitarEvosAttacks:
+	dbbw EVOLVE_LEVEL, 30, PUPITAR
+	db 0 ; no more evolutions
+	dbw 1, BITE
+	dbw 1, LEER
+	dbw 8, SANDSTORM
+	dbw 15, SCREECH
+	dbw 22, ROCK_SLIDE
+	dbw 29, THRASH
+	dbw 36, SCARY_FACE
+	dbw 43, CRUNCH
+	dbw 50, EARTHQUAKE
+	dbw 57, HYPER_BEAM
+	db 0 ; no more level-up moves
+
+PupitarEvosAttacks:
+	dbbw EVOLVE_LEVEL, 55, TYRANITAR
+	db 0 ; no more evolutions
+	dbw 1, BITE
+	dbw 1, LEER
+	dbw 1, SANDSTORM
+	dbw 1, SCREECH
+	dbw 8, SANDSTORM
+	dbw 15, SCREECH
+	dbw 22, ROCK_SLIDE
+	dbw 29, THRASH
+	dbw 38, SCARY_FACE
+	dbw 47, CRUNCH
+	dbw 56, EARTHQUAKE
+	dbw 65, HYPER_BEAM
+	db 0 ; no more level-up moves
+
+TyranitarEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, BITE
+	dbw 1, LEER
+	dbw 1, SANDSTORM
+	dbw 1, SCREECH
+	dbw 8, SANDSTORM
+	dbw 15, SCREECH
+	dbw 22, ROCK_SLIDE
+	dbw 29, THRASH
+	dbw 38, SCARY_FACE
+	dbw 47, CRUNCH
+	dbw 61, EARTHQUAKE
+	dbw 75, HYPER_BEAM
+	db 0 ; no more level-up moves
+	
 LugiaEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, AEROBLAST

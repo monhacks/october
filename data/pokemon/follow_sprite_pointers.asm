@@ -288,6 +288,7 @@ FollowSpritePointers::
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_RED ;CUBBURN
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_RED ;FLAMBEAR
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_RED ;BRUINUS
+	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;PALSSIO
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BROWN ;SENTRET
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BROWN ;FURRET
 	follow_sprite CleflingSpriteGFX, PAL_FOLLOWER_RED ;CLEFLING

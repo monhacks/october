@@ -163,6 +163,7 @@ FramesPointers:
 	dba CubburnFrames
 	dba FlambearFrames
 	dba BruinusFrames
+	dba PalssioFrames
 	dba SentretFrames
 	dba FurretFrames
 	dba CleflingFrames

@@ -185,6 +185,7 @@ JOHTO_POKEMON EQU const_value
 	const CUBBURN 
 	const FLAMBEAR
 	const BRUINUS
+	const PALSSIO
 	const SENTRET    ; a1
 	const FURRET     ; a2
 	const CLEFLING
