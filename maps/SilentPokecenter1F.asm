@@ -52,7 +52,7 @@ SilentPokecenterOldLadyText:
 	line "told me, so I'll"
 	cont "tell you."
 
-	para "VULPII has three"
+	para "VULPIII has three"
 	line "distinct stages"
 	cont "of life."
 
