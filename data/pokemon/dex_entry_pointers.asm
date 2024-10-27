@@ -162,6 +162,8 @@ PokedexDataPointerTable:
 	dba FeraligatrPokedexEntry
 	dba BayleefPokedexEntry
 	dba CubburnPokedexEntry
+	dba FlambearPokedexEntry
+	dba BruinusPokedexEntry
 	dba SentretPokedexEntry
 	dba FurretPokedexEntry
 	dba CleflingPokedexEntry

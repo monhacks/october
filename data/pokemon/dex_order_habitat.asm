@@ -38,8 +38,10 @@ HabitatPokedexOrder:
 	dw CHARIZARD
 	dw CYNDAQUIL
 	dw QUILAVA
-	dw TYPHLOSION ; XXX put Cubburn line after this once in
+	dw TYPHLOSION
 	dw CUBBURN
+	dw FLAMBEAR
+	dw BRUINUS
 	dw SANDSLASH
 	dw PHANPY
 	dw DONPHAN

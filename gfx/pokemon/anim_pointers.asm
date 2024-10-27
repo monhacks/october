@@ -161,6 +161,8 @@ AnimationPointers:
 	dw FeraligatrAnimation
 	dw BayleefAnimation
 	dw CubburnAnimation
+	dw FlambearAnimation
+	dw BruinusAnimation
 	dw SentretAnimation
 	dw FurretAnimation
 	dw CleflingAnimation

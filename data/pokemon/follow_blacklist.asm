@@ -85,6 +85,8 @@ CantFollowList:
 	dw MEWTWO
 	dw MEW
 	dw CUBBURN
+	dw FLAMBEAR
+	dw BRUINUS
 	dw SENTRET
 	dw FURRET
 	dw HOOTHOOT

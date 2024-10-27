@@ -12,6 +12,8 @@ NewPokedexOrder:
 	dw FERALIGATR
 	dw BAYLEEF
 	dw CUBBURN
+	dw FLAMBEAR 
+	dw BRUINUS
 	dw PIDGEY
 	dw PIDGEOTTO
 	dw PIDGEOT

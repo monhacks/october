@@ -11,6 +11,8 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw CubburnEggMoves
+	dw NoEggMoves2
+	dw NoEggMoves2
 	dw SentretEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2

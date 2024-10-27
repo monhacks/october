@@ -161,6 +161,8 @@ AnimationIdlePointers:
 	dw FeraligatrAnimationIdle
 	dw BayleefAnimationIdle
 	dw CubburnAnimationIdle
+	dw FlambearAnimationIdle
+	dw BruinusAnimationIdle
 	dw SentretAnimationIdle
 	dw FurretAnimationIdle
 	dw CleflingAnimationIdle

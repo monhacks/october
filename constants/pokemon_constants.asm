@@ -183,6 +183,8 @@ JOHTO_POKEMON EQU const_value
 	const FERALIGATR ; a0
 	const BAYLEEF
 	const CUBBURN 
+	const FLAMBEAR
+	const BRUINUS
 	const SENTRET    ; a1
 	const FURRET     ; a2
 	const CLEFLING

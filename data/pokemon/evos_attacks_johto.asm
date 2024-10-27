@@ -12,6 +12,8 @@ EvosAttacksPointers2::
 	dw FeraligatrEvosAttacks
 	dw BayleefEvosAttacks
 	dw CubburnEvosAttacks
+	dw FlambearEvosAttacks
+	dw BruinusEvosAttacks
 	dw SentretEvosAttacks
 	dw FurretEvosAttacks
 	dw CleflingEvosAttacks
@@ -117,8 +119,6 @@ EvosAttacksPointers2::
 	dw LarvitarEvosAttacks
 	dw PupitarEvosAttacks
 	dw TyranitarEvosAttacks
-	dw LugiaEvosAttacks
-	dw HoOhEvosAttacks
 .End:
 
 ChikoritaEvosAttacks:
@@ -288,18 +288,50 @@ BayleefEvosAttacks:
 	db 0 ; no more level-up moves
 
 CubburnEvosAttacks:
-	db 0 ; no more evolutions for now
+	dbbw EVOLVE_LEVEL, 14, FLAMBEAR
+	db 0 ; no more evolutions
 	dbw 1, SCRATCH
 	dbw 1, LEER
-	dbw 6, EMBER
-	dbw 11, SAND_ATTACK
-	dbw 17, BITE
-	dbw 22, SCARY_FACE
+	dbw 6, ROAR
+	dbw 12, EMBER
+	dbw 19, BITE
+	dbw 22, FURY_SWIPES
 	dbw 27, FLAME_WHEEL
-	dbw 33, FURY_SWIPES
-	dbw 38, REST
-	dbw 43, SLASH
+	dbw 31, SCARY_FACE
+	dbw 36, CRUNCH
+	dbw 39, REST
+	dbw 46, FLAMETHROWER
+	db 0 ; no more level-up moves
+
+FlambearEvosAttacks:
+	dbbw EVOLVE_LEVEL, 36, BRUINUS
+	db 0 ; no more evolutions
+	dbw 1, SCRATCH
+	dbw 1, LEER
+	dbw 6, ROAR
+	dbw 12, EMBER
+	dbw 21, BITE
+	dbw 26, FURY_SWIPES
+	dbw 30, FLAME_WHEEL
+	dbw 34, SCARY_FACE
+	dbw 38, CRUNCH
+	dbw 42, REST
 	dbw 49, FLAMETHROWER
+	db 0 ; no more level-up moves
+
+BruinusEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, SCRATCH
+	dbw 1, LEER
+	dbw 6, ROAR
+	dbw 12, EMBER
+	dbw 21, BITE
+	dbw 26, FURY_SWIPES
+	dbw 30, FLAME_WHEEL
+	dbw 34, SCARY_FACE
+	dbw 41, CRUNCH
+	dbw 44, REST
+	dbw 52, FLAMETHROWER
 	db 0 ; no more level-up moves
 
 SentretEvosAttacks:
@@ -1827,34 +1859,6 @@ TyranitarEvosAttacks:
 	dbw 47, CRUNCH
 	dbw 61, EARTHQUAKE
 	dbw 75, HYPER_BEAM
-	db 0 ; no more level-up moves
-
-LugiaEvosAttacks:
-	db 0 ; no more evolutions
-	dbw 1, AEROBLAST
-	dbw 11, SAFEGUARD
-	dbw 22, GUST
-	dbw 33, RECOVER
-	dbw 44, HYDRO_PUMP
-	dbw 55, RAIN_DANCE
-	dbw 66, SWIFT
-	dbw 77, WHIRLWIND
-	dbw 88, ANCIENTPOWER
-	dbw 99, FUTURE_SIGHT
-	db 0 ; no more level-up moves
-
-HoOhEvosAttacks:
-	db 0 ; no more evolutions
-	dbw 1, SACRED_FIRE
-	dbw 11, SAFEGUARD
-	dbw 22, GUST
-	dbw 33, RECOVER
-	dbw 44, FIRE_BLAST
-	dbw 55, SUNNY_DAY
-	dbw 66, SWIFT
-	dbw 77, WHIRLWIND
-	dbw 88, ANCIENTPOWER
-	dbw 99, FUTURE_SIGHT
 	db 0 ; no more level-up moves
 
 

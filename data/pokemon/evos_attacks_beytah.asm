@@ -1,6 +1,8 @@
 SECTION "Evolutions and Attacks 3", ROMX
 
 EvosAttacksPointers3::
+	dw LugiaEvosAttacks
+	dw HoOhEvosAttacks
 	dw CelebiEvosAttacks
 	dw AdbarstorkEvosAttacks
 	dw PupperonEvosAttacks
@@ -32,6 +34,34 @@ EvosAttacksPointers3::
 	dw NecrorexEvosAttacks
 	dw NurssumEvosAttacks
 .End:
+
+LugiaEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, AEROBLAST
+	dbw 11, SAFEGUARD
+	dbw 22, GUST
+	dbw 33, RECOVER
+	dbw 44, HYDRO_PUMP
+	dbw 55, RAIN_DANCE
+	dbw 66, SWIFT
+	dbw 77, WHIRLWIND
+	dbw 88, ANCIENTPOWER
+	dbw 99, FUTURE_SIGHT
+	db 0 ; no more level-up moves
+
+HoOhEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, SACRED_FIRE
+	dbw 11, SAFEGUARD
+	dbw 22, GUST
+	dbw 33, RECOVER
+	dbw 44, FIRE_BLAST
+	dbw 55, SUNNY_DAY
+	dbw 66, SWIFT
+	dbw 77, WHIRLWIND
+	dbw 88, ANCIENTPOWER
+	dbw 99, FUTURE_SIGHT
+	db 0 ; no more level-up moves
 
 CelebiEvosAttacks:
 	db 0 ; no more evolutions

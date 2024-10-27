@@ -818,5 +818,10 @@ CubburnFrontpic:	INCBIN "gfx/pokemon/cubburn/front.static.2bpp.lz"
 CubburnBackpic:	    INCBIN "gfx/pokemon/cubburn/back.2bpp.lz"
 NurssumFrontpic:	INCBIN "gfx/pokemon/nurssum/front.static.2bpp.lz"
 NurssumBackpic:	    INCBIN "gfx/pokemon/nurssum/back.2bpp.lz"
+FlambearFrontpic:	INCBIN "gfx/pokemon/flambear/front.static.2bpp.lz"
+FlambearBackpic:	INCBIN "gfx/pokemon/flambear/back.2bpp.lz"
+BruinusFrontpic:	INCBIN "gfx/pokemon/bruinus/front.static.2bpp.lz"
+BruinusBackpic:	    INCBIN "gfx/pokemon/bruinus/back.2bpp.lz"
+
 
 INCLUDE "gfx/pics_animated.asm"

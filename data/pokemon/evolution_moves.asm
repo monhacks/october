@@ -161,6 +161,8 @@ EvolutionMoves::
 	dw WATERFALL    ; FERALIGATR
 	dw NO_MOVE      ; BAYLEEF
 	dw NO_MOVE      ; CUBBURN
+	dw WILL_O_WISP  ; FLAMBEAR
+	dw FIRE_BLAST   ; BRUINUS
 	dw NO_MOVE      ; SENTRET
 	dw AGILITY      ; FURRET
 	dw NO_MOVE      ; CLEFLING

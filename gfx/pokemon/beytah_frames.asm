@@ -40,5 +40,8 @@ NecrorexFrames: INCLUDE "gfx/pokemon/necrorex/frames.asm"
 StromenFrames:  INCLUDE "gfx/pokemon/stromen/frames.asm"
 CubburnFrames:  INCLUDE "gfx/pokemon/cubburn/frames.asm"
 NurssumFrames:  INCLUDE "gfx/pokemon/nurssum/frames.asm"
+FlambearFrames:  INCLUDE "gfx/pokemon/flambear/frames.asm"
+BruinusFrames:  INCLUDE "gfx/pokemon/bruinus/frames.asm"
+
 
 

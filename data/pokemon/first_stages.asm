@@ -161,6 +161,9 @@ FirstEvoStages::
 	dw TOTODILE
 	dw TOTODILE   ;a0
 	dw BAYLEEF
+	dw CUBBURN
+	dw CUBBURN
+	dw CUBBURN
 	dw SENTRET
 	dw SENTRET
 	dw CLEFLING
@@ -297,7 +300,6 @@ FirstEvoStages::
 	dw CAMOUFLAKE
 	dw CAMOUFLAKE
 	dw NECROREX
-	dw CUBBURN
 	dw NURSSUM
 
 

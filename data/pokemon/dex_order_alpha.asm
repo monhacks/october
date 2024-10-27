@@ -23,6 +23,7 @@ AlphabeticalPokedexOrder:
 	dw BIPULLA
 	dw BLASTOISE
 	dw BLISSEY
+	dw BRUINUS
 	dw BULBASAUR
 	dw BURGELA
 	dw BUTTERFREE
@@ -77,6 +78,7 @@ AlphabeticalPokedexOrder:
 	dw FENNECURSE
 	dw FERALIGATR
 	dw FLAAFFY
+	dw FLAMBEAR
 	dw FLAREON
 	dw FORRETRESS
 	dw FURRET
