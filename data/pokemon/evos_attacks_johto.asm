@@ -289,17 +289,17 @@ BayleefEvosAttacks:
 
 CubburnEvosAttacks:
 	db 0 ; no more evolutions for now
-	db 1, SCRATCH
-	db 1, LEER
-	db 6, EMBER
-	db 11, SAND_ATTACK
-	db 17, BITE
-	db 22, SCARY_FACE
-	db 27, FLAME_WHEEL
-	db 33, FURY_SWIPES
-	db 38, REST
-	db 43, SLASH
-	db 49, FLAMETHROWER
+	dbw 1, SCRATCH
+	dbw 1, LEER
+	dbw 6, EMBER
+	dbw 11, SAND_ATTACK
+	dbw 17, BITE
+	dbw 22, SCARY_FACE
+	dbw 27, FLAME_WHEEL
+	dbw 33, FURY_SWIPES
+	dbw 38, REST
+	dbw 43, SLASH
+	dbw 49, FLAMETHROWER
 	db 0 ; no more level-up moves
 
 SentretEvosAttacks:
