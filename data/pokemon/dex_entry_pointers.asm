@@ -165,6 +165,8 @@ PokedexDataPointerTable:
 	dba FlambearPokedexEntry
 	dba BruinusPokedexEntry
 	dba PalssioPokedexEntry
+	dba PressioPokedexEntry
+	dba DonmarinPokedexEntry
 	dba SentretPokedexEntry
 	dba FurretPokedexEntry
 	dba CleflingPokedexEntry

@@ -164,6 +164,8 @@ EvolutionMoves::
 	dw WILL_O_WISP  ; FLAMBEAR
 	dw FIRE_BLAST   ; BRUINUS
 	dw NO_MOVE      ; PALSSIO
+	dw NO_MOVE      ; PRESSIO
+	dw NO_MOVE      ; DONMARIN
 	dw NO_MOVE      ; SENTRET
 	dw AGILITY      ; FURRET
 	dw NO_MOVE      ; CLEFLING

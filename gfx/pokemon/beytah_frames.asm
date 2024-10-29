@@ -43,6 +43,10 @@ NurssumFrames:  INCLUDE "gfx/pokemon/nurssum/frames.asm"
 FlambearFrames:  INCLUDE "gfx/pokemon/flambear/frames.asm"
 BruinusFrames:  INCLUDE "gfx/pokemon/bruinus/frames.asm"
 PalssioFrames:  INCLUDE "gfx/pokemon/palssio/frames.asm"
+PressioFrames:  INCLUDE "gfx/pokemon/pressio/frames.asm"
+DonmarinFrames:  INCLUDE "gfx/pokemon/donmarin/frames.asm"
+
+
 
 
 

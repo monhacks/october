@@ -14,6 +14,8 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw PalssioEggMoves
+	dw NoEggMoves2
+	dw NoEggMoves2
 	dw SentretEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2

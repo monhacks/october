@@ -57,6 +57,7 @@ AlphabeticalPokedexOrder:
 	dw DODAERIE
 	dw DODRIO
 	dw DODUO
+	dw DONMARIN
 	dw DONPHAN
 	dw DRAGONAIR
 	dw DRAGONITE
@@ -208,6 +209,7 @@ AlphabeticalPokedexOrder:
 	dw PONYTA
 	dw PORYGON
 	dw PORYGON2
+	dw PRESSIO
 	dw PRIMEAPE
 	dw PSYDUCK
 	dw PUPITAR

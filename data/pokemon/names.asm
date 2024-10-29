@@ -169,6 +169,8 @@ PokemonNames::
 	db "FLAMBEAR@@"
 	db "BRUINUS@@@"
 	db "PALSSIO@@@"
+	db "PRESSIO@@@"
+	db "DONMARIN@@"
 	db "SENTRET@@@"
 	db "FURRET@@@@"
 	db "CLEFLING@@"

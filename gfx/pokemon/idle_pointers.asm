@@ -164,6 +164,8 @@ AnimationIdlePointers:
 	dw FlambearAnimationIdle
 	dw BruinusAnimationIdle
 	dw PalssioAnimationIdle
+	dw PressioAnimationIdle
+	dw DonmarinAnimationIdle
 	dw SentretAnimationIdle
 	dw FurretAnimationIdle
 	dw CleflingAnimationIdle

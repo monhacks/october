@@ -172,6 +172,8 @@ PokemonCries::
 	mon_cry CRY_MARILL,      $2f0,  $0a0 ; FLAMBEAR
 	mon_cry CRY_BULBASAUR,   $de0,  $1a0 ; BRUINUS
 	mon_cry CRY_MANTINE,     $f90,  $090 ; PALSSIO
+	mon_cry CRY_GOLEM,       $300,  $0f0 ; PRESSIO
+	mon_cry CRY_GOLEM,      -$010,  $0c0 ; DONMARIN
 	mon_cry CRY_SENTRET,     $08a,  $0b8 ; SENTRET
 	mon_cry CRY_SENTRET,     $06b,  $102 ; FURRET
 	mon_cry CRY_HOOTHOOT_2CH,    $000,  $0a0 ; CLEFLING

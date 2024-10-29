@@ -164,6 +164,7 @@ AnimationPointers:
 	dw FlambearAnimation
 	dw BruinusAnimation
 	dw PalssioAnimation
+	dw PressioAnimation
 	dw SentretAnimation
 	dw FurretAnimation
 	dw CleflingAnimation

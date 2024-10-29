@@ -135,8 +135,10 @@ HabitatPokedexOrder:
 	dw BLASTOISE
 	dw TOTODILE
 	dw CROCONAW
-	dw FERALIGATR; XXX 86, add Palssio line after this once in
+	dw FERALIGATR
 	dw PALSSIO
+	dw PRESSIO
+	dw DONMARIN
 	dw STARYU
 	dw STARMIE
 	dw PSYDUCK

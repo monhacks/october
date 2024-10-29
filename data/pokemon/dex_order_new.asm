@@ -15,6 +15,8 @@ NewPokedexOrder:
 	dw FLAMBEAR 
 	dw BRUINUS
 	dw PALSSIO
+	dw PRESSIO
+	dw DONMARIN
 	dw PIDGEY
 	dw PIDGEOTTO
 	dw PIDGEOT

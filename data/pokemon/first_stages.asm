@@ -165,6 +165,8 @@ FirstEvoStages::
 	dw CUBBURN
 	dw CUBBURN
 	dw PALSSIO
+	dw PALSSIO
+	dw PALSSIO
 	dw SENTRET
 	dw SENTRET
 	dw CLEFLING

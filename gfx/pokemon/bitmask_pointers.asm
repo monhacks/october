@@ -164,6 +164,8 @@ BitmasksPointers:
 	dw FlambearBitmasks
 	dw BruinusBitmasks
 	dw PalssioBitmasks
+	dw PressioBitmasks
+	dw DonmarinBitmasks
 	dw SentretBitmasks
 	dw FurretBitmasks
 	dw CleflingBitmasks

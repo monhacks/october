@@ -164,6 +164,8 @@ FramesPointers:
 	dba FlambearFrames
 	dba BruinusFrames
 	dba PalssioFrames
+	dba PressioFrames
+	dba DonmarinFrames
 	dba SentretFrames
 	dba FurretFrames
 	dba CleflingFrames

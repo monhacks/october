@@ -15,6 +15,8 @@ EvosAttacksPointers2::
 	dw FlambearEvosAttacks
 	dw BruinusEvosAttacks
 	dw PalssioEvosAttacks
+	dw PressioEvosAttacks
+	dw DonmarinEvosAttacks
 	dw SentretEvosAttacks
 	dw FurretEvosAttacks
 	dw CleflingEvosAttacks
@@ -333,7 +335,8 @@ BruinusEvosAttacks:
 	db 0 ; no more level-up moves
 	
 PalssioEvosAttacks:
-	db 0 ; no more evolutions for now
+	db EVOLVE_LEVEL, 18, PRESSIO
+	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, GROWL
 	dbw 7, BITE
@@ -345,6 +348,37 @@ PalssioEvosAttacks:
 	dbw 43, AURORA_BEAM
 	dbw 46, BODY_SLAM
 	dbw 52, HYDRO_PUMP
+	db 0 ; no more level-up moves
+	
+PressioEvosAttacks:
+	db EVOLVE_LEVEL, 32, DONMARIN
+	db 0 ; no more evolutions
+	db 1, TACKLE
+	db 1, GROWL
+	db 7, BITE
+	db 13, WATER_GUN
+	db 17, POWDER_SNOW
+	db 22, MIST
+	db 29, SAFEGUARD
+	db 37, BUBBLEBEAM
+	db 46, AURORA_BEAM
+	db 49, BODY_SLAM
+	db 55, HYDRO_PUMP
+	db 0 ; no more level-up moves
+
+DonmarinEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE
+	db 1, GROWL
+	db 7, BITE
+	db 13, WATER_GUN
+	db 17, POWDER_SNOW
+	db 22, MIST
+	db 29, SAFEGUARD
+	db 39, BUBBLEBEAM
+	db 48, AURORA_BEAM
+	db 51, BODY_SLAM
+	db 58, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 SentretEvosAttacks:
