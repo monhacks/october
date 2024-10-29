@@ -353,32 +353,32 @@ PalssioEvosAttacks:
 PressioEvosAttacks:
 	db EVOLVE_LEVEL, 32, DONMARIN
 	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 1, GROWL
-	db 7, BITE
-	db 13, WATER_GUN
-	db 17, POWDER_SNOW
-	db 22, MIST
-	db 29, SAFEGUARD
-	db 37, BUBBLEBEAM
-	db 46, AURORA_BEAM
-	db 49, BODY_SLAM
-	db 55, HYDRO_PUMP
+	dbw 1, TACKLE
+	dbw 1, GROWL
+	dbw 7, BITE
+	dbw 13, WATER_GUN
+	dbw 17, POWDER_SNOW
+	dbw 22, MIST
+	dbw 29, SAFEGUARD
+	dbw 37, BUBBLEBEAM
+	dbw 46, AURORA_BEAM
+	dbw 49, BODY_SLAM
+	dbw 55, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 DonmarinEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 1, GROWL
-	db 7, BITE
-	db 13, WATER_GUN
-	db 17, POWDER_SNOW
-	db 22, MIST
-	db 29, SAFEGUARD
-	db 39, BUBBLEBEAM
-	db 48, AURORA_BEAM
-	db 51, BODY_SLAM
-	db 58, HYDRO_PUMP
+	dbw 1, TACKLE
+	dbw 1, GROWL
+	dbw 7, BITE
+	dbw 13, WATER_GUN
+	dbw 17, POWDER_SNOW
+	dbw 22, MIST
+	dbw 29, SAFEGUARD
+	dbw 39, BUBBLEBEAM
+	dbw 48, AURORA_BEAM
+	dbw 51, BODY_SLAM
+	dbw 58, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 SentretEvosAttacks:
