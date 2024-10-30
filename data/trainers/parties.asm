@@ -80,7 +80,7 @@ BugsyGroup:
 
 MortyGroup:
 	next_party ; MORTY (1)
-		db "MORTY@", TRAINERTYPE_ITEM_MOVES
+		db "MORTON@", TRAINERTYPE_ITEM_MOVES
 		dbw 29, MISDREAVUS
 		dw NO_ITEM
 		dw HYPNOSIS, MEGAPHONE, EVIL_EYE, NIGHT_SHADE
@@ -95,7 +95,7 @@ MortyGroup:
 
 PryceGroup:
 	next_party ; PRYCE (1)
-		db "PRYCE@", TRAINERTYPE_MOVES
+		db "BRYCE@", TRAINERTYPE_MOVES
 		db 27
 		dw DELIBIRD
 		dw HEADBUTT, ICY_WIND, AURORA_BEAM, REST
@@ -113,7 +113,7 @@ PryceGroup:
 
 JasmineGroup:
 	next_party ; JASMINE (1)
-		db "JASMINE@", TRAINERTYPE_MOVES
+		db "SYLVIA@", TRAINERTYPE_MOVES
 		db 30
 		dw MAGNETON
 		dw THUNDERBOLT, SUPERSONIC, SONICBOOM, THUNDER_WAVE
@@ -128,7 +128,7 @@ JasmineGroup:
 
 ChuckGroup:
 	next_party ; CHUCK (1)
-		db "CHUCK@", TRAINERTYPE_MOVES
+		db "FERGUS@", TRAINERTYPE_MOVES
 		db 27
 		dw PRIMEAPE ; SCARECROW
 		dw LEER, RAGE, KARATE_CHOP, FURY_SWIPES
@@ -146,7 +146,7 @@ ChuckGroup:
 
 ClairGroup:
 	next_party ; CLAIR (1)
-		db "CLAIR@", TRAINERTYPE_MOVES
+		db "SANDRA@", TRAINERTYPE_MOVES
 		db 37
 		dw DRAGONAIR ;quetzalcoatl
 		dw THUNDER_WAVE, SURF, SLAM, DRAGONBREATH
@@ -1215,7 +1215,7 @@ LassGroup:
 
 JanineGroup:
 	next_party ; JANINE (1)
-	db "JANINE@", TRAINERTYPE_MOVES
+	db "JANET@", TRAINERTYPE_MOVES
 	db 36
 	dw CROBAT
 	dw SCREECH, SUPERSONIC, CONFUSE_RAY, WING_ATTACK

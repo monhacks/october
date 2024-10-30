@@ -113,11 +113,11 @@ Landmarks:
 
 SilentTownName:     db "SILENT¯TOWN@"       ; Shizuoka
 CherrygroveCityName: db "CHERRYGROVE¯CITY@"    ; Nagoya
-VioletCityName:      db "VIOLET CITY@"        ; Nara
-AzaleaTownName:      db "AZALEA TOWN@"        ; Arida
+VioletCityName:      db "IRIS CITY@"        ; Nara
+AzaleaTownName:      db "GARNET TOWN@"        ; Arida
 AlderTownName:       db "ALDER¯TOWN@"       ; XXX: Substitute Cianwood for Shingu
-GoldenrodCityName:   db "GOLDENROD¯CITY@"      ; Osaka
-EcruteakCityName:    db "ECRUTEAK¯CITY@"       ; Kyoto
+GoldenrodCityName:   db "MARIGOLD¯CITY@"      ; Osaka
+EcruteakCityName:    db "SAPPANWOOD¯CITY@"       ; Kyoto
 OlivineCityName:     db "OLIVINE¯CITY@"        ; Kobe
 MahoganyTownName:    db "MAHOGANY¯TOWN@"       ; Iga
 BlackthornCityName:  db "BLACKTHORN¯CITY@"     ; Yamanashi
@@ -126,7 +126,7 @@ SilverCaveName:      db "SILVER CAVE@"
 SproutTowerName:     db "SPROUT¯TOWER@"
 ZenGardenName:       db "ZEN¯GARDEN@"
 RuinsOfAlphName:     db "RUINS¯OF ALPH@"
-UnionCaveName:       db "UNION CAVE@"
+UnionCaveName:       db "JOINT CAVE@"
 SlowpokeWellName:    db "SLOWPOKE¯WELL@"
 RadioTowerName:      db "RADIO TOWER@"
 PowerPlantName:      db "POWER PLANT@"
@@ -205,7 +205,7 @@ Route44Name:         db "ROUTE 44@"
 Route45Name:         db "ROUTE 45@"
 Route46Name:         db "ROUTE 46@"
 DarkCaveName:        db "DARK CAVE@"
-IlexForestName:      db "ILEX¯FOREST@"
+IlexForestName:      db "NANNY¯FOREST@"
 BurnedTowerName:     db "BURNED¯TOWER@"
 FastShipName:        db "FAST SHIP@"
 ViridianForestName:  db "VIRIDIAN¯FOREST@"
