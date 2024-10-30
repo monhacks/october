@@ -181,8 +181,9 @@ AzaleaGymMortyScript:
 	para "by reaching the"
 	line "end of my GYM."
 
-	para "I am MORTY, LEADER"
-	line "of the AZALEA GYM."
+	para "I am MORTON, LEAD-"
+	line "ER of the GARNET" 
+	para "GYM."
 	
 	para "Legends of this"
 	line "town say that a"
