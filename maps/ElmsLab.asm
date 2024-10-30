@@ -1150,7 +1150,7 @@ LabWhereGoingText:
 
 TakeCyndaquilText:
 	text "ELM: You'll take"
-	line "CYNDAQUIL, the"
+	line "CYNDERQUIL, the"
 	cont "fire #MON?"
 	done
 	
