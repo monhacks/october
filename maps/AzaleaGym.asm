@@ -183,7 +183,7 @@ AzaleaGymMortyScript:
 
 	para "I am MORTON, LEAD-"
 	line "ER of the GARNET" 
-	para "GYM."
+	cont "GYM."
 	
 	para "Legends of this"
 	line "town say that a"
