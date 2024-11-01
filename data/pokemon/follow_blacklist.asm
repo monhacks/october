@@ -91,7 +91,6 @@ CantFollowList:
 	dw PRESSIO
 	dw DONMARIN
 	dw SENTRET
-	dw FURRET
 	dw HOOTHOOT
 	dw NOCTOWL
 	dw LEDYBA
@@ -119,7 +118,6 @@ CantFollowList:
 	dw PHANDARIN
 	dw SUDOWOODO
 	dw POLITOED
-	dw HOPPIP
 	dw SKIPLOOM
 	dw JUMPLUFF
 	dw AIPOM
