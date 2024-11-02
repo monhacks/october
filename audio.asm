@@ -181,6 +181,7 @@ INCLUDE "audio/music/kantolegendbattle.asm"
 INCLUDE "audio/music/imakunitheme.asm"
 INCLUDE "audio/music/kantogymbattle.asm"
 INCLUDE "audio/music/elitefourbattle.asm"
+INCLUDE "audio/music/wildbattle2.asm"
 
 
 SECTION "Sound Effects", ROMX

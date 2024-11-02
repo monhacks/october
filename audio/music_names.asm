@@ -125,4 +125,5 @@
 	db "Lugia's Song@@@@@@@"
 	db "Kanto Birds@@@@@@@"
 	db "Imakuni?@@@@@@@@@@"
-	db "Elite Four Battle@" 
+	db "Elite Four Battle@"
+	db "B/W Beta Wild Btl@"

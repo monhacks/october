@@ -126,3 +126,4 @@
 	dba Music_KantoLegendBattleXY
 	dba Music_ImakuniTheme
 	dba Music_EliteFourBattle
+	dba Music_BattleBWBetaWild
