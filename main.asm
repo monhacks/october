@@ -460,14 +460,8 @@ INCLUDE "gfx/pokemon/bitmasks.asm"
 SECTION "Pic Animations Frame Pointers", ROMX
 INCLUDE "gfx/pokemon/frame_pointers.asm"
 
-SECTION "Pic Animations Kanto Frames", ROMX
-INCLUDE "gfx/pokemon/kanto_frames.asm"
-
-SECTION "Pic Animations Johto Frames", ROMX
-INCLUDE "gfx/pokemon/johto_frames.asm"
-
-SECTION "Pic Animations Beytah Frames", ROMX
-INCLUDE "gfx/pokemon/beytah_frames.asm"
+SECTION "Pic Animations Frames", ROMX
+INCLUDE "gfx/pokemon/pokemon_frames.asm"
 
 SECTION "Pic Animations Anims", ROMX
 
