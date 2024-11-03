@@ -130,3 +130,119 @@ pokeoctober.gbs?119
 # %comment   Originally Safari Zone from Pokémon HeartGold & SoulSilver.
 # %length    1:55
 pokeoctober.gbs?118
+
+# %title     Pokémon Center
+# %artist    Junichi Masuda
+# %composer  Junichi Masuda
+# %arranger  Junichi Masuda
+# %sequencer Junichi Masuda
+# %comment   Combination of the final and SW99 versions.
+# %length    1:01
+# %date      1999-08-17
+pokeoctober.gbs?9
+
+#### Things we haven't used yet ####
+
+# %title     Vs. Kanto Gym Leader
+# %artist    Junichi Masuda
+# %composer  Junichi Masuda
+# %arranger  Go Ichinose
+# %sequencer Eesrek/SK094?
+# %comment   With HG/SS additions. Taken from Pokemon Orange, not sure who made this port.
+# %length    2:07
+pokeoctober.gbs?6
+
+# %title     Bicycle
+# %artist    Junichi Masuda
+# %composer  Junichi Masuda
+# %arranger  Junichi Masuda
+# %sequencer Junichi Masuda
+# %comment   From the Pokémon Gold & Silver source code leaks.
+# %length    1:02
+# %date      1999-08-17
+pokeoctober.gbs?19
+
+# %title     Lavender Town
+# %artist    Junichi Masuda, Go Ichinose
+# %composer  Junichi Masuda
+# %arranger  Junichi Masuda, Go Ichinose
+# %sequencer Junichi Masuda, Go Ichinose
+# %comment   From the Pokémon Gold & Silver source code leaks.
+# %length    1:44
+# %date      1999-08-17
+pokeoctober.gbs?14
+
+# %title     An Adventure Begins
+# %artist    Junichi Masuda
+# %composer  Junichi Masuda
+# %arranger  Junichi Masuda, Go Ichinose
+# %sequencer Junichi Masuda, Go Ichinose
+# %comment   From the Pokémon Gold & Silver source code leaks.
+# %length    0:33
+# %date      1999-08-17
+pokeoctober.gbs?84
+
+# %title     Diglett's Cave
+# %artist    Junichi Masuda
+# %composer  Junichi Masuda
+# %arranger  Junichi Masuda
+# %sequencer Junichi Masuda
+# %comment   From the Pokémon Gold & Silver source code leaks.
+# %length    2:10
+# %date      1995-07-28
+pokeoctober.gbs?103
+
+# %title     Cerulean City
+# %artist    Zumi
+# %composer  Junichi Masuda
+# %arranger  Zumi
+# %sequencer Zumi
+# %comment   Now also used in Sour Crystal.
+# %length    1:02
+pokeoctober.gbs?104
+
+# %title     Cinnabar Island
+# %artist    Zumi
+# %composer  Junichi Masuda
+# %arranger  Go Ichinose, Zumi
+# %sequencer Zumi
+# %comment   Port of the one in FR/LG.
+# %length    1:02
+pokeoctober.gbs?105
+
+# %title     Route 24
+# %artist    Junichi Masuda
+# %composer  Junichi Masuda
+# %arranger  Junichi Masuda
+# %sequencer Junichi Masuda
+# %comment   Lazy edit of the one in RBY. Need to come up with a new one…
+# %length    0:38
+pokeoctober.gbs?106
+
+# %title     Vs. Professors
+# %artist    Zumi
+# %composer  Junichi Masuda
+# %arranger  Shota Kageyama, Zumi
+# %sequencer Zumi
+# %comment   Originally from another ROM hack.
+# %length    2:26
+# %date      2015
+pokeoctober.gbs?107
+
+# %title     Healing (Citrine Inn)
+# %artist    Junichi Masuda
+# %composer  Junichi Masuda
+# %sequencer Junichi Masuda
+# %comment   From the Pokémon Gold & Silver source code leaks.
+# %length    0:03
+# %date      1990-10-16
+pokeoctober.gbs?112
+
+# %title     Vs. Blue
+# %artist    ?
+# %composer  Junichi Masuda
+# %arranger  ?
+# %sequencer Junichi Masuda
+# %comment   From Pokémon Gold & Silver 97 Reforged. I forgot who did this one.
+# %length    1:56
+pokeoctober.gbs?113
