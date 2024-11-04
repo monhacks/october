@@ -9,6 +9,7 @@ Music_BattleBWBetaWild_Ch1:
 	volume 7, 7
 	note_type 12, 15, 0
 	pitch_offset 2
+	transpose 0, 2
 	vibrato $12, $15
 	sound_call .pattern0
 	sound_call .pattern1
@@ -285,6 +286,7 @@ Music_BattleBWBetaWild_Ch1:
 Music_BattleBWBetaWild_Ch2:
 	note_type 12, 15, 0
 	pitch_offset 1
+	transpose 0, 2
 	vibrato $8, $36
 	sound_call .pattern0
 	sound_call .pattern1
@@ -691,6 +693,7 @@ Music_BattleBWBetaWild_Ch2:
 
 Music_BattleBWBetaWild_Ch3:
 	note_type 12, 1, 0
+	transpose 0, 2
 	sound_call .pattern0
 	sound_call .pattern1
 .loop
