@@ -19,6 +19,16 @@
 # %comment   From the Pokémon Gold & Silver source code leaks.
 pokeoctober.gbs?1
 
+# %title     An Adventure Begins
+# %artist    Junichi Masuda
+# %composer  Junichi Masuda
+# %arranger  Junichi Masuda, Go Ichinose
+# %sequencer Junichi Masuda, Go Ichinose
+# %comment   From the Pokémon Gold & Silver source code leaks.
+# %length    0:33
+# %date      1999-08-17
+pokeoctober.gbs?84
+
 # %title     Silent Town
 # %artist    Junichi Masuda
 # %composer  Junichi Masuda
@@ -56,6 +66,25 @@ pokeoctober.gbs?32
 # %comment   From the Pokémon Gold & Silver source code leaks.
 # %date      1999-08-17
 pokeoctober.gbs?38
+
+# %title     Pokémon Center
+# %artist    Junichi Masuda
+# %composer  Junichi Masuda
+# %arranger  Junichi Masuda
+# %sequencer Junichi Masuda
+# %comment   Combination of the final and SW99 versions.
+# %length    1:01
+# %date      1999-08-17
+pokeoctober.gbs?9
+
+# %title     Dread Woods
+# %artist    Junichi Masuda
+# %composer  Junichi Masuda
+# %arranger  Junichi Masuda
+# %sequencer Junichi Masuda
+# %comment   From the Pokémon Gold & Silver source code leaks.
+# %length    0:28
+pokeoctober.gbs?114
 
 # %title     Route 33 / Mt. Hive
 # %artist    celadonk
@@ -122,25 +151,6 @@ pokeoctober.gbs?121
 # %fade      0
 pokeoctober.gbs?119
 
-# %title     Safari Zone
-# %artist    Zumi
-# %composer  Hitomi Sato
-# %arranger  Zumi
-# %sequencer Zumi
-# %comment   Originally Safari Zone from Pokémon HeartGold & SoulSilver.
-# %length    1:55
-pokeoctober.gbs?118
-
-# %title     Pokémon Center
-# %artist    Junichi Masuda
-# %composer  Junichi Masuda
-# %arranger  Junichi Masuda
-# %sequencer Junichi Masuda
-# %comment   Combination of the final and SW99 versions.
-# %length    1:01
-# %date      1999-08-17
-pokeoctober.gbs?9
-
 #### Things we haven't used yet ####
 
 # %title     Vs. Kanto Gym Leader
@@ -171,16 +181,6 @@ pokeoctober.gbs?19
 # %length    1:44
 # %date      1999-08-17
 pokeoctober.gbs?14
-
-# %title     An Adventure Begins
-# %artist    Junichi Masuda
-# %composer  Junichi Masuda
-# %arranger  Junichi Masuda, Go Ichinose
-# %sequencer Junichi Masuda, Go Ichinose
-# %comment   From the Pokémon Gold & Silver source code leaks.
-# %length    0:33
-# %date      1999-08-17
-pokeoctober.gbs?84
 
 # %title     Diglett's Cave
 # %artist    Junichi Masuda
@@ -243,6 +243,87 @@ pokeoctober.gbs?112
 # %composer  Junichi Masuda
 # %arranger  ?
 # %sequencer Junichi Masuda
-# %comment   From Pokémon Gold & Silver 97 Reforged. I forgot who did this one.
+# %comment   From Pokémon Gold & Silver 97 Reforged. I forgot who did this one. Was it GACT?
 # %length    1:56
 pokeoctober.gbs?113
+
+# %title     Vs. Mewtwo
+# %artist    LuciShrimp
+# %composer  Hajime Wakai, Kenta Nagata, Toru Minegishi
+# %arranger  LuciShrimp
+# %sequencer LuciShrimp
+# %comment   From Kanto Expansion Pak.
+# %length    4:20
+pokeoctober.gbs?122
+
+# %title     Vs. Ho-oh
+# %artist    Pigu
+# %composer  Go Ichinose
+# %arranger  Pigu
+# %sequencer Pigu
+# %comment   From Pokémon Anniversary Crystal. Based on Vs. Ho-oh from HG/SS.
+# %length    2:26
+pokeoctober.gbs?123
+
+# %title     Vs. Lugia
+# %artist    Pigu
+# %composer  Go Ichinose
+# %arranger  Pigu
+# %sequencer Pigu
+# %comment   From Pokémon Anniversary Crystal. Based on Vs. Lugia from HG/SS.
+# %length    1:50
+pokeoctober.gbs?124
+
+# %title     Lugia's Song
+# %artist    John Loeffler, Ralph Schukett
+# %composer  Go Ichinose
+# %arranger  Pigu
+# %sequencer Pigu
+# %comment   From Pokémon the Movie 2000.
+# %length    1:33
+pokeoctober.gbs?125
+
+# %title     Vs. Kanto Legendary
+# %artist    GACT, Pigu
+# %composer  Junichi Masuda, Shota Kageyama
+# %arranger  GACT
+# %sequencer Pigu
+# %comment   From Pokémon X/Y.
+# %length    2:33
+pokeoctober.gbs?126
+
+# %title     Imakuni?
+# %comment   From Pokémon TCG.
+# %length    1:36
+pokeoctober.gbs?127
+
+# %title     Vs. Elite Four
+# %comment   From Pokémon Sun/Moon.
+# %length    1:47
+pokeoctober.gbs?128
+
+# %title     Safari Zone Lobby
+# %artist    Mmmmmmmmmmmmmmmmm
+# %composer  Hitomi Sato
+# %arranger  Mmmmmmmmmmmmmmmmm
+# %sequencer Mmmmmmmmmmmmmmmmm
+# %length    1:31
+pokeoctober.gbs?120
+
+# %title     Safari Zone
+# %artist    Zumi
+# %composer  Hitomi Sato
+# %arranger  Zumi
+# %sequencer Zumi
+# %comment   Originally Safari Zone from Pokémon HeartGold & SoulSilver.
+# %length    1:55
+pokeoctober.gbs?118
+
+# %title     Vs. Safari Pokémon
+# %artist    Zumi
+# %composer  Junichi Masuda
+# %arranger  Zumi
+# %sequencer Zumi
+# %comment   From Pokémon Black/White 2009 beta, known for being played live by Mystery Thunder Mask at a Pokémon event in 2011.
+# %length    1:35
+pokeoctober.gbs?129
