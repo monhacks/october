@@ -225,6 +225,7 @@ JOHTO_POKEMON EQU const_value
 	const MARILL     ; b7
 	const AZUMARILL  ; b8
 	const PHANDARIN
+	const KUDATSUBE
 	const SUDOWOODO  ; b9
 	const POLITOED   ; ba
 	const HOPPIP     ; bb

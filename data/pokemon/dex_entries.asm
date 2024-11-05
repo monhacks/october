@@ -218,6 +218,7 @@ AzumarillPokedexEntry::  INCLUDE "data/pokemon/dex_entries/azumarill.asm"
 SECTION "Pokedex Entries 193-251", ROMX
 
 PhandarinPokedexEntry::  INCLUDE "data/pokemon/dex_entries/phandarin.asm"
+KudatsubePokedexEntry::  INCLUDE "data/pokemon/dex_entries/kudatsube.asm"
 SudowoodoPokedexEntry::  INCLUDE "data/pokemon/dex_entries/sudowoodo.asm"
 PolitoedPokedexEntry::   INCLUDE "data/pokemon/dex_entries/politoed.asm"
 HoppipPokedexEntry::     INCLUDE "data/pokemon/dex_entries/hoppip.asm"

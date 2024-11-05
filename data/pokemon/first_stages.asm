@@ -204,6 +204,7 @@ FirstEvoStages::
 	dw MARILL
 	dw MARILL     ;b8
 	dw PHANDARIN
+	dw KUDATSUBE
 	dw SUDOWOODO
 	dw POLIWAG
 	dw HOPPIP

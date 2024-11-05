@@ -70,6 +70,7 @@ EggMovePointers2::
 	dw MurkrowEggMoves
 	dw NoEggMoves2
 	dw MisdreavusEggMoves
+	dw KudatsubeEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw PinecoEggMoves
@@ -362,7 +363,11 @@ MurkrowEggMoves:
 	dw -1 ; end
 
 MisdreavusEggMoves:
-	dw SCREECH
+	dw DESTINY_BOND
+	dw -1 ; end
+	
+KudatsubeEggMoves:
+	dw GUST
 	dw DESTINY_BOND
 	dw -1 ; end
 

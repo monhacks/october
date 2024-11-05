@@ -203,6 +203,7 @@ BitmasksPointers:
 	dw MarillBitmasks
 	dw AzumarillBitmasks
 	dw PhandarinBitmasks
+	dw KudatsubeBitmasks
 	dw SudowoodoBitmasks
 	dw PolitoedBitmasks
 	dw HoppipBitmasks

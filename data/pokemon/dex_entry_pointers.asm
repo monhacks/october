@@ -204,6 +204,7 @@ PokedexDataPointerTable:
 	dba MarillPokedexEntry
 	dba AzumarillPokedexEntry
 	dba PhandarinPokedexEntry
+	dba KudatsubePokedexEntry
 	dba SudowoodoPokedexEntry
 	dba PolitoedPokedexEntry
 	dba HoppipPokedexEntry

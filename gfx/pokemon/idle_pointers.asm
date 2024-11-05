@@ -203,6 +203,7 @@ AnimationIdlePointers:
 	dw MarillAnimationIdle
 	dw AzumarillAnimationIdle
 	dw PhandarinAnimationIdle
+	dw KudatsubeAnimationIdle
 	dw SudowoodoAnimationIdle
 	dw PolitoedAnimationIdle
 	dw HoppipAnimationIdle

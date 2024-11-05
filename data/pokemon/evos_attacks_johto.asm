@@ -54,6 +54,7 @@ EvosAttacksPointers2::
 	dw MarillEvosAttacks
 	dw AzumarillEvosAttacks
 	dw PhandarinEvosAttacks
+	dw KudatsubeEvosAttacks
 	dw SudowoodoEvosAttacks
 	dw PolitoedEvosAttacks
 	dw HoppipEvosAttacks
@@ -897,6 +898,21 @@ PhandarinEvosAttacks:
 	dbw 37, BODY_SLAM
 	dbw 43, SHADOW_BALL
 	db 0 ; no more level-up moves
+	
+KudatsubeEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	dbw 1, GROWL
+	dbw 6, SAND_ATTACK
+	dbw 12, TRANSFORM
+	dbw 18, CURSE
+	dbw 24, EVIL_EYE
+	dbw 30, FLY
+	dbw 36, FUTURE_SIGHT
+	dbw 42, SHADOW_BALL
+	dbw 48, DOUBLE_TEAM
+	dbw 54, PERISH_SONG
+	db 0 ; no more level-up moves
 
 SudowoodoEvosAttacks:
 	db 0 ; no more evolutions
@@ -1137,7 +1153,7 @@ MisdreavusEvosAttacks:
 	dbw 48, PAIN_SPLIT
 	dbw 54, PERISH_SONG
 	db 0 ; no more level-up moves
-
+	
 UnownEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, PSYWAVE

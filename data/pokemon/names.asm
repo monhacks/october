@@ -208,6 +208,7 @@ PokemonNames::
 	db "MARILL@@@@"
 	db "AZUMARILL@"
 	db "PHANDARIN@"
+	db "KUDASTUBE@"
 	db "SUDOWOODO@"
 	db "POLITOAD@@"
 	db "HOPPIP@@@@"

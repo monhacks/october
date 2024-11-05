@@ -830,5 +830,7 @@ DonmarinFrontpic:	INCBIN "gfx/pokemon/donmarin/front.static.2bpp.lz"
 DonmarinBackpic:	INCBIN "gfx/pokemon/donmarin/back.2bpp.lz"
 LeafeonFrontpic:	INCBIN "gfx/pokemon/leafeon/front.static.2bpp.lz"
 LeafeonBackpic:	    INCBIN "gfx/pokemon/leafeon/back.2bpp.lz"
+KudatsubeFrontpic:	INCBIN "gfx/pokemon/kudatsube/front.static.2bpp.lz"
+KudatsubeBackpic:	INCBIN "gfx/pokemon/kudatsube/back.2bpp.lz"
 
 INCLUDE "gfx/pics_animated.asm"

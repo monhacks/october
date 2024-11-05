@@ -203,6 +203,7 @@ FramesPointers:
 	dba MarillFrames
 	dba AzumarillFrames
 	dba PhandarinFrames
+	dba KudatsubeFrames
 	dba SudowoodoFrames
 	dba PolitoedFrames
 	dba HoppipFrames

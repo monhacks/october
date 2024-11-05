@@ -191,6 +191,7 @@ HabitatPokedexOrder:
 	dw ARBOK
 	dw KOALYPTUS
 	dw FENNECURSE
+	dw KUDATSUBE
 	dw STROMEN
 	dw AGGROSWINE
 

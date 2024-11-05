@@ -203,6 +203,7 @@ AnimationPointers:
 	dw MarillAnimation
 	dw AzumarillAnimation
 	dw PhandarinAnimation
+	dw KudatsubeAnimation
 	dw SudowoodoAnimation
 	dw PolitoedAnimation
 	dw HoppipAnimation

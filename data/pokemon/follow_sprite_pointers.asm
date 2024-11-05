@@ -331,6 +331,7 @@ FollowSpritePointers::
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;MARILL
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;AZUMARILL
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;PHANDARIN
+	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;KUDATSUBE
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;SUDOWOODO
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;POLITOED
 	follow_sprite HoppipSpriteGFX, PAL_FOLLOWER_HOPPIP ;HOPPIP

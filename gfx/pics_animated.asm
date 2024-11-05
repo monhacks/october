@@ -406,3 +406,4 @@ MisdreavusFrontpicAnim:    INCBIN "gfx/pokemon/misdreavus/front.animated.2bpp.lz
 ChinchouFrontpicAnim:      INCBIN "gfx/pokemon/chinchou/front.animated.2bpp.lz"
 CleffaFrontpicAnim:        INCBIN "gfx/pokemon/cleffa/front.animated.2bpp.lz"
 LeafeonFrontpicAnim:       INCBIN "gfx/pokemon/leafeon/front.animated.2bpp.lz"
+KudatsubeFrontpicAnim:     INCBIN "gfx/pokemon/kudatsube/front.animated.2bpp.lz"

@@ -131,6 +131,7 @@ AlphabeticalPokedexOrder:
 	dw KOFFING
 	dw KOTORA
 	dw KRABBY
+	dw KUDATSUBE
 	dw LANTURN
 	dw LAPRAS
 	dw LARVITAR
