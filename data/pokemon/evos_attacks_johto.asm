@@ -336,7 +336,7 @@ BruinusEvosAttacks:
 	db 0 ; no more level-up moves
 	
 PalssioEvosAttacks:
-	db EVOLVE_LEVEL, 18, PRESSIO
+	dbbw EVOLVE_LEVEL, 18, PRESSIO
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, GROWL
@@ -352,7 +352,7 @@ PalssioEvosAttacks:
 	db 0 ; no more level-up moves
 	
 PressioEvosAttacks:
-	db EVOLVE_LEVEL, 32, DONMARIN
+	dbbw EVOLVE_LEVEL, 32, DONMARIN
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, GROWL
