@@ -217,6 +217,7 @@ FirstEvoStages::
 	dw WOOPER
 	dw EEVEE
 	dw EEVEE
+	dw EEVEE
 	dw MURKROW
 	dw SLOWPOKE
 	dw MISDREAVUS ;c8

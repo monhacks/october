@@ -216,6 +216,7 @@ AnimationPointers:
 	dw QuagsireAnimation
 	dw EspeonAnimation
 	dw UmbreonAnimation
+	dw LeafeonAnimation
 	dw MurkrowAnimation
 	dw SlowkingAnimation
 	dw MisdreavusAnimation

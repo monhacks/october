@@ -216,6 +216,7 @@ BitmasksPointers:
 	dw QuagsireBitmasks
 	dw EspeonBitmasks
 	dw UmbreonBitmasks
+	dw LeafeonBitmasks
 	dw MurkrowBitmasks
 	dw SlowkingBitmasks
 	dw MisdreavusBitmasks

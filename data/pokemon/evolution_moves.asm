@@ -216,6 +216,7 @@ EvolutionMoves::
 	dw DIG          ; QUAGSIRE
 	dw CONFUSION    ; ESPEON
 	dw SLUDGE       ; UMBREON
+	dw GIGA_DRAIN   ; LEAFEON
 	dw NO_MOVE      ; MURKROW
 	dw NO_MOVE      ; SLOWKING
 	dw NO_MOVE      ; MISDREAVUS

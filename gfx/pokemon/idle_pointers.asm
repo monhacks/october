@@ -216,6 +216,7 @@ AnimationIdlePointers:
 	dw QuagsireAnimationIdle
 	dw EspeonAnimationIdle
 	dw UmbreonAnimationIdle
+	dw LeafeonAnimationIdle
 	dw MurkrowAnimationIdle
 	dw SlowkingAnimationIdle
 	dw MisdreavusAnimationIdle

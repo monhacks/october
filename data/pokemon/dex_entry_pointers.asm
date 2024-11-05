@@ -217,6 +217,7 @@ PokedexDataPointerTable:
 	dba QuagsirePokedexEntry
 	dba EspeonPokedexEntry
 	dba UmbreonPokedexEntry
+	dba LeafeonPokedexEntry
 	dba MurkrowPokedexEntry
 	dba SlowkingPokedexEntry
 	dba MisdreavusPokedexEntry

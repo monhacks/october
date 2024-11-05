@@ -216,6 +216,7 @@ FramesPointers:
 	dba QuagsireFrames
 	dba EspeonFrames
 	dba UmbreonFrames
+	dba LeafeonFrames
 	dba MurkrowFrames
 	dba SlowkingFrames
 	dba MisdreavusFrames

@@ -66,6 +66,7 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
+	dw NoEggMoves2
 	dw MurkrowEggMoves
 	dw NoEggMoves2
 	dw MisdreavusEggMoves

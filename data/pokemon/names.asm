@@ -221,6 +221,7 @@ PokemonNames::
 	db "QUAGSIRE@@"
 	db "SOLAREON@@"
 	db "TOXEON@@@@"
+	db "LEAFEON@@@"
 	db "MURKROW@@@"
 	db "SLOWKING@@"
 	db "MISDREAVUS"

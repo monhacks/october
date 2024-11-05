@@ -126,6 +126,7 @@ CantFollowList:
 	dw LUXSWAN
 	dw ESPEON
 	dw UMBREON
+	dw LEAFEON
 	dw MURKROW
 	dw SLOWKING
 	dw MISDREAVUS

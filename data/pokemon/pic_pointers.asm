@@ -231,6 +231,7 @@ PokemonPicPointers::
 	mon_pic Quagsire
 	mon_pic Espeon
 	mon_pic Umbreon
+	mon_pic Leafeon
 	mon_pic Murkrow
 	mon_pic Slowking
 	mon_pic Misdreavus

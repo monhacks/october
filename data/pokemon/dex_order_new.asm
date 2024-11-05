@@ -224,6 +224,7 @@ NewPokedexOrder:
 	dw FLAREON
 	dw ESPEON
 	dw UMBREON
+	dw LEAFEON
 	dw HORSEA
 	dw SEADRA
 	dw KINGDRA

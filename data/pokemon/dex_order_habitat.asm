@@ -92,7 +92,7 @@ HabitatPokedexOrder:
 	dw FLAREON
 	dw ESPEON
 	dw UMBREON
-	;dw LEAFEON
+	dw LEAFEON
 
 ; MOUNTAIN
 	dw ONIX

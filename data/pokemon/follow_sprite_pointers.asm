@@ -344,6 +344,7 @@ FollowSpritePointers::
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;QUAGSIRE
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;ESPEON
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;UMBREON
+	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_GREEN ;UMBREON
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;MURKROW
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;SLOWKING
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;MISDREAVUS

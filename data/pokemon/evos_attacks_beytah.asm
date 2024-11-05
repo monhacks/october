@@ -1,6 +1,7 @@
 SECTION "Evolutions and Attacks 3", ROMX
 
 EvosAttacksPointers3::
+	dw SuicuneEvosAttacks
 	dw LarvitarEvosAttacks
 	dw PupitarEvosAttacks
 	dw TyranitarEvosAttacks
@@ -38,6 +39,19 @@ EvosAttacksPointers3::
 	dw NurssumEvosAttacks
 .End:
 
+SuicuneEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, BITE
+	dbw 1, LEER
+	dbw 11, BUBBLEBEAM
+	dbw 21, RAIN_DANCE
+	dbw 31, GUST
+	dbw 41, AURORA_BEAM
+	dbw 51, MIST
+	dbw 61, MIRROR_COAT
+	dbw 71, HYDRO_PUMP
+	db 0 ; no more level-up moves
+	
 LarvitarEvosAttacks:
 	dbbw EVOLVE_LEVEL, 30, PUPITAR
 	db 0 ; no more evolutions

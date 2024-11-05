@@ -67,6 +67,7 @@ EvosAttacksPointers2::
 	dw QuagsireEvosAttacks
 	dw EspeonEvosAttacks
 	dw UmbreonEvosAttacks
+	dw LeafeonEvosAttacks
 	dw MurkrowEvosAttacks
 	dw SlowkingEvosAttacks
 	dw MisdreavusEvosAttacks
@@ -118,7 +119,6 @@ EvosAttacksPointers2::
 	dw BlisseyEvosAttacks
 	dw RaikouEvosAttacks
 	dw EnteiEvosAttacks
-	dw SuicuneEvosAttacks
 .End:
 
 ChikoritaEvosAttacks:
@@ -1070,17 +1070,32 @@ EspeonEvosAttacks:
 
 UmbreonEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 1, TAIL_WHIP
-	db 1, SLUDGE
-	db 6, SAND_ATTACK
-	db 10, ACID
-	db 14, QUICK_ATTACK
-	db 18, BITE
-	db 27, SCREECH
-	db 33, TOXIC
-	db 38, MOONLIGHT
-	db 45, SLUDGE_BOMB
+	dbw 1, TACKLE
+	dbw 1, TAIL_WHIP
+	dbw 1, SLUDGE
+	dbw 6, SAND_ATTACK
+	dbw 10, ACID
+	dbw 14, QUICK_ATTACK
+	dbw 18, BITE
+	dbw 27, SCREECH
+	dbw 33, TOXIC
+	dbw 38, MOONLIGHT
+	dbw 45, SLUDGE_BOMB
+	db 0 ; no more level-up moves
+	
+LeafeonEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	dbw 1, TAIL_WHIP
+	dbw 6, SAND_ATTACK
+	dbw 10, RAZOR_LEAF
+	dbw 14, QUICK_ATTACK
+	dbw 18, DOUBLE_KICK
+	dbw 23, MEGA_DRAIN
+	dbw 27, SLEEP_POWDER
+	dbw 33, SUNNY_DAY
+	dbw 38, SYNTHESIS
+	dbw 45, SOLARBEAM
 	db 0 ; no more level-up moves
 
 MurkrowEvosAttacks:
@@ -1845,19 +1860,6 @@ EnteiEvosAttacks:
 	dbw 51, FLAMETHROWER
 	dbw 61, SWAGGER
 	dbw 71, FIRE_BLAST
-	db 0 ; no more level-up moves
-
-SuicuneEvosAttacks:
-	db 0 ; no more evolutions
-	dbw 1, BITE
-	dbw 1, LEER
-	dbw 11, BUBBLEBEAM
-	dbw 21, RAIN_DANCE
-	dbw 31, GUST
-	dbw 41, AURORA_BEAM
-	dbw 51, MIST
-	dbw 61, MIRROR_COAT
-	dbw 71, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 ;-------------------------------------------------------------------------------------------
