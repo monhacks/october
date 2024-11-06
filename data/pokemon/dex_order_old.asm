@@ -61,8 +61,8 @@ OldPokedexOrder:
 	dw MAREEP
 	dw FLAAFFY
 	dw AMPHAROS
-	dw KOTORA
-	dw RAITORA
+	dw TYKER
+	dw STRAIGAR
 	dw GOROTORA
 	dw WOOPER
 	dw QUAGSIRE

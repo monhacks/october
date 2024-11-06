@@ -1446,10 +1446,10 @@ JohtoGrassWildMons:
 	; day
 	dbw 6, SNUBBULL
 	dbw 7, EKANS
-	dbw 9, KOTORA
-	dbw 8, KOTORA
+	dbw 9, TYKER
+	dbw 8, TYKER
 	dbw 9, SNUBBULL
-	dbw 9, KOTORA
+	dbw 9, HOPPIP
 	dbw 9, HOPPIP
 	; nite
 	dbw 6, WOOPER
@@ -1473,10 +1473,10 @@ JohtoGrassWildMons:
 	; day
 	dbw 7, SNUBBULL
 	dbw 8, EKANS
-	dbw 10, KOTORA
-	dbw 9, KOTORA
+	dbw 10, TYKER
+	dbw 9, TYKER
 	dbw 10, SNUBBULL
-	dbw 10, KOTORA
+	dbw 10, HOPPIP
 	dbw 10, HOPPIP
 	; nite
 	dbw 7, WOOPER

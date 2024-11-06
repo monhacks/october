@@ -200,9 +200,9 @@ FirstEvoStages::
 	dw MAREEP
 	dw MAREEP
 	dw MAREEP
-	dw KOTORA
-	dw KOTORA
-	dw KOTORA
+	dw TYKER
+	dw TYKER
+	dw TYKER
 	dw ODDISH
 	dw MARILL
 	dw MARILL     ;b8

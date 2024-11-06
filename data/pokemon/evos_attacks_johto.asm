@@ -842,7 +842,7 @@ AmpharosEvosAttacks:
 	db 0 ; no more level-up moves
 
 TykerEvosAttacks:
-	dbbw EVOLVE_LEVEL, 15, RAITORA
+	dbbw EVOLVE_LEVEL, 15, STRAIGAR
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, TAIL_WHIP
