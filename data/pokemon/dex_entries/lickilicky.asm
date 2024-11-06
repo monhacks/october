@@ -5,6 +5,6 @@
 	next "merchants trap"
 	next "fleeing thieves by"
 
-	page "having LICKILORD"
+	page "having LICKILICKY"
 	next "unfurl its tongue"
 	next "along the ground.@"
