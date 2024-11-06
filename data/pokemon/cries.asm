@@ -207,11 +207,11 @@ PokemonCries::
 	mon_cry CRY_MAREEP,      $022,  $0d8 ; MAREEP
 	mon_cry CRY_MAREEP,     -$007,  $180 ; FLAAFFY
 	mon_cry CRY_AMPHAROS,   -$024,  $240 ; AMPHAROS
-	mon_cry CRY_MANTINE,     -$051,  $0e8 ; BITEEL TODO
-	mon_cry CRY_MANTINE,     -$051,  $0e8 ; LURREEL TODO
 	mon_cry CRY_PICHU,       $f60,  $200 ; TYKER
 	mon_cry CRY_LARVITAR,    $db3,  $168 ; STRAIGAR
 	mon_cry CRY_LARVITAR,    $ca2,  $192 ; GOROTORA
+	mon_cry CRY_MANTINE,     -$051,  $0e8 ; BITEEL TODO
+	mon_cry CRY_MANTINE,     -$051,  $0e8 ; LURREEL TODO
 	mon_cry CRY_CLEFFA,      $084,  $150 ; BELLOSSOM
 	mon_cry CRY_MARILL,      $11b,  $120 ; MARILL
 	mon_cry CRY_MARILL,      $0b6,  $180 ; AZUMARILL
