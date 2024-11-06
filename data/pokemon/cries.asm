@@ -207,6 +207,9 @@ PokemonCries::
 	mon_cry CRY_MAREEP,      $022,  $0d8 ; MAREEP
 	mon_cry CRY_MAREEP,     -$007,  $180 ; FLAAFFY
 	mon_cry CRY_AMPHAROS,   -$024,  $240 ; AMPHAROS
+	mon_cry CRY_PICHU,       $f60,  $200 ; TYKER
+	mon_cry CRY_LARVITAR,    $db3,  $168 ; STRAIGAR
+	mon_cry CRY_LARVITAR,    $ca2,  $192 ; GOROTORA
 	mon_cry CRY_CLEFFA,      $084,  $150 ; BELLOSSOM
 	mon_cry CRY_MARILL,      $11b,  $120 ; MARILL
 	mon_cry CRY_MARILL,      $0b6,  $180 ; AZUMARILL
@@ -304,9 +307,6 @@ PokemonCries::
  	mon_cry CRY_DIGLETT,     $020,   $040 ; MORPHOBIA EVO
 	mon_cry CRY_GLIGAR,     -$045,  $120  ; TERRACHNID
 	mon_cry CRY_GRIMER,      $100,  $100 ; SMUJJ
-	mon_cry CRY_PICHU,       $f60,  $200 ; KOTORA
-	mon_cry CRY_LARVITAR,    $db3,  $168 ; RAITORA
-	mon_cry CRY_LARVITAR,    $ca2,  $192 ; GOROTORA
 	mon_cry CRY_NIDORAN_M,  -$0a3,  $091 ; XXX KOALYPTUS
 	mon_cry CRY_CATERPIE,    $0a3,  $091 ; OREFRY
 	mon_cry CRY_KRABBY,      $160,  $0a0 ; BALLERINE

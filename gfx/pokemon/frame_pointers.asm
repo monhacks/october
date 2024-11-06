@@ -199,6 +199,9 @@ FramesPointers:
 	dba MareepFrames
 	dba FlaaffyFrames
 	dba AmpharosFrames
+	dba TykerFrames
+	dba StraigarFrames
+	dba GorotoraFrames
 	dba BellossomFrames
 	dba MarillFrames
 	dba AzumarillFrames
@@ -296,9 +299,6 @@ FramesPointers:
 	dba MorphobiaFrames
 	dba TerrachnidFrames
 	dba SmujjFrames
-	dba KotoraFrames
-	dba RaitoraFrames
-	dba GorotoraFrames
 	dba KoalyptusFrames
 	dba OrefryFrames
 	dba BallerineFrames

@@ -129,7 +129,6 @@ AlphabeticalPokedexOrder:
 	dw KIWACKI
 	dw KOALYPTUS
 	dw KOFFING
-	dw KOTORA
 	dw KRABBY
 	dw KUDATSUBE
 	dw LANTURN
@@ -222,7 +221,6 @@ AlphabeticalPokedexOrder:
 	dw QWILFISH
 	dw RAICHU
 	dw RAIKOU
-	dw RAITORA
 	dw RAPIDASH
 	dw RATICATE
 	dw RATTATA
@@ -261,6 +259,7 @@ AlphabeticalPokedexOrder:
 	dw STARMIE
 	dw STARYU
 	dw STEELIX
+	dw STRAIGAR
 	dw STROMEN
 	dw SUDOWOODO
 	dw SUICUNE
@@ -279,6 +278,7 @@ AlphabeticalPokedexOrder:
 	dw TOPSYSPOT
 	dw TOTODILE
 	dw TRICULES
+	dw TYKER
 	dw TYPHLOSION
 	dw TYRANITAR
 	dw TYROGUE

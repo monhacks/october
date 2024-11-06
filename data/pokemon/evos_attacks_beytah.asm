@@ -1,6 +1,9 @@
 SECTION "Evolutions and Attacks 3", ROMX
 
 EvosAttacksPointers3::
+	dw SmoochumEvosAttacks
+	dw ElekidEvosAttacks
+	dw MagbyEvosAttacks
 	dw MiltankEvosAttacks
 	dw BlisseyEvosAttacks
 	dw RaikouEvosAttacks
@@ -27,9 +30,6 @@ EvosAttacksPointers3::
 	dw MorphobiaEvosAttacks
 	dw TerrachnidEvosAttacks
 	dw SmujjEvosAttacks
-	dw KotoraEvosAttacks
-	dw RaitoraEvosAttacks
-	dw GorotoraEvosAttacks
 	dw KoalyptusEvosAttacks
 	dw OrefryEvoAttacks
 	dw BallerineEvoAttacks
@@ -38,6 +38,48 @@ EvosAttacksPointers3::
 	dw NecrorexEvosAttacks
 	dw NurssumEvosAttacks
 .End:
+
+SmoochumEvosAttacks:
+	dbbw EVOLVE_LEVEL, 30, JYNX
+	db 0 ; no more evolutions
+	dbw 1, POUND
+	dbw 1, LICK
+	dbw 9, SWEET_KISS
+	dbw 13, POWDER_SNOW
+	dbw 21, CONFUSION
+	dbw 25, SING
+	dbw 33, MEAN_LOOK
+	dbw 37, PSYCHIC_M
+	dbw 45, PERISH_SONG
+	dbw 49, BLIZZARD
+	db 0 ; no more level-up moves
+
+ElekidEvosAttacks:
+	dbbw EVOLVE_LEVEL, 30, ELECTABUZZ
+	db 0 ; no more evolutions
+	dbw 1, QUICK_ATTACK
+	dbw 1, LEER
+	dbw 9, THUNDERPUNCH
+	dbw 17, LIGHT_SCREEN
+	dbw 25, SWIFT
+	dbw 33, SCREECH
+	dbw 41, THUNDERBOLT
+	dbw 49, THUNDER
+	db 0 ; no more level-up moves
+
+MagbyEvosAttacks:
+	dbbw EVOLVE_LEVEL, 30, MAGMAR
+	db 0 ; no more evolutions
+	dbw 1, EMBER
+	dbw 7, LEER
+	dbw 13, SMOG
+	dbw 19, FIRE_PUNCH
+	dbw 25, SMOKESCREEN
+	dbw 31, SUNNY_DAY
+	dbw 37, FLAMETHROWER
+	dbw 43, CONFUSE_RAY
+	dbw 49, FIRE_BLAST
+	db 0 ; no more level-up moves
 
 MiltankEvosAttacks:
 	db 0 ; no more evolutions
@@ -196,7 +238,7 @@ CelebiEvosAttacks:
 	db 0 ; no more level-up moves
 
 NecrorexEvosAttacks:
-	db 0 ; no evos?
+	db 0 ; no more evolutions
 	dbw 1, RAGE
 	dbw 1, SCREECH
 	dbw 7, FOCUS_ENERGY
@@ -524,56 +566,6 @@ SmujjEvosAttacks:
 	dbw 52, SLUDGE_BOMB
 	db 0 ; no more level-up moves
 
-KotoraEvosAttacks:
-	dbbw EVOLVE_LEVEL, 15, RAITORA
-	db 0 ; no more evolutions
-	dbw 1, TACKLE
-	dbw 1, TAIL_WHIP
-	dbw 6, THUNDERSHOCK
-	dbw 10, BITE
-	dbw 15, THUNDER_WAVE
-	dbw 19, SCARY_FACE
-	dbw 24, SPARK
-	dbw 28, TAKE_DOWN
-	dbw 33, AGILITY
-	dbw 37, CRUNCH
-	dbw 42, THUNDERBOLT
-	dbw 46, SLASH
-	db 0 ; no more level-up moves
-
-RaitoraEvosAttacks:
-	dbbw EVOLVE_LEVEL, 30, GOROTORA
-	db 0 ; no more evolutions
-	dbw 1, TACKLE
-	dbw 1, TAIL_WHIP
-	dbw 6, THUNDERSHOCK
-	dbw 10, BITE
-	dbw 17, THUNDER_WAVE
-	dbw 21, SCARY_FACE
-	dbw 25, SPARK
-	dbw 30, TAKE_DOWN
-	dbw 35, AGILITY
-	dbw 42, CRUNCH
-	dbw 49, THUNDERBOLT
-	dbw 56, SLASH
-	db 0 ; no more level-up moves
-
-GorotoraEvosAttacks:
-	db 0 ; no more evolutions
-	dbw 1, TACKLE
-	dbw 1, TAIL_WHIP
-	dbw 6, THUNDERSHOCK
-	dbw 10, BITE
-	dbw 17, THUNDER_WAVE
-	dbw 21, SCARY_FACE
-	dbw 25, SPARK
-	dbw 31, TAKE_DOWN
-	dbw 34, AGILITY
-	dbw 45, CRUNCH
-	dbw 51, THUNDERBOLT
-	dbw 58, SLASH
-	db 0 ; no more level-up moves
-	
 NurssumEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, TACKLE

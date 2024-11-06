@@ -50,6 +50,9 @@ EvosAttacksPointers2::
 	dw MareepEvosAttacks
 	dw FlaaffyEvosAttacks
 	dw AmpharosEvosAttacks
+	dw TykerEvosAttacks
+	dw StraigarEvosAttacks
+	dw GorotoraEvosAttacks
 	dw BellossomEvosAttacks
 	dw MarillEvosAttacks
 	dw AzumarillEvosAttacks
@@ -118,9 +121,6 @@ EvosAttacksPointers2::
 	dw SmeargleEvosAttacks
 	dw TyrogueEvosAttacks
 	dw HitmontopEvosAttacks
-	dw SmoochumEvosAttacks
-	dw ElekidEvosAttacks
-	dw MagbyEvosAttacks
 .End:
 
 ChikoritaEvosAttacks:
@@ -841,6 +841,56 @@ AmpharosEvosAttacks:
 	dbw 57, THUNDER
 	db 0 ; no more level-up moves
 
+TykerEvosAttacks:
+	dbbw EVOLVE_LEVEL, 15, RAITORA
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	dbw 1, TAIL_WHIP
+	dbw 6, THUNDERSHOCK
+	dbw 10, BITE
+	dbw 15, THUNDER_WAVE
+	dbw 19, SCARY_FACE
+	dbw 24, SPARK
+	dbw 28, TAKE_DOWN
+	dbw 33, AGILITY
+	dbw 37, CRUNCH
+	dbw 42, THUNDERBOLT
+	dbw 46, SLASH
+	db 0 ; no more level-up moves
+
+StraigarEvosAttacks:
+	dbbw EVOLVE_LEVEL, 30, GOROTORA
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	dbw 1, TAIL_WHIP
+	dbw 6, THUNDERSHOCK
+	dbw 10, BITE
+	dbw 17, THUNDER_WAVE
+	dbw 21, SCARY_FACE
+	dbw 25, SPARK
+	dbw 30, TAKE_DOWN
+	dbw 35, AGILITY
+	dbw 42, CRUNCH
+	dbw 49, THUNDERBOLT
+	dbw 56, SLASH
+	db 0 ; no more level-up moves
+
+GorotoraEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	dbw 1, TAIL_WHIP
+	dbw 6, THUNDERSHOCK
+	dbw 10, BITE
+	dbw 17, THUNDER_WAVE
+	dbw 21, SCARY_FACE
+	dbw 25, SPARK
+	dbw 31, TAKE_DOWN
+	dbw 34, AGILITY
+	dbw 45, CRUNCH
+	dbw 51, THUNDERBOLT
+	dbw 58, SLASH
+	db 0 ; no more level-up moves
+	
 BellossomEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, ABSORB
@@ -1864,48 +1914,6 @@ HitmontopEvosAttacks:
 	dbw 37, AGILITY
 	dbw 43, DETECT
 	dbw 49, TRIPLE_KICK
-	db 0 ; no more level-up moves
-
-SmoochumEvosAttacks:
-	dbbw EVOLVE_LEVEL, 30, JYNX
-	db 0 ; no more evolutions
-	dbw 1, POUND
-	dbw 1, LICK
-	dbw 9, SWEET_KISS
-	dbw 13, POWDER_SNOW
-	dbw 21, CONFUSION
-	dbw 25, SING
-	dbw 33, MEAN_LOOK
-	dbw 37, PSYCHIC_M
-	dbw 45, PERISH_SONG
-	dbw 49, BLIZZARD
-	db 0 ; no more level-up moves
-
-ElekidEvosAttacks:
-	dbbw EVOLVE_LEVEL, 30, ELECTABUZZ
-	db 0 ; no more evolutions
-	dbw 1, QUICK_ATTACK
-	dbw 1, LEER
-	dbw 9, THUNDERPUNCH
-	dbw 17, LIGHT_SCREEN
-	dbw 25, SWIFT
-	dbw 33, SCREECH
-	dbw 41, THUNDERBOLT
-	dbw 49, THUNDER
-	db 0 ; no more level-up moves
-
-MagbyEvosAttacks:
-	dbbw EVOLVE_LEVEL, 30, MAGMAR
-	db 0 ; no more evolutions
-	dbw 1, EMBER
-	dbw 7, LEER
-	dbw 13, SMOG
-	dbw 19, FIRE_PUNCH
-	dbw 25, SMOKESCREEN
-	dbw 31, SUNNY_DAY
-	dbw 37, FLAMETHROWER
-	dbw 43, CONFUSE_RAY
-	dbw 49, FIRE_BLAST
 	db 0 ; no more level-up moves
 
 ;-------------------------------------------------------------------------------------------

@@ -199,6 +199,9 @@ AnimationPointers:
 	dw MareepAnimation
 	dw FlaaffyAnimation
 	dw AmpharosAnimation
+	dw TykerAnimation
+	dw StraigarAnimation
+	dw GorotoraAnimation
 	dw BellossomAnimation
 	dw MarillAnimation
 	dw AzumarillAnimation
@@ -296,9 +299,6 @@ AnimationPointers:
 	dw MorphobiaAnimation
 	dw TerrachnidAnimation
 	dw SmujjAnimation
-	dw KotoraAnimation
-	dw RaitoraAnimation
-	dw GorotoraAnimation
 	dw KoalyptusAnimation
 	dw OrefryAnimation
 	dw BallerineAnimation

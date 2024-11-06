@@ -358,8 +358,8 @@ SilkaneFrontpicAnim:       INCBIN "gfx/pokemon/silkane/front.animated.2bpp.lz"
 MorphobiaFrontpicAnim:     INCBIN "gfx/pokemon/morphobia/front.animated.2bpp.lz"
 TerrachnidFrontpicAnim:    INCBIN "gfx/pokemon/terrachnid/front.animated.2bpp.lz"
 SmujjFrontpicAnim:         INCBIN "gfx/pokemon/smujj/front.animated.2bpp.lz"
-KotoraFrontpicAnim:        INCBIN "gfx/pokemon/kotora/front.animated.2bpp.lz"
-RaitoraFrontpicAnim:       INCBIN "gfx/pokemon/raitora/front.animated.2bpp.lz"
+TykerFrontpicAnim:         INCBIN "gfx/pokemon/tyker/front.animated.2bpp.lz"
+StraigarFrontpicAnim:      INCBIN "gfx/pokemon/straigar/front.animated.2bpp.lz"
 GorotoraFrontpicAnim:      INCBIN "gfx/pokemon/gorotora/front.animated.2bpp.lz"
 
 SECTION "Pics 23 Animated", ROMX

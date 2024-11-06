@@ -199,6 +199,9 @@ AnimationIdlePointers:
 	dw MareepAnimationIdle
 	dw FlaaffyAnimationIdle
 	dw AmpharosAnimationIdle
+	dw TykerAnimationIdle
+	dw StraigarAnimationIdle
+	dw GorotoraAnimationIdle
 	dw BellossomAnimationIdle
 	dw MarillAnimationIdle
 	dw AzumarillAnimationIdle
@@ -296,9 +299,6 @@ AnimationIdlePointers:
 	dw MorphobiaAnimationIdle
 	dw TerrachnidAnimationIdle
 	dw SmujjAnimationIdle
-	dw KotoraAnimationIdle
-	dw RaitoraAnimationIdle
-	dw GorotoraAnimationIdle
 	dw KoalyptusAnimationIdle
 	dw OrefryAnimationIdle
 	dw BallerineAnimationIdle

@@ -200,6 +200,9 @@ FirstEvoStages::
 	dw MAREEP
 	dw MAREEP
 	dw MAREEP
+	dw KOTORA
+	dw KOTORA
+	dw KOTORA
 	dw ODDISH
 	dw MARILL
 	dw MARILL     ;b8
@@ -297,9 +300,6 @@ FirstEvoStages::
 	dw SILKANE
 	dw TERRACHNID
 	dw SMUJJ
-	dw KOTORA
-	dw KOTORA
-	dw KOTORA
 	dw KOALYPTUS
 	dw OREFRY
 	dw BALLERINE

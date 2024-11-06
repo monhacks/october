@@ -49,10 +49,14 @@ EggMovePointers2::
 	dw MareepEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
+	dw TykerEggMoves
+	dw NoEggMoves2
+	dw NoEggMoves2
 	dw NoEggMoves2
 	dw MarillEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
+	dw KudatsubeEggMoves
 	dw SudowoodoEggMoves
 	dw NoEggMoves2
 	dw HoppipEggMoves
@@ -70,7 +74,6 @@ EggMovePointers2::
 	dw MurkrowEggMoves
 	dw NoEggMoves2
 	dw MisdreavusEggMoves
-	dw KudatsubeEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw PinecoEggMoves
@@ -146,9 +149,6 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw SmujjEggMoves
-	dw KotoraEggMoves
-	dw NoEggMoves2
-	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
@@ -307,6 +307,12 @@ MareepEggMoves:
 	dw SCREECH
 	dw REFLECT
 	dw -1 ; end
+	
+TykerEggMoves:
+	db THUNDERBOLT
+	db TAKE_DOWN
+	db SCREECH
+	db -1 ; end
 
 MarillEggMoves:
 	dw LIGHT_SCREEN
@@ -621,12 +627,6 @@ SmujjEggMoves:
 	dw MEAN_LOOK
 	dw LICK
 	dw -1 ; end
-
-KotoraEggMoves:
-	db THUNDERBOLT
-	db TAKE_DOWN
-	db SCREECH
-	db -1 ; end
 	
 NoEggMoves2:
 	db -1 ; end

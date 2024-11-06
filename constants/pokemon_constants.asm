@@ -221,6 +221,9 @@ JOHTO_POKEMON EQU const_value
 	const MAREEP     ; b3
 	const FLAAFFY    ; b4
 	const AMPHAROS   ; b5
+	const TYKER
+	const STRAIGAR
+	const GOROTORA
 	const BELLOSSOM  ; b6
 	const MARILL     ; b7
 	const AZUMARILL  ; b8
@@ -318,9 +321,6 @@ JOHTO_POKEMON EQU const_value
 	const MORPHOBIA
 	const TERRACHNID
 	const SMUJJ
-	const KOTORA
-	const RAITORA
-	const GOROTORA
 	const KOALYPTUS
 	const OREFRY
 	const BALLERINE

@@ -214,6 +214,9 @@ PokemonPicPointers::
 	mon_pic Mareep
 	mon_pic Flaaffy
 	mon_pic Ampharos
+	mon_pic Tyker
+	mon_pic Straigar
+	mon_pic Gorotora
 	mon_pic Bellossom
 	mon_pic Marill
 	mon_pic Azumarill
@@ -314,9 +317,6 @@ PokemonPicPointers::
 	mon_pic Morphobia
 	mon_pic Terrachnid
 	mon_pic Smujj
-	mon_pic Kotora
-	mon_pic Raitora
-	mon_pic Gorotora
 	mon_pic Koalyptus
 	mon_pic Orefry
 	mon_pic Ballerine

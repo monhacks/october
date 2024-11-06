@@ -200,6 +200,9 @@ PokedexDataPointerTable:
 	dba MareepPokedexEntry
 	dba FlaaffyPokedexEntry
 	dba AmpharosPokedexEntry
+	dba TykerPokedexEntry
+	dba StraigarPokedexEntry
+	dba GorotoraPokedexEntry
 	dba BellossomPokedexEntry
 	dba MarillPokedexEntry
 	dba AzumarillPokedexEntry
@@ -297,9 +300,6 @@ PokedexDataPointerTable:
 	dba MorphobiaPokedexEntry
 	dba TerrachnidPokedexEntry
 	dba SmujjPokedexEntry
-	dba KotoraPokedexEntry
-	dba RaitoraPokedexEntry
-	dba GorotoraPokedexEntry
 	dba KoalyptusPokedexEntry
 	dba OrefryPokedexEntry
 	dba BallerinePokedexEntry

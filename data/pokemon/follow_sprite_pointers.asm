@@ -327,6 +327,9 @@ FollowSpritePointers::
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;MAREEP
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;FLAAFFY
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;AMPHAROS
+	follow_sprite KotoraSpriteGFX, PAL_FOLLOWER_KOTORA ;TYKER
+	follow_sprite KotoraSpriteGFX, PAL_FOLLOWER_KOTORA ;STRAIGAR TODO
+	follow_sprite KotoraSpriteGFX, PAL_FOLLOWER_KOTORA ;GOROTORA TODO
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;BELLOSSOM
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;MARILL
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;AZUMARILL
@@ -424,9 +427,6 @@ FollowSpritePointers::
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;MORPHOBIA
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_PURPLE ;TERRACHNID
 	follow_sprite SmujjSpriteGFX, PAL_FOLLOWER_PURPLE ;SMUJJ
-	follow_sprite KotoraSpriteGFX, PAL_FOLLOWER_KOTORA ;KOTORA
-	follow_sprite KotoraSpriteGFX, PAL_FOLLOWER_KOTORA ;RAITORA
-	follow_sprite KotoraSpriteGFX, PAL_FOLLOWER_KOTORA ;GOROTORA
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_SILVER ;KOALYPTUS
 	follow_sprite OrefrySpriteGFX, PAL_FOLLOWER_OREFRY ;OREFRY
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_RED ;BALLERINE

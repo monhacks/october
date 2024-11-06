@@ -10,6 +10,9 @@ HabitatPokedexOrder:
 	dw MAREEP
 	dw FLAAFFY
 	dw AMPHAROS
+	dw TYKER
+	dw STRAIGAR
+	dw GOROTORA
 	dw COINPUR
 	dw MEOWTH
 	dw PERSIAN

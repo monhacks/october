@@ -199,6 +199,9 @@ EvolutionMoves::
 	dw NO_MOVE      ; MAREEP
 	dw NO_MOVE      ; FLAAFFY
 	dw THUNDERPUNCH ; AMPHAROS
+	dw NO_MOVE      ; TYKER
+	dw NO_MOVE      ; STRAIGAR
+	dw NO_MOVE      ; GOROTORA
 	dw SWORDS_DANCE ; BELLOSSOM
 	dw NO_MOVE      ; MARILL
 	dw NO_MOVE      ; AZUMARILL
@@ -296,9 +299,6 @@ EvolutionMoves::
 	dw NO_MOVE      ; MORPHOBIA
 	dw NO_MOVE      ; TERRACHNID
 	dw NO_MOVE      ; SMUJJ
-	dw NO_MOVE      ; KOTORA
-	dw NO_MOVE      ; RAITORA
-	dw NO_MOVE      ; GOROTORA
 	dw NO_MOVE      ; KOALYPTUS
 	dw NO_MOVE      ; OREFRY
 	dw NO_MOVE      ; BALLERINE

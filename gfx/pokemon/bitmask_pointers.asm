@@ -199,6 +199,9 @@ BitmasksPointers:
 	dw MareepBitmasks
 	dw FlaaffyBitmasks
 	dw AmpharosBitmasks
+	dw TykerBitmasks
+	dw StraigarBitmasks
+	dw GorotoraBitmasks
 	dw BellossomBitmasks
 	dw MarillBitmasks
 	dw AzumarillBitmasks
@@ -296,9 +299,6 @@ BitmasksPointers:
 	dw MorphobiaBitmasks
 	dw TerrachnidBitmasks
 	dw SmujjBitmasks
-	dw KotoraBitmasks
-	dw RaitoraBitmasks
-	dw GorotoraBitmasks
 	dw KoalyptusBitmasks
 	dw OrefryBitmasks
 	dw BallerineBitmasks
