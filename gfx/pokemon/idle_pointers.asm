@@ -284,6 +284,7 @@ AnimationIdlePointers:
 	dw LugiaAnimationIdle
 	dw HoOhAnimationIdle
 	dw CelebiAnimationIdle
+	dw KokopelliAnimationIdle
 	dw AdbarstorkAnimationIdle
 	dw PupperonAnimationIdle
 	dw CoaltaAnimationIdle

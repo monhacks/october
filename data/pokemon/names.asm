@@ -289,6 +289,7 @@ PokemonNames::
 	db "LUGIA@@@@@"
 	db "HO-OH@@@@@"
 	db "CELEBI@@@@"
+	db "KOKOPELLI@"
 	db "ADBARSTORK"
 	db "PUPPERON@@"
 	db "KOLTA@@@@@"

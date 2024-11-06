@@ -306,6 +306,7 @@ JOHTO_POKEMON EQU const_value
 	const LUGIA      ; f9
 	const HO_OH      ; fa
 	const CELEBI     ; fb
+	const KOKOPELLI
 	const ADBARSTORK ; fe
 	const PUPPERON   ; ff
 	const COALTA

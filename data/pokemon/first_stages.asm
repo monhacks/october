@@ -285,6 +285,7 @@ FirstEvoStages::
 	dw LUGIA
 	dw HO_OH
 	dw CELEBI
+	dw KOKOPELLI
 	dw ADBARSTORK
 	dw PUPPERON
 	dw COALTA

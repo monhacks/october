@@ -297,4 +297,5 @@ OldPokedexOrder:
 	dw MEWTWO
 	dw MEW
 	dw CELEBI
+	dw KOKOPELLI
 	dw NECROREX

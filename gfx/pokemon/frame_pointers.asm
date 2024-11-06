@@ -284,6 +284,7 @@ FramesPointers:
 	dba LugiaFrames
 	dba HoOhFrames
 	dba CelebiFrames
+	dba KokopelliFrames
 	dba AdbarstorkFrames
 	dba PupperonFrames
 	dba CoaltaFrames

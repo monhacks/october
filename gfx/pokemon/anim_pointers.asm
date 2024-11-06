@@ -284,6 +284,7 @@ AnimationPointers:
 	dw LugiaAnimation
 	dw HoOhAnimation
 	dw CelebiAnimation
+	dw KokopelliAnimation
 	dw AdbarstorkAnimation
 	dw PupperonAnimation
 	dw CoaltaAnimation

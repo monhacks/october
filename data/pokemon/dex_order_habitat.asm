@@ -314,3 +314,4 @@ HabitatPokedexOrder:
 	dw HO_OH
 	dw MEW
 	dw CELEBI
+	dw KOKOPELLI

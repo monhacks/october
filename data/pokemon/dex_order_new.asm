@@ -308,6 +308,7 @@ NewPokedexOrder:
 	dw MEWTWO
 	dw MEW
 	dw CELEBI
+	dw KOKOPELLI
 
 ;---------------------------------------------
 _NUM_NEW_DEX_ORDER = (@ - NewPokedexOrder) / 2

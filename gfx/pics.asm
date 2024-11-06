@@ -834,5 +834,7 @@ KudatsubeFrontpic:	INCBIN "gfx/pokemon/kudatsube/front.static.2bpp.lz"
 KudatsubeBackpic:	INCBIN "gfx/pokemon/kudatsube/back.2bpp.lz"
 LickilickyFrontpic:	INCBIN "gfx/pokemon/lickilicky/front.static.2bpp.lz"
 LickilickyBackpic:	INCBIN "gfx/pokemon/lickilicky/back.2bpp.lz"
+KokopelliFrontpic:	INCBIN "gfx/pokemon/kokopelli/front.static.2bpp.lz"
+KokopelliBackpic:	INCBIN "gfx/pokemon/kokopelli/back.2bpp.lz"
 
 INCLUDE "gfx/pics_animated.asm"

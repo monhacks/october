@@ -189,6 +189,7 @@ CantFollowList:
 	dw TYRANITAR
 	dw LUGIA
 	dw HO_OH
+	dw KOKOPELLI
 	dw ADBARSTORK
 	dw PUPPERON ; done but TODO: growlithe & arcanine
 	dw MOIBELLE

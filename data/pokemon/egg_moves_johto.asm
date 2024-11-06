@@ -134,6 +134,7 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
+	dw NoEggMoves2
 	dw AdbarstorkEggMoves
 	dw NoEggMoves2
 	dw CoaltaEggMoves

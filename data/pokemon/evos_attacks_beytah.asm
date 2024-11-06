@@ -15,6 +15,7 @@ EvosAttacksPointers3::
 	dw LugiaEvosAttacks
 	dw HoOhEvosAttacks
 	dw CelebiEvosAttacks
+	dw KokopelliEvosAttacks
 	dw AdbarstorkEvosAttacks
 	dw PupperonEvosAttacks
 	dw CoaltaEvosAttacks
@@ -236,7 +237,20 @@ CelebiEvosAttacks:
 	dbw 40, BATON_PASS
 	dbw 50, PERISH_SONG
 	db 0 ; no more level-up moves
-
+	
+KokopelliEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, PURSUIT
+	dbw 1, SING
+	dbw 1, RECOVER
+	dbw 1, EARTHQUAKE
+	dbw 10, LEECH_SEED
+	dbw 20, ANCIENTPOWER
+	dbw 30, MAGNITUDE
+	dbw 40, FAINT_ATTACK
+	dbw 50, PERISH_SONG
+	db 0 ; no more level-up moves
+	
 NecrorexEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, RAGE

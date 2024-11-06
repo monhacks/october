@@ -412,6 +412,7 @@ FollowSpritePointers::
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;LUGIA
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;HO_OH
 	follow_sprite CelebiSpriteGFX, PAL_FOLLOWER_BROWN;CELEBI
+	follow_sprite CelebiSpriteGFX, PAL_FOLLOWER_BROWN;KOKOPELLI TO DO
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;ADBARSTORK
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_RED ;PUPPERON
 	follow_sprite CoaltaSpriteGFX, PAL_FOLLOWER_RED ;COALTA

@@ -284,6 +284,7 @@ EvolutionMoves::
 	dw NO_MOVE      ; LUGIA
 	dw NO_MOVE      ; HO_OH
 	dw NO_MOVE      ; CELEBI
+	dw NO_MOVE      ; KOKOPELLI
 	dw NO_MOVE      ; ADBARSTORK
 	dw NO_MOVE      ; PUPPERON
 	dw NO_MOVE      ; COALTA

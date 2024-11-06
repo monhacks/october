@@ -284,6 +284,7 @@ BitmasksPointers:
 	dw LugiaBitmasks
 	dw HoOhBitmasks
 	dw CelebiBitmasks
+	dw KokopelliBitmasks
 	dw AdbarstorkBitmasks
 	dw PupperonBitmasks
 	dw CoaltaBitmasks

@@ -285,6 +285,7 @@ PokedexDataPointerTable:
 	dba LugiaPokedexEntry
 	dba HoOhPokedexEntry
 	dba CelebiPokedexEntry
+	dba KokopelliPokedexEntry
 	dba AdbarstorkPokedexEntry
 	dba PupperonPokedexEntry
 	dba CoaltaPokedexEntry

@@ -129,6 +129,7 @@ AlphabeticalPokedexOrder:
 	dw KIWACKI
 	dw KOALYPTUS
 	dw KOFFING
+	dw KOKOPELLI
 	dw KRABBY
 	dw KUDATSUBE
 	dw LANTURN

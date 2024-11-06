@@ -302,6 +302,7 @@ PokemonPicPointers::
 	mon_pic Lugia
 	mon_pic HoOh
 	mon_pic Celebi
+	mon_pic Kokopelli
 	mon_pic Adbarstork
 	mon_pic Pupperon
 	mon_pic Coalta
