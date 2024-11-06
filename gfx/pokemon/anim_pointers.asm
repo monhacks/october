@@ -202,6 +202,8 @@ AnimationPointers:
 	dw TykerAnimation
 	dw StraigarAnimation
 	dw GorotoraAnimation
+	dw BiteelAnimation
+	dw LurreelAnimation
 	dw BellossomAnimation
 	dw MarillAnimation
 	dw AzumarillAnimation

@@ -202,6 +202,8 @@ EvolutionMoves::
 	dw NO_MOVE      ; TYKER
 	dw NO_MOVE      ; STRAIGAR
 	dw NO_MOVE      ; GOROTORA
+	dw NO_MOVE      ; BITEEL
+	dw IRON_TAIL    ; LURREEL
 	dw SWORDS_DANCE ; BELLOSSOM
 	dw NO_MOVE      ; MARILL
 	dw NO_MOVE      ; AZUMARILL

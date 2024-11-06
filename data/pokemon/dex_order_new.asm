@@ -214,6 +214,8 @@ NewPokedexOrder:
 	dw OCTILLERY
 	dw CHINCHOU
 	dw LANTURN
+	dw BITEEL
+	dw LURREEL
 	dw SEEL
 	dw DEWGONG
 	dw LICKITUNG

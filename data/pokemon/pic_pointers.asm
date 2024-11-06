@@ -217,6 +217,8 @@ PokemonPicPointers::
 	mon_pic Tyker
 	mon_pic Straigar
 	mon_pic Gorotora
+	mon_pic Biteel
+	mon_pic Lurreel
 	mon_pic Bellossom
 	mon_pic Marill
 	mon_pic Azumarill

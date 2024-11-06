@@ -205,6 +205,8 @@ HabitatPokedexOrder:
 	dw SEAKING
 	dw CHINCHOU
 	dw LANTURN
+	dw BITEEL
+	dw LURREEL
 	dw REMORAID
 	dw OCTILLERY
 	dw QWILFISH

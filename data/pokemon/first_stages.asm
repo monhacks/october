@@ -203,6 +203,8 @@ FirstEvoStages::
 	dw TYKER
 	dw TYKER
 	dw TYKER
+	dw BITEEL
+	dw BITEEL
 	dw ODDISH
 	dw MARILL
 	dw MARILL     ;b8

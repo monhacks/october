@@ -64,6 +64,8 @@ OldPokedexOrder:
 	dw TYKER
 	dw STRAIGAR
 	dw GOROTORA
+	dw BITEEL
+	dw LURREEL
 	dw WOOPER
 	dw QUAGSIRE
 	dw GASTLY

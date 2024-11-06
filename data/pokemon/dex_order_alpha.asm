@@ -21,6 +21,7 @@ AlphabeticalPokedexOrder:
 	dw BELLOSSOM
 	dw BELLSPROUT
 	dw BIPULLA
+	dw BITEEL
 	dw BLASTOISE
 	dw BLISSEY
 	dw BRUINUS

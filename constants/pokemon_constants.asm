@@ -224,6 +224,8 @@ JOHTO_POKEMON EQU const_value
 	const TYKER
 	const STRAIGAR
 	const GOROTORA
+	const BITEEL
+	const LURREEL
 	const BELLOSSOM  ; b6
 	const MARILL     ; b7
 	const AZUMARILL  ; b8

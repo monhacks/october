@@ -202,6 +202,8 @@ FramesPointers:
 	dba TykerFrames
 	dba StraigarFrames
 	dba GorotoraFrames
+	dba BiteelFrames
+	dba LurreelFrames
 	dba BellossomFrames
 	dba MarillFrames
 	dba AzumarillFrames

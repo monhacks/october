@@ -112,6 +112,8 @@ CantFollowList:
 	dw MAREEP
 	dw FLAAFFY
 	dw AMPHAROS
+	dw BITEEL
+	dw LURREEL
 	dw BELLOSSOM
 	dw MARILL
 	dw AZUMARILL

@@ -203,6 +203,8 @@ PokedexDataPointerTable:
 	dba TykerPokedexEntry
 	dba StraigarPokedexEntry
 	dba GorotoraPokedexEntry
+	dba BiteelPokedexEntry
+	dba LurreelPokedexEntry
 	dba BellossomPokedexEntry
 	dba MarillPokedexEntry
 	dba AzumarillPokedexEntry

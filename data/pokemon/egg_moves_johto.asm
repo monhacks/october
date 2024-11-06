@@ -53,6 +53,8 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
+	dw NoEggMoves2
+	dw NoEggMoves2
 	dw MarillEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2

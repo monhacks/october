@@ -53,6 +53,8 @@ EvosAttacksPointers2::
 	dw TykerEvosAttacks
 	dw StraigarEvosAttacks
 	dw GorotoraEvosAttacks
+	dw BiteelEvosAttacks
+	dw LurreelEvosAttacks
 	dw BellossomEvosAttacks
 	dw MarillEvosAttacks
 	dw AzumarillEvosAttacks
@@ -890,6 +892,28 @@ GorotoraEvosAttacks:
 	dbw 51, THUNDERBOLT
 	dbw 58, SLASH
 	db 0 ; no more level-up moves
+	
+BiteelEvosAttacks:
+	db 0 ; no more evolutions
+LurreelEvosAttacks:
+	db 0 ; no more evolutions
+	db 1 , WATER_GUN
+	db 1 , GROWL
+	db 1 , TACKLE
+	db 10, RAGE
+	db 12, BUBBLE
+	db 13, HARDEN
+	db 16, SUPERSONIC
+	db 19, BIDE
+	db 27, SLAM
+	db 31, DOUBLE_TEAM
+	db 38, ACID_ARMOR
+	db 39, CRUNCH
+	db 47, IRON_TAIL
+	db 52, THRASH
+	db 56, HYDRO_PUMP
+	db 0 ; no more level-up moves
+
 	
 BellossomEvosAttacks:
 	db 0 ; no more evolutions

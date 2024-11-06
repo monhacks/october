@@ -215,9 +215,10 @@ TykerPokedexEntry::	     INCLUDE "data/pokemon/dex_entries/tyker.asm"
 StraigarPokedexEntry::	 INCLUDE "data/pokemon/dex_entries/straigar.asm"
 GorotoraPokedexEntry::	 INCLUDE "data/pokemon/dex_entries/gorotora.asm"
 
-
 SECTION "Pokedex Entries 193-251", ROMX
 
+BiteelPokedexEntry::	 INCLUDE "data/pokemon/dex_entries/biteel.asm"
+LurreelPokedexEntry::	 INCLUDE "data/pokemon/dex_entries/lurreel.asm"
 BellossomPokedexEntry::  INCLUDE "data/pokemon/dex_entries/bellossom.asm"
 MarillPokedexEntry::     INCLUDE "data/pokemon/dex_entries/marill.asm"
 AzumarillPokedexEntry::  INCLUDE "data/pokemon/dex_entries/azumarill.asm"

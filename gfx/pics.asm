@@ -834,7 +834,14 @@ KudatsubeFrontpic:	INCBIN "gfx/pokemon/kudatsube/front.static.2bpp.lz"
 KudatsubeBackpic:	INCBIN "gfx/pokemon/kudatsube/back.2bpp.lz"
 LickilickyFrontpic:	INCBIN "gfx/pokemon/lickilicky/front.static.2bpp.lz"
 LickilickyBackpic:	INCBIN "gfx/pokemon/lickilicky/back.2bpp.lz"
+BiteelFrontpic:	    INCBIN "gfx/pokemon/biteel/front.static.2bpp.lz"
+BiteelBackpic:	    INCBIN "gfx/pokemon/biteel/back.2bpp.lz"
+LurreelFrontpic:	INCBIN "gfx/pokemon/lurreel/front.static.2bpp.lz"
+LurreelBackpic:	    INCBIN "gfx/pokemon/lurreel/back.2bpp.lz"
+
+SECTION "Pics 25", ROMX
+
 KokopelliFrontpic:	INCBIN "gfx/pokemon/kokopelli/front.static.2bpp.lz"
-KokopelliBackpic:	INCBIN "gfx/pokemon/kokopelli/back.2bpp.lz"
+KokopelliBackpic:   INCBIN "gfx/pokemon/kokopelli/back.2bpp.lz"
 
 INCLUDE "gfx/pics_animated.asm"

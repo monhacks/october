@@ -207,6 +207,8 @@ PokemonNames::
 	db "TYKER@@@@@"
 	db "STRAIGAR@@"
 	db "GOROTORA@@"
+	db "BITEEL@@@@"
+	db "LURREEL@@@"
 	db "BELLOSSOM@"
 	db "MARILL@@@@"
 	db "AZUMARILL@"

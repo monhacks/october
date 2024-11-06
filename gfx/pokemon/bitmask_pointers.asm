@@ -202,6 +202,8 @@ BitmasksPointers:
 	dw TykerBitmasks
 	dw StraigarBitmasks
 	dw GorotoraBitmasks
+	dw BiteelBitmasks
+	dw LurreelBitmasks
 	dw BellossomBitmasks
 	dw MarillBitmasks
 	dw AzumarillBitmasks

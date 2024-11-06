@@ -202,6 +202,8 @@ AnimationIdlePointers:
 	dw TykerAnimationIdle
 	dw StraigarAnimationIdle
 	dw GorotoraAnimationIdle
+	dw BiteelAnimationIdle
+	dw LurreelAnimationIdle
 	dw BellossomAnimationIdle
 	dw MarillAnimationIdle
 	dw AzumarillAnimationIdle
