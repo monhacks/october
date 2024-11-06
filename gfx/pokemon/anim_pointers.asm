@@ -261,6 +261,7 @@ AnimationPointers:
 	dw KingdraAnimation
 	dw PhanpyAnimation
 	dw DonphanAnimation
+	dw LickilickyAnimation
 	dw Porygon2Animation
 	dw StantlerAnimation
 	dw SmeargleAnimation

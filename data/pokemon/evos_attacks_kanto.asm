@@ -1795,15 +1795,20 @@ HitmonchanEvosAttacks:
 	db 0 ; no more level-up moves
 
 LickitungEvosAttacks:
+	dbbw EVOLVE_LEVEL, 33, LICKILICKY
 	db 0 ; no more evolutions
 	dbw 1, LICK
-	dbw 7, SUPERSONIC
-	dbw 13, DEFENSE_CURL
-	dbw 19, STOMP
-	dbw 25, WRAP
-	dbw 31, DISABLE
-	dbw 37, SLAM
-	dbw 43, SCREECH
+	dbw 1, SUPERSONIC
+	dbw 6, WRAP
+	dbw 11, DEFENSE_CURL
+	dbw 17, STOMP
+	dbw 22, SEISMIC_TOSS
+	dbw 28, DISABLE
+	dbw 33, ROLLOUT
+	dbw 39, SLAM
+	dbw 44, MAGNITUDE
+	dbw 50, SCREECH
+	dbw 55, BODY_SLAM
 	db 0 ; no more level-up moves
 
 KoffingEvosAttacks:

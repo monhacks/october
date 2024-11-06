@@ -112,6 +112,7 @@ EvosAttacksPointers2::
 	dw KingdraEvosAttacks
 	dw PhanpyEvosAttacks
 	dw DonphanEvosAttacks
+	dw LickilickyEvosAttacks
 	dw Porygon2EvosAttacks
 	dw StantlerEvosAttacks
 	dw SmeargleEvosAttacks
@@ -1783,6 +1784,22 @@ DonphanEvosAttacks:
 	dbw 33, ROLLOUT
 	dbw 41, RAPID_SPIN
 	dbw 49, EARTHQUAKE
+	db 0 ; no more level-up moves
+	
+LickilickyEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, LICK
+	dbw 1, SUPERSONIC
+	dbw 6, WRAP
+	dbw 11, DEFENSE_CURL
+	dbw 17, STOMP
+	dbw 22, SEISMIC_TOSS
+	dbw 28, DISABLE
+	dbw 33, ROLLOUT
+	dbw 39, SLAM
+	dbw 44, MAGNITUDE
+	dbw 50, SCREECH
+	dbw 55, BODY_SLAM
 	db 0 ; no more level-up moves
 
 Porygon2EvosAttacks:

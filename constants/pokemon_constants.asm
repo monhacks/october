@@ -283,6 +283,7 @@ JOHTO_POKEMON EQU const_value
 	const KINGDRA    ; e6
 	const PHANPY     ; e7
 	const DONPHAN    ; e8
+	const LICKILICKY 
 	const PORYGON2   ; e9
 	const STANTLER   ; ea
 	const SMEARGLE   ; eb

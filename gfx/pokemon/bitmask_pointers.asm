@@ -261,6 +261,7 @@ BitmasksPointers:
 	dw KingdraBitmasks
 	dw PhanpyBitmasks
 	dw DonphanBitmasks
+	dw LickilickyBitmasks
 	dw Porygon2Bitmasks
 	dw StantlerBitmasks
 	dw SmeargleBitmasks

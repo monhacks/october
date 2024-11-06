@@ -138,6 +138,7 @@ AlphabeticalPokedexOrder:
 	dw LEAFEON
 	dw LEDIAN
 	dw LEDYBA
+	dw LICKILICKY
 	dw LICKITUNG
 	dw LUGIA
 	dw LUXSWAN

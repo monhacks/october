@@ -261,6 +261,7 @@ FramesPointers:
 	dba KingdraFrames
 	dba PhanpyFrames
 	dba DonphanFrames
+	dba LickilickyFrames
 	dba Porygon2Frames
 	dba StantlerFrames
 	dba SmeargleFrames

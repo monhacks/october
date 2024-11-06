@@ -170,6 +170,7 @@ CantFollowList:
 	dw KINGDRA
 	dw PHANPY
 	dw DONPHAN
+	dw LICKILICKY
 	dw PORYGON2
 	dw STANTLER
 	dw SMEARGLE

@@ -76,7 +76,7 @@ HabitatPokedexOrder:
 	dw GIRAFARIG
 	dw TOPSYSPOT
 	dw LICKITUNG
-	;dw LICKILICKY
+	dw LICKILICKY
 	dw SCYTHER
 	dw SCIZOR
 	dw ELEKID

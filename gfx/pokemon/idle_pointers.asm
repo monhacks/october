@@ -261,6 +261,7 @@ AnimationIdlePointers:
 	dw KingdraAnimationIdle
 	dw PhanpyAnimationIdle
 	dw DonphanAnimationIdle
+	dw LickilickyAnimationIdle
 	dw Porygon2AnimationIdle
 	dw StantlerAnimationIdle
 	dw SmeargleAnimationIdle

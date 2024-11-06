@@ -266,6 +266,7 @@ PokemonNames::
 	db "KINGDRA@@@"
 	db "PHANPY@@@@"
 	db "DONPHAN@@@"
+	db "LICKILICKY"
 	db "PORYGON2@@"
 	db "STANTLER@@"
 	db "SMEARGLE@@"

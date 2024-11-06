@@ -262,6 +262,7 @@ PokedexDataPointerTable:
 	dba KingdraPokedexEntry
 	dba PhanpyPokedexEntry
 	dba DonphanPokedexEntry
+	dba LickilickyPokedexEntry
 	dba Porygon2PokedexEntry
 	dba StantlerPokedexEntry
 	dba SmearglePokedexEntry

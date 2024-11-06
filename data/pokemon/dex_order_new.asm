@@ -217,6 +217,7 @@ NewPokedexOrder:
 	dw SEEL
 	dw DEWGONG
 	dw LICKITUNG
+	dw LICKILICKY
 	dw BURGELA
 	dw TANGELA
 	dw EEVEE

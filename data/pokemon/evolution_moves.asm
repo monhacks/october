@@ -261,6 +261,7 @@ EvolutionMoves::
 	dw NO_MOVE      ; KINGDRA
 	dw NO_MOVE      ; PHANPY
 	dw FURY_ATTACK  ; DONPHAN
+	dw NO_MOVE      ; LICKILICKY
 	dw NO_MOVE      ; PORYGON2
 	dw NO_MOVE      ; STANTLER
 	dw NO_MOVE      ; SMEARGLE

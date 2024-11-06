@@ -262,6 +262,7 @@ FirstEvoStages::
 	dw HORSEA
 	dw PHANPY
 	dw PHANPY     ;e8
+	dw LICKITUNG
 	dw PORYGON
 	dw STANTLER
 	dw SMEARGLE
