@@ -244,6 +244,10 @@ AnimationIdlePointers:
 	dw SwinubAnimationIdle
 	dw PiloswineAnimationIdle
 	dw ChomoswineAnimationIdle
+	dw CamouflakeAnimationIdle
+	dw GermifrostAnimationIdle
+	dw VegelancheAnimationIdle
+	dw SnouwrbunAnimationIdle
 	dw CorsolaAnimationIdle
 	dw RemoraidAnimationIdle
 	dw OctilleryAnimationIdle
@@ -278,7 +282,6 @@ AnimationIdlePointers:
 	dw CelebiAnimationIdle
 	dw AdbarstorkAnimationIdle
 	dw PupperonAnimationIdle
-	dw CamouflakeAnimationIdle
 	dw CoaltaAnimationIdle
 	dw BurgelaAnimationIdle
 	dw VulpiiiAnimationIdle
@@ -300,9 +303,6 @@ AnimationIdlePointers:
 	dw BallerineAnimationIdle
 	dw OrijoeyAnimationIdle
 	dw AggroswineAnimationIdle
-	dw GermifrostAnimationIdle
-	dw VegelancheAnimationIdle
-	dw SnouwrbunAnimationIdle
 	dw NecrorexAnimationIdle
 	dw NurssumAnimationIdle
 

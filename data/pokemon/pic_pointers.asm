@@ -262,6 +262,10 @@ PokemonPicPointers::
 	mon_pic Swinub
 	mon_pic Piloswine
 	mon_pic Chomoswine
+	mon_pic Camouflake
+	mon_pic Germifrost
+	mon_pic Vegelanche
+	mon_pic Snouwrbun
 	mon_pic Corsola
 	mon_pic Remoraid
 	mon_pic Octillery
@@ -296,7 +300,6 @@ PokemonPicPointers::
 	mon_pic Celebi
 	mon_pic Adbarstork
 	mon_pic Pupperon
-	mon_pic Camouflake
 	mon_pic Coalta
 	mon_pic Burgela
 	mon_pic Vulpiii
@@ -318,9 +321,6 @@ PokemonPicPointers::
 	mon_pic Ballerine
 	mon_pic Orijoey
 	mon_pic Aggroswine
-	mon_pic Germifrost
-	mon_pic Vegelanche
-	mon_pic Snouwrbun
 	mon_pic Necrorex
 	mon_pic Nurssum
 

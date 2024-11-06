@@ -244,6 +244,10 @@ BitmasksPointers:
 	dw SwinubBitmasks
 	dw PiloswineBitmasks
 	dw ChomoswineBitmasks
+	dw CamouflakeBitmasks
+	dw GermifrostBitmasks
+	dw VegelancheBitmasks
+	dw SnouwrbunBitmasks
 	dw CorsolaBitmasks
 	dw RemoraidBitmasks
 	dw OctilleryBitmasks
@@ -278,7 +282,6 @@ BitmasksPointers:
 	dw CelebiBitmasks
 	dw AdbarstorkBitmasks
 	dw PupperonBitmasks
-	dw CamouflakeBitmasks
 	dw CoaltaBitmasks
 	dw BurgelaBitmasks
 	dw VulpiiiBitmasks
@@ -300,9 +303,6 @@ BitmasksPointers:
 	dw BallerineBitmasks
 	dw OrijoeyBitmasks
 	dw AggroswineBitmasks
-	dw GermifrostBitmasks
-	dw VegelancheBitmasks
-	dw SnouwrbunBitmasks
 	dw NecrorexBitmasks
 	dw NurssumBitmasks
 

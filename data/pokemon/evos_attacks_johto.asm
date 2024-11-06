@@ -95,6 +95,10 @@ EvosAttacksPointers2::
 	dw SwinubEvosAttacks
 	dw PiloswineEvosAttacks
 	dw ChomoswineEvosAttacks
+	dw CamouflakeEvosAttacks
+	dw GermifrostEvosAttacks
+	dw VegelancheEvosAttacks
+	dw SnouwrbunEvosAttacks
 	dw CorsolaEvosAttacks
 	dw RemoraidEvosAttacks
 	dw OctilleryEvosAttacks
@@ -116,10 +120,6 @@ EvosAttacksPointers2::
 	dw SmoochumEvosAttacks
 	dw ElekidEvosAttacks
 	dw MagbyEvosAttacks
-	dw MiltankEvosAttacks
-	dw BlisseyEvosAttacks
-	dw RaikouEvosAttacks
-	dw EnteiEvosAttacks
 .End:
 
 ChikoritaEvosAttacks:
@@ -1527,6 +1527,73 @@ ChomoswineEvosAttacks:
 	dbw 51, AMNESIA
 	dbw 57, EARTHQUAKE
 	db 0 ; no more level-up moves
+	
+CamouflakeEvosAttacks:
+	dbbw EVOLVE_LEVEL, 18, GERMIFROST
+	db 0 ; no more evolutions
+	dbw 1, ROLLOUT
+	dbw 1, GROWL
+	dbw 4, RAPID_SPIN
+	dbw 9, POWDER_SNOW
+	dbw 13, DEFENSE_CURL
+	dbw 18, ABSORB
+	dbw 22, CHARM
+	dbw 27, ICY_WIND
+	dbw 31, MEGA_DRAIN
+	dbw 36, MIST
+	dbw 40, ICE_BEAM
+	dbw 45, GIGA_DRAIN
+	db 0 ; no more level-up moves
+	
+GermifrostEvosAttacks:
+	dbbw EVOLVE_ITEM, HEART_STONE, VEGELANCHE
+	dbbw EVOLVE_ITEM, POISON_STONE, SNOUWRBUN
+	db 0 ; no more evolutions
+	dbw 1, ROLLOUT
+	dbw 1, GROWL
+	dbw 4, RAPID_SPIN
+	dbw 9, POWDER_SNOW
+	dbw 13, DEFENSE_CURL
+	dbw 18, ABSORB
+	dbw 24, CHARM
+	dbw 29, ICY_WIND
+	dbw 33, MEGA_DRAIN
+	dbw 38, MIST
+	dbw 42, ICE_BEAM
+	dbw 47, GIGA_DRAIN
+	db 0 ; no more level-up moves
+
+VegelancheEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, ROLLOUT
+	dbw 1, GROWL
+	dbw 4, RAPID_SPIN
+	dbw 9, POWDER_SNOW
+	dbw 13, DEFENSE_CURL
+	dbw 18, ABSORB
+	dbw 26, CHARM
+	dbw 31, ICY_WIND
+	dbw 35, MEGA_DRAIN
+	dbw 40, MIST
+	dbw 44, ICE_BEAM
+	dbw 49, GIGA_DRAIN
+	db 0 ; no more level-up moves
+
+SnouwrbunEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, ROLLOUT
+	dbw 1, GROWL
+	dbw 4, RAPID_SPIN
+	dbw 9, POWDER_SNOW
+	dbw 13, DEFENSE_CURL
+	dbw 18, ABSORB
+	dbw 26, CHARM
+	dbw 31, PURSUIT
+	dbw 35, MEGA_DRAIN
+	dbw 40, MIST
+	dbw 44, FAINT_ATTACK
+	dbw 49, GIGA_DRAIN
+	db 0 ; no more level-up moves
 
 CorsolaEvosAttacks:
 	db 0 ; no more evolutions
@@ -1822,60 +1889,6 @@ MagbyEvosAttacks:
 	dbw 37, FLAMETHROWER
 	dbw 43, CONFUSE_RAY
 	dbw 49, FIRE_BLAST
-	db 0 ; no more level-up moves
-	
-MiltankEvosAttacks:
-	db 0 ; no more evolutions
-	dbw 1, TACKLE
-	dbw 4, GROWL
-	dbw 8, DEFENSE_CURL
-	dbw 13, STOMP
-	dbw 19, MILK_DRINK
-	dbw 26, BIDE
-	dbw 34, ROLLOUT
-	dbw 43, BODY_SLAM
-	dbw 53, HEAL_BELL
-	db 0 ; no more level-up moves
-
-BlisseyEvosAttacks:
-	db 0 ; no more evolutions
-	dbw 1, POUND
-	dbw 4, GROWL
-	dbw 7, TAIL_WHIP
-	dbw 10, SOFTBOILED
-	dbw 13, DOUBLESLAP
-	dbw 18, MINIMIZE
-	dbw 23, SING
-	dbw 28, EGG_BOMB
-	dbw 33, DEFENSE_CURL
-	dbw 40, LIGHT_SCREEN
-	dbw 47, DOUBLE_EDGE
-	db 0 ; no more level-up moves
-
-RaikouEvosAttacks:
-	db 0 ; no more evolutions
-	dbw 1, BITE
-	dbw 1, LEER
-	dbw 11, THUNDERSHOCK
-	dbw 21, ROAR
-	dbw 31, QUICK_ATTACK
-	dbw 41, SPARK
-	dbw 51, REFLECT
-	dbw 61, CRUNCH
-	dbw 71, THUNDER
-	db 0 ; no more level-up moves
-
-EnteiEvosAttacks:
-	db 0 ; no more evolutions
-	dbw 1, BITE
-	dbw 1, LEER
-	dbw 11, EMBER
-	dbw 21, ROAR
-	dbw 31, FIRE_SPIN
-	dbw 41, STOMP
-	dbw 51, FLAMETHROWER
-	dbw 61, SWAGGER
-	dbw 71, FIRE_BLAST
 	db 0 ; no more level-up moves
 
 ;-------------------------------------------------------------------------------------------

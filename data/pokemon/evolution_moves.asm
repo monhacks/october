@@ -244,6 +244,10 @@ EvolutionMoves::
 	dw NO_MOVE      ; SWINUB
 	dw FURY_ATTACK  ; PILOSWINE
 	dw NO_MOVE      ; CHOMOSWINE
+	dw NO_MOVE      ; CAMOUFLAKE
+	dw NO_MOVE		; GERMIFROST
+	dw PETAL_DANCE	; VEGELANCHE
+	dw LEECH_SEED	; SNOUWRBUN
 	dw NO_MOVE      ; CORSOLA
 	dw NO_MOVE      ; REMORAID
 	dw OCTAZOOKA    ; OCTILLERY
@@ -278,7 +282,6 @@ EvolutionMoves::
 	dw NO_MOVE      ; CELEBI
 	dw NO_MOVE      ; ADBARSTORK
 	dw NO_MOVE      ; PUPPERON
-	dw NO_MOVE      ; CAMOUFLAKE
 	dw NO_MOVE      ; COALTA
 	dw NO_MOVE      ; BURGELA
 	dw NO_MOVE      ; VULPIII
@@ -300,9 +303,6 @@ EvolutionMoves::
 	dw NO_MOVE      ; BALLERINE
 	dw NO_MOVE      ; ORIJOEY
 	dw NO_MOVE      ; AGGROSWINE
-	dw NO_MOVE		; GERMIFROST
-	dw PETAL_DANCE	; VEGELANCHE
-	dw LEECH_SEED	; SNOUWRBUN
 	dw NO_MOVE	    ; NECROREX
 	dw NO_MOVE      ; NURSSUM
 

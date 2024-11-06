@@ -245,6 +245,10 @@ PokedexDataPointerTable:
 	dba SwinubPokedexEntry
 	dba PiloswinePokedexEntry
 	dba ChomoswinePokedexEntry
+	dba CamouflakePokedexEntry
+	dba GermifrostPokedexEntry
+	dba VegelanchePokedexEntry
+	dba SnouwrbunPokedexEntry
 	dba CorsolaPokedexEntry
 	dba RemoraidPokedexEntry
 	dba OctilleryPokedexEntry
@@ -279,7 +283,6 @@ PokedexDataPointerTable:
 	dba CelebiPokedexEntry
 	dba AdbarstorkPokedexEntry
 	dba PupperonPokedexEntry
-	dba CamouflakePokedexEntry
 	dba CoaltaPokedexEntry
 	dba BurgelaPokedexEntry
 	dba VulpiiiPokedexEntry
@@ -301,9 +304,6 @@ PokedexDataPointerTable:
 	dba BallerinePokedexEntry
 	dba OrijoeyPokedexEntry
 	dba AggroswinePokedexEntry
-	dba GermifrostPokedexEntry
-	dba VegelanchePokedexEntry
-	dba SnouwrbunPokedexEntry
 	dba NecrorexPokedexEntry
 	dba NurssumPokedexEntry
 

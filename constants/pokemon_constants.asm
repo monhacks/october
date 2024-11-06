@@ -266,6 +266,10 @@ JOHTO_POKEMON EQU const_value
 	const SWINUB     ; dc
 	const PILOSWINE  ; dd
 	const CHOMOSWINE
+	const CAMOUFLAKE
+	const GERMIFROST
+	const VEGELANCHE
+	const SNOUWRBUN
 	const CORSOLA    ; de
 	const REMORAID   ; df
 	const OCTILLERY  ; e0
@@ -300,7 +304,6 @@ JOHTO_POKEMON EQU const_value
 	const CELEBI     ; fb
 	const ADBARSTORK ; fe
 	const PUPPERON   ; ff
-	const CAMOUFLAKE
 	const COALTA
 	const BURGELA
 	const VULPIII
@@ -322,9 +325,6 @@ JOHTO_POKEMON EQU const_value
 	const BALLERINE
 	const ORIJOEY
 	const AGGROSWINE
-	const GERMIFROST
-	const VEGELANCHE
-	const SNOUWRBUN
 	const NECROREX ; sans undertale
 	const NURSSUM ; teraleak beytah
 

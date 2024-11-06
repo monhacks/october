@@ -252,6 +252,10 @@ PokemonCries::
 	mon_cry CRY_CYNDAQUIL,   $1fe,  $140 ; SWINUB
 	mon_cry CRY_MAGCARGO,   -$109,  $100 ; PILOSWINE
 	mon_cry CRY_MAGCARGO,   -525,  448   ; CHOMOSWINE
+	mon_cry CRY_PICHU,       $000,  $150 ; CAMOUFLAKE
+	mon_cry CRY_PICHU,       $030,  $150 ; TODO: GERMIFROST
+	mon_cry CRY_PICHU,       $060,  $140 ; TODO: VEGELANCHE
+	mon_cry CRY_PICHU,       $070,  $140 ; TODO: SNOUWRBUN
 	mon_cry CRY_MAGCARGO,    $0a1,  $0e8 ; CORSOLA
 	mon_cry CRY_SUNFLORA,    $00d,  $100 ; REMORAID
 	mon_cry CRY_TOTODILE,    $000,  $180 ; OCTILLERY
@@ -286,7 +290,6 @@ PokemonCries::
 	mon_cry CRY_ENTEI,       $14a,  $111 ; CELEBI
 	mon_cry CRY_SUNFLORA,   -$060,  $19f ; ADBARSTORK
 	mon_cry CRY_GROWLITHE,   $0a1,  $0e8 ; PUPPERON
-	mon_cry CRY_PICHU,       $000,  $150 ; CAMOUFLAKE
 	mon_cry CRY_MARILL,      $0c0,  $090 ; COALTA
 	mon_cry CRY_MARILL,      $f4c,  $110 ; BURGELA
 	mon_cry CRY_LAPRAS,      $0B0,  $0D0 ; VULPIII
@@ -308,9 +311,6 @@ PokemonCries::
 	mon_cry CRY_KRABBY,      $160,  $0a0 ; BALLERINE
 	mon_cry CRY_KANGASKHAN,  $0f0,  $04b ; ORIJOEY
 	mon_cry CRY_AGGROSWINE,  $1B7,  $068 ; AGGROSWINE
-	mon_cry CRY_PICHU,       $030,  $150 ; TODO: GERMIFROST
-	mon_cry CRY_PICHU,       $060,  $140 ; TODO: VEGELANCHE
-	mon_cry CRY_PICHU,       $070,  $140 ; TODO: SNOUWRBUN
 	mon_cry CRY_PICHU,       $000,  $150 ; TODO: NECROREX
 	mon_cry CRY_PICHU,       $077,  $140 ; TODO: NURSSUM
 

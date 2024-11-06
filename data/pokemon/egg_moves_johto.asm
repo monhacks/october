@@ -94,6 +94,10 @@ EggMovePointers2::
 	dw SwinubEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
+	dw NoEggMoves2
+	dw NoEggMoves2
+	dw NoEggMoves2
+	dw NoEggMoves2
 	dw CorsolaEggMoves
 	dw RemoraidEggMoves
 	dw NoEggMoves2
@@ -128,7 +132,6 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw AdbarstorkEggMoves
 	dw NoEggMoves2
-	dw NoEggMoves2
 	dw CoaltaEggMoves
 	dw BurgelaEggMoves
 	dw VulpiiiEggMoves
@@ -143,9 +146,6 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw SmujjEggMoves
 	dw KotoraEggMoves
-	dw NoEggMoves2
-	dw NoEggMoves2
-	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2

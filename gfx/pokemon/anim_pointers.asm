@@ -244,6 +244,10 @@ AnimationPointers:
 	dw SwinubAnimation
 	dw PiloswineAnimation
 	dw ChomoswineAnimation
+	dw CamouflakeAnimation
+	dw GermifrostAnimation
+	dw VegelancheAnimation
+	dw SnouwrbunAnimation
 	dw CorsolaAnimation
 	dw RemoraidAnimation
 	dw OctilleryAnimation
@@ -278,7 +282,6 @@ AnimationPointers:
 	dw CelebiAnimation
 	dw AdbarstorkAnimation
 	dw PupperonAnimation
-	dw CamouflakeAnimation
 	dw CoaltaAnimation
 	dw BurgelaAnimation
 	dw VulpiiiAnimation
@@ -300,8 +303,5 @@ AnimationPointers:
 	dw BallerineAnimation
 	dw OrijoeyAnimation
 	dw AggroswineAnimation
-	dw GermifrostAnimation
-	dw VegelancheAnimation
-	dw SnouwrbunAnimation
 	dw NecrorexAnimation
 	dw NurssumAnimation

@@ -244,6 +244,10 @@ FramesPointers:
 	dba SwinubFrames
 	dba PiloswineFrames
 	dba ChomoswineFrames
+	dba CamouflakeFrames
+	dba GermifrostFrames
+	dba VegelancheFrames
+	dba SnouwrbunFrames
 	dba CorsolaFrames
 	dba RemoraidFrames
 	dba OctilleryFrames
@@ -278,7 +282,6 @@ FramesPointers:
 	dba CelebiFrames
 	dba AdbarstorkFrames
 	dba PupperonFrames
-	dba CamouflakeFrames
 	dba CoaltaFrames
 	dba BurgelaFrames
 	dba VulpiiiFrames
@@ -300,8 +303,5 @@ FramesPointers:
 	dba BallerineFrames
 	dba OrijoeyFrames
 	dba AggroswineFrames
-	dba GermifrostFrames
-	dba VegelancheFrames
-	dba SnouwrbunFrames
 	dba NecrorexFrames
 	dba NurssumFrames
