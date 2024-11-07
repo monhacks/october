@@ -843,5 +843,7 @@ SECTION "Pics 25", ROMX
 
 KokopelliFrontpic:	INCBIN "gfx/pokemon/kokopelli/front.static.2bpp.lz"
 KokopelliBackpic:   INCBIN "gfx/pokemon/kokopelli/back.2bpp.lz"
+AngoreFrontpic:	    INCBIN "gfx/pokemon/angore/front.static.2bpp.lz"
+AngoreBackpic:      INCBIN "gfx/pokemon/angore/back.2bpp.lz"
 
 INCLUDE "gfx/pics_animated.asm"

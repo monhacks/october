@@ -1,6 +1,7 @@
 SECTION "Evolutions and Attacks 3", ROMX
 
 EvosAttacksPointers3::
+	dw HitmontopEvosAttacks
 	dw SmoochumEvosAttacks
 	dw ElekidEvosAttacks
 	dw MagbyEvosAttacks
@@ -40,6 +41,19 @@ EvosAttacksPointers3::
 	dw NurssumEvosAttacks
 .End:
 
+HitmontopEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, ROLLING_KICK
+	dbw 7, FOCUS_ENERGY
+	dbw 13, PURSUIT
+	dbw 19, QUICK_ATTACK
+	dbw 25, RAPID_SPIN
+	dbw 31, COUNTER
+	dbw 37, AGILITY
+	dbw 43, DETECT
+	dbw 49, TRIPLE_KICK
+	db 0 ; no more level-up moves
+	
 SmoochumEvosAttacks:
 	dbbw EVOLVE_LEVEL, 30, JYNX
 	db 0 ; no more evolutions

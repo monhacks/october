@@ -264,6 +264,7 @@ PokedexDataPointerTable:
 	dba HoundoomPokedexEntry
 	dba FennecursePokedexEntry
 	dba StromenPokedexEntry
+	dba AngorePokedexEntry
 	dba KingdraPokedexEntry
 	dba PhanpyPokedexEntry
 	dba DonphanPokedexEntry

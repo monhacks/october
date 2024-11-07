@@ -263,6 +263,7 @@ EvolutionMoves::
 	dw NO_MOVE      ; HOUNDOOM
 	dw NO_MOVE      ; FENNECURSE
 	dw NO_MOVE      ; STROMEN
+	dw NO_MOVE      ; ANGORE
 	dw NO_MOVE      ; KINGDRA
 	dw NO_MOVE      ; PHANPY
 	dw FURY_ATTACK  ; DONPHAN

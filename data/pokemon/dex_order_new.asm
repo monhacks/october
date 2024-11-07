@@ -216,6 +216,7 @@ NewPokedexOrder:
 	dw LANTURN
 	dw BITEEL
 	dw LURREEL
+	dw ANGORE
 	dw SEEL
 	dw DEWGONG
 	dw LICKITUNG

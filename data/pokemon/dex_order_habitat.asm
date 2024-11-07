@@ -207,6 +207,7 @@ HabitatPokedexOrder:
 	dw LANTURN
 	dw BITEEL
 	dw LURREEL
+	dw ANGORE
 	dw REMORAID
 	dw OCTILLERY
 	dw QWILFISH

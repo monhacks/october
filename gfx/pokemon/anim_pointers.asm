@@ -263,6 +263,7 @@ AnimationPointers:
 	dw HoundoomAnimation
 	dw FennecurseAnimation
 	dw StromenAnimation
+	dw AngoreAnimation
 	dw KingdraAnimation
 	dw PhanpyAnimation
 	dw DonphanAnimation

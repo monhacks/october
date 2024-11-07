@@ -264,6 +264,7 @@ FirstEvoStages::
 	dw HOUNDOUR
 	dw FENNECURSE
 	dw STROMEN
+	dw ANGORE
 	dw HORSEA
 	dw PHANPY
 	dw PHANPY     ;e8

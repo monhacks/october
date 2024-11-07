@@ -285,6 +285,7 @@ JOHTO_POKEMON EQU const_value
 	const HOUNDOOM   ; e5
 	const FENNECURSE
 	const STROMEN
+	const ANGORE
 	const KINGDRA    ; e6
 	const PHANPY     ; e7
 	const DONPHAN    ; e8

@@ -169,6 +169,7 @@ CantFollowList:
 	dw HOUNDOOM
 	dw FENNECURSE
 	dw STROMEN
+	dw ANGORE
 	dw KINGDRA
 	dw PHANPY
 	dw DONPHAN

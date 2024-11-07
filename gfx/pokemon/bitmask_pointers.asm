@@ -263,6 +263,7 @@ BitmasksPointers:
 	dw HoundoomBitmasks
 	dw FennecurseBitmasks
 	dw StromenBitmasks
+	dw AngoreBitmasks
 	dw KingdraBitmasks
 	dw PhanpyBitmasks
 	dw DonphanBitmasks

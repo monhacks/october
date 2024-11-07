@@ -263,6 +263,7 @@ AnimationIdlePointers:
 	dw HoundoomAnimationIdle
 	dw FennecurseAnimationIdle
 	dw StromenAnimationIdle
+	dw AngoreAnimationIdle
 	dw KingdraAnimationIdle
 	dw PhanpyAnimationIdle
 	dw DonphanAnimationIdle

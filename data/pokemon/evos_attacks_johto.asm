@@ -114,6 +114,7 @@ EvosAttacksPointers2::
 	dw HoundoomEvosAttacks
 	dw FennecurseEvosAttacks
 	dw StromenEvosAttacks
+	dw AngoreEvosAttacks
 	dw KingdraEvosAttacks
 	dw PhanpyEvosAttacks
 	dw DonphanEvosAttacks
@@ -122,7 +123,6 @@ EvosAttacksPointers2::
 	dw StantlerEvosAttacks
 	dw SmeargleEvosAttacks
 	dw TyrogueEvosAttacks
-	dw HitmontopEvosAttacks
 .End:
 
 ChikoritaEvosAttacks:
@@ -1821,6 +1821,23 @@ StromenEvosAttacks:
 	dbw 58, PSYCHIC_M
 	db 0 ; no more level-up moves
 	
+AngoreEvosAttacks:
+	db 0 ; no more evolutions
+	db 1, TACKLE
+	db 1, GROWL
+	db 1, BUBBLE
+	db 6, DEFENSE_CURL
+	db 10, RAGE
+	db 15, SUPERSONIC
+	db 19, BUBBLEBEAM
+	db 24, SCREECH
+	db 28, IRON_TAIL
+	db 34, ACID_ARMOR
+	db 39, SCARY_FACE
+	db 45, CRUNCH
+	db 50, HYDRO_PUMP
+	db 0 ; no more level-up moves
+	
 KingdraEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, BUBBLE
@@ -1925,19 +1942,6 @@ TyrogueEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, FOCUS_ENERGY
-	db 0 ; no more level-up moves
-
-HitmontopEvosAttacks:
-	db 0 ; no more evolutions
-	dbw 1, ROLLING_KICK
-	dbw 7, FOCUS_ENERGY
-	dbw 13, PURSUIT
-	dbw 19, QUICK_ATTACK
-	dbw 25, RAPID_SPIN
-	dbw 31, COUNTER
-	dbw 37, AGILITY
-	dbw 43, DETECT
-	dbw 49, TRIPLE_KICK
 	db 0 ; no more level-up moves
 
 ;-------------------------------------------------------------------------------------------

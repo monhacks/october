@@ -271,6 +271,7 @@ PokemonCries::
 	mon_cry CRY_CYNDAQUIL,   531,  128   ; HOUNDOOM
 	mon_cry CRY_CYNDAQUIL,   $303,  $1c0 ; FENNECURSE
 	mon_cry CRY_GRIMER,      $210,  $100 ; STROMEN
+	mon_cry CRY_WOOPER,      $8f0,  $100 ; ANGORE: TODO
 	mon_cry CRY_SLUGMA,      $2fb,  $100 ; KINGDRA
 	mon_cry CRY_SENTRET,     $048,  $230 ; PHANPY
 	mon_cry CRY_SENTRET,    -184,  768   ; DONPHAN

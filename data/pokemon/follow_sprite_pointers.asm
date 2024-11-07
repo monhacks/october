@@ -390,7 +390,8 @@ FollowSpritePointers::
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;HOUNDOUR
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;HOUNDOOM
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_RED ;FENNECURSE
-	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BROWN ;FENNECURSE
+	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BROWN ;STROMEN
+	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;ANGORE
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;KINGDRA
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;PHANPY
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;DONPHAN

@@ -263,6 +263,7 @@ FramesPointers:
 	dba HoundoomFrames
 	dba FennecurseFrames
 	dba StromenFrames
+	dba AngoreFrames
 	dba KingdraFrames
 	dba PhanpyFrames
 	dba DonphanFrames

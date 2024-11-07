@@ -411,3 +411,4 @@ LickilickyFrontpicAnim:    INCBIN "gfx/pokemon/lickilicky/front.animated.2bpp.lz
 KokopelliFrontpicAnim:     INCBIN "gfx/pokemon/kokopelli/front.animated.2bpp.lz"
 BiteelFrontpicAnim:        INCBIN "gfx/pokemon/biteel/front.animated.2bpp.lz"
 LurreelFrontpicAnim:       INCBIN "gfx/pokemon/lurreel/front.animated.2bpp.lz"
+AngoreFrontpicAnim:        INCBIN "gfx/pokemon/angore/front.animated.2bpp.lz"

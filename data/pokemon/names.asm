@@ -268,6 +268,7 @@ PokemonNames::
 	db "HOUNDOOM@@"
 	db "FENNECURSE"
 	db "STROMEN@@@"
+	db "ANGORE@@@@"
 	db "KINGDRA@@@"
 	db "PHANPY@@@@"
 	db "DONPHAN@@@"

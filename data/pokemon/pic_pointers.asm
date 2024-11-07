@@ -281,6 +281,7 @@ PokemonPicPointers::
 	mon_pic Houndoom
 	mon_pic Fennecurse
 	mon_pic Stromen
+	mon_pic Angore
 	mon_pic Kingdra
 	mon_pic Phanpy
 	mon_pic Donphan
