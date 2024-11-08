@@ -262,8 +262,8 @@ PokemonCries::
 	mon_cry CRY_PICHU,       $060,  $140 ; TODO: VEGELANCHE
 	mon_cry CRY_PICHU,       $070,  $140 ; TODO: SNOUWRBUN
 	mon_cry CRY_MAGCARGO,    $0a1,  $0e8 ; CORSOLA
-	mon_cry CRY_SUNFLORA,    $00d,  $100 ; REMORAID
-	mon_cry CRY_TOTODILE,    $000,  $180 ; OCTILLERY
+	mon_cry CRY_CHIKORITA,    77,   72   ; REMORAID (diff)
+	mon_cry CRY_CHIKORITA,   $000,  $180 ; OCTILLERY
 	mon_cry CRY_TEDDIURSA,   $002,  $06a ; DELIBIRD
 	mon_cry CRY_MANTINE,    -$0be,  $0f0 ; MANTINE
 	mon_cry CRY_LARVITAR,    $06b,  $280 ; SKARMORY, needs fixing
