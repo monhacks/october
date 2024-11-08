@@ -1792,16 +1792,16 @@ JohtoGrassWildMons:
 	dbw 24, GLIGAR
 	dbw 25, DONPHAN
 	dbw 20, PHANPY
-	dbw 27, SKARMORY
-	dbw 27, SKARMORY
+	dbw 27, AIRMOR
+	dbw 27, AIRMOR
 	; day
 	dbw 23, GEODUDE
 	dbw 23, GRAVELER
 	dbw 24, GLIGAR
 	dbw 25, DONPHAN
 	dbw 30, DONPHAN
-	dbw 27, SKARMORY
-	dbw 27, SKARMORY
+	dbw 27, AIRMOR
+	dbw 27, AIRMOR
 	; nite
 	dbw 23, GEODUDE
 	dbw 23, GRAVELER

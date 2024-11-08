@@ -276,7 +276,8 @@ PokemonPicPointers::
 	mon_pic Octillery
 	mon_pic Delibird
 	mon_pic Mantine
-	mon_pic Skarmory
+	mon_pic Kukulcan
+	mon_pic Airmor
 	mon_pic Houndour
 	mon_pic Houndoom
 	mon_pic Fennecurse
@@ -306,6 +307,7 @@ PokemonPicPointers::
 	mon_pic Tyranitar
 	mon_pic Lugia
 	mon_pic HoOh
+	mon_pic Komaitiff
 	mon_pic Celebi
 	mon_pic Kokopelli
 	mon_pic Adbarstork

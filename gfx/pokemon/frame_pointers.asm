@@ -258,7 +258,8 @@ FramesPointers:
 	dba OctilleryFrames
 	dba DelibirdFrames
 	dba MantineFrames
-	dba SkarmoryFrames
+	dba KukulcanFrames
+	dba AirmorFrames
 	dba HoundourFrames
 	dba HoundoomFrames
 	dba FennecurseFrames
@@ -288,6 +289,7 @@ FramesPointers:
 	dba TyranitarFrames
 	dba LugiaFrames
 	dba HoOhFrames
+	dba KomaitiffFrames
 	dba CelebiFrames
 	dba KokopelliFrames
 	dba AdbarstorkFrames

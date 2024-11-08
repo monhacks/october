@@ -133,8 +133,10 @@ AlphabeticalPokedexOrder:
 	dw KOALYPTUS
 	dw KOFFING
 	dw KOKOPELLI
+	dw KOMAITIFF
 	dw KRABBY
 	dw KUDATSUBE
+	dw KUKULCAN
 	dw LANTURN
 	dw LAPRAS
 	dw LARVITAR
@@ -243,7 +245,7 @@ AlphabeticalPokedexOrder:
 	dw SHUCKLE
 	dw SHUQLOUR
 	dw SILKANE
-	dw SKARMORY
+	dw AIRMOR
 	dw SKIPLOOM
 	dw SLOWBRO
 	dw SLOWKING

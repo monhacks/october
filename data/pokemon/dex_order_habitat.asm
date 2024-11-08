@@ -96,6 +96,7 @@ HabitatPokedexOrder:
 	dw ESPEON
 	dw UMBREON
 	dw LEAFEON
+	dw KUKULCAN
 
 ; MOUNTAIN
 	dw ONIX
@@ -245,7 +246,7 @@ HabitatPokedexOrder:
 	dw KATU
 	dw XATU
 	dw MURKROW
-	dw SKARMORY
+	dw AIRMOR
 	dw CLEFLING
 	dw MALLODY
 	dw ADBARSTORK
@@ -317,6 +318,7 @@ HabitatPokedexOrder:
 	dw MEWTWO
 	dw LUGIA
 	dw HO_OH
+	dw KOMAITIFF
 	dw MEW
 	dw CELEBI
 	dw KOKOPELLI

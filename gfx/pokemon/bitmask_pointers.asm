@@ -258,7 +258,8 @@ BitmasksPointers:
 	dw OctilleryBitmasks
 	dw DelibirdBitmasks
 	dw MantineBitmasks
-	dw SkarmoryBitmasks
+	dw KukulcanBitmasks
+	dw AirmorBitmasks
 	dw HoundourBitmasks
 	dw HoundoomBitmasks
 	dw FennecurseBitmasks
@@ -288,6 +289,7 @@ BitmasksPointers:
 	dw TyranitarBitmasks
 	dw LugiaBitmasks
 	dw HoOhBitmasks
+	dw KomaitiffBitmasks
 	dw CelebiBitmasks
 	dw KokopelliBitmasks
 	dw AdbarstorkBitmasks

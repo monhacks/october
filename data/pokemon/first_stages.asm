@@ -259,7 +259,8 @@ FirstEvoStages::
 	dw REMORAID   ;e0
 	dw DELIBIRD
 	dw MANTINE
-	dw SKARMORY
+	dw KUKULCAN
+	dw AIRMOR
 	dw HOUNDOUR
 	dw HOUNDOUR
 	dw FENNECURSE
@@ -289,6 +290,7 @@ FirstEvoStages::
 	dw LARVITAR   ;f8
 	dw LUGIA
 	dw HO_OH
+	dw KOMAITIFF
 	dw CELEBI
 	dw KOKOPELLI
 	dw ADBARSTORK

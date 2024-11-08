@@ -17,6 +17,7 @@ EvosAttacksPointers3::
 	dw TyranitarEvosAttacks
 	dw LugiaEvosAttacks
 	dw HoOhEvosAttacks
+	dw KomaitiffEvosAttacks
 	dw CelebiEvosAttacks
 	dw KokopelliEvosAttacks
 	dw AdbarstorkEvosAttacks
@@ -251,6 +252,20 @@ LugiaEvosAttacks:
 	db 0 ; no more level-up moves
 
 HoOhEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, SACRED_FIRE
+	dbw 11, SAFEGUARD
+	dbw 22, GUST
+	dbw 33, RECOVER
+	dbw 44, FIRE_BLAST
+	dbw 55, SUNNY_DAY
+	dbw 66, SWIFT
+	dbw 77, WHIRLWIND
+	dbw 88, ANCIENTPOWER
+	dbw 99, FUTURE_SIGHT
+	db 0 ; no more level-up moves
+	
+KomaitiffEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, SACRED_FIRE
 	dbw 11, SAFEGUARD

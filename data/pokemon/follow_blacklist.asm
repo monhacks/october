@@ -164,7 +164,8 @@ CantFollowList:
 	dw OCTILLERY
 	dw DELIBIRD
 	dw MANTINE
-	dw SKARMORY
+	dw KUKULCAN
+	dw AIRMOR
 	dw HOUNDOUR
 	dw HOUNDOOM
 	dw FENNECURSE
@@ -194,6 +195,7 @@ CantFollowList:
 	dw TYRANITAR
 	dw LUGIA
 	dw HO_OH
+	dw KOMAITIFF
 	dw KOKOPELLI
 	dw ADBARSTORK
 	dw PUPPERON ; done but TODO: growlithe & arcanine

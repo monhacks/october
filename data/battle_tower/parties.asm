@@ -2689,7 +2689,7 @@ BattleTowerMons5:
 	bigdw 136 ; SDef
 	db "SANDA-@@@@@"
 
-	dw SKARMORY
+	dw AIRMOR
 	db APPLE
 	dw SANDSTORM, FLY, STEEL_WING, TOXIC
 
@@ -3151,7 +3151,7 @@ BattleTowerMons6:
 	bigdw 149 ; SDef
 	db "UINDEi@@@@@"
 
-	dw SKARMORY
+	dw AIRMOR
 	db MIRACLEBERRY
 	dw STEEL_WING, FLY, TOXIC, PROTECT
 
@@ -4345,7 +4345,7 @@ BattleTowerMons8:
 	bigdw 292 ; SDef
 	db "MANTAIN@@@@"
 
-	dw SKARMORY
+	dw AIRMOR
 	db QUICK_CLAW
 	dw STEEL_WING, FLY, MUD_SLAP, TOXIC
 
@@ -4969,7 +4969,7 @@ BattleTowerMons9:
 	bigdw 223 ; SDef
 	db "HERUGA-@@@@"
 
-	dw SKARMORY
+	dw AIRMOR
 	db QUICK_CLAW
 	dw SANDSTORM, STEEL_WING, TOXIC, RETURN
 

@@ -109,7 +109,8 @@ EvosAttacksPointers2::
 	dw OctilleryEvosAttacks
 	dw DelibirdEvosAttacks
 	dw MantineEvosAttacks
-	dw SkarmoryEvosAttacks
+	dw KukulcanEvosAttacks
+	dw AirmorEvosAttacks
 	dw HoundourEvosAttacks
 	dw HoundoomEvosAttacks
 	dw FennecurseEvosAttacks
@@ -1749,8 +1750,13 @@ MantineEvosAttacks:
 	dbw 55, CONFUSE_RAY
 	dbw 62, HYDRO_PUMP
 	db 0 ; no more level-up moves
+	
+KukulcanEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	db 0 ; no more level-up moves
 
-SkarmoryEvosAttacks:
+AirmorEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, PECK
 	dbw 1, LEER

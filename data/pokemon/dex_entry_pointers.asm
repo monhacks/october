@@ -259,7 +259,8 @@ PokedexDataPointerTable:
 	dba OctilleryPokedexEntry
 	dba DelibirdPokedexEntry
 	dba MantinePokedexEntry
-	dba SkarmoryPokedexEntry
+	dba KukulcanPokedexEntry
+	dba AirmorPokedexEntry
 	dba HoundourPokedexEntry
 	dba HoundoomPokedexEntry
 	dba FennecursePokedexEntry
@@ -289,6 +290,7 @@ PokedexDataPointerTable:
 	dba TyranitarPokedexEntry
 	dba LugiaPokedexEntry
 	dba HoOhPokedexEntry
+	dba KomaitiffPokedexEntry
 	dba CelebiPokedexEntry
 	dba KokopelliPokedexEntry
 	dba AdbarstorkPokedexEntry

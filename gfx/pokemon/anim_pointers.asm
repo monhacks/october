@@ -258,7 +258,8 @@ AnimationPointers:
 	dw OctilleryAnimation
 	dw DelibirdAnimation
 	dw MantineAnimation
-	dw SkarmoryAnimation
+	dw KukulcanAnimation
+	dw AirmorAnimation
 	dw HoundourAnimation
 	dw HoundoomAnimation
 	dw FennecurseAnimation
@@ -288,6 +289,7 @@ AnimationPointers:
 	dw TyranitarAnimation
 	dw LugiaAnimation
 	dw HoOhAnimation
+	dw KomaitiffAnimation
 	dw CelebiAnimation
 	dw KokopelliAnimation
 	dw AdbarstorkAnimation

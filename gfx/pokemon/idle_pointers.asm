@@ -258,7 +258,8 @@ AnimationIdlePointers:
 	dw OctilleryAnimationIdle
 	dw DelibirdAnimationIdle
 	dw MantineAnimationIdle
-	dw SkarmoryAnimationIdle
+	dw KukulcanAnimationIdle
+	dw AirmorAnimationIdle
 	dw HoundourAnimationIdle
 	dw HoundoomAnimationIdle
 	dw FennecurseAnimationIdle
@@ -288,6 +289,7 @@ AnimationIdlePointers:
 	dw TyranitarAnimationIdle
 	dw LugiaAnimationIdle
 	dw HoOhAnimationIdle
+	dw KomaitiffAnimationIdle
 	dw CelebiAnimationIdle
 	dw KokopelliAnimationIdle
 	dw AdbarstorkAnimationIdle

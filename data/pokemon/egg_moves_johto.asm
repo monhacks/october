@@ -108,7 +108,8 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw DelibirdEggMoves
 	dw MantineEggMoves
-	dw SkarmoryEggMoves
+	dw NoEggMoves2
+	dw AirmorEggMoves
 	dw HoundourEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
@@ -134,6 +135,7 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw LarvitarEggMoves
+	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
@@ -494,7 +496,7 @@ MantineEggMoves:
 	dw SLAM
 	dw -1 ; end
 
-SkarmoryEggMoves:
+AirmorEggMoves:
 	dw DRILL_PECK
 	dw PURSUIT
 	dw WHIRLWIND

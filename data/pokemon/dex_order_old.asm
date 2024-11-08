@@ -238,7 +238,7 @@ OldPokedexOrder:
 	dw PHANPY
 	dw DONPHAN
 	dw MANTINE
-	dw SKARMORY
+	dw AIRMOR
 	dw DODAERIE
 	dw DODUO
 	dw DODRIO

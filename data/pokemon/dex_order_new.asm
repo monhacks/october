@@ -235,6 +235,7 @@ NewPokedexOrder:
 	dw KINGDRA
 	dw ALUMAIDEN
 	dw VALHALDRA
+	dw KUKULCAN
 	dw GLIGAR
 	dw TERRACHNID
 	dw DELIBIRD
@@ -251,7 +252,7 @@ NewPokedexOrder:
 	dw PHANPY
 	dw DONPHAN
 	dw MANTINE
-	dw SKARMORY
+	dw AIRMOR
 	dw DODAERIE
 	dw DODUO
 	dw DODRIO
@@ -310,6 +311,7 @@ NewPokedexOrder:
 	dw TYRANITAR
 	dw LUGIA
 	dw HO_OH
+	dw KOMAITIFF
 	dw MEWTWO
 	dw MEW
 	dw CELEBI

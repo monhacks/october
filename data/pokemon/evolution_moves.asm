@@ -258,7 +258,8 @@ EvolutionMoves::
 	dw OCTAZOOKA    ; OCTILLERY
 	dw NO_MOVE      ; DELIBIRD
 	dw NO_MOVE      ; MANTINE
-	dw NO_MOVE      ; SKARMORY
+	dw NO_MOVE      ; KUKULCAN
+	dw NO_MOVE      ; AIRMOR
 	dw NO_MOVE      ; HOUNDOUR
 	dw NO_MOVE      ; HOUNDOOM
 	dw NO_MOVE      ; FENNECURSE
@@ -288,6 +289,7 @@ EvolutionMoves::
 	dw NO_MOVE      ; TYRANITAR
 	dw NO_MOVE      ; LUGIA
 	dw NO_MOVE      ; HO_OH
+	dw NO_MOVE      ; KOMAITIFF
 	dw NO_MOVE      ; CELEBI
 	dw NO_MOVE      ; KOKOPELLI
 	dw NO_MOVE      ; ADBARSTORK
