@@ -1853,7 +1853,7 @@ KingdraEvosAttacks:
 	db 0 ; no more level-up moves
 	
 AlumaidenEvosAttacks:
-    dbbw EVOLVE_ITEM, UP_GRADE, VALHALDRA ; COVENANT_ORB: TODO
+    dbbw EVOLVE_ITEM, UP_GRADE, VALHALDRA ; LINKING_CORD: TODO
 	db 0 ; no more evolutions
 	dbw 1, HEADBUTT
 	dbw 1, HAZE
