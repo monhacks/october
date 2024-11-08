@@ -172,6 +172,7 @@ CantFollowList:
 	dw ANGORE
 	dw KINGDRA
 	dw ALUMAIDEN
+	dw VALHALDRA
 	dw PHANPY
 	dw DONPHAN
 	dw LICKILICKY

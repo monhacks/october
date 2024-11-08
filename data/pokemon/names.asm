@@ -271,6 +271,7 @@ PokemonNames::
 	db "ANGORE@@@@"
 	db "KINGDRA@@@"
 	db "ALUMAIDEN@"
+	db "VALHALDRA@"
 	db "PHANPY@@@@"
 	db "DONPHAN@@@"
 	db "LICKILICKY"

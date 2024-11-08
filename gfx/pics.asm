@@ -847,5 +847,7 @@ AngoreFrontpic:	    INCBIN "gfx/pokemon/angore/front.static.2bpp.lz"
 AngoreBackpic:      INCBIN "gfx/pokemon/angore/back.2bpp.lz"
 AlumaidenFrontpic:	INCBIN "gfx/pokemon/alumaiden/front.static.2bpp.lz"
 AlumaidenBackpic:   INCBIN "gfx/pokemon/alumaiden/back.2bpp.lz"
+ValhaldraFrontpic:	INCBIN "gfx/pokemon/valhaldra/front.static.2bpp.lz"
+ValhaldraBackpic:   INCBIN "gfx/pokemon/valhaldra/back.2bpp.lz"
 
 INCLUDE "gfx/pics_animated.asm"

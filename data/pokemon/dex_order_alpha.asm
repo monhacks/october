@@ -289,6 +289,7 @@ AlphabeticalPokedexOrder:
 	dw UMBREON
 	dw UNOWN
 	dw URSARING
+	dw VALHALDRA
 	dw VAPOREON
 	dw VEGELANCHE
 	dw VENOMOTH

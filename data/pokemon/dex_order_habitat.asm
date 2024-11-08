@@ -230,6 +230,7 @@ HabitatPokedexOrder:
 	dw SEADRA
 	dw KINGDRA
 	dw ALUMAIDEN
+	dw VALHALDRA
 	dw MAGIKARP
 
 ; SKY

@@ -234,6 +234,7 @@ NewPokedexOrder:
 	dw SEADRA
 	dw KINGDRA
 	dw ALUMAIDEN
+	dw VALHALDRA
 	dw GLIGAR
 	dw TERRACHNID
 	dw DELIBIRD

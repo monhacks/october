@@ -288,6 +288,7 @@ JOHTO_POKEMON EQU const_value
 	const ANGORE
 	const KINGDRA    ; e6
 	const ALUMAIDEN
+	const VALHALDRA
 	const PHANPY     ; e7
 	const DONPHAN    ; e8
 	const LICKILICKY 

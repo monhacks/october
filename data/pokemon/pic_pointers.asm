@@ -284,6 +284,7 @@ PokemonPicPointers::
 	mon_pic Angore
 	mon_pic Kingdra
 	mon_pic Alumaiden
+	mon_pic Valhaldra
 	mon_pic Phanpy
 	mon_pic Donphan
 	mon_pic Lickilicky

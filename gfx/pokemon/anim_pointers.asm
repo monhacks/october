@@ -266,6 +266,7 @@ AnimationPointers:
 	dw AngoreAnimation
 	dw KingdraAnimation
 	dw AlumaidenAnimation
+	dw ValhaldraAnimation
 	dw PhanpyAnimation
 	dw DonphanAnimation
 	dw LickilickyAnimation

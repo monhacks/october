@@ -266,7 +266,7 @@ EvolutionMoves::
 	dw NO_MOVE      ; ANGORE
 	dw NO_MOVE      ; KINGDRA
 	dw NO_MOVE      ; ALUMAIDEN
-;   dw PERISH_SONG  ; VALHALDRA
+    dw PERISH_SONG  ; VALHALDRA
 	dw NO_MOVE      ; PHANPY
 	dw FURY_ATTACK  ; DONPHAN
 	dw NO_MOVE      ; LICKILICKY

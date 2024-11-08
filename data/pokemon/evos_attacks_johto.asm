@@ -117,6 +117,7 @@ EvosAttacksPointers2::
 	dw AngoreEvosAttacks
 	dw KingdraEvosAttacks
 	dw AlumaidenEvosAttacks
+	dw ValhaldraEvosAttacks
 	dw PhanpyEvosAttacks
 	dw DonphanEvosAttacks
 	dw LickilickyEvosAttacks
@@ -1852,6 +1853,7 @@ KingdraEvosAttacks:
 	db 0 ; no more level-up moves
 	
 AlumaidenEvosAttacks:
+    dbbw EVOLVE_ITEM, UP_GRADE, VALHALDRA ; COVENANT_ORB: TODO
 	db 0 ; no more evolutions
 	dbw 1, HEADBUTT
 	dbw 1, HAZE
@@ -1866,6 +1868,23 @@ AlumaidenEvosAttacks:
 	dbw 50, CURSE
 	dbw 55, SURF
 	dbw 60, OUTRAGE
+	db 0 ; no more level-up moves
+	
+ValhaldraEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, HEADBUTT
+	dbw 1, HAZE
+	dbw 1, MIST
+	dbw 8, SING
+	dbw 15, TWISTER
+	dbw 25, SMOKESCREEN
+	dbw 30, DRAGONBREATH
+	dbw 35, PROTECT
+	dbw 38, TACKLE ;EERIE_LIGHT: TODO
+	dbw 45, TACKLE ; IRON_HEAD ; TODO
+	dbw 55, CURSE
+	dbw 60, SURF
+	dbw 65, OUTRAGE
 	db 0 ; no more level-up moves
 
 PhanpyEvosAttacks:

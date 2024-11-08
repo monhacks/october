@@ -267,6 +267,7 @@ FirstEvoStages::
 	dw ANGORE
 	dw HORSEA
 	dw ALUMAIDEN
+	dw ALUMAIDEN
 	dw PHANPY
 	dw PHANPY     ;e8
 	dw LICKITUNG
