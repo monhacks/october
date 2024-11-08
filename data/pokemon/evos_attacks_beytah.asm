@@ -1,6 +1,8 @@
 SECTION "Evolutions and Attacks 3", ROMX
 
 EvosAttacksPointers3::
+	dw SmeargleEvosAttacks
+	dw TyrogueEvosAttacks
 	dw HitmontopEvosAttacks
 	dw SmoochumEvosAttacks
 	dw ElekidEvosAttacks
@@ -41,6 +43,29 @@ EvosAttacksPointers3::
 	dw NurssumEvosAttacks
 .End:
 
+SmeargleEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, SKETCH
+	dbw 11, SKETCH
+	dbw 21, SKETCH
+	dbw 31, SKETCH
+	dbw 41, SKETCH
+	dbw 51, SKETCH
+	dbw 61, SKETCH
+	dbw 71, SKETCH
+	dbw 81, SKETCH
+	dbw 91, SKETCH
+	db 0 ; no more level-up moves
+
+TyrogueEvosAttacks:
+	dbbbw EVOLVE_STAT, 20, ATK_LT_DEF, HITMONCHAN
+	dbbbw EVOLVE_STAT, 20, ATK_GT_DEF, HITMONLEE
+	dbbbw EVOLVE_STAT, 20, ATK_EQ_DEF, HITMONTOP
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	dbw 1, FOCUS_ENERGY
+	db 0 ; no more level-up moves
+	
 HitmontopEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, ROLLING_KICK

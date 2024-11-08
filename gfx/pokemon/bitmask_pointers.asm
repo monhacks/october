@@ -265,6 +265,7 @@ BitmasksPointers:
 	dw StromenBitmasks
 	dw AngoreBitmasks
 	dw KingdraBitmasks
+	dw AlumaidenBitmasks
 	dw PhanpyBitmasks
 	dw DonphanBitmasks
 	dw LickilickyBitmasks

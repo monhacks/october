@@ -233,6 +233,7 @@ NewPokedexOrder:
 	dw HORSEA
 	dw SEADRA
 	dw KINGDRA
+	dw ALUMAIDEN
 	dw GLIGAR
 	dw TERRACHNID
 	dw DELIBIRD

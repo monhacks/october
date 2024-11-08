@@ -265,6 +265,7 @@ FramesPointers:
 	dba StromenFrames
 	dba AngoreFrames
 	dba KingdraFrames
+	dba AlumaidenFrames
 	dba PhanpyFrames
 	dba DonphanFrames
 	dba LickilickyFrames

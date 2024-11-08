@@ -171,6 +171,7 @@ CantFollowList:
 	dw STROMEN
 	dw ANGORE
 	dw KINGDRA
+	dw ALUMAIDEN
 	dw PHANPY
 	dw DONPHAN
 	dw LICKILICKY

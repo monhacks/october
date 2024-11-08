@@ -266,6 +266,7 @@ PokedexDataPointerTable:
 	dba StromenPokedexEntry
 	dba AngorePokedexEntry
 	dba KingdraPokedexEntry
+	dba AlumaidenPokedexEntry
 	dba PhanpyPokedexEntry
 	dba DonphanPokedexEntry
 	dba LickilickyPokedexEntry

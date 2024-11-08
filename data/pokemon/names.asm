@@ -270,6 +270,7 @@ PokemonNames::
 	db "STROMEN@@@"
 	db "ANGORE@@@@"
 	db "KINGDRA@@@"
+	db "ALUMAIDEN@"
 	db "PHANPY@@@@"
 	db "DONPHAN@@@"
 	db "LICKILICKY"

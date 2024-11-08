@@ -7,6 +7,7 @@ AlphabeticalPokedexOrder:
 	dw AGGROSWINE
 	dw AIPOM
 	dw ALAKAZAM
+	dw ALUMAIDEN
 	dw AMPHAROS
 	dw ANGORE
 	dw ARBOK

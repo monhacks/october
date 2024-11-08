@@ -265,6 +265,7 @@ AnimationIdlePointers:
 	dw StromenAnimationIdle
 	dw AngoreAnimationIdle
 	dw KingdraAnimationIdle
+	dw AlumaidenAnimationIdle
 	dw PhanpyAnimationIdle
 	dw DonphanAnimationIdle
 	dw LickilickyAnimationIdle

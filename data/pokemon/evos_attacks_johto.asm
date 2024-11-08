@@ -116,13 +116,12 @@ EvosAttacksPointers2::
 	dw StromenEvosAttacks
 	dw AngoreEvosAttacks
 	dw KingdraEvosAttacks
+	dw AlumaidenEvosAttacks
 	dw PhanpyEvosAttacks
 	dw DonphanEvosAttacks
 	dw LickilickyEvosAttacks
 	dw Porygon2EvosAttacks
 	dw StantlerEvosAttacks
-	dw SmeargleEvosAttacks
-	dw TyrogueEvosAttacks
 .End:
 
 ChikoritaEvosAttacks:
@@ -1851,6 +1850,23 @@ KingdraEvosAttacks:
 	dbw 40, AGILITY
 	dbw 51, HYDRO_PUMP
 	db 0 ; no more level-up moves
+	
+AlumaidenEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, HEADBUTT
+	dbw 1, HAZE
+	dbw 1, MIST
+	dbw 3, SING
+	dbw 10, TWISTER
+	dbw 20, SMOKESCREEN
+	dbw 25, DRAGONBREATH
+	dbw 30, PROTECT
+	dbw 33, TACKLE ;EERIE_LIGHT: TODO
+	dbw 40, TACKLE ; IRON_HEAD ; TODO
+	dbw 50, CURSE
+	dbw 55, SURF
+	dbw 60, OUTRAGE
+	db 0 ; no more level-up moves
 
 PhanpyEvosAttacks:
 	dbbw EVOLVE_LEVEL, 25, DONPHAN
@@ -1919,29 +1935,6 @@ StantlerEvosAttacks:
 	dbw 27, MEAN_LOOK
 	dbw 33, SHADOW_BALL
 	dbw 36, TAKE_DOWN
-	db 0 ; no more level-up moves
-
-SmeargleEvosAttacks:
-	db 0 ; no more evolutions
-	dbw 1, SKETCH
-	dbw 11, SKETCH
-	dbw 21, SKETCH
-	dbw 31, SKETCH
-	dbw 41, SKETCH
-	dbw 51, SKETCH
-	dbw 61, SKETCH
-	dbw 71, SKETCH
-	dbw 81, SKETCH
-	dbw 91, SKETCH
-	db 0 ; no more level-up moves
-
-TyrogueEvosAttacks:
-	dbbbw EVOLVE_STAT, 20, ATK_LT_DEF, HITMONCHAN
-	dbbbw EVOLVE_STAT, 20, ATK_GT_DEF, HITMONLEE
-	dbbbw EVOLVE_STAT, 20, ATK_EQ_DEF, HITMONTOP
-	db 0 ; no more evolutions
-	dbw 1, TACKLE
-	dbw 1, FOCUS_ENERGY
 	db 0 ; no more level-up moves
 
 ;-------------------------------------------------------------------------------------------

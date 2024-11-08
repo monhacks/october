@@ -229,6 +229,7 @@ HabitatPokedexOrder:
 	dw HORSEA
 	dw SEADRA
 	dw KINGDRA
+	dw ALUMAIDEN
 	dw MAGIKARP
 
 ; SKY

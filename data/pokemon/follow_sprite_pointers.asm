@@ -393,6 +393,7 @@ FollowSpritePointers::
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BROWN ;STROMEN
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;ANGORE
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;KINGDRA
+	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;ALUMAIDEN
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;PHANPY
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;DONPHAN
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;LICKILICKY
