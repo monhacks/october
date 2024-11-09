@@ -125,7 +125,6 @@ EvosAttacksPointers2::
 	dw DonphanEvosAttacks
 	dw LickilickyEvosAttacks
 	dw Porygon2EvosAttacks
-	dw StantlerEvosAttacks
 .End:
 
 ChikoritaEvosAttacks:
