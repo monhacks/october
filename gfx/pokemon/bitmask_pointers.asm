@@ -260,6 +260,8 @@ BitmasksPointers:
 	dw MantineBitmasks
 	dw KukulcanBitmasks
 	dw AirmorBitmasks
+	dw AercrowBitmasks
+	dw AdbarstorkBitmasks
 	dw HoundourBitmasks
 	dw HoundoomBitmasks
 	dw FennecurseBitmasks
@@ -292,7 +294,6 @@ BitmasksPointers:
 	dw KomaitiffBitmasks
 	dw CelebiBitmasks
 	dw KokopelliBitmasks
-	dw AdbarstorkBitmasks
 	dw PupperonBitmasks
 	dw CoaltaBitmasks
 	dw BurgelaBitmasks

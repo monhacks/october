@@ -260,6 +260,8 @@ EvolutionMoves::
 	dw NO_MOVE      ; MANTINE
 	dw NO_MOVE      ; KUKULCAN
 	dw NO_MOVE      ; AIRMOR
+	dw NO_MOVE      ; AERCROW
+	dw NO_MOVE      ; ADBARSTORK
 	dw NO_MOVE      ; HOUNDOUR
 	dw NO_MOVE      ; HOUNDOOM
 	dw NO_MOVE      ; FENNECURSE
@@ -292,7 +294,6 @@ EvolutionMoves::
 	dw NO_MOVE      ; KOMAITIFF
 	dw NO_MOVE      ; CELEBI
 	dw NO_MOVE      ; KOKOPELLI
-	dw NO_MOVE      ; ADBARSTORK
 	dw NO_MOVE      ; PUPPERON
 	dw NO_MOVE      ; COALTA
 	dw NO_MOVE      ; BURGELA

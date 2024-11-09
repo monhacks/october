@@ -20,6 +20,7 @@ OldPokedexOrder:
 	dw NOCTOWL
 	dw CLEFLING
 	dw MALLODY
+	dw AERCROW
 	dw ADBARSTORK
 	dw KIWACKI
 	dw RATTATA

@@ -260,6 +260,8 @@ AnimationIdlePointers:
 	dw MantineAnimationIdle
 	dw KukulcanAnimationIdle
 	dw AirmorAnimationIdle
+	dw AercrowAnimationIdle
+	dw AdbarstorkAnimationIdle
 	dw HoundourAnimationIdle
 	dw HoundoomAnimationIdle
 	dw FennecurseAnimationIdle
@@ -292,7 +294,6 @@ AnimationIdlePointers:
 	dw KomaitiffAnimationIdle
 	dw CelebiAnimationIdle
 	dw KokopelliAnimationIdle
-	dw AdbarstorkAnimationIdle
 	dw PupperonAnimationIdle
 	dw CoaltaAnimationIdle
 	dw BurgelaAnimationIdle

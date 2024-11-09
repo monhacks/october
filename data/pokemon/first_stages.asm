@@ -261,6 +261,8 @@ FirstEvoStages::
 	dw MANTINE
 	dw KUKULCAN
 	dw AIRMOR
+	dw AERCROW
+	dw ADBARSTORK
 	dw HOUNDOUR
 	dw HOUNDOUR
 	dw FENNECURSE
@@ -293,7 +295,6 @@ FirstEvoStages::
 	dw KOMAITIFF
 	dw CELEBI
 	dw KOKOPELLI
-	dw ADBARSTORK
 	dw PUPPERON
 	dw COALTA
 	dw BURGELA

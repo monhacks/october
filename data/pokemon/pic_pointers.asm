@@ -278,6 +278,8 @@ PokemonPicPointers::
 	mon_pic Mantine
 	mon_pic Kukulcan
 	mon_pic Airmor
+	mon_pic Aercrow
+	mon_pic Adbarstork
 	mon_pic Houndour
 	mon_pic Houndoom
 	mon_pic Fennecurse
@@ -310,7 +312,6 @@ PokemonPicPointers::
 	mon_pic Komaitiff
 	mon_pic Celebi
 	mon_pic Kokopelli
-	mon_pic Adbarstork
 	mon_pic Pupperon
 	mon_pic Coalta
 	mon_pic Burgela

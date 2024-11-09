@@ -166,6 +166,8 @@ CantFollowList:
 	dw MANTINE
 	dw KUKULCAN
 	dw AIRMOR
+	dw AERCROW
+	dw ADBARSTORK
 	dw HOUNDOUR
 	dw HOUNDOOM
 	dw FENNECURSE
@@ -197,7 +199,6 @@ CantFollowList:
 	dw HO_OH
 	dw KOMAITIFF
 	dw KOKOPELLI
-	dw ADBARSTORK
 	dw PUPPERON ; done but TODO: growlithe & arcanine
 	dw MOIBELLE
 	dw BELLEDAM ; done but TODO: moibelle

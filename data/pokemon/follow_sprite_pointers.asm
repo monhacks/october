@@ -388,6 +388,8 @@ FollowSpritePointers::
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;MANTINE
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;KUKULCAN
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;AIRMOR
+	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;AERCROW
+	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;ADBARSTORK
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;HOUNDOUR
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;HOUNDOOM
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_RED ;FENNECURSE
@@ -419,8 +421,7 @@ FollowSpritePointers::
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;HO_OH
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;KOMAITIFF
 	follow_sprite CelebiSpriteGFX, PAL_FOLLOWER_BROWN;CELEBI
-	follow_sprite CelebiSpriteGFX, PAL_FOLLOWER_BROWN;KOKOPELLI TO DO
-	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;ADBARSTORK
+	follow_sprite CelebiSpriteGFX, PAL_FOLLOWER_BROWN;KOKOPELLI: TODO
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_RED ;PUPPERON
 	follow_sprite CoaltaSpriteGFX, PAL_FOLLOWER_RED ;COALTA
 	follow_sprite BurgelaSpriteGFX, PAL_FOLLOWER_BLUE ;BURGELA

@@ -260,6 +260,8 @@ FramesPointers:
 	dba MantineFrames
 	dba KukulcanFrames
 	dba AirmorFrames
+	dba AercrowFrames
+	dba AdbarstorkFrames
 	dba HoundourFrames
 	dba HoundoomFrames
 	dba FennecurseFrames
@@ -292,7 +294,6 @@ FramesPointers:
 	dba KomaitiffFrames
 	dba CelebiFrames
 	dba KokopelliFrames
-	dba AdbarstorkFrames
 	dba PupperonFrames
 	dba CoaltaFrames
 	dba BurgelaFrames
