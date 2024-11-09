@@ -260,6 +260,8 @@ AnimationPointers:
 	dw MantineAnimation
 	dw KukulcanAnimation
 	dw AirmorAnimation
+	dw AercrowAnimation
+	dw AdbarstorkAnimation
 	dw HoundourAnimation
 	dw HoundoomAnimation
 	dw FennecurseAnimation
@@ -292,7 +294,6 @@ AnimationPointers:
 	dw KomaitiffAnimation
 	dw CelebiAnimation
 	dw KokopelliAnimation
-	dw AdbarstorkAnimation
 	dw PupperonAnimation
 	dw CoaltaAnimation
 	dw BurgelaAnimation
