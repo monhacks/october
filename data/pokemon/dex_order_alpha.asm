@@ -3,6 +3,7 @@
 AlphabeticalPokedexOrder:
 	dw ABRA
 	dw ADBARSTORK
+	dw AERCROW
 	dw AERODACTYL
 	dw AGGROSWINE
 	dw AIPOM

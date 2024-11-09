@@ -111,6 +111,8 @@ EvosAttacksPointers2::
 	dw MantineEvosAttacks
 	dw KukulcanEvosAttacks
 	dw AirmorEvosAttacks
+	dw AercrowEvosAttacks
+	dw AdbarstorkEvosAttacks
 	dw HoundourEvosAttacks
 	dw HoundoomEvosAttacks
 	dw FennecurseEvosAttacks
@@ -1769,7 +1771,35 @@ AirmorEvosAttacks:
 	dbw 28, DRILL_PECK
 	dbw 32, SPIKES
 	db 0 ; no more level-up moves
-
+	
+AercrowEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, PECK
+	dbw 1, LEER
+	dbw 4, SAND_ATTACK
+	dbw 8, SWIFT
+	dbw 12, FURY_ATTACK
+	dbw 16, AGILITY
+	dbw 20, WING_ATTACK
+	dbw 24, SLASH
+	dbw 28, DRILL_PECK
+	dbw 32, SPIKES
+	db 0 ; no more level-up moves
+	
+AdbarstorkEvosAttacks:
+	db  0; no more evolutions
+	dbw 1, PECK
+	dbw 5, GROWL
+	dbw 9, FURY_ATTACK
+	dbw 12, WHIRLWIND
+	dbw 19, TWISTER
+	dbw 25, WING_ATTACK
+	dbw 31, SCREECH
+	dbw 39, MIRROR_MOVE
+	dbw 45, DRILL_PECK
+	dbw 52, FLY
+	db 0 ; no more level-up moves
+	
 HoundourEvosAttacks:
 	dbbw EVOLVE_LEVEL, 35, HOUNDOOM
 	db 0 ; no more evolutions
@@ -1946,20 +1976,6 @@ Porygon2EvosAttacks:
 	dbw 32, LOCK_ON
 	dbw 36, TRI_ATTACK
 	dbw 44, ZAP_CANNON
-	db 0 ; no more level-up moves
-
-StantlerEvosAttacks:
-	db 0 ; no more evolutions
-	dbw 1, TACKLE
-	dbw 8, LEER
-	dbw 10, HYPNOSIS
-	dbw 13, STOMP
-	dbw 16, SAND_ATTACK
-	dbw 21, DOUBLE_KICK
-	dbw 23, CONFUSE_RAY
-	dbw 27, MEAN_LOOK
-	dbw 33, SHADOW_BALL
-	dbw 36, TAKE_DOWN
 	db 0 ; no more level-up moves
 
 ;-------------------------------------------------------------------------------------------

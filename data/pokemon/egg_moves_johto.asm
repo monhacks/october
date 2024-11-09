@@ -110,6 +110,8 @@ EggMovePointers2::
 	dw MantineEggMoves
 	dw NoEggMoves2
 	dw AirmorEggMoves
+	dw AercrowEggMoves
+	dw AdbarstorkEggMoves
 	dw HoundourEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
@@ -142,7 +144,6 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
-	dw AdbarstorkEggMoves
 	dw NoEggMoves2
 	dw CoaltaEggMoves
 	dw BurgelaEggMoves
@@ -500,6 +501,15 @@ AirmorEggMoves:
 	dw DRILL_PECK
 	dw PURSUIT
 	dw WHIRLWIND
+	dw SKY_ATTACK
+	dw -1 ; end
+	
+AercrowEggMoves:
+	dw WHIRLWIND
+	dw DRILL_PECK
+	dw QUICK_ATTACK
+	dw MIRROR_MOVE
+	dw WING_ATTACK
 	dw SKY_ATTACK
 	dw -1 ; end
 

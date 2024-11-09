@@ -268,6 +268,8 @@ PokemonCries::
 	mon_cry CRY_MANTINE,    -$0be,  $0f0 ; MANTINE
 	mon_cry CRY_NIDORAN_M,   $000,  $100 ; KUKULCAN: TODO
 	mon_cry CRY_LARVITAR,    $06b,  $280 ; AIRMOR, needs fixing
+	mon_cry CRY_NIDORAN_M,   $000,  $100 ; AERCROW: TODO
+	mon_cry CRY_SUNFLORA,   -$060,  $19f ; ADBARSTORK
 	mon_cry CRY_CYNDAQUIL,     0,  288   ; HOUNDOUR
 	mon_cry CRY_CYNDAQUIL,   531,  128   ; HOUNDOOM
 	mon_cry CRY_CYNDAQUIL,   $303,  $1c0 ; FENNECURSE
@@ -300,7 +302,6 @@ PokemonCries::
 	mon_cry CRY_NIDORAN_M,   $000,  $100 ; KOMAITIFF: TODO
 	mon_cry CRY_ENTEI,       $14a,  $111 ; CELEBI
 	mon_cry CRY_ENTEI,       $41a,  $111 ; KOKOPELLI
-	mon_cry CRY_SUNFLORA,   -$060,  $19f ; ADBARSTORK
 	mon_cry CRY_GROWLITHE,   $0a1,  $0e8 ; PUPPERON
 	mon_cry CRY_MARILL,      $0c0,  $090 ; COALTA
 	mon_cry CRY_MARILL,      $f4c,  $110 ; BURGELA

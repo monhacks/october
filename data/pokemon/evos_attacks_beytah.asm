@@ -1,6 +1,7 @@
 SECTION "Evolutions and Attacks 3", ROMX
 
 EvosAttacksPointers3::
+	dw StantlerEvosAttacks
 	dw SmeargleEvosAttacks
 	dw TyrogueEvosAttacks
 	dw HitmontopEvosAttacks
@@ -20,7 +21,6 @@ EvosAttacksPointers3::
 	dw KomaitiffEvosAttacks
 	dw CelebiEvosAttacks
 	dw KokopelliEvosAttacks
-	dw AdbarstorkEvosAttacks
 	dw PupperonEvosAttacks
 	dw CoaltaEvosAttacks
 	dw BurgelaEvosAttacks
@@ -44,6 +44,20 @@ EvosAttacksPointers3::
 	dw NurssumEvosAttacks
 .End:
 
+StantlerEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	dbw 8, LEER
+	dbw 10, HYPNOSIS
+	dbw 13, STOMP
+	dbw 16, SAND_ATTACK
+	dbw 21, DOUBLE_KICK
+	dbw 23, CONFUSE_RAY
+	dbw 27, MEAN_LOOK
+	dbw 33, SHADOW_BALL
+	dbw 36, TAKE_DOWN
+	db 0 ; no more level-up moves
+	
 SmeargleEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, SKETCH
@@ -393,20 +407,6 @@ KoalyptusEvosAttacks:
 	dbw 32, CRUNCH
 	dbw 36, SLASH
 	dbw 42, BELLY_DRUM
-	db 0 ; no more level-up moves
-
-AdbarstorkEvosAttacks:
-	db  0; no more evolutions
-	dbw 1, PECK
-	dbw 5, GROWL
-	dbw 9, FURY_ATTACK
-	dbw 12, WHIRLWIND
-	dbw 19, TWISTER
-	dbw 25, WING_ATTACK
-	dbw 31, SCREECH
-	dbw 39, MIRROR_MOVE
-	dbw 45, DRILL_PECK
-	dbw 52, FLY
 	db 0 ; no more level-up moves
 
 PupperonEvosAttacks:

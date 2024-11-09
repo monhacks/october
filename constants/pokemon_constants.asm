@@ -282,6 +282,8 @@ JOHTO_POKEMON EQU const_value
 	const MANTINE    ; e2
 	const KUKULCAN
 	const AIRMOR     ; e3
+	const AERCROW
+	const ADBARSTORK
 	const HOUNDOUR   ; e4
 	const HOUNDOOM   ; e5
 	const FENNECURSE
@@ -314,7 +316,6 @@ JOHTO_POKEMON EQU const_value
 	const KOMAITIFF
 	const CELEBI     ; fb
 	const KOKOPELLI
-	const ADBARSTORK ; fe
 	const PUPPERON   ; ff
 	const COALTA
 	const BURGELA

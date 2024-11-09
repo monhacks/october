@@ -261,6 +261,8 @@ PokedexDataPointerTable:
 	dba MantinePokedexEntry
 	dba KukulcanPokedexEntry
 	dba AirmorPokedexEntry
+	dba AercrowPokedexEntry
+	dba AdbarstorkPokedexEntry
 	dba HoundourPokedexEntry
 	dba HoundoomPokedexEntry
 	dba FennecursePokedexEntry
@@ -293,7 +295,6 @@ PokedexDataPointerTable:
 	dba KomaitiffPokedexEntry
 	dba CelebiPokedexEntry
 	dba KokopelliPokedexEntry
-	dba AdbarstorkPokedexEntry
 	dba PupperonPokedexEntry
 	dba CoaltaPokedexEntry
 	dba BurgelaPokedexEntry

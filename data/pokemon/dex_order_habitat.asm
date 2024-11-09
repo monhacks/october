@@ -249,6 +249,7 @@ HabitatPokedexOrder:
 	dw AIRMOR
 	dw CLEFLING
 	dw MALLODY
+	dw AERCROW
 	dw ADBARSTORK
 	dw MAGNEMITE
 	dw MAGNETON
