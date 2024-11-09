@@ -315,12 +315,12 @@ PokemonCries::
  	mon_cry CRY_DIGLETT,     $020,   $040 ; MORPHOBIA EVO
 	mon_cry CRY_GLIGAR,     -$045,  $120  ; TERRACHNID
 	mon_cry CRY_GRIMER,      $100,  $100 ; SMUJJ
-	mon_cry CRY_NIDORAN_M,  -$0a3,  $091 ; XXX KOALYPTUS
+	mon_cry CRY_NIDORAN_M,  -$0a3,  $091 ; KOALYPTUS
 	mon_cry CRY_CATERPIE,    $0a3,  $091 ; OREFRY
 	mon_cry CRY_KRABBY,      $160,  $0a0 ; BALLERINE
 	mon_cry CRY_KANGASKHAN,  $0f0,  $04b ; ORIJOEY
 	mon_cry CRY_AGGROSWINE,  $1B7,  $068 ; AGGROSWINE
-	mon_cry CRY_PICHU,       $000,  $150 ; TODO: NECROREX
+	mon_cry CRY_TYPHLOSION, -$0B7,  $180 ; NECROREX
 	mon_cry CRY_PICHU,       $077,  $140 ; TODO: NURSSUM
 
 
