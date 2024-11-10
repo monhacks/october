@@ -853,6 +853,8 @@ KomaitiffFrontpic:	INCBIN "gfx/pokemon/komaitiff/front.static.2bpp.lz"
 KomaitiffBackpic:   INCBIN "gfx/pokemon/komaitiff/back.2bpp.lz"
 KukulcanFrontpic:	INCBIN "gfx/pokemon/kukulcan/front.static.2bpp.lz"
 KukulcanBackpic:    INCBIN "gfx/pokemon/kukulcan/back.2bpp.lz"
+GargraniteFrontpic:	INCBIN "gfx/pokemon/gargranite/front.static.2bpp.lz"
+GargraniteBackpic:  INCBIN "gfx/pokemon/gargranite/back.2bpp.lz"
 
 SECTION "Pics 26", ROMX
 

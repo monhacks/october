@@ -264,6 +264,7 @@ AnimationIdlePointers:
 	dw AdbarstorkAnimationIdle
 	dw HoundourAnimationIdle
 	dw HoundoomAnimationIdle
+	dw GargraniteAnimationIdle
 	dw FennecurseAnimationIdle
 	dw StromenAnimationIdle
 	dw AngoreAnimationIdle

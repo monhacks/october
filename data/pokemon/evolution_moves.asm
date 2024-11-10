@@ -264,6 +264,7 @@ EvolutionMoves::
 	dw NO_MOVE      ; ADBARSTORK
 	dw NO_MOVE      ; HOUNDOUR
 	dw NO_MOVE      ; HOUNDOOM
+	dw NO_MOVE      ; GARGRANITE
 	dw NO_MOVE      ; FENNECURSE
 	dw NO_MOVE      ; STROMEN
 	dw NO_MOVE      ; ANGORE

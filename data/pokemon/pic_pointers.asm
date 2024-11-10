@@ -282,6 +282,7 @@ PokemonPicPointers::
 	mon_pic Adbarstork
 	mon_pic Houndour
 	mon_pic Houndoom
+	mon_pic Gargranite
 	mon_pic Fennecurse
 	mon_pic Stromen
 	mon_pic Angore

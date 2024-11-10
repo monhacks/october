@@ -560,6 +560,8 @@ INCBIN "gfx/pokemon/houndour/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/houndour/shiny.pal"
 INCBIN "gfx/pokemon/houndoom/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/houndoom/shiny.pal"
+INCBIN "gfx/pokemon/gargranite/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/gargranite/shiny.pal"
 INCBIN "gfx/pokemon/fennecurse/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/fennecurse/shiny.pal"
 INCBIN "gfx/pokemon/stromen/front.gbcpal", middle_colors

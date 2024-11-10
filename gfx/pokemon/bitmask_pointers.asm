@@ -264,6 +264,7 @@ BitmasksPointers:
 	dw AdbarstorkBitmasks
 	dw HoundourBitmasks
 	dw HoundoomBitmasks
+	dw GargraniteBitmasks
 	dw FennecurseBitmasks
 	dw StromenBitmasks
 	dw AngoreBitmasks

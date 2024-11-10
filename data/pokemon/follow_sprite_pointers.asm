@@ -392,6 +392,7 @@ FollowSpritePointers::
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;ADBARSTORK
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;HOUNDOUR
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;HOUNDOOM
+	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;GARGRANITE
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_RED ;FENNECURSE
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BROWN ;STROMEN
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;ANGORE

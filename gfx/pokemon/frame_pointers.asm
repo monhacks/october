@@ -264,6 +264,7 @@ FramesPointers:
 	dba AdbarstorkFrames
 	dba HoundourFrames
 	dba HoundoomFrames
+	dba GargraniteBitmasks
 	dba FennecurseFrames
 	dba StromenFrames
 	dba AngoreFrames

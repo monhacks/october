@@ -264,6 +264,7 @@ AnimationPointers:
 	dw AdbarstorkAnimation
 	dw HoundourAnimation
 	dw HoundoomAnimation
+	dw GargraniteAnimation
 	dw FennecurseAnimation
 	dw StromenAnimation
 	dw AngoreAnimation
