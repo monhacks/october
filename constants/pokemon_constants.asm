@@ -286,6 +286,7 @@ JOHTO_POKEMON EQU const_value
 	const ADBARSTORK
 	const HOUNDOUR   ; e4
 	const HOUNDOOM   ; e5
+	const GARGRANITE
 	const FENNECURSE
 	const STROMEN
 	const ANGORE

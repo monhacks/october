@@ -269,6 +269,7 @@ NewPokedexOrder:
 	dw AERCROW
 	dw HOUNDOUR
 	dw HOUNDOOM
+	dw GARGRANITE
 	dw SLUGMA
 	dw MAGCARGO
 	dw SNEASEL

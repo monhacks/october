@@ -272,6 +272,7 @@ PokemonCries::
 	mon_cry CRY_SUNFLORA,   -$060,  $19f ; ADBARSTORK
 	mon_cry CRY_CYNDAQUIL,     0,  288   ; HOUNDOUR
 	mon_cry CRY_CYNDAQUIL,   531,  128   ; HOUNDOOM
+	mon_cry CRY_NIDORAN_M,   $000,  $100 ; GARGRANITE: TODO
 	mon_cry CRY_CYNDAQUIL,   $303,  $1c0 ; FENNECURSE
 	mon_cry CRY_GRIMER,      $210,  $100 ; STROMEN
 	mon_cry CRY_WOOPER,      $8f0,  $100 ; ANGORE: TODO

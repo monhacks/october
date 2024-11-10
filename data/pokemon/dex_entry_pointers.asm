@@ -265,6 +265,7 @@ PokedexDataPointerTable:
 	dba AdbarstorkPokedexEntry
 	dba HoundourPokedexEntry
 	dba HoundoomPokedexEntry
+	dba GargranitePokedexEntry
 	dba FennecursePokedexEntry
 	dba StromenPokedexEntry
 	dba AngorePokedexEntry

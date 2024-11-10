@@ -50,6 +50,7 @@ HabitatPokedexOrder:
 	dw DONPHAN
 	dw HOUNDOUR
 	dw HOUNDOOM
+	dw GARGRANITE
 	dw NIDORAN_F
 	dw NIDORINA
 	dw NIDOQUEEN

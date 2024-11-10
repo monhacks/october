@@ -269,6 +269,7 @@ PokemonNames::
 	db "ADBARSTORK"
 	db "HOUNDOUR@@"
 	db "HOUNDOOM@@"
+	db "GARGRANITE"
 	db "FENNECURSE"
 	db "STROMEN@@@"
 	db "ANGORE@@@@"

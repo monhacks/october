@@ -115,6 +115,7 @@ EvosAttacksPointers2::
 	dw AdbarstorkEvosAttacks
 	dw HoundourEvosAttacks
 	dw HoundoomEvosAttacks
+	dw GargraniteEvosAttacks
 	dw FennecurseEvosAttacks
 	dw StromenEvosAttacks
 	dw AngoreEvosAttacks
@@ -1822,6 +1823,11 @@ HoundoomEvosAttacks:
 	dbw 30, FAINT_ATTACK
 	dbw 35, FLAMETHROWER
 	dbw 52, CRUNCH
+	db 0 ; no more level-up moves
+	
+GargraniteEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
 	db 0 ; no more level-up moves
 	
 FennecurseEvosAttacks:
