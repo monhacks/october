@@ -2637,12 +2637,12 @@ FisherGroup:
 
 	next_party ; FISHER (26)
 	db "BILLY@", TRAINERTYPE_NORMAL
-	db 3
-	dw MAGIKARP
-	db 3
-	dw POLIWAG
-	db 3
+	db 16
 	dw WOOPER
+	db 16
+	dw POLIWAG
+	db 17
+	dw BITEEL
 	end_party
 
 	next_party ; FISHER (27)
