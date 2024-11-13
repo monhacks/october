@@ -55,7 +55,7 @@ TrainerClassNames::
 	db "PICNICKER@"
 	db "CAMPER@"
 	db "ROCKET@"
-	db "MONK@"
+	db "SAGE@"
 	db "MEDIUM@"
 	db "BOARDER@"
 	db "#FAN@"
