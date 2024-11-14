@@ -295,9 +295,9 @@ BattleAnimations::
 	dw BattleAnim_Ambush
 	dw BattleAnim_WillOWisp
 	dw BattleAnim_EvilEye
-	dw BattleAnim_HeldItemTrigger
 	dw BattleAnim_Uppercut
 	dw BattleAnim_Terrorize
+	dw BattleAnim_HeldItemTrigger
 .End:
 
 BattleAnim_0:
