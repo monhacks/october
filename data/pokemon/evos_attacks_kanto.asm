@@ -2199,16 +2199,18 @@ FlareonEvosAttacks:
 PorygonEvosAttacks:
 	dbbw EVOLVE_TRADE, UP_GRADE, PORYGON2
 	db 0 ; no more evolutions
-	dbw 1, CONVERSION2
 	dbw 1, TACKLE
-	dbw 1, CONVERSION
-	dbw 9, AGILITY
+	dbw 1, SHARPEN
+	dbw 1, THUNDER_WAVE
+	dbw 8, PECK
 	dbw 12, PSYBEAM
 	dbw 20, RECOVER
-	dbw 24, SHARPEN
+	dbw 24, AGILITY
 	dbw 32, LOCK_ON
 	dbw 36, TRI_ATTACK
-	dbw 44, ZAP_CANNON
+	dbw 44, MIMIC
+	dbw 48, ZAP_CANNON
+	dbw 56, HYPER_BEAM
 	db 0 ; no more level-up moves
 
 OmanyteEvosAttacks:

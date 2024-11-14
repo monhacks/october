@@ -1971,16 +1971,18 @@ LickilickyEvosAttacks:
 
 Porygon2EvosAttacks:
 	db 0 ; no more evolutions
-	dbw 1, CONVERSION2
 	dbw 1, TACKLE
-	dbw 1, CONVERSION
-	dbw 9, AGILITY
-	dbw 12, PSYBEAM
-	dbw 20, RECOVER
-	dbw 24, DEFENSE_CURL
-	dbw 32, LOCK_ON
-	dbw 36, TRI_ATTACK
-	dbw 44, ZAP_CANNON
+	dbw 1, SHARPEN
+	dbw 1, THUNDER_WAVE
+	dbw 10, PECK
+	dbw 14, PSYBEAM
+	dbw 22, RECOVER
+	dbw 26, AGILITY
+	dbw 34, LOCK_ON
+	dbw 38, TRI_ATTACK
+	dbw 46, MIMIC
+	dbw 50, ZAP_CANNON
+	dbw 58, HYPER_BEAM
 	db 0 ; no more level-up moves
 
 ;-------------------------------------------------------------------------------------------
