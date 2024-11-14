@@ -24,7 +24,7 @@ EvosAttacksPointers3::
 	dw PupperonEvosAttacks
 	dw CoaltaEvosAttacks
 	dw BurgelaEvosAttacks
-	dw VupiiiEvosAttacks
+	dw VulpiiiEvosAttacks
 	dw WorfursEvosAttacks
 	dw WearlycanEvosAttacks
 	dw DodaerieEvosAttacks
@@ -464,14 +464,14 @@ BurgelaEvosAttacks:
 	dbw 46, ROLLOUT
 	db 0 ; no more level-up moves
 
-VupiiiEvosAttacks:
+VulpiiiEvosAttacks:
 	dbbw EVOLVE_HAPPINESS, TR_ANYTIME, VULPIX
 	db 0 ; no more evolutions
 	dbw 1, EMBER
 	dbw 1, TAIL_WHIP
 	dbw 6, QUICK_ATTACK
-	dbw 11, TEMPT
-	dbw 17, SPITE
+	dbw 11, SPITE
+	dbw 17, PSYCH_UP
 	dbw 22, FIRE_SPIN
 	dbw 28, FAINT_ATTACK
 	dbw 33, TACKLE ; MAGMA_RING

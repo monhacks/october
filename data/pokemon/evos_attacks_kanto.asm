@@ -728,8 +728,8 @@ VulpixEvosAttacks:
 	dbw 1, EMBER
 	dbw 1, TAIL_WHIP
 	dbw 6, QUICK_ATTACK
-	dbw 11, TEMPT
-	dbw 17, SPITE
+	dbw 11, SPITE
+	dbw 17, PSYCH_UP
 	dbw 22, FIRE_SPIN
 	dbw 28, FAINT_ATTACK
 	dbw 33, TACKLE ; MAGMA_RING
