@@ -287,5 +287,7 @@ Moves1:
 	move EFFECT_BURN,                0, FIRE,     85, 15,    0 ;WILL_O_WISP 
 	move EFFECT_EVIL_EYE,           65, GHOST,   100, 10,    0 ;EVIL_EYE
 	move EFFECT_FLINCH_HIT,         55, FIGHTING, 80, 15,    0 ;UPPERCUT
+	move EFFECT_SPEED_DOWN_2,        0, DARK,     90, 10,    0 ;TERRORIZE
+
 
 

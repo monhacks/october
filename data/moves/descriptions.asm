@@ -273,6 +273,7 @@ MoveDescriptions1:
 	dw WillOWispDescription
 	dw EvilEyeDescription
 	dw UppercutDescription
+	dw TerrorizeDescription
 .End:
 	
 InvalidMoveDescription:
@@ -993,6 +994,7 @@ AeroblastDescription:
 	db   "Has a high criti-"
 	next "cal hit ratio.@"
 
+TerrorizeDescription:
 CottonSporeDescription:
 	db   "Sharply reduces"
 	next "the foe's SPEED.@"

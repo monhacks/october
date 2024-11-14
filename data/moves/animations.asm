@@ -297,6 +297,7 @@ BattleAnimations::
 	dw BattleAnim_EvilEye
 	dw BattleAnim_HeldItemTrigger
 	dw BattleAnim_Uppercut
+	dw BattleAnim_Terrorize
 .End:
 
 BattleAnim_0:
@@ -3568,6 +3569,7 @@ BattleAnim_MachPunch:
 	anim_wait 16
 	anim_ret
 
+BattleAnim_Terrorize:
 BattleAnim_ScaryFace:
 	anim_1gfx BATTLE_ANIM_GFX_BEAM
 	anim_bgeffect BATTLE_BG_EFFECT_ALTERNATE_HUES, $0, $2, $0

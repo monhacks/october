@@ -273,3 +273,4 @@ MoveNames::
 	move_name "WILL-O-WISP"
 	move_name "EVIL EYE"
 	move_name "UPPERCUT"
+	move_name "TERRORIZE"
