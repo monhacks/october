@@ -169,7 +169,7 @@ EvolutionMoves::
 	dw NO_MOVE      ; SENTRET
 	dw AGILITY      ; FURRET
 	dw NO_MOVE      ; CLEFLING
-	dw NO_MOVE      ; MALLODY
+	dw WING_ATTACK  ; MALLODY
 	dw NO_MOVE      ; HOOTHOOT
 	dw NO_MOVE      ; NOCTOWL
 	dw NO_MOVE      ; LEDYBA

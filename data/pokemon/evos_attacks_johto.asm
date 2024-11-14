@@ -436,10 +436,9 @@ CleflingEvosAttacks:
 
 MallodyEvosAttacks:
 	db 0 ; no more evolutions
-	dbw 16, WING_ATTACK
 	dbw 20, WATER_GUN
-	dbw 24, TWISTER
-	dbw 30, DISABLE
+	dbw 24, MEGAPHONE
+	dbw 30, TWISTER
 	dbw 34, FLY
 	dbw 38, REST
 	dbw 38, SNORE
