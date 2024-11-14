@@ -283,7 +283,7 @@ Moves1:
 	move EFFECT_NORMAL_HIT,        140, ROCK,      70,  5,   0 ;ROCK_SLASH
 	move EFFECT_ACCURACY_DOWN_HIT,  20, WATER,   100,  10, 100 ;INK_SPRAY
 	move EFFECT_SP_ATK_DOWN,         0, NORMAL,  100, 40,    0 ;MEGAPHONE
-	move EFFECT_ALWAYS_HIT,         80, DARK,    100, 20,    0 ;AMBUSH
+	move EFFECT_ALWAYS_HIT,         80, DARK,    100, 20,    0 ;BLINDSIDE
 	move EFFECT_BURN,                0, FIRE,     85, 15,    0 ;WILL_O_WISP 
 	move EFFECT_EVIL_EYE,           65, GHOST,   100, 10,    0 ;EVIL_EYE
 	move EFFECT_FLINCH_HIT,         55, FIGHTING, 80, 15,    0 ;UPPERCUT

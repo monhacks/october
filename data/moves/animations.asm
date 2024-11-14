@@ -292,7 +292,7 @@ BattleAnimations::
 	dw BattleAnim_RockSlash
 	dw BattleAnim_InkSpray
 	dw BattleAnim_Megaphone
-	dw BattleAnim_Ambush
+	dw BattleAnim_Blindside
 	dw BattleAnim_WillOWisp
 	dw BattleAnim_EvilEye
 	dw BattleAnim_Uppercut
@@ -3578,7 +3578,7 @@ BattleAnim_ScaryFace:
 	anim_wait 64
 	anim_ret
 
-BattleAnim_Ambush:
+BattleAnim_Blindside:
 BattleAnim_FaintAttack:
 	anim_1gfx BATTLE_ANIM_GFX_HIT
 	anim_sound 0, 0, SFX_CURSE

@@ -491,7 +491,7 @@ WorfursEvosAttacks:
 	dbw 25, MIMIC
 	dbw 31, ICE_PUNCH
 	dbw 36, DIG
-	dbw 41, AMBUSH
+	dbw 41, BLINDSIDE
 	dbw 47, THRASH ; WINTER CLAWS
 	dbw 52, THRASH
 	db 0 ; no more level-up moves
@@ -507,7 +507,7 @@ WearlycanEvosAttacks:
     dbw 27, MIMIC
     dbw 33, ICE_PUNCH
     dbw 38, DIG
-    dbw 43, AMBUSH
+    dbw 43, BLINDSIDE
     dbw 49, THRASH ; WINTER CLAWS
     dbw 54, THRASH
     db 0 ; no more level-up moves

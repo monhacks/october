@@ -269,7 +269,7 @@ MoveDescriptions1:
 	dw RockSlashDescription
 	dw InkSprayDescription
 	dw MegaphoneDescription
-	dw AmbushDescription
+	dw BlindsideDescription
 	dw WillOWispDescription
 	dw EvilEyeDescription
 	dw UppercutDescription
@@ -1023,7 +1023,7 @@ ScaryFaceDescription:
 	db   "Sharply reduces"
 	next "the foe's SPEED.@"
 
-AmbushDescription:
+BlindsideDescription:
 FaintAttackDescription:
 	db   "An attack that"
 	next "never misses.@"

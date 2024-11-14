@@ -22,7 +22,7 @@ EvolutionMoves::
 	dw NO_MOVE      ; SPEAROW
 	dw TWISTER      ; FEAROW
 	dw NO_MOVE      ; EKANS
-	dw CRUNCH       ; ARBOK
+	dw TERRORIZE    ; ARBOK
 	dw NO_MOVE      ; PIKACHU
 	dw THUNDERPUNCH ; RAICHU
 	dw NO_MOVE      ; SANDSHREW
@@ -158,11 +158,11 @@ EvolutionMoves::
 	dw FIRE_PUNCH   ; TYPHLOSION
 	dw NO_MOVE      ; TOTODILE
 	dw NO_MOVE      ; CROCONAW
-	dw WATERFALL    ; FERALIGATR
+	dw UPPERCUT     ; FERALIGATR
 	dw NO_MOVE      ; BAYLEEF
 	dw NO_MOVE      ; CUBBURN
-	dw WILL_O_WISP  ; FLAMBEAR
-	dw FIRE_BLAST   ; BRUINUS
+	dw NO_MOVE      ; FLAMBEAR
+	dw WILL_O_WISP  ; BRUINUS
 	dw NO_MOVE      ; PALSSIO
 	dw NO_MOVE      ; PRESSIO
 	dw NO_MOVE      ; DONMARIN

@@ -1844,7 +1844,7 @@ FennecurseEvosAttacks:
 	dbw 34, CURSE
 	dbw 39, SHADOW_BALL
 	dbw 44, SCARY_FACE
-	dbw 50, AMBUSH
+	dbw 50, BLINDSIDE
 	dbw 56, FLAMETHROWER
 	db 0 ; no more level-up moves
 
@@ -1858,7 +1858,7 @@ StromenEvosAttacks:
 	dbw 22, NIGHT_SHADE
 	dbw 28, CURSE
 	dbw 34, PAIN_SPLIT
-	dbw 40, AMBUSH
+	dbw 40, BLINDSIDE
 	dbw 46, SHADOW_BALL
 	dbw 53, DESTINY_BOND
 	dbw 58, PSYCHIC_M

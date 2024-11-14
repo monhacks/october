@@ -257,24 +257,24 @@
 	const ROCK_SMASH   ; f9
 	const WHIRLPOOL    ; fa
 	const BEAT_UP      ; fb
-	const UPROOT	   ; fc
-	const WIND_RIDE    ; fd
+	const UPROOT	   ; fc, needs anim
+	const WIND_RIDE    ; fd, needs anim
 	const ROCK_HEAD    ; fe
 	const WATER_SPORT  ; ff
-	const BRIGHT_MOSS  ; 100
-	const STRONG_ARM   ; 101
+	const BRIGHT_MOSS  ; 100, needs anim
+	const STRONG_ARM   ; 101, needs anim
 	const CROSS_CUTTER ; 102
 	const TEMPT        ; 103
 	const COIN_HURL    ; 104
-	const BOUNCE       ; 105
-	const ROCK_SLASH   ; 106
-	const INK_SPRAY
+	const BOUNCE       ; 105, fix this move
+	const ROCK_SLASH   ; 106, polish this anim
+	const INK_SPRAY    ; needs anim
 	const MEGAPHONE
-	const AMBUSH
-	const WILL_O_WISP
-	const EVIL_EYE
-	const UPPERCUT
-	const TERRORIZE
+	const BLINDSIDE    ; needs anim
+	const WILL_O_WISP  ; fix this move
+	const EVIL_EYE     ; needs anim
+	const UPPERCUT     ; needs anim
+	const TERRORIZE    ; needs anim
 NUM_ATTACKS EQU const_value + -1
 
 	if NUM_ATTACKS > $3fff
