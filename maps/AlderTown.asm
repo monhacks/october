@@ -8,11 +8,11 @@ AlderTown_MapScripts:
 	db 2 ; scene scripts
 	scene_script .EmptyScene ; SCENE_ALDER_TOWN_NOTHING
 	scene_script .EmptyScene ; SCENE_ALDER_TOWN_GYM_UNLOCKED
+
+	db 0 ; callbacks
 	
 .EmptyScene:
 	end
-
-	db 0 ; callbacks
 	
 TrainerFisherBilly:
 	trainer FISHER, FISHER_BILLY, EVENT_BEAT_FISHER_BILLY, FisherBillySeenText, FisherBillyBeatenText, 0, .Script
