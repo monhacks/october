@@ -459,7 +459,7 @@ SpearowEvosAttacks:
 	dbw 9, MIRROR_MOVE
 	dbw 13, FURY_ATTACK
 	dbw 18, WING_ATTACK
-	dbw 24, SCARY_FACE
+	dbw 24, TERRORIZE
 	dbw 29, FAINT_ATTACK
 	dbw 33, FLY
 	dbw 38, DRILL_PECK
@@ -476,7 +476,7 @@ FearowEvosAttacks:
 	dbw 9, MIRROR_MOVE
 	dbw 13, FURY_ATTACK
 	dbw 18, WING_ATTACK
-	dbw 26, SCARY_FACE
+	dbw 26, TERRORIZE
 	dbw 31, FAINT_ATTACK
 	dbw 35, FLY
 	dbw 40, DRILL_PECK
