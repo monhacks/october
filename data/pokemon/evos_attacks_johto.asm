@@ -510,35 +510,37 @@ LedianEvosAttacks:
 SpinarakEvosAttacks:
 	dbbw EVOLVE_LEVEL, 22, ARIADOS
 	db 0 ; no more evolutions
-	dbw 1, POISON_STING
+	dbw 1, CONSTRICT
 	dbw 1, STRING_SHOT
-	dbw 4, CONSTRICT
-	dbw 9, BITE
-	dbw 13, NIGHT_SHADE
-	dbw 18, SPIDER_WEB
-	dbw 22, LEECH_LIFE
-	dbw 27, TACKLE ; POISON_FANG
-	dbw 31, SPITE
-	dbw 36, FAINT_ATTACK
-	dbw 40, CONFUSE_RAY
-	dbw 45, MEAN_LOOK
+	dbw 1, POISON_STING
+	dbw 4, LEECH_LIFE
+	dbw 9, NIGHT_SHADE
+	dbw 13, SPIDER_WEB
+	dbw 18, BITE
+	dbw 22, SPITE
+	dbw 27, TACKLE ; TOXIC_LEECH
+	dbw 31, FAINT_ATTACK
+	dbw 36, TACKLE ; TERRORIZE
+	dbw 40, CROSS_CUTTER
+	dbw 45, CONFUSE_RAY
 	dbw 49, SLUDGE_BOMB
 	db 0 ; no more level-up moves
 
 AriadosEvosAttacks:
 	db 0 ; no more evolutions
-	dbw 1, POISON_STING
+	dbw 1, CONSTRICT
 	dbw 1, STRING_SHOT
-	dbw 4, CONSTRICT
-	dbw 9, BITE
-	dbw 13, NIGHT_SHADE
-	dbw 18, SPIDER_WEB
-	dbw 22, LEECH_LIFE
-	dbw 29, TACKLE ; POISON_FANG
-	dbw 33, SPITE
-	dbw 38, FAINT_ATTACK
-	dbw 42, CONFUSE_RAY
-	dbw 47, MEAN_LOOK
+	dbw 1, POISON_STING
+	dbw 4, LEECH_LIFE
+	dbw 9, NIGHT_SHADE
+	dbw 13, SPIDER_WEB
+	dbw 18, BITE
+	dbw 22, SPITE
+	dbw 29, TACKLE ; TOXIC_LEECH
+	dbw 33, FAINT_ATTACK
+	dbw 38, TACKLE ; TERRORIZE
+	dbw 42, CROSS_CUTTER
+	dbw 47, CONFUSE_RAY
 	dbw 51, SLUDGE_BOMB
 	db 0 ; no more level-up moves
 
