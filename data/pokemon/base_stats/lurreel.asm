@@ -3,7 +3,7 @@
 	db  75,  65, 115,  95,  80, 115
 	;   hp  atk  def  spd  sat  sdf
 
-	db WATER, STEEL ; type
+	db ELECTRIC, DARK ; type
 	db 45 ; catch rate
 	db 194 ; base exp
 	dw NO_ITEM, NO_ITEM ; items

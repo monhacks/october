@@ -1797,7 +1797,7 @@ HitmonchanEvosAttacks:
 	db 0 ; no more level-up moves
 
 LickitungEvosAttacks:
-	dbbw EVOLVE_LEVEL, 33, LICKILICKY
+	dbbw EVOLVE_LEVEL, 32, LICKILICKY
 	db 0 ; no more evolutions
 	dbw 1, LICK
 	dbw 1, SUPERSONIC

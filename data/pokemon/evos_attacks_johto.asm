@@ -883,6 +883,7 @@ StraigarEvosAttacks:
 	db 0 ; no more level-up moves
 
 GorotoraEvosAttacks:
+	dbbw EVOLVE_LEVEL, 30, GOROTORA
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, TAIL_WHIP
@@ -899,24 +900,42 @@ GorotoraEvosAttacks:
 	db 0 ; no more level-up moves
 	
 BiteelEvosAttacks:
+	dbbw EVOLVE_LEVEL, 28, LURREEL
 	db 0 ; no more evolutions
+	db 1 , WRAP
+	db 1 , LEER
+	db 1 , THUNDER_WAVE
+	db 4, THUNDERSHOCK
+	db 8, LEECH_LIFE
+	db 12, BITE
+	db 17, TACKLE ; THUNDERJOLT
+	db 21, FLASH
+	db 25, TACKLE ;DEEP_DIVE
+	db 29, TERRORIZE
+	db 34, SPARK
+	db 38, CONFUSE_RAY
+	db 42, IRON_TAIL
+	db 46, TACKLE ; FLOODLIGHT
+	db 51, THUNDER
+	db 0 ; no more level-up moves
+	
 LurreelEvosAttacks:
 	db 0 ; no more evolutions
-	db 1 , WATER_GUN
-	db 1 , GROWL
-	db 1 , TACKLE
-	db 10, RAGE
-	db 12, BUBBLE
-	db 13, HARDEN
-	db 16, SUPERSONIC
-	db 19, BIDE
-	db 27, SLAM
-	db 31, DOUBLE_TEAM
-	db 38, ACID_ARMOR
-	db 39, CRUNCH
-	db 47, IRON_TAIL
-	db 52, THRASH
-	db 56, HYDRO_PUMP
+	db 1 , WRAP
+	db 1 , LEER
+	db 1 , THUNDER_WAVE
+	db 4, THUNDERSHOCK
+	db 8, LEECH_LIFE
+	db 12, BITE
+	db 17, TACKLE ; THUNDERJOLT
+	db 21, FLASH
+	db 27, TACKLE; DEEP_DIVE
+	db 31, TERRORIZE
+	db 36, SPARK
+	db 40, CONFUSE_RAY
+	db 44, IRON_TAIL
+	db 48, TACKLE ; FLOODLIGHT
+	db 53, THUNDER
 	db 0 ; no more level-up moves
 
 	
