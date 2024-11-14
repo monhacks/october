@@ -272,3 +272,4 @@ MoveNames::
 	move_name "BLINDSIDE"
 	move_name "WILL-O-WISP"
 	move_name "EVIL EYE"
+	move_name "UPPERCUT"

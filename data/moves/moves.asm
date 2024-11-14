@@ -286,4 +286,6 @@ Moves1:
 	move EFFECT_ALWAYS_HIT,         80, DARK,    100, 20,    0 ;AMBUSH
 	move EFFECT_BURN,                0, FIRE,     85, 15,    0 ;WILL_O_WISP 
 	move EFFECT_EVIL_EYE,           65, GHOST,   100, 10,    0 ;EVIL_EYE
+	move EFFECT_FLINCH_HIT,         55, FIGHTING, 80, 15,    0 ;UPPERCUT
+
 

@@ -55,7 +55,7 @@ EvolutionMoves::
 	dw NO_MOVE      ; PSYDUCK
 	dw NO_MOVE      ; GOLDUCK
 	dw NO_MOVE      ; MANKEY
-	dw RAGE         ; PRIMEAPE
+	dw UPPERCUT     ; PRIMEAPE
 	dw NO_MOVE      ; GROWLITHE
 	dw EXTREMESPEED ; ARCANINE
 	dw NO_MOVE      ; POLIWAG

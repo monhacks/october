@@ -296,6 +296,7 @@ BattleAnimations::
 	dw BattleAnim_WillOWisp
 	dw BattleAnim_EvilEye
 	dw BattleAnim_HeldItemTrigger
+	dw BattleAnim_Uppercut
 .End:
 
 BattleAnim_0:
@@ -675,6 +676,7 @@ BattleAnim_Pound:
 	anim_wait 16
 	anim_ret
 
+BattleAnim_Uppercut:
 BattleAnim_KarateChop:
 	anim_1gfx BATTLE_ANIM_GFX_HIT
 	anim_sound 0, 1, SFX_KARATE_CHOP

@@ -272,6 +272,7 @@ MoveDescriptions1:
 	dw AmbushDescription
 	dw WillOWispDescription
 	dw EvilEyeDescription
+	dw UppercutDescription
 .End:
 	
 InvalidMoveDescription:
@@ -368,7 +369,8 @@ VineWhipDescription:
 RockHeadDescription:
 	db	 "TODO"
 	next "TODO@"
-	
+
+UppercutDescription:
 StompDescription:
 	db   "An attack that may"
 	next "cause flinching.@"
