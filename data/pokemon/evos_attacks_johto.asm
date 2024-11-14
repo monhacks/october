@@ -449,34 +449,36 @@ MallodyEvosAttacks:
 HoothootEvosAttacks:
 	dbbw EVOLVE_LEVEL, 20, NOCTOWL
 	db 0 ; no more evolutions
-	dbw 1, TACKLE
+	dbw 1, SCRATCH
 	dbw 1, GROWL
+	dbw 1, LEER
 	dbw 1, FORESIGHT
 	dbw 6, PECK
 	dbw 11, HYPNOSIS
-	dbw 17, HEADBUTT
-	dbw 22, PURSUIT
+	dbw 17, SLASH
+	dbw 22, MEGAPHONE
 	dbw 28, WING_ATTACK
-	dbw 33, MEGAHORN
+	dbw 33, TERRORIZE
 	dbw 39, FAINT_ATTACK
 	dbw 44, FLY
-	dbw 50, PERISH_SONG
+	dbw 50, BLINDSIDE
 	db 0 ; no more level-up moves
 
 NoctowlEvosAttacks:
 	db 0 ; no more evolutions
-	dbw 1, TACKLE
+	dbw 1, SCRATCH
 	dbw 1, GROWL
+	dbw 1, LEER
 	dbw 1, FORESIGHT
 	dbw 6, PECK
 	dbw 11, HYPNOSIS
-	dbw 17, HEADBUTT
-	dbw 24, PURSUIT
+	dbw 17, SLASH
+	dbw 24, MEGAPHONE
 	dbw 30, WING_ATTACK
-	dbw 35, MEGAHORN
+	dbw 35, TERRORIZE
 	dbw 41, FAINT_ATTACK
 	dbw 46, FLY
-	dbw 52, PERISH_SONG
+	dbw 52, BLINDSIDE
 	db 0 ; no more level-up moves
 
 LedybaEvosAttacks:

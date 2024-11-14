@@ -171,7 +171,7 @@ EvolutionMoves::
 	dw NO_MOVE      ; CLEFLING
 	dw WING_ATTACK  ; MALLODY
 	dw NO_MOVE      ; HOOTHOOT
-	dw NO_MOVE      ; NOCTOWL
+	dw MEAN_LOOK    ; NOCTOWL
 	dw NO_MOVE      ; LEDYBA
 	dw NO_MOVE      ; LEDIAN
 	dw NO_MOVE      ; SPINARAK
