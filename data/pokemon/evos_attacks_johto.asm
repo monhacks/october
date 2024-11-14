@@ -500,7 +500,7 @@ LedianEvosAttacks:
 	dbw 22, DETECT
 	dbw 27, ROCK_SMASH
 	dbw 31, AGILITY
-	dbw 36, TACKLE ; UPPERCUT
+	dbw 36, UPPERCUT
 	dbw 40, FLY
 	dbw 45, BATON_PASS
 	dbw 49, MOONLIGHT
