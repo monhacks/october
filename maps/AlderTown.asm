@@ -1,11 +1,28 @@
+	object_const_def
+	const ALDER_COOLTRAINERF
+	const ALDER_GYM_GUY
+	const ALDER_FISHER
+	const ALDER_BILLY
+
 AlderTown_MapScripts:
 	db 2 ; scene scripts
 	scene_script .EmptyScene ; SCENE_ALDER_TOWN_NOTHING
 	scene_script .EmptyScene ; SCENE_ALDER_TOWN_GYM_UNLOCKED
+	
+.EmptyScene:
+	end
 
 	db 0 ; callbacks
-
-.EmptyScene:
+	
+TrainerFisherBilly:
+	trainer FISHER, FISHER_BILLY, EVENT_BEAT_FISHER_BILLY, FisherBillySeenText, FisherBillyBeatenText, 0, .Script
+	
+.Script:
+	endifjustbattled
+	opentext
+	writetext FisherBillyAfterText
+	waitbutton
+	closetext
 	end
 
 AlderTownHappinessRaterSign:
@@ -25,6 +42,26 @@ AlderTownSign:
 
 	para "The Quiet Town of"
 	line "Aging Grace"
+	done
+	
+FisherBillySeenText:
+	text "Oi! Buzz off, you"
+	line "little brat!"
+	done
+	
+FisherBillyBeatenText:
+	text "I told you to buzz"
+	line "off!"
+	done
+	
+FisherBillyAfterText:
+	text "Alright, you won."
+	line "Now leave."
+
+	para "I got better"
+	line "things to do than"
+	para "to entertain"
+	line "twerps like you."
 	done
 
 AlderTown_GymLocked:
@@ -153,7 +190,8 @@ AlderTown_MapEvents:
 	bg_event 10,  8, BGEVENT_READ, AlderTownSign
 	bg_event  8, 11, BGEVENT_READ, AlderTownGymSign
 
-	db 3 ; object events
+	db 4 ; object events
 	object_event  5, 12, SPRITE_GYM_GUY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, AlderTownOutsideGymGuyScript, EVENT_BEAT_ROUTE33_KAREN
 	object_event 15, 10, SPRITE_FISHER,  SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, 8, 15, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, AlderTownFisherScript, -1
 	object_event  8,  5, SPRITE_COOLTRAINER_F, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, PAL_NPC_BLUE, OBJECTTYPE_SCRIPT, 0, AlderTownCheckOutMtHiveScript, -1
+	object_event 15, 11, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerFisherBilly, -1

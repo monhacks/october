@@ -1,6 +1,5 @@
 	object_const_def ; object_event constants
 	const ROUTE30_SOLDIER
-	const ROUTE30_FISHER
 	const ROUTE30_YOUNGSTER
 	const ROUTE30_FRUIT_TREE
 	const ROUTE30_LASS1
@@ -19,17 +18,6 @@ TrainerSoldierDwight:
 	endifjustbattled
 	opentext
 	writetext SoldierDwightAfterText
-	waitbutton
-	closetext
-	end
-	
-TrainerFisherBilly:
-	trainer FISHER, FISHER_BILLY, EVENT_BEAT_FISHER_BILLY, FisherBillySeenText, FisherBillyBeatenText, 0, .Script
-	
-.Script:
-	endifjustbattled
-	opentext
-	writetext FisherBillyAfterText
 	waitbutton
 	closetext
 	end
@@ -108,26 +96,6 @@ SoldierDwightAfterText:
 	line "of my face!"
 	done
 	
-FisherBillySeenText:
-	text "Oi! Buzz off, you"
-	line "little brat!"
-	done
-	
-FisherBillyBeatenText:
-	text "I told you to buzz"
-	line "off!"
-	done
-	
-FisherBillyAfterText:
-	text "Alright, you won."
-	line "Now leave."
-
-	para "I got better"
-	line "things to do than"
-	para "to entertain"
-	line "twerps like you."
-	done
-	
 Route30YoungsterText_DirectionsToMrPokemonsHouse:
 	text "MR. #MON's house"
 	line "is right up ahead."
@@ -187,9 +155,8 @@ Route30_MapEvents:
 	bg_event 13,  5, BGEVENT_READ, Route30TrainerTips
 	bg_event  6, 16, BGEVENT_ITEM, Route30HiddenPotion
 
-	db 6 ; object events
+	db 5 ; object events
 	object_event  8, 22, SPRITE_SOLDIER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_TRAINER, 1, TrainerSoldierDwight, -1
-	object_event  8,  19, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_TRAINER, 0, TrainerFisherBilly, -1
 	object_event  6,  6, SPRITE_YOUNGSTER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 1, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, Route30YoungsterScript, -1
 	object_event 12,  15, SPRITE_FRUIT_TREE, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, Route30FruitTree2, -1
 	object_event 12, 28, SPRITE_LASS, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, Route30CooltrainerFScript, -1
