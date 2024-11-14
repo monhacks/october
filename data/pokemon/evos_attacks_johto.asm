@@ -1778,14 +1778,17 @@ AercrowEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, PECK
 	dbw 1, LEER
-	dbw 4, SAND_ATTACK
-	dbw 8, SWIFT
-	dbw 12, FURY_ATTACK
-	dbw 16, AGILITY
-	dbw 20, WING_ATTACK
-	dbw 24, SLASH
-	dbw 28, DRILL_PECK
-	dbw 32, SPIKES
+	dbw 5, POUND
+	dbw 8, FOCUS_ENERGY
+	dbw 14, KARATE_CHOP
+	dbw 19, SLAM
+	dbw 22, SCARY_FACE
+	dbw 28, WING_ATTACK
+	dbw 33, HEADBUTT
+	dbw 36, COUNTER
+	dbw 42, CROSS_CHOP
+	dbw 47, MIRROR_MOVE
+	dbw 50, THRASH
 	db 0 ; no more level-up moves
 	
 AdbarstorkEvosAttacks:
