@@ -298,6 +298,9 @@ BattleAnimations::
 	dw BattleAnim_Uppercut
 	dw BattleAnim_Terrorize
 	dw BattleAnim_Lunge
+	dw BattleAnim_DragonSmash
+	dw BattleAnim_ShellBomb
+	dw BattleAnim_MagnetField
 	dw BattleAnim_HeldItemTrigger
 .End:
 
@@ -669,6 +672,8 @@ BattleAnim_Shake:
 	anim_wait 40
 	anim_ret
 
+BattleAnim_MagnetField:
+BattleAnim_DragonSmash:
 BattleAnim_Pound:
 	anim_1gfx BATTLE_ANIM_GFX_HIT
 	anim_sound 0, 1, SFX_POUND
@@ -4936,6 +4941,24 @@ BattleAnim_WillOWisp:
 	anim_wait 8
 	anim_loop 4, .loop
 	anim_wait 48
+	anim_ret
+	
+BattleAnim_ShellBomb:
+	anim_1gfx BATTLE_ANIM_GFX_EXPLOSION
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $60, $4, $10
+	anim_bgeffect BATTLE_BG_EFFECT_FLASH_INVERTED, $0, $8, $24
+	anim_call BattleAnimSub_Explosion2
+	anim_wait 16
+	anim_1gfx BATTLE_ANIM_GFX_MISC
+	anim_sound 6, 2, SFX_MENU
+	anim_obj BATTLE_ANIM_OBJ_SPIKES, 48, 88, $20
+	anim_wait 8
+	anim_sound 6, 2, SFX_MENU
+	anim_obj BATTLE_ANIM_OBJ_SPIKES, 48, 88, $30
+	anim_wait 8
+	anim_sound 6, 2, SFX_MENU
+	anim_obj BATTLE_ANIM_OBJ_SPIKES, 48, 88, $28
+	anim_wait 64
 	anim_ret
 
 BattleAnimSub_EyeBeams:

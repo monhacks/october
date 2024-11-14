@@ -275,11 +275,15 @@ MoveDescriptions1:
 	dw UppercutDescription
 	dw TerrorizeDescription
 	dw LungeDescription
+	dw DragonSmashDescription
+	dw ShellBombDescription
+	dw MagnetFieldDescription
 .End:
 	
 InvalidMoveDescription:
 	db "?@"
 
+MagnetFieldDescription:
 PoundDescription:
 	db   "Pounds with fore-"
 	next "legs or tail.@"
@@ -561,6 +565,7 @@ SeismicTossDescription:
 	db   "The user's level"
 	next "equals damage HP.@"
 
+DragonSmashDescription:
 StrengthDescription:
 	db   "A powerful physi-"
 	next "cal attack.@"
@@ -1338,6 +1343,10 @@ EvilEyeDescription:
 LungeDescription:
 	db   "Lunges to lower"
 	next "foe's ATTACK.@"
+	
+ShellBombDescription:
+	db "Sets up spikes and"
+	next "does big damage."
 
 ;--------------------------------------------------------------------
 _NUM_MOVE_DESCRIPTIONS = (MoveDescriptions1.End  - MoveDescriptions1)/2

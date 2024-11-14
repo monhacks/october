@@ -276,6 +276,9 @@
 	const UPPERCUT     ; needs anim
 	const TERRORIZE    ; needs anim
 	const LUNGE        ; needs anim
+	const DRAGON_SMASH ; needs anim
+	const SHELL_BOMB   ; needs anim
+	const MAGNET_FIELD ; needs anim
 NUM_ATTACKS EQU const_value + -1
 
 	if NUM_ATTACKS > $3fff

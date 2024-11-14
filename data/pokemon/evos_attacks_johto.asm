@@ -1329,7 +1329,7 @@ ForretressEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, ABSORB
 	dbw 1, PROTECT
-	dbw 1, SELFDESTRUCT
+	dbw 1, SHELL_BOMB
 	dbw 8, SELFDESTRUCT
 	dbw 15, TAKE_DOWN
 	dbw 22, RAPID_SPIN

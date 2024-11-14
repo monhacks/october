@@ -275,3 +275,6 @@ MoveNames::
 	move_name "UPPERCUT"
 	move_name "TERRORIZE"
 	move_name "LUNGE"
+	move_name "DRAGON SMASH"
+	move_name "SHELL BOMB"
+	move_name "MAGNET FIELD"
