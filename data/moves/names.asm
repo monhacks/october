@@ -274,3 +274,4 @@ MoveNames::
 	move_name "EVIL EYE"
 	move_name "UPPERCUT"
 	move_name "TERRORIZE"
+	move_name "LUNGE"

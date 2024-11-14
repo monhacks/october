@@ -297,6 +297,7 @@ BattleAnimations::
 	dw BattleAnim_EvilEye
 	dw BattleAnim_Uppercut
 	dw BattleAnim_Terrorize
+	dw BattleAnim_Lunge
 	dw BattleAnim_HeldItemTrigger
 .End:
 
@@ -2957,6 +2958,7 @@ BattleAnim_SwordsDance:
 	anim_wait 56
 	anim_ret
 
+BattleAnim_Lunge:
 BattleAnim_QuickAttack:
 	anim_2gfx BATTLE_ANIM_GFX_SPEED, BATTLE_ANIM_GFX_HIT
 	anim_sound 0, 0, SFX_MENU

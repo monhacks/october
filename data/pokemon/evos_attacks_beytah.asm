@@ -46,16 +46,18 @@ EvosAttacksPointers3::
 
 StantlerEvosAttacks:
 	db 0 ; no more evolutions
-	dbw 1, TACKLE
-	dbw 8, LEER
-	dbw 10, HYPNOSIS
-	dbw 13, STOMP
-	dbw 16, SAND_ATTACK
-	dbw 21, DOUBLE_KICK
-	dbw 23, CONFUSE_RAY
-	dbw 27, MEAN_LOOK
-	dbw 33, SHADOW_BALL
-	dbw 36, TAKE_DOWN
+	dbw 1, FLASH
+	dbw 1, STOMP
+	dbw 1, LEER
+	dbw 7, NIGHT_SHADE
+	dbw 12, DOUBLE_KICK
+	dbw 19, MEAN_LOOK
+	dbw 24, HEADBUTT
+	dbw 31, HYPNOSIS
+	dbw 36, TERRORIZE
+	dbw 43, LUNGE
+	dbw 48, TACKLE ; MYSTIC_HORNS
+	dbw 55, SKULL_BASH
 	db 0 ; no more level-up moves
 	
 SmeargleEvosAttacks:
@@ -542,7 +544,7 @@ ParasporEvosAttacks:
 	dbw 36, SPORE
 	dbw 40, GROWTH
 	dbw 45, SLASH
-	dbw 51, TACKLE ; LUNGE
+	dbw 51, LUNGE
 	db 0 ; no more level-up moves
 
 MolambinoEvosAttacks:
@@ -597,7 +599,7 @@ MorphobiaEvosAttacks:
 	dbw 40, SCREECH
 	dbw 44, SHADOW_BALL
 	dbw 48, FLY
-	dbw 54, TACKLE;LUNGE
+	dbw 54, LUNGE
 	db 0 ; no more level-up moves
 
 TerrachnidEvosAttacks:
@@ -611,7 +613,7 @@ TerrachnidEvosAttacks:
 	dbw 26, CROSS_CUTTER
 	dbw 30, CUT; STUN CUT
 	dbw 37, TOXIC
-	dbw 41, TACKLE;LUNGE
+	dbw 41, LUNGE
 	dbw 45, EARTHQUAKE
 	dbw 52, FISSURE
 	db 0 ; no more level-up moves

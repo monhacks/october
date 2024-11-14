@@ -503,7 +503,7 @@ LedianEvosAttacks:
 	dbw 40, FLY
 	dbw 45, BATON_PASS
 	dbw 49, MOONLIGHT
-	dbw 54, TACKLE ; LUNGE
+	dbw 54, LUNGE
 	db 0 ; no more level-up moves
 
 SpinarakEvosAttacks:

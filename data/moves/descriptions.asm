@@ -274,6 +274,7 @@ MoveDescriptions1:
 	dw EvilEyeDescription
 	dw UppercutDescription
 	dw TerrorizeDescription
+	dw LungeDescription
 .End:
 	
 InvalidMoveDescription:
@@ -1333,6 +1334,10 @@ WillOWispDescription:
 EvilEyeDescription:
 	db "Damage doubles if"
 	next "foe has status.@"
+	
+LungeDescription:
+	db   "Lunges to lower"
+	next "foe's ATTACK.@"
 
 ;--------------------------------------------------------------------
 _NUM_MOVE_DESCRIPTIONS = (MoveDescriptions1.End  - MoveDescriptions1)/2

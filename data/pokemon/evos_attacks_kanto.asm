@@ -328,7 +328,7 @@ ButterfreeEvosAttacks:
 	dbw 29, PSYBEAM
 	dbw 34, FLY
 	dbw 37, STUN_SPORE
-	dbw 41, TACKLE ; LUNGE
+	dbw 41, LUNGE
 	dbw 46, WHIRLWIND
 	dbw 49, PSYCHIC_M
 	db 0 ; no more level-up moves
@@ -359,7 +359,7 @@ BeedrillEvosAttacks:
 	dbw 29, PIN_MISSILE
 	dbw 34, FLY
 	dbw 37, SPIKE_CANNON
-	dbw 41, TACKLE ; LUNGE
+	dbw 41, LUNGE
 	dbw 46, TOXIC
 	dbw 49, SLUDGE_BOMB
 	db 0 ; no more level-up moves
@@ -891,7 +891,7 @@ ParasEvosAttacks:
 	dbw 36, SPORE
 	dbw 40, GROWTH
 	dbw 45, SLASH
-	dbw 51, TACKLE ; LUNGE
+	dbw 51, LUNGE
 	db 0 ; no more level-up moves
 
 ParasectEvosAttacks:
@@ -907,7 +907,7 @@ ParasectEvosAttacks:
 	dbw 38, SPORE
 	dbw 42, GROWTH
 	dbw 47, SLASH
-	dbw 53, TACKLE ; LUNGE
+	dbw 53, LUNGE
 	db 0 ; no more level-up moves
 
 VenonatEvosAttacks:
