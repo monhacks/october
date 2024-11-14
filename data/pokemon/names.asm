@@ -280,7 +280,7 @@ PokemonNames::
 	db "DONPHAN@@@"
 	db "LICKILICKY"
 	db "PORYGON2@@"
-	db "STANTLER@@"
+	db "STANTLEER@"
 	db "SMEARGLE@@"
 	db "TYROGUE@@@"
 	db "HITMONTOP@"
