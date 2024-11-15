@@ -195,6 +195,7 @@ BattleAnimFrameData:
 	dw .Frameset_WaterSpoutRising    ; BATTLE_ANIM_FRAMESET_WATER_SPOUT_RISING
 	dw .Frameset_WaterSpoutFalling   ; BATTLE_ANIM_FRAMESET_WATER_SPOUT_FALLING
 	dw .Frameset_MagnetBomb          ; BATTLE_ANIM_FRAMESET_MAGNET_BOMB
+	dw .Frameset_ExplosionSmall      ; BATTLE_ANIM_FRAMESET_EXPLOSION_SMALL
 
 .Frameset_HitBig:
 	frame BATTLE_ANIM_OAMSET_00,  6
@@ -1317,5 +1318,11 @@ BattleAnimFrameData:
 	
 .Frameset_MagnetBomb:
 	dowait 4
-	frame BATTLEANIMOAMSET_0F,  54
+	frame BATTLE_ANIM_OAMSET_0F,  54
+	delanim
+	
+.Frameset_ExplosionSmall:
+	frame BATTLE_ANIM_OAMSET_55,  2
+	frame BATTLE_ANIM_OAMSET_54,  2
+	frame BATTLE_ANIM_OAMSET_53,  2
 	delanim

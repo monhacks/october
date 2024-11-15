@@ -234,8 +234,10 @@ BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLE_ANIM_OBJ_WATER_SPORT         ; c7
 	const BATTLE_ANIM_OBJ_WATER_SPOUT_RISING  ; c8
 	const BATTLE_ANIM_OBJ_WATER_SPOUT_FALLING ; c9
-	const ANIM_OBJ_MAGNET_BOMB_SPINNING
-	const ANIM_OBJ_MAGNET_BOMB_IMPACT
+	const BATTLE_ANIM_OBJ_MAGNET_BOMB_SPINNING
+	const BATTLE_ANIM_OBJ_MAGNET_BOMB_IMPACT
+	const BATTLE_ANIM_OBJ_SMALL_EXPLOSION
+
 	
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
 	const_def
@@ -519,6 +521,7 @@ BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLE_ANIM_FRAMESET_WATER_SPOUT_RISING    ; c0
 	const BATTLE_ANIM_FRAMESET_WATER_SPOUT_FALLING   ; c1
 	const BATTLE_ANIM_FRAMESET_MAGNET_BOMB
+	const BATTLE_ANIM_FRAMESET_EXPLOSION_SMALL
 
 ; BattleAnimOAMData indexes (see data/battle_anims/oam.asm)
 	const_def
@@ -844,6 +847,7 @@ BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLE_ANIM_GFX_SMOKE_PUFF ; 29
 	const BATTLE_ANIM_GFX_PLAYERHEAD ; 2a
 	const BATTLE_ANIM_GFX_ENEMYFEET  ; 2b
+	const BATTLE_ANIM_GFX_SMALL_EXPLOSION
 
 ; battle_bg_effect struct members (see macros/wram.asm)
 	const_def
@@ -904,6 +908,7 @@ NUM_BG_EFFECTS EQU 5 ; see wActiveBGEffects
 	const PAL_BTLCUSTOM_LIGHT_SCREEN    ; 11
 	const PAL_BTLCUSTOM_MIRROR_COAT     ; 12
 	const PAL_BTLCUSTOM_WILL_O_WISP     ; 13
+	const PAL_BTLCUSTOM_BRIGHT
 NUM_CUSTOM_BATTLE_PALETTES EQU const_value
 
 PAL_BTLCUSTOM_DEFAULT EQU -1

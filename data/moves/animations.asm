@@ -4964,63 +4964,63 @@ BattleAnim_ShellBomb:
 BattleAnim_MagnetBomb:
 	anim_setobjpal PAL_BATTLE_OB_BROWN, PAL_BTLCUSTOM_BRIGHT
 	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_ICE
-	anim_2gfx ANIM_GFX_ROCKS, ANIM_GFX_SMALL_EXPLOSION
+	anim_2gfx BATTLE_ANIM_GFX_ROCKS, BATTLE_ANIM_GFX_SMALL_EXPLOSION
 	anim_battlergfx_2row
 	anim_sound 0, 0, SFX_RAGE
-	anim_obj ANIM_OBJ_MAGNET_BOMB_SPINNING, 132, 36, $0
+	anim_obj BATTLE_ANIM_OBJ_MAGNET_BOMB_SPINNING, 132, 36, $0
 	anim_wait 8
 	anim_sound 0, 0, SFX_RAGE
-	anim_obj ANIM_OBJ_MAGNET_BOMB_SPINNING, 132, 62, $18
+	anim_obj BATTLE_ANIM_OBJ_MAGNET_BOMB_SPINNING, 132, 62, $18
 	anim_wait 8
 	anim_sound 0, 0, SFX_RAGE
-	anim_obj ANIM_OBJ_MAGNET_BOMB_SPINNING, 132, 54, $30
+	anim_obj BATTLE_ANIM_OBJ_MAGNET_BOMB_SPINNING, 132, 54, $30
 	anim_wait 8
 	anim_sound 0, 0, SFX_RAGE
-	anim_obj ANIM_OBJ_MAGNET_BOMB_SPINNING, 132, 48, $8
+	anim_obj BATTLE_ANIM_OBJ_MAGNET_BOMB_SPINNING, 132, 48, $8
 	anim_wait 8
 	anim_sound 0, 0, SFX_RAGE
-	anim_obj ANIM_OBJ_MAGNET_BOMB_SPINNING, 132, 64, $20
+	anim_obj BATTLE_ANIM_OBJ_MAGNET_BOMB_SPINNING, 132, 64, $20
 	anim_wait 8
 	anim_sound 0, 0, SFX_RAGE
-	anim_obj ANIM_OBJ_MAGNET_BOMB_SPINNING, 132, 36, $10
+	anim_obj BATTLE_ANIM_OBJ_MAGNET_BOMB_SPINNING, 132, 36, $10
 	anim_wait 8
-	anim_bgeffect ANIM_BG_BATTLEROBJ_1ROW, $0, $1, $0
+	anim_bgeffect BATTLE_BG_EFFECT_BATTLEROBJ_1ROW, $0, $1, $0
 	anim_sound 0, 0, SFX_RAGE
-	anim_obj ANIM_OBJ_MAGNET_BOMB_SPINNING, 132, 38, $8
-	anim_obj ANIM_OBJ_MAGNET_BOMB_IMPACT, 136, 56, $38
+	anim_obj BATTLE_ANIM_OBJ_MAGNET_BOMB_SPINNING, 132, 38, $8
+	anim_obj BATTLE_ANIM_OBJ_MAGNET_BOMB_IMPACT, 136, 56, $38
 	anim_wait 8
 	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $60, $1, $0
 	anim_sound 0, 1, SFX_EGG_BOMB
-	anim_obj ANIM_OBJ_SMALL_EXPLOSION, 124, 62, $0
-	anim_obj ANIM_OBJ_MAGNET_BOMB_SPINNING, 132, 64, $28
-	anim_obj ANIM_OBJ_MAGNET_BOMB_IMPACT, 136, 56, $16
+	anim_obj BATTLE_ANIM_OBJ_SMALL_EXPLOSION, 124, 62, $0
+	anim_obj BATTLE_ANIM_OBJ_MAGNET_BOMB_SPINNING, 132, 64, $28
+	anim_obj BATTLE_ANIM_OBJ_MAGNET_BOMB_IMPACT, 136, 56, $16
 	anim_wait 8
 	anim_sound 0, 1, SFX_EGG_BOMB
-	anim_obj ANIM_OBJ_SMALL_EXPLOSION, 140, 62, $0
-	anim_obj ANIM_OBJ_MAGNET_BOMB_IMPACT, 136, 56, $39
+	anim_obj BATTLE_ANIM_OBJ_SMALL_EXPLOSION, 140, 62, $0
+	anim_obj BATTLE_ANIM_OBJ_MAGNET_BOMB_IMPACT, 136, 56, $39
 	anim_wait 8
 	anim_sound 0, 1, SFX_EGG_BOMB
-	anim_obj ANIM_OBJ_SMALL_EXPLOSION, 124, 42, $0
-	anim_obj ANIM_OBJ_MAGNET_BOMB_IMPACT, 136, 56, $10
+	anim_obj BATTLE_ANIM_OBJ_SMALL_EXPLOSION, 124, 42, $0
+	anim_obj BATTLE_ANIM_OBJ_MAGNET_BOMB_IMPACT, 136, 56, $10
 	anim_wait 8
 	anim_sound 0, 1, SFX_EGG_BOMB
-	anim_obj ANIM_OBJ_SMALL_EXPLOSION, 132, 52, $0
-	anim_obj ANIM_OBJ_MAGNET_BOMB_IMPACT, 136, 56, $18
+	anim_obj BATTLE_ANIM_OBJ_SMALL_EXPLOSION, 132, 52, $0
+	anim_obj BATTLE_ANIM_OBJ_MAGNET_BOMB_IMPACT, 136, 56, $18
 	anim_wait 8
 	anim_sound 0, 1, SFX_EGG_BOMB
-	anim_obj ANIM_OBJ_SMALL_EXPLOSION, 124, 62, $0
-	anim_obj ANIM_OBJ_MAGNET_BOMB_IMPACT, 136, 56, $38
+	anim_obj BATTLE_ANIM_OBJ_SMALL_EXPLOSION, 124, 62, $0
+	anim_obj BATTLE_ANIM_OBJ_MAGNET_BOMB_IMPACT, 136, 56, $38
 	anim_wait 8
 	anim_sound 0, 1, SFX_EGG_BOMB
-	anim_obj ANIM_OBJ_SMALL_EXPLOSION, 140, 42, $0
-	anim_obj ANIM_OBJ_MAGNET_BOMB_IMPACT, 136, 56, $0
+	anim_obj BATTLE_ANIM_OBJ_SMALL_EXPLOSION, 140, 42, $0
+	anim_obj BATTLE_ANIM_OBJ_MAGNET_BOMB_IMPACT, 136, 56, $0
 	anim_wait 8
 	anim_sound 0, 1, SFX_EGG_BOMB
-	anim_obj ANIM_OBJ_SMALL_EXPLOSION, 124, 42, $0
-	anim_obj ANIM_OBJ_MAGNET_BOMB_IMPACT, 136, 56, $1d
+	anim_obj BATTLE_ANIM_OBJ_SMALL_EXPLOSION, 124, 42, $0
+	anim_obj BATTLE_ANIM_OBJ_MAGNET_BOMB_IMPACT, 136, 56, $1d
 	anim_wait 8
 	anim_sound 0, 1, SFX_EGG_BOMB
-	anim_obj ANIM_OBJ_SMALL_EXPLOSION, 132, 52, $0
+	anim_obj BATTLE_ANIM_OBJ_SMALL_EXPLOSION, 132, 52, $0
 	anim_wait 32
 	anim_call BattleAnim_ShowMon_1_3
 	anim_ret
@@ -5261,6 +5261,14 @@ BattleAnim_UserObj_2Row:
 	anim_ret
 
 BattleAnim_ShowMon_1:
+	anim_wait 1
+	anim_bgeffect BATTLE_BG_EFFECT_SHOW_MON, $0, $1, $0
+	anim_wait 4
+	anim_incobj 1
+	anim_wait 1
+	anim_ret
+	
+BattleAnim_ShowMon_1_3:
 	anim_wait 1
 	anim_bgeffect BATTLE_BG_EFFECT_SHOW_MON, $0, $1, $0
 	anim_wait 4
