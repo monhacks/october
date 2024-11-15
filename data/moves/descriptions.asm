@@ -278,6 +278,7 @@ MoveDescriptions1:
 	dw DragonSmashDescription
 	dw ShellBombDescription
 	dw MagnetFieldDescription
+	dw MagnetBombDescription
 .End:
 	
 InvalidMoveDescription:
@@ -1347,6 +1348,10 @@ LungeDescription:
 ShellBombDescription:
 	db "Sets up spikes and"
 	next "does big damage."
+	
+MagnetBombDescription:
+	db "Floating magnets"
+	next "attack the foe."
 
 ;--------------------------------------------------------------------
 _NUM_MOVE_DESCRIPTIONS = (MoveDescriptions1.End  - MoveDescriptions1)/2

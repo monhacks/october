@@ -162,3 +162,4 @@ MoveEffectsPointers:
 	dw SpeedDown2Hit
 	dw DoBurn
 	dw EvilEye
+	dw ShellBomb

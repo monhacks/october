@@ -2230,3 +2230,25 @@ EvilEye:
 	buildopponentrage
 	kingsrock
 	endmove
+
+ShellBomb:
+	checkobedience
+	usedmovetext
+	doturn
+	critical
+	damagestats
+	damagecalc
+	stab
+	damagevariation
+	checkhit
+	moveanim
+	failuretext
+	applydamage
+	criticaltext
+	supereffectivetext
+	notifyweakenedeffect
+	checkfaint
+	buildopponentrage
+	kingsrock
+	spikes
+	endmove
