@@ -1330,7 +1330,7 @@ ForretressEvosAttacks:
 	dbw 1, ABSORB
 	dbw 1, PROTECT
 	dbw 1, SHELL_BOMB
-	dbw 8, SELFDESTRUCT
+	dbw 6, MAGNET_BOMB
 	dbw 15, TAKE_DOWN
 	dbw 22, RAPID_SPIN
 	dbw 25, MEGA_DRAIN
