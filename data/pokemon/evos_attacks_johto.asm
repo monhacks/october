@@ -1492,14 +1492,14 @@ HeracrossEvosAttacks:
 	dbw 1, TACKLE
 	dbw 1, LEER
 	dbw 6, HORN_ATTACK
-	dbw 12, ENDURE
-	dbw 19, FURY_ATTACK
+	dbw 12, FURY_ATTACK
+	dbw 19, FURY_CUTTER
 	dbw 26, COUNTER
-	dbw 31, TAKE_DOWN
-	dbw 37, LOW_KICK
-	dbw 44, CROSS_CUTTER
-	dbw 49, SUBMISSION
-	dbw 54, MEGAHORN
+	dbw 32, KARATE_CHOP
+	dbw 38, LUNGE
+	dbw 45, SUBMISSION
+	dbw 52, SWORDS_DANCE
+	dbw 58, MEGAHORN
 	db 0 ; no more level-up moves
 
 SneaselEvosAttacks:
@@ -1889,19 +1889,19 @@ StromenEvosAttacks:
 	
 AngoreEvosAttacks:
 	db 0 ; no more evolutions
-	db 1, TACKLE
-	db 1, GROWL
-	db 1, BUBBLE
-	db 6, DEFENSE_CURL
-	db 10, RAGE
-	db 15, SUPERSONIC
-	db 19, BUBBLEBEAM
-	db 24, SCREECH
-	db 28, IRON_TAIL
-	db 34, ACID_ARMOR
-	db 39, SCARY_FACE
-	db 45, CRUNCH
-	db 50, HYDRO_PUMP
+	dbw 1, TACKLE
+	dbw 1, GROWL
+	dbw 1, BUBBLE
+	dbw 6, DEFENSE_CURL
+	dbw 10, RAGE
+	dbw 15, SUPERSONIC
+	dbw 19, BUBBLEBEAM
+	dbw 24, SCREECH
+	dbw 28, IRON_TAIL
+	dbw 34, ACID_ARMOR
+	dbw 39, SCARY_FACE
+	dbw 45, CRUNCH
+	dbw 50, HYDRO_PUMP
 	db 0 ; no more level-up moves
 	
 KingdraEvosAttacks:
