@@ -80,7 +80,6 @@ TypeMatchups:
 	db BUG,          FIRE,         NOT_VERY_EFFECTIVE
 	db BUG,          GRASS,        SUPER_EFFECTIVE
 	db BUG,          FIGHTING,     NOT_VERY_EFFECTIVE
-	db BUG,          POISON,       NOT_VERY_EFFECTIVE
 	db BUG,          FLYING,       NOT_VERY_EFFECTIVE
 	db BUG,          PSYCHIC,      SUPER_EFFECTIVE
 	db BUG,          GHOST,        NOT_VERY_EFFECTIVE
