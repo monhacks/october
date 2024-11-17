@@ -125,7 +125,7 @@ IntroScene1:
 	ldh [hSCX], a
 	xor a
 	ld [wIntroFrameCounter2], a
-	ld a, $80
+	ld a, $F0
 	ld [wIntroFrameCounter1], a
 	ld a, $42
 	ldh [hLCDCPointer], a
@@ -710,13 +710,20 @@ IntroScene9:
 	ret
 
 .palettes:
+db %11100100
+	db %11100100
+	db %11100100
+	db %11100100
 	db %11100100
 	db %11100100
 	db %11100100
 	db %11100100
 	db %11100100
 	db %10010000
+	db %10010000
 	db %01000000
+	db %01000000
+	db %00000000
 	db %00000000
 	db -1
 

@@ -910,7 +910,7 @@ DoAnimFrame:
 	call .IncrementJumptableIndex
 	ld hl, SPRITEANIMSTRUCT_0D
 	add hl, bc
-	ld [hl], $b0
+	ld [hl], $d0
 	ret
 
 .one__16e4

@@ -429,8 +429,8 @@ SpriteAnimFrameData:
 	dorestart
 
 .Frameset_GSIntroShellder:
-	frame SPRITE_ANIM_OAMSET_GS_INTRO_SHELLDER_1,  8
-	frame SPRITE_ANIM_OAMSET_GS_INTRO_SHELLDER_2,  8
+	frame SPRITE_ANIM_OAMSET_GS_INTRO_SHELLDER_1,  12
+	frame SPRITE_ANIM_OAMSET_GS_INTRO_SHELLDER_2,  12
 	dorestart
 
 .Frameset_GSIntroMagikarp:
