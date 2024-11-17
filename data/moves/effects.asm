@@ -2209,7 +2209,7 @@ DoBurn:
 	checksafeguard
 	burn
 	endmove
-	
+
 EvilEye:
 	checkobedience
 	usedmovetext

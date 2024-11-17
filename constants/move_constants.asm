@@ -257,7 +257,7 @@
 	const ROCK_SMASH   ; f9
 	const WHIRLPOOL    ; fa
 	const BEAT_UP      ; fb
-	const UPROOT	   ; fc, needs anim
+	const UPROOT       ; fc, needs anim
 	const WIND_RIDE    ; fd, needs anim
 	const ROCK_HEAD    ; fe
 	const WATER_SPORT  ; ff
@@ -271,7 +271,7 @@
 	const INK_SPRAY    ; needs anim
 	const MEGAPHONE
 	const BLINDSIDE    ; needs anim
-	const WILL_O_WISP  ; fix this move
+	const WILL_O_WISP
 	const EVIL_EYE     ; needs anim
 	const UPPERCUT     ; needs anim
 	const TERRORIZE    ; needs anim

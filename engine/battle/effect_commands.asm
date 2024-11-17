@@ -5856,7 +5856,7 @@ BattleCommand_Paralyze:
 	jr nz, .failed
 	call CheckSubstituteOpp
 	jr nz, .failed
-	ld c, 30
+	ld c, 15
 	call DelayFrames
 	call AnimateCurrentMove
 	ld a, $1
@@ -5936,14 +5936,14 @@ BattleCommand_Burn:
 	jr nz, .failed
 	call CheckSubstituteOpp
 	jr nz, .failed
-	ld c, 30
+	ld c, 15
 	call DelayFrames
 	call AnimateCurrentMove
 	ld a, $1
 	ldh [hBGMapMode], a
 	ld a, BATTLE_VARS_STATUS_OPP
 	call GetBattleVarAddr
-	set PAR, [hl]
+	set BRN, [hl]
 	call UpdateOpponentInParty
 	ld hl, ApplyBrnEffectOnAttack
 	call CallBattleCore
