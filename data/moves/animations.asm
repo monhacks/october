@@ -301,6 +301,7 @@ BattleAnimations::
 	dw BattleAnim_DragonSmash
 	dw BattleAnim_ShellBomb
 	dw BattleAnim_MagnetField
+	dw BattleAnim_MagnetBomb
 	dw BattleAnim_HeldItemTrigger
 .End:
 
@@ -1647,6 +1648,31 @@ BattleAnim_Teleport:
 	anim_ret
 
 BattleAnim_Bounce:
+	anim_if_param_equal $1, BattleAnim_Bounce_branch_1
+	anim_if_param_equal $2, BattleAnim_Bounce_branch_2
+	anim_2gfx BATTLE_ANIM_GFX_BLUR, BATTLE_ANIM_GFX_HIT
+	anim_sound 0, 0, SFX_KINESIS
+	anim_obj BATTLE_ANIM_OBJ_BLUR_VERTICAL_DOWN, 136, 230, $10
+	anim_wait 16
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $10, $4, $0
+	anim_sound 0, 1, SFX_STOMP
+	anim_obj BATTLE_ANIM_OBJ_HIT_BIG_YFIX, 136, 56, $0
+	anim_wait 16
+
+BattleAnim_Bounce_branch_2:
+	anim_bgeffect BATTLE_BG_EFFECT_SHOW_MON, $0, $1, $0
+	anim_wait 16
+	anim_ret
+
+BattleAnim_Bounce_branch_1:
+	anim_1gfx BATTLE_ANIM_GFX_BLUR
+	anim_sound 0, 0, SFX_POTION
+	anim_bgeffect BATTLE_BG_EFFECT_HIDE_MON, $0, $1, $0
+	anim_obj BATTLE_ANIM_OBJ_BLUR_VERTICAL_UP, 48, 88, $30
+	anim_wait 32
+	anim_clearobjs
+	anim_ret
+
 BattleAnim_Fly:
 	anim_if_param_equal $1, .turn1
 	anim_if_param_equal $2, .miss
@@ -4886,14 +4912,24 @@ BattleAnim_CoinHurl:
 
 BattleAnim_RockSlash:
 	anim_2gfx BATTLE_ANIM_GFX_ROCKS, BATTLE_ANIM_GFX_CUT
+	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $56, $2, $0
 	anim_sound 0, 1, SFX_CUT
-	anim_obj BATTLE_ANIM_OBJ_BIG_ROCK, 120, 44, $30 ;128
-	anim_obj BATTLE_ANIM_OBJ_BIG_ROCK, 134, 48, $30
-	anim_obj BATTLE_ANIM_OBJ_BIG_ROCK, 156, 54, $30
-	anim_wait 60
-	anim_sound 0, 0, SFX_OUTRAGE
-	anim_sound 0, 0, SFX_VICEGRIP
-	anim_obj BATTLE_ANIM_OBJ_CUT_LONG_DOWN_LEFT, 150, 40, $0
+	anim_obj BATTLE_ANIM_OBJ_CUT_LONG_DOWN_LEFT, 148, 36, $0
+	anim_wait 8
+	anim_bgp $1b
+	anim_sound 0, 1, SFX_KARATE_CHOP
+	anim_obj BATTLE_ANIM_OBJ_ROCK_SMASH, 128, 56, $5c
+	anim_obj BATTLE_ANIM_OBJ_ROCK_SMASH, 128, 56, $e8
+	anim_obj BATTLE_ANIM_OBJ_CUT_LONG_DOWN_LEFT, 152, 40, $0
+	anim_wait 8
+	anim_sound 0, 1, SFX_KARATE_CHOP
+	anim_obj BATTLE_ANIM_OBJ_ROCK_SMASH, 132, 60, $5c
+	anim_obj BATTLE_ANIM_OBJ_ROCK_SMASH, 132, 60, $e8
+	anim_obj BATTLE_ANIM_OBJ_CUT_LONG_DOWN_LEFT, 144, 32, $0
+	anim_wait 8
+	anim_obj BATTLE_ANIM_OBJ_ROCK_SMASH, 123, 52, $5c
+	anim_obj BATTLE_ANIM_OBJ_ROCK_SMASH, 123, 52, $e8
+	anim_sound 0, 1, SFX_KARATE_CHOP
 	anim_wait 32
 	anim_ret
 
@@ -4962,7 +4998,6 @@ BattleAnim_ShellBomb:
 	anim_ret
 	
 BattleAnim_MagnetBomb:
-	anim_setobjpal PAL_BATTLE_OB_BROWN, PAL_BTLCUSTOM_BRIGHT
 	anim_setobjpal PAL_BATTLE_OB_RED, PAL_BTLCUSTOM_ICE
 	anim_2gfx BATTLE_ANIM_GFX_ROCKS, BATTLE_ANIM_GFX_SMALL_EXPLOSION
 	anim_battlergfx_2row

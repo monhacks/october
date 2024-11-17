@@ -196,6 +196,8 @@ BattleAnimFrameData:
 	dw .Frameset_WaterSpoutFalling   ; BATTLE_ANIM_FRAMESET_WATER_SPOUT_FALLING
 	dw .Frameset_MagnetBomb          ; BATTLE_ANIM_FRAMESET_MAGNET_BOMB
 	dw .Frameset_ExplosionSmall      ; BATTLE_ANIM_FRAMESET_EXPLOSION_SMALL
+	dw .Frameset_BlurVerticalUp      ; BATTLE_ANIM_FRAMESET_BLUR_VERTICAL_UP
+	dw .Frameset_BlurVerticalDown    ; BATTLE_ANIM_FRAMESET_BLUR_VERTICAL_DOWN
 
 .Frameset_HitBig:
 	frame BATTLE_ANIM_OAMSET_00,  6
@@ -1315,14 +1317,22 @@ BattleAnimFrameData:
 .Frameset_WaterSpoutFalling:
 	frame BATTLE_ANIM_OAMSET_DA,  8
 	endanim
-	
+
 .Frameset_MagnetBomb:
 	dowait 4
 	frame BATTLE_ANIM_OAMSET_0F,  54
 	delanim
-	
+
 .Frameset_ExplosionSmall:
 	frame BATTLE_ANIM_OAMSET_55,  2
 	frame BATTLE_ANIM_OAMSET_54,  2
 	frame BATTLE_ANIM_OAMSET_53,  2
 	delanim
+
+.Frameset_BlurVerticalUp:
+	frame BATTLE_ANIM_OAMSET_DC, 32
+	endanim
+
+.Frameset_BlurVerticalDown:
+	frame BATTLE_ANIM_OAMSET_DC, 32, OAM_X_FLIP, OAM_Y_FLIP
+	endanim

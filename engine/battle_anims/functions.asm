@@ -13,88 +13,89 @@ DoBattleAnimFrame:
 
 .Jumptable:
 ; entries correspond to BATTLE_ANIM_FUNC_* constants
-	dw BattleAnimFunction_Null ; 00
-	dw BattleAnimFunction_01 ; 01
-	dw BattleAnimFunction_02 ; 02
-	dw BattleAnimFunction_03 ; 03
-	dw BattleAnimFunction_04 ; 04
-	dw BattleAnimFunction_ThrowFromPlayerToEnemy ; 05
-	dw BattleAnimFunction_ThrowFromPlayerToEnemyAndDisappear ; 06
-	dw BattleAnimFunction_07 ; 07
-	dw BattleAnimFunction_08 ; 08
-	dw BattleAnimFunction_09 ; 09
-	dw BattleAnimFunction_0A ; 0a
-	dw BattleAnimFunction_RazorLeaf ; 0b
-	dw BattleAnimFunction_0C ; 0c
-	dw BattleAnimFunction_0D ; 0d
-	dw BattleAnimFunction_0E ; 0e
-	dw BattleAnimFunction_0F ; 0f
-	dw BattleAnimFunction_10 ; 10
-	dw BattleAnimFunction_11 ; 11
-	dw BattleAnimFunction_PokeBall ; 12
-	dw BattleAnimFunction_PokeBallBlocked ; 13
-	dw BattleAnimFunction_14 ; 14
-	dw BattleAnimFunction_15 ; 15
-	dw BattleAnimFunction_16 ; 16
-	dw BattleAnimFunction_17 ; 17
-	dw BattleAnimFunction_18 ; 18
-	dw BattleAnimFunction_19 ; 19
-	dw BattleAnimFunction_1A ; 1a
-	dw BattleAnimFunction_1B ; 1b
-	dw BattleAnimFunction_1C ; 1c
-	dw BattleAnimFunction_1D ; 1d
-	dw BattleAnimFunction_1E ; 1e
-	dw BattleAnimFunction_1F ; 1f
-	dw BattleAnimFunction_LeechSeed ; 20
-	dw BattleAnimFunction_21 ; 21
-	dw BattleAnimFunction_22 ; 22
-	dw BattleAnimFunction_23 ; 23
-	dw BattleAnimFunction_24 ; 24
-	dw BattleAnimFunction_25 ; 25
-	dw BattleAnimFunction_26 ; 26
-	dw BattleAnimFunction_27 ; 27
-	dw BattleAnimFunction_28 ; 28
-	dw BattleAnimFunction_SpiralDescent ; 29
-	dw BattleAnimFunction_PoisonGas ; 2a
-	dw BattleAnimFunction_Horn ; 2b
-	dw BattleAnimFunction_2C ; 2c
-	dw BattleAnimFunction_2D ; 2d
-	dw BattleAnimFunction_2E ; 2e
-	dw BattleAnimFunction_2F ; 2f
-	dw BattleAnimFunction_30 ; 30
-	dw BattleAnimFunction_31 ; 31
-	dw BattleAnimFunction_32 ; 32
-	dw BattleAnimFunction_33 ; 33
-	dw BattleAnimFunction_34 ; 34
-	dw BattleAnimFunction_35 ; 35
-	dw BattleAnimFunction_36 ; 36
-	dw BattleAnimFunction_37 ; 37
-	dw BattleAnimFunction_38 ; 38
-	dw BattleAnimFunction_39 ; 39
-	dw BattleAnimFunction_3A ; 3a
-	dw BattleAnimFunction_3B ; 3b
-	dw BattleAnimFunction_3C ; 3c
-	dw BattleAnimFunction_3D ; 3d
-	dw BattleAnimFunction_3E ; 3e
-	dw BattleAnimFunction_3F ; 3f
-	dw BattleAnimFunction_40 ; 40
-	dw BattleAnimFunction_41 ; 41
-	dw BattleAnimFunction_42 ; 42
-	dw BattleAnimFunction_43 ; 43
-	dw BattleAnimFunction_44 ; 44
-	dw BattleAnimFunction_45 ; 45
-	dw BattleAnimFunction_46 ; 46
-	dw BattleAnimFunction_47 ; 47
-	dw BattleAnimFunction_48 ; 48
-	dw BattleAnimFunction_49 ; 49
-	dw BattleAnimFunction_4A ; 4a
-	dw BattleAnimFunction_4B ; 4b
-	dw BattleAnimFunction_4C ; 4c
-	dw BattleAnimFunction_4D ; 4d
-	dw BattleAnimFunction_4E ; 4e
-	dw BattleAnimFunction_4F ; 4f
-	dw BattleAnimFunc_BubbleSplash
-	dw BattleAnimFunction_RadialMoveOut
+	dw BattleAnimFunction_Null                                ; 00
+	dw BattleAnimFunction_01                                  ; 01
+	dw BattleAnimFunction_02                                  ; 02
+	dw BattleAnimFunction_03                                  ; 03
+	dw BattleAnimFunction_04                                  ; 04
+	dw BattleAnimFunction_ThrowFromPlayerToEnemy              ; 05
+	dw BattleAnimFunction_ThrowFromPlayerToEnemyAndDisappear  ; 06
+	dw BattleAnimFunction_07                                  ; 07
+	dw BattleAnimFunction_08                                  ; 08
+	dw BattleAnimFunction_09                                  ; 09
+	dw BattleAnimFunction_0A                                  ; 0a
+	dw BattleAnimFunction_RazorLeaf                           ; 0b
+	dw BattleAnimFunction_0C                                  ; 0c
+	dw BattleAnimFunction_0D                                  ; 0d
+	dw BattleAnimFunction_0E                                  ; 0e
+	dw BattleAnimFunction_0F                                  ; 0f
+	dw BattleAnimFunction_10                                  ; 10
+	dw BattleAnimFunction_11                                  ; 11
+	dw BattleAnimFunction_PokeBall                            ; 12
+	dw BattleAnimFunction_PokeBallBlocked                     ; 13
+	dw BattleAnimFunction_14                                  ; 14
+	dw BattleAnimFunction_15                                  ; 15
+	dw BattleAnimFunction_16                                  ; 16
+	dw BattleAnimFunction_17                                  ; 17
+	dw BattleAnimFunction_18                                  ; 18
+	dw BattleAnimFunction_19                                  ; 19
+	dw BattleAnimFunction_1A                                  ; 1a
+	dw BattleAnimFunction_1B                                  ; 1b
+	dw BattleAnimFunction_1C                                  ; 1c
+	dw BattleAnimFunction_1D                                  ; 1d
+	dw BattleAnimFunction_1E                                  ; 1e
+	dw BattleAnimFunction_1F                                  ; 1f
+	dw BattleAnimFunction_LeechSeed                           ; 20
+	dw BattleAnimFunction_21                                  ; 21
+	dw BattleAnimFunction_22                                  ; 22
+	dw BattleAnimFunction_23                                  ; 23
+	dw BattleAnimFunction_24                                  ; 24
+	dw BattleAnimFunction_25                                  ; 25
+	dw BattleAnimFunction_26                                  ; 26
+	dw BattleAnimFunction_27                                  ; 27
+	dw BattleAnimFunction_28                                  ; 28
+	dw BattleAnimFunction_SpiralDescent                       ; 29
+	dw BattleAnimFunction_PoisonGas                           ; 2a
+	dw BattleAnimFunction_Horn                                ; 2b
+	dw BattleAnimFunction_2C                                  ; 2c
+	dw BattleAnimFunction_2D                                  ; 2d
+	dw BattleAnimFunction_2E                                  ; 2e
+	dw BattleAnimFunction_2F                                  ; 2f
+	dw BattleAnimFunction_30                                  ; 30
+	dw BattleAnimFunction_31                                  ; 31
+	dw BattleAnimFunction_32                                  ; 32
+	dw BattleAnimFunction_33                                  ; 33
+	dw BattleAnimFunction_34                                  ; 34
+	dw BattleAnimFunction_35                                  ; 35
+	dw BattleAnimFunction_36                                  ; 36
+	dw BattleAnimFunction_37                                  ; 37
+	dw BattleAnimFunction_38                                  ; 38
+	dw BattleAnimFunction_39                                  ; 39
+	dw BattleAnimFunction_3A                                  ; 3a
+	dw BattleAnimFunction_3B                                  ; 3b
+	dw BattleAnimFunction_3C                                  ; 3c
+	dw BattleAnimFunction_3D                                  ; 3d
+	dw BattleAnimFunction_3E                                  ; 3e
+	dw BattleAnimFunction_3F                                  ; 3f
+	dw BattleAnimFunction_40                                  ; 40
+	dw BattleAnimFunction_41                                  ; 41
+	dw BattleAnimFunction_42                                  ; 42
+	dw BattleAnimFunction_43                                  ; 43
+	dw BattleAnimFunction_44                                  ; 44
+	dw BattleAnimFunction_45                                  ; 45
+	dw BattleAnimFunction_46                                  ; 46
+	dw BattleAnimFunction_47                                  ; 47
+	dw BattleAnimFunction_48                                  ; 48
+	dw BattleAnimFunction_49                                  ; 49
+	dw BattleAnimFunction_4A                                  ; 4a
+	dw BattleAnimFunction_4B                                  ; 4b
+	dw BattleAnimFunction_4C                                  ; 4c
+	dw BattleAnimFunction_4D                                  ; 4d
+	dw BattleAnimFunction_4E                                  ; 4e
+	dw BattleAnimFunction_4F                                  ; 4f
+	dw BattleAnimFunc_BubbleSplash                            ; 50
+	dw BattleAnimFunction_RadialMoveOut                       ; 51
+	dw BattleAnimFunction_RadialMoveIn                        ; 52
 
 BattleAnimFunction_Null:
 	call BattleAnim_AnonJumptable
@@ -4076,39 +4077,88 @@ BattleAnimFunction_RadialMoveOut:
 	add hl, bc
 	
 	push hl
-		ld a, [hli]
-		ld e, [hl]
-		ld d, a
-	
-		lb hl, 3, 0 ; speed (coarse, finetune)
-		add hl, de
-		
-		ld a, h
-		ld e, l
+	ld a, [hli]
+	ld e, [hl]
+	ld d, a
+
+	lb hl, 6, 0 ; speed (coarse, finetune)
+	add hl, de
+
+	ld a, h
+	ld e, l
 	pop hl
-	
+
 	ld [hli], a
 	ld [hl], e
-	
+
 	cp 80 ; final position
 	jp nc, DeinitBattleAnimation
-	
+
 	ld hl, BATTLEANIMSTRUCT_PARAM ; angle
 	add hl, bc
 	ld e, [hl]
 	push de
-		ld a, e
-		call BattleAnim_Sine
-		ld hl, BATTLEANIMSTRUCT_YOFFSET
-		add hl, bc
-		ld [hl], a
+	ld a, e
+	call BattleAnim_Sine
+	ld hl, BATTLEANIMSTRUCT_YOFFSET
+	add hl, bc
+	ld [hl], a
 	pop de
-	
+
 	ld a, e ; reload angle
 	call BattleAnim_Cosine
 	ld hl, BATTLEANIMSTRUCT_XOFFSET
 	add hl, bc
 	ld [hl], a
+	ret
+
+BattleAnimFunction_RadialMoveIn:
+	call BattleAnim_AnonJumptable
+
+	dw .zero
+	dw .one
+
+.zero
+	call BattleAnim_IncAnonJumptableIndex
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld a, 40
+	ld [hli], a
+	ld [hl], 0
+.one
+	ld hl, BATTLEANIMSTRUCT_PARAM
+	add hl, bc
+	ld a, [hl]
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld d, [hl]
+	push af
+	push de
+	call BattleAnim_Sine
+	ld hl, BATTLEANIMSTRUCT_YOFFSET
+	add hl, bc
+	ld [hl], a
+	pop de
+	pop af
+	call BattleAnim_Cosine
+	ld hl, BATTLEANIMSTRUCT_XOFFSET
+	add hl, bc
+	ld [hl], a
+	ld hl, BATTLEANIMSTRUCT_VAR1
+	add hl, bc
+	ld a, [hli]
+	ld d, a
+	ld e, [hl]
+	ld hl, -4.5
+	add hl, de
+	jp nc, DeinitBattleAnimation
+	ld e, l
+	ld d, h
+	ld hl, BATTLEANIMSTRUCT_VAR2
+	add hl, bc
+	ld a, e
+	ld [hld], a
+	ld [hl], d
 	ret
 
 Functionce6f1:

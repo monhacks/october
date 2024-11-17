@@ -1322,12 +1322,12 @@ CoinHurlDescription:
 	next "stronger the attack.@"
 	
 BounceDescription:
-	db "1st turn: Bounce"
+	db   "1st turn: Bounce"
 	next "2nd turn: Attack@"
 	
 RockSlashDescription:
-	db "Attacks the enemy"
-	next "with extreme vigor."
+	db   "A terribly strong"
+	next "attack.@"
 	
 MegaphoneDescription:
 	db   "A loud noise that"
