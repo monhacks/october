@@ -91,6 +91,7 @@ AlphabeticalPokedexOrder:
 	dw GASTLY
 	dw GENGAR
 	dw GEODUDE
+	dw GESTICUTE
 	dw GERMIFROST
 	dw GIRAFARIG
 	dw GLIGAR

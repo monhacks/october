@@ -317,6 +317,7 @@ PokedexDataPointerTable:
 	dba AggroswinePokedexEntry
 	dba NecrorexPokedexEntry
 	dba NurssumPokedexEntry
+	dba GesticutePokedexEntry
 
 ;-------------------------------------------------------
 _NUM_POKEDEX_ENTRIES = (@ - PokedexDataPointerTable) / 3

@@ -82,3 +82,4 @@
 	const CRY_BIPULLA
 	const CRY_AGGROSWINE ; 'quil but 2x
 	const CRY_TRICULES
+	const CRY_NONE

@@ -338,6 +338,7 @@ JOHTO_POKEMON EQU const_value
 	const AGGROSWINE
 	const NECROREX ; sans undertale
 	const NURSSUM ; teraleak beytah
+	const GESTICUTE ; from g3 beytah idea sheet
 
 NUM_POKEMON EQU const_value + -1
 

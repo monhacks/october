@@ -42,6 +42,7 @@ EvosAttacksPointers3::
 	dw AggroswineEvoAttacks
 	dw NecrorexEvosAttacks
 	dw NurssumEvosAttacks
+	dw GesticuteEvosAttacks
 .End:
 
 StantlerEvosAttacks:
@@ -651,9 +652,11 @@ NurssumEvosAttacks:
 	dbw 44, FAINT_ATTACK
 	dbw 49, DOUBLE_EDGE
 	db 0 ; no more level-up moves
-
-
-
+	
+GesticuteEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	db 0 ; no more level-up moves
 
 ;---------------------------------------------------------------------------------------------
 _NUM_EVOS_ATTACKS = _NUM_EVOS_ATTACKS + ((EvosAttacksPointers3.End  - EvosAttacksPointers3)/2)

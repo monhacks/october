@@ -307,14 +307,14 @@ PokemonCries::
 	mon_cry CRY_MARILL,      $0c0,  $090 ; COALTA
 	mon_cry CRY_MARILL,      $f4c,  $110 ; BURGELA
 	mon_cry CRY_LAPRAS,      $0B0,  $0D0 ; VULPIII
-	mon_cry CRY_WORFURS,     -$0b0,  $120 ; WORFURS
-	mon_cry CRY_WORFURS,     -$1db,  $150 ; WEARLYCAN
+	mon_cry CRY_WORFURS,     -$0b0, $120 ; WORFURS
+	mon_cry CRY_WORFURS,     -$1db, $150 ; WEARLYCAN
 	mon_cry CRY_DIGLETT,     $0cb,  $061 ; DODAERIE
 	mon_cry CRY_PARAS,       $0c4,  $0b0 ; PARASPOR
-	mon_cry CRY_MOLAMBINO,    $043,  $050 ; MOLAMBINO
-	mon_cry CRY_CHIKORITA,    $040,    $200 ; KIWACKI
- 	mon_cry CRY_DIGLETT,     $010,   $010 ; MORPHOBIA
- 	mon_cry CRY_DIGLETT,     $020,   $040 ; MORPHOBIA EVO
+	mon_cry CRY_MOLAMBINO,    $043, $050 ; MOLAMBINO
+	mon_cry CRY_CHIKORITA,    $040, $200 ; KIWACKI
+ 	mon_cry CRY_DIGLETT,     $010,  $010 ; MORPHOBIA
+ 	mon_cry CRY_DIGLETT,     $020,  $040 ; MORPHOBIA EVO
 	mon_cry CRY_GLIGAR,     -$045,  $120  ; TERRACHNID
 	mon_cry CRY_GRIMER,      $100,  $100 ; SMUJJ
 	mon_cry CRY_NIDORAN_M,  -$0a3,  $091 ; KOALYPTUS
@@ -324,6 +324,7 @@ PokemonCries::
 	mon_cry CRY_AGGROSWINE,  $1B7,  $068 ; AGGROSWINE
 	mon_cry CRY_TYPHLOSION, -$0B7,  $180 ; NECROREX
 	mon_cry CRY_PICHU,       $077,  $140 ; TODO: NURSSUM
+	mon_cry CRY_NONE,        $000,  $000 ; GESTICUTE
 
 
 	;Beytah/new cries: Typhlosion, Pichu, Quagsire, Umbreon, Dunsparce, Sneasel, Houndour/Houndoom, Donphan, Coinpur, Katu, Adbarstork, Clefling, Mallody, Camouflake

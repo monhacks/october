@@ -238,6 +238,7 @@ NewPokedexOrder:
 	dw KUKULCAN
 	dw GLIGAR
 	dw TERRACHNID
+	dw GESTICUTE
 	dw DELIBIRD
 	dw SWINUB
 	dw PILOSWINE

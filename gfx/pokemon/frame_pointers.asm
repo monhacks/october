@@ -316,3 +316,4 @@ FramesPointers:
 	dba AggroswineFrames
 	dba NecrorexFrames
 	dba NurssumFrames
+	dba GesticuteFrames

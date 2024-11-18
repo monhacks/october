@@ -316,4 +316,6 @@ AnimationIdlePointers:
 	dw AggroswineAnimationIdle
 	dw NecrorexAnimationIdle
 	dw NurssumAnimationIdle
+	dw GesticuteAnimationIdle
+
 

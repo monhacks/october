@@ -77,3 +77,4 @@ Cries:
 	dba Cry_Bipulla
 	dba Cry_Aggroswine
 	dba Cry_Tricules
+	dba Cry_Gesticute

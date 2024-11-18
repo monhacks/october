@@ -311,10 +311,12 @@ SmujjAnimation:      INCLUDE "gfx/pokemon/smujj/anim.asm"
 KoalyptusAnimation:  INCLUDE "gfx/pokemon/koalyptus/anim.asm"
 OrefryAnimation:     INCLUDE "gfx/pokemon/orefry/anim.asm"
 BallerineAnimation:  INCLUDE "gfx/pokemon/ballerine/anim.asm"
-OrijoeyAnimation: INCLUDE "gfx/pokemon/orijoey/anim.asm"
+OrijoeyAnimation:    INCLUDE "gfx/pokemon/orijoey/anim.asm"
 AggroswineAnimation: INCLUDE "gfx/pokemon/aggroswine/anim.asm"
-NecrorexAnimation:  INCLUDE "gfx/pokemon/necrorex/anim.asm"
+NecrorexAnimation:   INCLUDE "gfx/pokemon/necrorex/anim.asm"
 NurssumAnimation:    INCLUDE "gfx/pokemon/nurssum/anim.asm"
+GesticuteAnimation:  INCLUDE "gfx/pokemon/gesticute/anim.asm"
+
 
 ;------------------------------------------------------
 EggAnimation:        INCLUDE "gfx/pokemon/egg/anim.asm"

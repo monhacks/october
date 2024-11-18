@@ -308,13 +308,15 @@ SilkaneBitmasks:    INCLUDE "gfx/pokemon/silkane/bitmask.asm"
 MorphobiaBitmasks:  INCLUDE "gfx/pokemon/morphobia/bitmask.asm"
 TerrachnidBitmasks: INCLUDE "gfx/pokemon/terrachnid/bitmask.asm"
 SmujjBitmasks:      INCLUDE "gfx/pokemon/smujj/bitmask.asm"
-KoalyptusBitmasks:   INCLUDE "gfx/pokemon/koalyptus/bitmask.asm"
+KoalyptusBitmasks:  INCLUDE "gfx/pokemon/koalyptus/bitmask.asm"
 OrefryBitmasks:     INCLUDE "gfx/pokemon/orefry/bitmask.asm"
 BallerineBitmasks:  INCLUDE "gfx/pokemon/ballerine/bitmask.asm"
 OrijoeyBitmasks:    INCLUDE "gfx/pokemon/orijoey/bitmask.asm"
 AggroswineBitmasks: INCLUDE "gfx/pokemon/aggroswine/bitmask.asm"
-NecrorexBitmasks:  INCLUDE "gfx/pokemon/necrorex/bitmask.asm"
-NurssumBitmasks:  INCLUDE "gfx/pokemon/nurssum/bitmask.asm"
+NecrorexBitmasks:   INCLUDE "gfx/pokemon/necrorex/bitmask.asm"
+NurssumBitmasks:    INCLUDE "gfx/pokemon/nurssum/bitmask.asm"
+GesticuteBitmasks:  INCLUDE "gfx/pokemon/gesticute/bitmask.asm"
+
 
 ;--------------------------------------------------------
 EggBitmasks:        INCLUDE "gfx/pokemon/egg/bitmask.asm"

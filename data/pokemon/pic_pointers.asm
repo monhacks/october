@@ -334,6 +334,7 @@ PokemonPicPointers::
 	mon_pic Aggroswine
 	mon_pic Necrorex
 	mon_pic Nurssum
+	mon_pic Gesticute
 
 ;------------------------------------------------
 _NUM_POKEMON_PICS = (@ - PokemonPicPointers) / 9 - 1

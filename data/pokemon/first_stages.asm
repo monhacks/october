@@ -317,6 +317,7 @@ FirstEvoStages::
 	dw AGGROSWINE
 	dw NECROREX
 	dw NURSSUM
+	dw GESTICUTE
 
 
 

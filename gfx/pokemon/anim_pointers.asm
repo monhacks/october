@@ -316,3 +316,5 @@ AnimationPointers:
 	dw AggroswineAnimation
 	dw NecrorexAnimation
 	dw NurssumAnimation
+	dw GesticuteAnimation
+	

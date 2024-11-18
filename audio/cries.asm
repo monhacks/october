@@ -198,6 +198,13 @@ Cry_Tricules:
 	channel 5, Cry_Tricules_Ch5
 	channel 6, Cry_Tricules_Ch6
 	channel 8, Cry_Tricules_Ch8
+	
+Cry_Gesticute:
+	channel_count 3
+	channel 5, Cry_Gesticute_Ch5
+	channel 6, Cry_Gesticute_Ch6
+	channel 8, Cry_Gesticute_Ch8
+
 
 Cry_Entei_Ch5:
 	; soundinput $ff
@@ -2294,4 +2301,13 @@ Cry_Tricules_Ch8:
 	noise __,  5, $98, $3a
 	noise __,  5, $98, $3c
 	noise C_,  9, $d2, $5b
+	endchannel
+
+Cry_Gesticute_Ch5:
+	endchannel
+
+Cry_Gesticute_Ch6:
+	endchannel
+
+Cry_Gesticute_Ch8:
 	endchannel

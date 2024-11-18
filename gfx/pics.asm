@@ -860,5 +860,7 @@ AercrowFrontpic:	INCBIN "gfx/pokemon/aercrow/front.static.2bpp.lz"
 AercrowBackpic:     INCBIN "gfx/pokemon/aercrow/back.2bpp.lz"
 GargraniteFrontpic:	INCBIN "gfx/pokemon/gargranite/front.static.2bpp.lz"
 GargraniteBackpic:  INCBIN "gfx/pokemon/gargranite/back.2bpp.lz"
+GesticuteFrontpic:	INCBIN "gfx/pokemon/gesticute/front.static.2bpp.lz"
+GesticuteBackpic:   INCBIN "gfx/pokemon/gesticute/back.2bpp.lz"
 
 INCLUDE "gfx/pics_animated.asm"

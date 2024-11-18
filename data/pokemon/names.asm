@@ -321,6 +321,7 @@ PokemonNames::
 	db "AGGROSWINE"
 	db "NECROREX@@"
 	db "NURSSUM@@@"
+	db "GESTICUTE@"
 
 ;--------------------------------------------------------------
 _NUM_POKEMON_NAMES = (@ - PokemonNames) / (MON_NAME_LENGTH - 1)

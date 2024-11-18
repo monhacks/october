@@ -218,4 +218,5 @@ CantFollowList:
 	dw AGGROSWINE
 	dw NECROREX
 	dw NURSSUM
+	dw GESTICUTE
 	dw -1

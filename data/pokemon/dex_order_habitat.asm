@@ -98,6 +98,7 @@ HabitatPokedexOrder:
 	dw UMBREON
 	dw LEAFEON
 	dw KUKULCAN
+	dw GESTICUTE
 
 ; MOUNTAIN
 	dw ONIX

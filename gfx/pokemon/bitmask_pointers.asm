@@ -316,4 +316,5 @@ BitmasksPointers:
 	dw AggroswineBitmasks
 	dw NecrorexBitmasks
 	dw NurssumBitmasks
+	dw GesticuteBitmasks
 
