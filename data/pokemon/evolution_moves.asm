@@ -122,7 +122,7 @@ EvolutionMoves::
 	dw NO_MOVE      ; STARMIE
 	dw BARRIER      ; MR__MIME
 	dw NO_MOVE      ; SCYTHER
-	dw NO_MOVE      ; JYNX
+	dw LOVELY_KISS  ; JYNX
 	dw NO_MOVE      ; ELECTABUZZ
 	dw NO_MOVE      ; MAGMAR
 	dw NO_MOVE      ; PINSIR
@@ -135,11 +135,11 @@ EvolutionMoves::
 	dw WATER_GUN    ; VAPOREON
 	dw THUNDERSHOCK ; JOLTEON
 	dw EMBER        ; FLAREON
-	dw NO_MOVE      ; PORYGON
+	dw CONVERSION   ; PORYGON
 	dw NO_MOVE      ; OMANYTE
-	dw SPIKE_CANNON ; OMASTAR
+	dw SURF         ; OMASTAR
 	dw NO_MOVE      ; KABUTO
-	dw SLASH        ; KABUTOPS
+	dw ROCK_SLASH   ; KABUTOPS
 	dw NO_MOVE      ; AERODACTYL
 	dw NO_MOVE      ; SNORLAX
 	dw NO_MOVE      ; ARTICUNO
@@ -239,7 +239,7 @@ EvolutionMoves::
 	dw NO_MOVE      ; GRANBULL
 	dw NO_MOVE      ; QWILFISH
 	dw FURY_CUTTER  ; SCIZOR
-	dw NO_MOVE      ; TRICULES
+	dw METAL_CLAW   ; TRICULES
 	dw NO_MOVE      ; HERACROSS
 	dw NO_MOVE      ; SNEASEL
 	dw NO_MOVE      ; TEDDIURSA
@@ -274,7 +274,7 @@ EvolutionMoves::
 	dw NO_MOVE      ; PHANPY
 	dw FURY_ATTACK  ; DONPHAN
 	dw NO_MOVE      ; LICKILICKY
-	dw NO_MOVE      ; PORYGON2
+	dw CONVERSION2  ; PORYGON2
 	dw NO_MOVE      ; STANTLER
 	dw NO_MOVE      ; SMEARGLE
 	dw NO_MOVE      ; TYROGUE

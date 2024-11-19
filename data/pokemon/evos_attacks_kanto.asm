@@ -2024,49 +2024,56 @@ ScytherEvosAttacks:
 	dbw 48, DOUBLE_TEAM
 	db 0 ; no more level-up moves
 
+; ------ all Shadow learnsets below this line ----- 
+
 JynxEvosAttacks:
 	db 0 ; no more evolutions
-	dbw 1, POUND
 	dbw 1, LICK
-	dbw 1, LOVELY_KISS
-	dbw 1, POWDER_SNOW
-	dbw 9, LOVELY_KISS
-	dbw 13, POWDER_SNOW
-	dbw 21, DOUBLESLAP
-	dbw 25, ICE_PUNCH
-	dbw 35, MEAN_LOOK
-	dbw 41, BODY_SLAM
-	dbw 51, PERISH_SONG
-	dbw 57, BLIZZARD
+	dbw 1, SWEET_KISS
+	dbw 1, POUND
+	dbw 6, CHARM
+	dbw 12, POWDER_SNOW
+	dbw 18, DOUBLESLAP
+	dbw 24, CONFUSION
+	dbw 30, ICE_PUNCH
+	dbw 38, BODY_SLAM
+	dbw 44, PSYCHIC_M
+	dbw 50, PERISH_SONG
+	dbw 56, BLIZZARD
 	db 0 ; no more level-up moves
 
 ElectabuzzEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, QUICK_ATTACK
 	dbw 1, LEER
-	dbw 1, THUNDERPUNCH
-	dbw 9, THUNDERPUNCH
-	dbw 17, LIGHT_SCREEN
-	dbw 25, SWIFT
-	dbw 36, SCREECH
-	dbw 47, THUNDERBOLT
-	dbw 58, THUNDER
+	dbw 5, THUNDERSHOCK
+	dbw 10, KARATE_CHOP
+	dbw 14, SCREECH
+	dbw 19, SWIFT
+	dbw 24, LIGHT_SCREEN
+	dbw 28, THUNDERPUNCH
+	dbw 35, SWAGGER
+	dbw 40, CROSS_CHOP
+	dbw 44, THUNDERBOLT
+	dbw 49, STRENGTH
+	dbw 54, THUNDER
 	db 0 ; no more level-up moves
 
 MagmarEvosAttacks:
 	db 0 ; no more evolutions
-	dbw 1, EMBER
-	dbw 1, LEER
 	dbw 1, SMOG
-	dbw 1, FIRE_PUNCH
-	dbw 7, LEER
-	dbw 13, SMOG
-	dbw 19, FIRE_PUNCH
-	dbw 25, SMOKESCREEN
-	dbw 33, SUNNY_DAY
-	dbw 41, FLAMETHROWER
-	dbw 49, CONFUSE_RAY
-	dbw 57, FIRE_BLAST
+	dbw 1, LEER
+	dbw 5, EMBER
+	dbw 10, KARATE_CHOP
+	dbw 14, SMOKESCREEN
+	dbw 19, FAINT_ATTACK
+	dbw 24, CONFUSE_RAY
+	dbw 28, FIRE_PUNCH
+	dbw 35, SUNNY_DAY
+	dbw 40, CROSS_CHOP
+	dbw 44, FLAMETHROWER
+	dbw 49, BODY_SLAM
+	dbw 54, FIRE_BLAST
 	db 0 ; no more level-up moves
 
 PinsirEvosAttacks:
@@ -2088,14 +2095,18 @@ PinsirEvosAttacks:
 TaurosEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
-	dbw 4, TAIL_WHIP
-	dbw 8, RAGE
-	dbw 13, HORN_ATTACK
-	dbw 19, SCARY_FACE
-	dbw 26, PURSUIT
+	dbw 1, TAIL_WHIP
+	dbw 5, RAGE
+	dbw 10, PURSUIT
+	dbw 17, HORN_ATTACK
+	dbw 22, SCARY_FACE
+	dbw 27, HEADBUTT
 	dbw 34, REST
-	dbw 43, THRASH
-	dbw 53, TAKE_DOWN
+	dbw 39, TAKE_DOWN
+	dbw 44, MAGNITUDE
+	dbw 51, THRASH
+	dbw 56, EARTHQUAKE
+	dbw 61, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 
 MagikarpEvosAttacks:
@@ -2108,14 +2119,18 @@ MagikarpEvosAttacks:
 
 GyaradosEvosAttacks:
 	db 0 ; no more evolutions
-	dbw 1, THRASH
-	dbw 1, BITE
-	dbw 25, DRAGON_RAGE
+	dbw 1, SPLASH
+	dbw 10, TACKLE
+	dbw 15, FLAIL
+	dbw 25, DRAGON_RAGE	
 	dbw 30, LEER
-	dbw 35, TWISTER
-	dbw 40, HYDRO_PUMP
-	dbw 45, RAIN_DANCE
-	dbw 50, HYPER_BEAM
+	dbw 35, RAGE
+	dbw 40, TWISTER
+	dbw 45, HYDRO_PUMP
+	dbw 50, RAIN_DANCE
+	dbw 55, THRASH
+	dbw 60, OUTRAGE
+	dbw 65, HYPER_BEAM
 	db 0 ; no more level-up moves
 
 LaprasEvosAttacks:
@@ -2123,14 +2138,15 @@ LaprasEvosAttacks:
 	dbw 1, WATER_GUN
 	dbw 1, GROWL
 	dbw 1, SING
-	dbw 8, MIST
-	dbw 15, BODY_SLAM
-	dbw 22, CONFUSE_RAY
-	dbw 29, PERISH_SONG
-	dbw 36, ICE_BEAM
-	dbw 43, RAIN_DANCE
-	dbw 50, SAFEGUARD
-	dbw 57, HYDRO_PUMP
+	dbw 7, MIST
+	dbw 14, BODY_SLAM
+	dbw 21, CONFUSE_RAY
+	dbw 28, SURF
+	dbw 35, RAIN_DANCE
+	dbw 42, SAFEGUARD
+	dbw 49, ICE_BEAM
+	dbw 56, PERISH_SONG
+	dbw 63, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 DittoEvosAttacks:
@@ -2148,54 +2164,74 @@ EeveeEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, TAIL_WHIP
-	dbw 8, SAND_ATTACK
-	dbw 16, GROWL
-	dbw 23, QUICK_ATTACK
-	dbw 30, BITE
-	dbw 36, BATON_PASS
-	dbw 42, TAKE_DOWN
+	dbw 1, GROWL
+	dbw 5, FOCUS_ENERGY
+	dbw 10, QUICK_ATTACK
+	dbw 15, SAND_ATTACK
+	dbw 20, BITE
+	dbw 25, CHARM
+	dbw 30, TAKE_DOWN
+	dbw 35, BATON_PASS
 	db 0 ; no more level-up moves
 
 VaporeonEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, TAIL_WHIP
-	dbw 1, WATER_GUN
-	dbw 8, SAND_ATTACK
-	dbw 23, QUICK_ATTACK
-	dbw 30, BITE
-	dbw 36, AURORA_BEAM
-	dbw 42, HAZE
-	dbw 47, ACID_ARMOR
-	dbw 52, HYDRO_PUMP
+	dbw 1, GROWL
+	dbw 5, FOCUS_ENERGY
+	dbw 10, QUICK_ATTACK
+	dbw 15, SAND_ATTACK
+	dbw 20, BITE
+	dbw 25, CHARM
+	dbw 30, TAKE_DOWN
+	dbw 35, BATON_PASS
+	dbw 40, MIST
+	dbw 45, AURORA_BEAM
+	dbw 50, HAZE
+	dbw 55, SURF
+	dbw 60, ACID_ARMOR
+	dbw 65, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 JolteonEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, TAIL_WHIP
-	dbw 1, THUNDERSHOCK
-	dbw 8, SAND_ATTACK
-	dbw 23, QUICK_ATTACK
-	dbw 30, DOUBLE_KICK
-	dbw 36, PIN_MISSILE
-	dbw 42, THUNDER_WAVE
-	dbw 47, AGILITY
-	dbw 52, THUNDER
+	dbw 1, GROWL
+	dbw 5, FOCUS_ENERGY
+	dbw 10, QUICK_ATTACK
+	dbw 15, SAND_ATTACK
+	dbw 20, BITE
+	dbw 25, CHARM
+	dbw 30, TAKE_DOWN
+	dbw 35, BATON_PASS
+	dbw 40, SPARK
+	dbw 45, DOUBLE_KICK
+	dbw 50, THUNDERBOLT
+	dbw 55, EXTREMESPEED
+	dbw 60, AGILITY
+	dbw 65, THUNDER
 	db 0 ; no more level-up moves
 
 FlareonEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, TAIL_WHIP
-	dbw 1, EMBER
-	dbw 8, SAND_ATTACK
-	dbw 23, QUICK_ATTACK
-	dbw 30, BITE
-	dbw 36, FIRE_SPIN
-	dbw 42, SMOG
-	dbw 47, LEER
-	dbw 52, FLAMETHROWER
+	dbw 1, GROWL
+	dbw 5, FOCUS_ENERGY
+	dbw 10, QUICK_ATTACK
+	dbw 15, SAND_ATTACK
+	dbw 20, BITE
+	dbw 25, CHARM
+	dbw 30, TAKE_DOWN
+	dbw 35, BATON_PASS
+	dbw 40, FIRE_SPIN
+	dbw 45, DIG
+	dbw 50, FLAMETHROWER
+	dbw 55, EXTREMESPEED
+	dbw 60, AGILITY
+	dbw 65, FIRE_BLAST
 	db 0 ; no more level-up moves
 
 PorygonEvosAttacks:
@@ -2220,26 +2256,29 @@ OmanyteEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, CONSTRICT
 	dbw 1, WITHDRAW
-	dbw 13, BITE
-	dbw 19, WATER_GUN
-	dbw 31, LEER
-	dbw 37, PROTECT
-	dbw 49, ANCIENTPOWER
-	dbw 55, HYDRO_PUMP
+	dbw 5, BITE
+	dbw 10, LEER
+	dbw 15, WATER_GUN
+	dbw 20, SAND_ATTACK
+	dbw 25, ANCIENTPOWER
+	dbw 30, RAPID_SPIN
+	dbw 35, MUD_SLAP
 	db 0 ; no more level-up moves
 
 OmastarEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, CONSTRICT
 	dbw 1, WITHDRAW
-	dbw 1, BITE
-	dbw 13, BITE
-	dbw 19, WATER_GUN
-	dbw 31, LEER
-	dbw 37, PROTECT
-	dbw 39, SPIKE_CANNON
-	dbw 54, ANCIENTPOWER
-	dbw 65, HYDRO_PUMP
+	dbw 5, BITE
+	dbw 10, LEER
+	dbw 15, WATER_GUN
+	dbw 20, SAND_ATTACK
+	dbw 25, ANCIENTPOWER
+	dbw 30, RAPID_SPIN
+	dbw 35, MUD_SLAP
+	dbw 47, SPIKE_CANNON
+	dbw 54, ROCK_SLIDE
+	dbw 61, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 KabutoEvosAttacks:
@@ -2247,88 +2286,105 @@ KabutoEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, SCRATCH
 	dbw 1, HARDEN
-	dbw 10, ABSORB
-	dbw 19, LEER
-	dbw 28, SAND_ATTACK
-	dbw 37, ENDURE
-	dbw 46, MEGA_DRAIN
-	dbw 55, ANCIENTPOWER
+	dbw 5, ABSORB
+	dbw 10, LEER
+	dbw 15, WATER_GUN
+	dbw 20, SAND_ATTACK
+	dbw 25, ANCIENTPOWER
+	dbw 30, MEGA_DRAIN
+	dbw 35, DIG
 	db 0 ; no more level-up moves
 
 KabutopsEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, SCRATCH
 	dbw 1, HARDEN
-	dbw 1, ABSORB
-	dbw 10, ABSORB
-	dbw 19, LEER
-	dbw 28, SAND_ATTACK
-	dbw 37, ENDURE
-	dbw 39, SLASH
-	dbw 51, MEGA_DRAIN
-	dbw 65, ANCIENTPOWER
+	dbw 5, ABSORB
+	dbw 10, LEER
+	dbw 15, WATER_GUN
+	dbw 20, SAND_ATTACK
+	dbw 25, ANCIENTPOWER
+	dbw 30, MEGA_DRAIN
+	dbw 35, DIG
+	dbw 47, SLASH
+	dbw 54, WATERFALL
+	dbw 61, ROCK_SLIDE
 	db 0 ; no more level-up moves
 
 AerodactylEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, WING_ATTACK
-	dbw 8, AGILITY
-	dbw 15, BITE
-	dbw 22, SUPERSONIC
-	dbw 29, ANCIENTPOWER
-	dbw 36, SCARY_FACE
-	dbw 43, TAKE_DOWN
-	dbw 50, HYPER_BEAM
+	dbw 1, SUPERSONIC
+	dbw 7, BITE
+	dbw 14, AGILITY
+	dbw 21, ANCIENTPOWER
+	dbw 28, TAKE_DOWN
+	dbw 35, FLY
+	dbw 42, SCARY_FACE
+	dbw 49, CRUNCH
+	dbw 56, ROCK_HEAD
+	dbw 63, HYPER_BEAM
 	db 0 ; no more level-up moves
 
 SnorlaxEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
-	dbw 8, AMNESIA
-	dbw 15, DEFENSE_CURL
-	dbw 22, BELLY_DRUM
-	dbw 29, HEADBUTT
-	dbw 36, SNORE
-	dbw 36, REST
-	dbw 43, BODY_SLAM
-	dbw 50, ROLLOUT
-	dbw 57, HYPER_BEAM
+	dbw 1, DEFENSE_CURL
+	dbw 1, ROLLOUT
+	dbw 8, HEADBUTT
+	dbw 16, AMNESIA
+	dbw 24, REST
+	dbw 24, SNORE
+	dbw 32, CRUNCH
+	dbw 40, BODY_SLAM
+	dbw 48, CURSE
+	dbw 56, BELLY_DRUM
+	dbw 64, HYPER_BEAM
 	db 0 ; no more level-up moves
 
 ArticunoEvosAttacks:
 	db 0 ; no more evolutions
-	dbw 1, GUST
 	dbw 1, POWDER_SNOW
-	dbw 13, MIST
-	dbw 25, AGILITY
-	dbw 37, MIND_READER
-	dbw 49, ICE_BEAM
-	dbw 61, REFLECT
-	dbw 73, BLIZZARD
+	dbw 1, GUST
+	dbw 1, MIST
+	dbw 9, AGILITY
+	dbw 18, FLY
+	dbw 27, AURORA_BEAM
+	dbw 36, MIND_READER
+	dbw 45, ICE_BEAM
+	dbw 54, REFLECT
+	dbw 63, BLIZZARD
+	dbw 72, SKY_ATTACK
 	db 0 ; no more level-up moves
 
 ZapdosEvosAttacks:
 	db 0 ; no more evolutions
-	dbw 1, PECK
 	dbw 1, THUNDERSHOCK
-	dbw 13, THUNDER_WAVE
-	dbw 25, AGILITY
-	dbw 37, DETECT
-	dbw 49, DRILL_PECK
-	dbw 61, LIGHT_SCREEN
-	dbw 73, THUNDER
+	dbw 1, GUST
+	dbw 1, THUNDER_WAVE
+	dbw 9, AGILITY
+	dbw 18, FLY
+	dbw 27, SPARK
+	dbw 36, DRILL_PECK
+	dbw 45, THUNDERBOLT
+	dbw 54, LIGHT_SCREEN
+	dbw 63, THUNDER
+	dbw 72, SKY_ATTACK
 	db 0 ; no more level-up moves
 
 MoltresEvosAttacks:
 	db 0 ; no more evolutions
-	dbw 1, WING_ATTACK
 	dbw 1, EMBER
-	dbw 13, FIRE_SPIN
-	dbw 25, AGILITY
-	dbw 37, ENDURE
-	dbw 49, FLAMETHROWER
-	dbw 61, SAFEGUARD
-	dbw 73, SKY_ATTACK
+	dbw 1, GUST
+	dbw 1, SAFEGUARD
+	dbw 9, AGILITY
+	dbw 18, FLY
+	dbw 27, FLAME_WHEEL
+	dbw 36, ENDURE
+	dbw 45, FLAMETHROWER
+	dbw 54, SUNNY_DAY
+	dbw 63, FIRE_BLAST
+	dbw 72, SKY_ATTACK
 	db 0 ; no more level-up moves
 
 DratiniEvosAttacks:
@@ -2336,14 +2392,16 @@ DratiniEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, WRAP
 	dbw 1, LEER
-	dbw 8, THUNDER_WAVE
-	dbw 15, TWISTER
-	dbw 22, DRAGON_RAGE
-	dbw 29, SLAM
-	dbw 36, AGILITY
-	dbw 43, SAFEGUARD
+	dbw 5, THUNDER_WAVE
+	dbw 12, TWISTER
+	dbw 17, SAFEGUARD
+	dbw 23, SLAM
+	dbw 28, DRAGON_RAGE
+	dbw 34, AGILITY
+	dbw 39, DRAGONBREATH
+	dbw 45, SURF
 	dbw 50, OUTRAGE
-	dbw 57, HYPER_BEAM
+	dbw 56, HYPER_BEAM
 	db 0 ; no more level-up moves
 
 DragonairEvosAttacks:
@@ -2351,59 +2409,65 @@ DragonairEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, WRAP
 	dbw 1, LEER
-	dbw 1, THUNDER_WAVE
-	dbw 1, TWISTER
-	dbw 8, THUNDER_WAVE
-	dbw 15, TWISTER
-	dbw 22, DRAGON_RAGE
-	dbw 29, SLAM
-	dbw 38, AGILITY
-	dbw 47, SAFEGUARD
-	dbw 56, OUTRAGE
-	dbw 65, HYPER_BEAM
+	dbw 5, THUNDER_WAVE
+	dbw 12, TWISTER
+	dbw 17, SAFEGUARD
+	dbw 23, SLAM
+	dbw 28, DRAGON_RAGE
+	dbw 36, AGILITY
+	dbw 41, DRAGONBREATH
+	dbw 47, SURF
+	dbw 52, OUTRAGE
+	dbw 58, HYPER_BEAM
 	db 0 ; no more level-up moves
 
 DragoniteEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, WRAP
 	dbw 1, LEER
-	dbw 1, THUNDER_WAVE
-	dbw 1, TWISTER
-	dbw 8, THUNDER_WAVE
-	dbw 15, TWISTER
-	dbw 22, DRAGON_RAGE
-	dbw 29, SLAM
-	dbw 38, AGILITY
-	dbw 47, SAFEGUARD
-	dbw 54, WING_ATTACK
-	dbw 61, OUTRAGE
-	dbw 75, HYPER_BEAM
+	dbw 5, THUNDER_WAVE
+	dbw 12, TWISTER
+	dbw 17, SAFEGUARD
+	dbw 23, SLAM
+	dbw 28, DRAGON_RAGE
+	dbw 36, AGILITY
+	dbw 41, DRAGONBREATH
+	dbw 47, SURF
+	dbw 52, OUTRAGE
+	dbw 60, HYPER_BEAM
 	db 0 ; no more level-up moves
 
 MewtwoEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, CONFUSION
 	dbw 1, DISABLE
+	dbw 1, PSYCH_UP
 	dbw 11, BARRIER
-	dbw 22, SWIFT
-	dbw 33, PSYCH_UP
-	dbw 44, FUTURE_SIGHT
-	dbw 55, MIST
+	dbw 22, TELEPORT
+	dbw 33, FUTURE_SIGHT
+	dbw 44, SWIFT
+	dbw 55, SHADOW_BALL
 	dbw 66, PSYCHIC_M
-	dbw 77, AMNESIA
+	dbw 77, BARRIER
 	dbw 88, RECOVER
-	dbw 99, SAFEGUARD
+	dbw 99, TACKLE ; SYNCHRONIZE
 	db 0 ; no more level-up moves
 
 MewEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, POUND
-	dbw 10, TRANSFORM
-	dbw 20, MEGA_PUNCH
-	dbw 30, METRONOME
-	dbw 40, PSYCHIC_M
-	dbw 50, ANCIENTPOWER
+	dbw 1, TELEPORT
+	dbw 1, PSYCH_UP
+	dbw 10, MEGA_PUNCH
+	dbw 20, METRONOME
+	dbw 30, FUTURE_SIGHT
+	dbw 40, ANCIENTPOWER
+	dbw 50, EXTREMESPEED
+	dbw 60, PSYCHIC_M
+	dbw 70, BARRIER
+	dbw 80, TRANSFORM
+	dbw 90, HYPER_BEAM
 	db 0 ; no more level-up moves
 
-;-----------------------------------------------------------------------
+;----------------------------------------------------------------------
 _NUM_EVOS_ATTACKS = (EvosAttacksPointers1.End  - EvosAttacksPointers1)/2
