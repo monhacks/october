@@ -1993,38 +1993,42 @@ StarmieEvosAttacks:
 	dbw 1, BUBBLEBEAM
 	dbw 37, CONFUSE_RAY
 	db 0 ; no more level-up moves
+	
+; ------ all Shadow learnsets below this line ----- 
 
 MrMimeEvosAttacks:
 	db 0 ; no more evolutions
-	dbw 1, BARRIER
-	dbw 6, CONFUSION
-	dbw 11, SUBSTITUTE
-	dbw 16, MEDITATE
-	dbw 21, DOUBLESLAP
-	dbw 26, LIGHT_SCREEN
-	dbw 26, REFLECT
-	dbw 31, ENCORE
-	dbw 36, PSYBEAM
-	dbw 41, BATON_PASS
-	dbw 46, SAFEGUARD
+	dbw 1, POUND
+	dbw 1, ENCORE
+	dbw 4, CONFUSION
+	dbw 10, MEDITATE
+	dbw 15, CHARM
+	dbw 19, MIMIC
+	dbw 25, DOUBLESLAP
+	dbw 30, SAFEGUARD
+	dbw 34, REFLECT
+	dbw 34, LIGHT_SCREEN
+	dbw 38, PSYBEAM
+	dbw 43, SUBSTITUTE
+	dbw 47, BATON_PASS
+	dbw 53, PSYCHIC_M
 	db 0 ; no more level-up moves
 
 ScytherEvosAttacks:
-	dbbw EVOLVE_TRADE, METAL_COAT, SCIZOR
+	dbbw EVOLVE_LEVEL, 41, SCIZOR
 	db 0 ; no more evolutions
 	dbw 1, QUICK_ATTACK
 	dbw 1, LEER
 	dbw 6, FOCUS_ENERGY
-	dbw 12, PURSUIT
-	dbw 18, FALSE_SWIPE
-	dbw 24, AGILITY
+	dbw 12, FURY_CUTTER
+	dbw 18, METAL_CLAW
+	dbw 24, FALSE_SWIPE
 	dbw 30, WING_ATTACK
-	dbw 36, SLASH
-	dbw 42, SWORDS_DANCE
-	dbw 48, DOUBLE_TEAM
+	dbw 36, AGILITY
+	dbw 42, SLASH
+	dbw 48, FLY
+	dbw 54, SWORDS_DANCE
 	db 0 ; no more level-up moves
-
-; ------ all Shadow learnsets below this line ----- 
 
 JynxEvosAttacks:
 	db 0 ; no more evolutions
