@@ -199,6 +199,7 @@ HabitatPokedexOrder:
 	dw FENNECURSE
 	dw KUDATSUBE
 	dw STROMEN
+	dw RATTLIT
 	dw AGGROSWINE
 
 ; SEA

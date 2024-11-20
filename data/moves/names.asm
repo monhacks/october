@@ -279,3 +279,4 @@ MoveNames::
 	move_name "SHELL BOMB"
 	move_name "MAGNET FIELD"
 	move_name "MAGNET BOMB"
+	move_name "LAVA BURST"

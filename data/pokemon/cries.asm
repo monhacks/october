@@ -325,6 +325,8 @@ PokemonCries::
 	mon_cry CRY_TYPHLOSION, -$0B7,  $180 ; NECROREX
 	mon_cry CRY_PICHU,       $077,  $140 ; TODO: NURSSUM
 	mon_cry CRY_NONE,        $000,  $000 ; GESTICUTE
+	mon_cry CRY_VULPIX,      $0a1,  $090 ; RATTLIT
+
 
 
 	;Beytah/new cries: Typhlosion, Pichu, Quagsire, Umbreon, Dunsparce, Sneasel, Houndour/Houndoom, Donphan, Coinpur, Katu, Adbarstork, Clefling, Mallody, Camouflake

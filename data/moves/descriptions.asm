@@ -279,6 +279,7 @@ MoveDescriptions1:
 	dw ShellBombDescription
 	dw MagnetFieldDescription
 	dw MagnetBombDescription
+	dw LavaBurstDescription
 .End:
 	
 InvalidMoveDescription:
@@ -1352,6 +1353,10 @@ ShellBombDescription:
 MagnetBombDescription:
 	db "Floating magnets"
 	next "attack the foe."
-
+	
+MagnetBombDescription:
+	db "Scarlet flames"
+	next "may leave burn."
+	
 ;--------------------------------------------------------------------
 _NUM_MOVE_DESCRIPTIONS = (MoveDescriptions1.End  - MoveDescriptions1)/2

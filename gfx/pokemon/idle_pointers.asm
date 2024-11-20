@@ -317,5 +317,6 @@ AnimationIdlePointers:
 	dw NecrorexAnimationIdle
 	dw NurssumAnimationIdle
 	dw GesticuteAnimationIdle
+	dw RattlitAnimationIdle
 
 

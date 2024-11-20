@@ -317,3 +317,4 @@ FramesPointers:
 	dba NecrorexFrames
 	dba NurssumFrames
 	dba GesticuteFrames
+	dba RattlitFrames

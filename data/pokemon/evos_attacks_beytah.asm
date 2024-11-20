@@ -43,6 +43,7 @@ EvosAttacksPointers3::
 	dw NecrorexEvosAttacks
 	dw NurssumEvosAttacks
 	dw GesticuteEvosAttacks
+	dw RattlitEvosAttacks
 .End:
 
 StantlerEvosAttacks:
@@ -656,6 +657,22 @@ NurssumEvosAttacks:
 GesticuteEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
+	db 0 ; no more level-up moves
+	
+RattlitEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, NIGHT_SHADE
+	dbw 1, GROWL
+;   dbw 5, ECHO
+	dbw 10, HEAL_BELL
+	dbw 15, CONFUSION
+;	dbw 20, ECHO
+	dbw 25, RAPID_SPIN
+	dbw 30, SHADOW_BALL
+;	dbw 35, ECHO
+;	dbw 40, EXIT_PATH
+	dbw 45, PSYCHIC_M
+;	dbw 50, ECHO
 	db 0 ; no more level-up moves
 
 ;---------------------------------------------------------------------------------------------

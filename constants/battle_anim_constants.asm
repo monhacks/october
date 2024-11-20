@@ -239,7 +239,7 @@ BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLE_ANIM_OBJ_SMALL_EXPLOSION             ; cc
 	const BATTLE_ANIM_OBJ_BLUR_VERTICAL_UP            ; cd
 	const BATTLE_ANIM_OBJ_BLUR_VERTICAL_DOWN          ; ce
-
+	const BATTLE_ANIM_OBJ_LAVA_BURST_SMOKE            ; cf
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
 	const_def
@@ -527,6 +527,7 @@ BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLE_ANIM_FRAMESET_EXPLOSION_SMALL       ; c3
 	const BATTLE_ANIM_FRAMESET_BLUR_VERTICAL_UP      ; c4
 	const BATTLE_ANIM_FRAMESET_BLUR_VERTICAL_DOWN    ; c5
+	const BATTLE_ANIM_FRAMESET_LAVA_PLUME_SMOKE      ; c6
 
 ; BattleAnimOAMData indexes (see data/battle_anims/oam.asm)
 	const_def
@@ -853,6 +854,7 @@ BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLE_ANIM_GFX_SMOKE_PUFF        ; 29
 	const BATTLE_ANIM_GFX_SMALL_EXPLOSION   ; 2a
 	const BATTLE_ANIM_GFX_BLUR              ; 2b
+	const BATTLE_ANIM_GFX_SMOKE_PUFF_BIG    ; 2c
 
 
 ;- put new ANIM_GFX before this line -
@@ -918,7 +920,7 @@ NUM_BG_EFFECTS EQU 5 ; see wActiveBGEffects
 	const PAL_BTLCUSTOM_LIGHT_SCREEN    ; 11
 	const PAL_BTLCUSTOM_MIRROR_COAT     ; 12
 	const PAL_BTLCUSTOM_WILL_O_WISP     ; 13
-	const PAL_BTLCUSTOM_BRIGHT
+	const PAL_BTLCUSTOM_LAVA_BURST      ; 14
 NUM_CUSTOM_BATTLE_PALETTES EQU const_value
 
 PAL_BTLCUSTOM_DEFAULT EQU -1

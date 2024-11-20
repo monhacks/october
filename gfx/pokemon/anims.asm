@@ -316,6 +316,7 @@ AggroswineAnimation: INCLUDE "gfx/pokemon/aggroswine/anim.asm"
 NecrorexAnimation:   INCLUDE "gfx/pokemon/necrorex/anim.asm"
 NurssumAnimation:    INCLUDE "gfx/pokemon/nurssum/anim.asm"
 GesticuteAnimation:  INCLUDE "gfx/pokemon/gesticute/anim.asm"
+RattlitAnimation:    INCLUDE "gfx/pokemon/rattlit/anim.asm"
 
 
 ;------------------------------------------------------

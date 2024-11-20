@@ -279,6 +279,7 @@ NewPokedexOrder:
 	dw KOALYPTUS
 	dw PHANDARIN
 	dw MISDREAVUS
+	dw RATTLIT
 	dw PORYGON
 	dw PORYGON2
 	dw CHANSEY

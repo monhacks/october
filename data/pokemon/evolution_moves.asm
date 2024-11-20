@@ -317,6 +317,7 @@ EvolutionMoves::
 	dw NO_MOVE	    ; NECROREX
 	dw NO_MOVE      ; NURSSUM
 	dw NO_MOVE      ; GESTICUTE
+	dw NO_MOVE      ; RATTLIT
 
 ;----------------------------------
 _NUM_EVO_MOVES = (@ - EvolutionMoves) / 2

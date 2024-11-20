@@ -319,6 +319,7 @@ MonMenuIcons:
 	db ICON_CUBONE      ; NECROREX
 	db ICON_RATTATA     ; NURSSUM
 	db ICON_DELIBIRD    ; GESTICUTE
+	db ICON_MISDREAVUS  ; RATTLIT
 
 ; -----------------------------
 	db ICON_EGG         ; EGG

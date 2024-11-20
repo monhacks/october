@@ -198,6 +198,7 @@ BattleAnimFrameData:
 	dw .Frameset_ExplosionSmall      ; BATTLE_ANIM_FRAMESET_EXPLOSION_SMALL
 	dw .Frameset_BlurVerticalUp      ; BATTLE_ANIM_FRAMESET_BLUR_VERTICAL_UP
 	dw .Frameset_BlurVerticalDown    ; BATTLE_ANIM_FRAMESET_BLUR_VERTICAL_DOWN
+	dw .Frameset_LavaBurstSmoke      ; BATTLE_ANIM_FRAMESET_LAVA_BURST_SMOKE
 
 .Frameset_HitBig:
 	frame BATTLE_ANIM_OAMSET_00,  6
@@ -1336,3 +1337,9 @@ BattleAnimFrameData:
 .Frameset_BlurVerticalDown:
 	frame BATTLE_ANIM_OAMSET_DC, 32, OAM_X_FLIP, OAM_Y_FLIP
 	endanim
+	
+.Frameset_LavaBurstSmoke:
+	frame BATTLEANIMOAMSET_03, 2
+	frame BATTLEANIMOAMSET_11F , 2
+	frame BATTLEANIMOAMSET_03, 2
+	delanim

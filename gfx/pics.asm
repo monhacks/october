@@ -862,5 +862,7 @@ GargraniteFrontpic:	INCBIN "gfx/pokemon/gargranite/front.static.2bpp.lz"
 GargraniteBackpic:  INCBIN "gfx/pokemon/gargranite/back.2bpp.lz"
 GesticuteFrontpic:	INCBIN "gfx/pokemon/gesticute/front.static.2bpp.lz"
 GesticuteBackpic:   INCBIN "gfx/pokemon/gesticute/back.2bpp.lz"
+RattlitFrontpic:	INCBIN "gfx/pokemon/rattlit/front.static.2bpp.lz"
+RattlitBackpic:     INCBIN "gfx/pokemon/rattlit/back.2bpp.lz"
 
 INCLUDE "gfx/pics_animated.asm"

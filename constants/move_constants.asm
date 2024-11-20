@@ -266,8 +266,8 @@
 	const CROSS_CUTTER ; 102
 	const TEMPT        ; 103
 	const COIN_HURL    ; 104
-	const BOUNCE       ; 105, fix this move
-	const ROCK_SLASH   ; 106, polish this anim
+	const BOUNCE       ; 105
+	const ROCK_SLASH   ; 106
 	const INK_SPRAY    ; needs anim
 	const MEGAPHONE
 	const BLINDSIDE    ; needs anim
@@ -280,6 +280,7 @@
 	const SHELL_BOMB   ; needs anim
 	const MAGNET_FIELD ; needs anim
 	const MAGNET_BOMB
+	const LAVA_BURST
 NUM_ATTACKS EQU const_value + -1
 
 	if NUM_ATTACKS > $3fff

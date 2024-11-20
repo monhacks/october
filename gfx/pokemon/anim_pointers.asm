@@ -317,4 +317,4 @@ AnimationPointers:
 	dw NecrorexAnimation
 	dw NurssumAnimation
 	dw GesticuteAnimation
-	
+	dw RattlitAnimation

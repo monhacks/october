@@ -318,6 +318,7 @@ FirstEvoStages::
 	dw NECROREX
 	dw NURSSUM
 	dw GESTICUTE
+	dw RATTLIT
 
 
 
