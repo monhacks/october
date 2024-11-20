@@ -760,7 +760,7 @@ JigglypuffEvosAttacks:
 	dbbw EVOLVE_ITEM, MOON_STONE, WIGGLYTUFF
 	db 0 ; no more evolutions
 	dbw 1, POUND
-	dbw 4, SING
+	dbw 1, SING
 	dbw 1, DEFENSE_CURL
 	dbw 6, DOUBLESLAP
 	dbw 11, DISABLE
@@ -984,8 +984,8 @@ MeowthEvosAttacks:
 	dbw 1, SCRATCH
 	dbw 1, GROWL
 	dbw 1, TAIL_WHIP
-	dbw 6, BITE
-	dbw 12, TEMPT
+	dbw 6, THIEF
+	dbw 12, BITE
 	dbw 16, PAY_DAY
 	dbw 22, FAINT_ATTACK
 	dbw 28, FURY_SWIPES
@@ -1001,8 +1001,8 @@ PersianEvosAttacks:
 	dbw 1, SCRATCH
 	dbw 1, GROWL
 	dbw 1, TAIL_WHIP
-	dbw 6, BITE
-	dbw 12, TEMPT
+	dbw 6, THIEF
+	dbw 12, BITE
 	dbw 16, PAY_DAY
 	dbw 22, FAINT_ATTACK
 	dbw 28, FURY_SWIPES
@@ -1017,12 +1017,16 @@ PsyduckEvosAttacks:
 	dbbw EVOLVE_LEVEL, 33, GOLDUCK
 	db 0 ; no more evolutions
 	dbw 1, SCRATCH
-	dbw 5, TAIL_WHIP
-	dbw 10, DISABLE
+	dbw 1, TAIL_WHIP
+	dbw 6, DISABLE
+	dbw 10, WATER_GUN
 	dbw 16, CONFUSION
-	dbw 23, SCREECH
-	dbw 31, PSYCH_UP
-	dbw 40, FURY_SWIPES
+	dbw 20, SCREECH
+	dbw 26, BUBBLEBEAM
+	dbw 30, BIDE
+	dbw 36, FURY_SWIPES
+	dbw 40, PSYCH_UP
+	dbw 46, ICE_PUNCH
 	dbw 50, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
@@ -1030,15 +1034,16 @@ GolduckEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, SCRATCH
 	dbw 1, TAIL_WHIP
-	dbw 1, DISABLE
-	dbw 1, CONFUSION
-	dbw 5, TAIL_WHIP
-	dbw 10, DISABLE
+	dbw 6, DISABLE
+	dbw 10, WATER_GUN
 	dbw 16, CONFUSION
-	dbw 23, SCREECH
-	dbw 31, PSYCH_UP
-	dbw 44, FURY_SWIPES
-	dbw 58, HYDRO_PUMP
+	dbw 20, SCREECH
+	dbw 26, BUBBLEBEAM
+	dbw 30, BIDE
+	dbw 38, FURY_SWIPES
+	dbw 42, PSYCH_UP
+	dbw 48, ICE_PUNCH
+	dbw 52, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 MankeyEvosAttacks:
@@ -1060,7 +1065,6 @@ MankeyEvosAttacks:
 
 PrimeapeEvosAttacks:
 	db 0 ; no more evolutions
-	db 0 ; no more evolutions
 	dbw 1, SCRATCH
 	dbw 1, LEER
 	dbw 6, LOW_KICK
@@ -1074,6 +1078,10 @@ PrimeapeEvosAttacks:
 	dbw 50, CROSS_CHOP
 	dbw 56, THRASH
 	db 0 ; no more level-up moves
+	
+	
+; ------ all Shadow learnsets above this line ----- 
+
 
 GrowlitheEvosAttacks:
 	dbbw EVOLVE_ITEM, FIRE_STONE, ARCANINE

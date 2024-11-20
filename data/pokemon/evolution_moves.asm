@@ -51,9 +51,9 @@ EvolutionMoves::
 	dw NO_MOVE      ; DIGLETT
 	dw TRI_ATTACK   ; DUGTRIO
 	dw NO_MOVE      ; MEOWTH
-	dw SWIFT        ; PERSIAN
+	dw NO_MOVE      ; PERSIAN
 	dw NO_MOVE      ; PSYDUCK
-	dw NO_MOVE      ; GOLDUCK
+	dw SURF         ; GOLDUCK
 	dw NO_MOVE      ; MANKEY
 	dw UPPERCUT     ; PRIMEAPE
 	dw NO_MOVE      ; GROWLITHE
