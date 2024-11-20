@@ -5,6 +5,6 @@
 	next "in places that"
 	next "nobody goes near."
 
-	page "Rumor has it"
+	page "Rumor has it that"
 	next "calling its name"
 	next "will curse you.@"

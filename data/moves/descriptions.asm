@@ -1354,7 +1354,7 @@ MagnetBombDescription:
 	db "Floating magnets"
 	next "attack the foe."
 	
-MagnetBombDescription:
+LavaBurstDescription:
 	db "Scarlet flames"
 	next "may leave burn."
 	
