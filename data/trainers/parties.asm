@@ -5566,14 +5566,14 @@ ManchildGroup:
 		db     TRAINERTYPE_NORMAL
 		dbw    15, COALTA
 		dbw    16, SMUJJ
-		;dbw    18, OREFRY
+		dbw    18, OREFRY
 	end_party
 
 	next_party
 		string "ZACHARY"
 		db     TRAINERTYPE_NORMAL
 		dbw    24, GASTLY
-		;dbw    25, STROMEN
+		dbw    25, STROMEN
 	end_party
 
 	end_party_list
