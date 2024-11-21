@@ -317,6 +317,7 @@ NecrorexAnimationIdle:   INCLUDE "gfx/pokemon/necrorex/anim_idle.asm"
 NurssumAnimationIdle:    INCLUDE "gfx/pokemon/nurssum/anim_idle.asm"
 GesticuteAnimationIdle:  INCLUDE "gfx/pokemon/gesticute/anim_idle.asm"
 RattlitAnimationIdle:    INCLUDE "gfx/pokemon/rattlit/anim_idle.asm"
+AudinoAnimationIdle:     INCLUDE "gfx/pokemon/audino/anim_idle.asm"
 
 ;---------------------------------------------------------------
 EggAnimationIdle:        INCLUDE "gfx/pokemon/egg/anim_idle.asm"

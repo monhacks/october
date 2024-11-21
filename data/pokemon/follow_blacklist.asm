@@ -220,4 +220,5 @@ CantFollowList:
 	dw NURSSUM
 	dw GESTICUTE
 	dw RATTLIT
+	dw AUDINO
 	dw -1

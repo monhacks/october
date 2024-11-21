@@ -284,6 +284,7 @@ NewPokedexOrder:
 	dw PORYGON2
 	dw CHANSEY
 	dw BLISSEY
+	dw AUDINO
 	dw LAPRAS
 	dw OMANYTE
 	dw OMASTAR

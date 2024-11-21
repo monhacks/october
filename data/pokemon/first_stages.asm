@@ -319,6 +319,7 @@ FirstEvoStages::
 	dw NURSSUM
 	dw GESTICUTE
 	dw RATTLIT
+	dw AUDINO
 
 
 

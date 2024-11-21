@@ -15,6 +15,7 @@ AlphabeticalPokedexOrder:
 	dw ARCANINE
 	dw ARIADOS
 	dw ARTICUNO
+	dw AUDINO
 	dw AZUMARILL
 	dw BALLERINE
 	dw BAYLEEF

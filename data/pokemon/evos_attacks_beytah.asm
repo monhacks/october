@@ -44,6 +44,7 @@ EvosAttacksPointers3::
 	dw NurssumEvosAttacks
 	dw GesticuteEvosAttacks
 	dw RattlitEvosAttacks
+	dw AudinoEvosAttacks
 .End:
 
 StantlerEvosAttacks:
@@ -673,6 +674,23 @@ RattlitEvosAttacks:
 ;	dbw 40, EXIT_PATH
 	dbw 45, PSYCHIC_M
 ;	dbw 50, ECHO
+	db 0 ; no more level-up moves
+	
+AudinoEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, POUND
+	dbw 1, GROWL
+	dbw 5, MIND_READER
+	dbw 10, SING
+	dbw 15, SWIFT
+;	dbw 20, ECHO
+	dbw 25, SAFEGUARD
+	dbw 30, CONFUSION
+	dbw 35, TRI_ATTACK
+	dbw 40, HEAL_BELL
+	dbw 45, PSYBEAM
+	dbw 50, REST
+	dbw 55, RETURN
 	db 0 ; no more level-up moves
 
 ;---------------------------------------------------------------------------------------------

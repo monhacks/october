@@ -865,4 +865,10 @@ GesticuteBackpic:   INCBIN "gfx/pokemon/gesticute/back.2bpp.lz"
 RattlitFrontpic:	INCBIN "gfx/pokemon/rattlit/front.static.2bpp.lz"
 RattlitBackpic:     INCBIN "gfx/pokemon/rattlit/back.2bpp.lz"
 
+SECTION "Pics 27", ROMX
+
+AudinoFrontpic:	    INCBIN "gfx/pokemon/audino/front.static.2bpp.lz"
+AudinoBackpic:      INCBIN "gfx/pokemon/audino/back.2bpp.lz"
+
+
 INCLUDE "gfx/pics_animated.asm"

@@ -318,3 +318,4 @@ FramesPointers:
 	dba NurssumFrames
 	dba GesticuteFrames
 	dba RattlitFrames
+	dba AudinoFrames

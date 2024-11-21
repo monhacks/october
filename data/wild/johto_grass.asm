@@ -1548,7 +1548,7 @@ JohtoGrassWildMons:
 	dbw 16, RATTATA
 	dbw 17, CLEFLING
 	dbw 15, ABRA
-	dbw 17, JIGGLYPUFF
+	dbw 17, AUDINO
 	dbw 15, SMEARGLE
 	dbw 15, DITTO
 	; day
@@ -1556,7 +1556,7 @@ JohtoGrassWildMons:
 	dbw 16, RATTATA
 	dbw 17, CLEFLING
 	dbw 15, ABRA
-	dbw 17, JIGGLYPUFF
+	dbw 17, AUDINO
 	dbw 15, DITTO
 	dbw 15, SMEARGLE
 	; nite
@@ -1564,7 +1564,7 @@ JohtoGrassWildMons:
 	dbw 16, RATTATA
 	dbw 17, HOOTHOOT
 	dbw 15, ABRA
-	dbw 17, JIGGLYPUFF
+	dbw 17, AUDINO
 	dbw 15, FENNECURSE
 	dbw 15, FENNECURSE
 
@@ -1575,7 +1575,7 @@ JohtoGrassWildMons:
 	dbw 14, PIDGEY
 	dbw 13, PUPPERON
 	dbw 10, ABRA
-	dbw 12, JIGGLYPUFF
+	dbw 12, AUDINO
 	dbw 10, DITTO
 	dbw 12, YANMA
 	; day
@@ -1583,7 +1583,7 @@ JohtoGrassWildMons:
 	dbw 14, PIDGEY
 	dbw 13, VULPIII
 	dbw 10, ABRA
-	dbw 12, JIGGLYPUFF
+	dbw 12, AUDINO
 	dbw 10, DITTO
 	dbw 12, YANMA
 	; nite
@@ -1591,7 +1591,7 @@ JohtoGrassWildMons:
 	dbw 14, HOOTHOOT
 	dbw 13, PSYDUCK
 	dbw 10, ABRA
-	dbw 12, JIGGLYPUFF
+	dbw 12, AUDINO
 	dbw 10, DITTO
 	dbw 12, YANMA
 

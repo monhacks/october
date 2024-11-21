@@ -320,6 +320,7 @@ MonMenuIcons:
 	db ICON_RATTATA     ; NURSSUM
 	db ICON_DELIBIRD    ; GESTICUTE
 	db ICON_MISDREAVUS  ; RATTLIT
+	db ICON_CHANSEY     ; AUDINO
 
 ; -----------------------------
 	db ICON_EGG         ; EGG

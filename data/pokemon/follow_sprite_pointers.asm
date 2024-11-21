@@ -446,4 +446,6 @@ FollowSpritePointers::
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_SILVER ;NURSSUM
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_SILVER ;GESTICUTE
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BROWN ;RATTLIT
+	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_JIGGLYPUFF ;AUDINO
+
 

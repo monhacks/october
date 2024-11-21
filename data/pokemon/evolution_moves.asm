@@ -318,6 +318,7 @@ EvolutionMoves::
 	dw NO_MOVE      ; NURSSUM
 	dw NO_MOVE      ; GESTICUTE
 	dw NO_MOVE      ; RATTLIT
+	dw NO_MOVE      ; AUDINO
 
 ;----------------------------------
 _NUM_EVO_MOVES = (@ - EvolutionMoves) / 2

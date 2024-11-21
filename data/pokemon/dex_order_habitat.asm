@@ -74,6 +74,7 @@ HabitatPokedexOrder:
 	dw CHANSEY
 	dw BLISSEY
 	dw TANGELA
+	dw AUDINO
 	;dw JUNGELA
 	dw ORIJOEY
 	dw KANGASKHAN

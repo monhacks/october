@@ -318,3 +318,4 @@ AnimationPointers:
 	dw NurssumAnimation
 	dw GesticuteAnimation
 	dw RattlitAnimation
+	dw AudinoAnimation

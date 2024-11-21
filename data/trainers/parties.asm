@@ -5647,13 +5647,13 @@ NiechelleGroup:
 	next_party ; LASS (19) NIE NIE 1
 	db "NIECHELLE@", TRAINERTYPE_NORMAL
 	db 5
-	dw SNUBBULL
-	db 6
 	dw MAREEP
 	db 6
-	dw GESTICUTE
-	db 7
 	dw JIGGLYPUFF
+	db 6
+	dw AUDINO
+	db 7
+	dw GESTICUTE
 	end_party
 
 	
@@ -5672,11 +5672,11 @@ NiechelleGroup:
 	db 18
 	dw FLAAFFY
 	db 19
-	dw GERMIFROST
+	dw GESTICUTE
 	db 20
 	dw JIGGLYPUFF
 	dw 21
-	dw SNUBBULL
+	dw AUDINO
 	end_party
 
 	next_party ; LASS (19) NIE NIE 4
@@ -5684,11 +5684,13 @@ NiechelleGroup:
 	db 30
 	dw AMPHAROS
 	db 32
-	dw VEGELANCHE
+	dw GESTICUTE
+	db 32
+	dw SNUBBULL
 	db 34
 	dw JIGGLYPUFF
 	db 36
-	dw GRANBULL
+	dw AUDINO
 	end_party
 	
 	next_party ; LASS (20) NIE NIE 5
@@ -5697,7 +5699,7 @@ NiechelleGroup:
 	dw AMPHAROS
 	dw THUNDERBOLT, ICE_PUNCH, FIRE_PUNCH, IRON_TAIL
 	db 53
-	dw VEGELANCHE
+	dw GESTICUTE
 	dw RAZOR_LEAF, ICE_BEAM, PURSUIT, GIGA_DRAIN
 	db 54
 	dw JIGGLYPUFF
@@ -5706,7 +5708,10 @@ NiechelleGroup:
 	dw GRANBULL
 	dw CRUNCH, HYPER_BEAM, PROTECT, SHADOW_BALL
 	db 56
-	dw JIGGLYPUFF ; SAKURAQUA
+	dw JIGGLYPUFF ; PIPLUP
+	dw SOLARBEAM, SWEET_KISS, BUBBLEBEAM, PETAL_DANCE
+	db 56
+	dw AUDINO
 	dw SOLARBEAM, SWEET_KISS, BUBBLEBEAM, PETAL_DANCE
 	end_party
 	
