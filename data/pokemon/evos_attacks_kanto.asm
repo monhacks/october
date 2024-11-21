@@ -255,7 +255,7 @@ CharizardEvosAttacks:
 SquirtleEvosAttacks:
 	dbbw EVOLVE_LEVEL, 16, WARTORTLE
 	db 0 ; no more evolutions
-	dbw 1, POUND
+	dbw 1, LAVA_BURST ; POUND
 	dbw 1, TAIL_WHIP
 	dbw 6, WITHDRAW
 	dbw 10, BUBBLE
