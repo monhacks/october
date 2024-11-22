@@ -319,5 +319,6 @@ AnimationIdlePointers:
 	dw GesticuteAnimationIdle
 	dw RattlitAnimationIdle
 	dw AudinoAnimationIdle
+	dw MunchlaxAnimationIdle
 
 

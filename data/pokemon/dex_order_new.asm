@@ -292,6 +292,7 @@ NewPokedexOrder:
 	dw KABUTOPS
 	dw AERODACTYL
 	dw NECROREX
+	dw MUNCHLAX
 	dw SNORLAX
 	dw BULBASAUR
 	dw IVYSAUR

@@ -172,13 +172,14 @@ AlphabeticalPokedexOrder:
 	dw MEW
 	dw MEWTWO
 	dw MILTANK
+	dw MIMENTOR
 	dw MISDREAVUS
 	dw MOIBELLE
 	dw MOLAMBINO
 	dw MOLTRES
 	dw MORPHOBIA
-	dw MR__MIME
 	dw MUK
+	dw MUNCHLAX
 	dw MURKROW
 	dw NATU
 	dw NECROREX

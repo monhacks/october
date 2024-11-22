@@ -318,6 +318,8 @@ NurssumBitmasks:    INCLUDE "gfx/pokemon/nurssum/bitmask.asm"
 GesticuteBitmasks:  INCLUDE "gfx/pokemon/gesticute/bitmask.asm"
 RattlitBitmasks:    INCLUDE "gfx/pokemon/rattlit/bitmask.asm"
 AudinoBitmasks:     INCLUDE "gfx/pokemon/audino/bitmask.asm"
+MunchlaxBitmasks:   INCLUDE "gfx/pokemon/munchlax/bitmask.asm"
+
 
 
 ;--------------------------------------------------------

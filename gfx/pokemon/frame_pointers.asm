@@ -319,3 +319,4 @@ FramesPointers:
 	dba GesticuteFrames
 	dba RattlitFrames
 	dba AudinoFrames
+	dba MunchlaxFrames

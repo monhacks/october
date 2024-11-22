@@ -142,7 +142,7 @@ FirstEvoStages::
 	dw KABUTO
 	dw KABUTO
 	dw AERODACTYL
-	dw SNORLAX
+	dw MUNCHLAX
 	dw ARTICUNO   ;90
 	dw ZAPDOS
 	dw MOLTRES
@@ -320,6 +320,7 @@ FirstEvoStages::
 	dw GESTICUTE
 	dw RATTLIT
 	dw AUDINO
+	dw MUNCHLAX
 
 
 

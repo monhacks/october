@@ -319,6 +319,7 @@ EvolutionMoves::
 	dw NO_MOVE      ; GESTICUTE
 	dw NO_MOVE      ; RATTLIT
 	dw NO_MOVE      ; AUDINO
+	dw NO_MOVE      ; MUNCHLAX
 
 ;----------------------------------
 _NUM_EVO_MOVES = (@ - EvolutionMoves) / 2

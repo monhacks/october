@@ -228,6 +228,7 @@ MankeySpriteGFX::              INCBIN "gfx/sprites/pokemon/mankey.2bpp"
 PrimeapeSpriteGFX::            INCBIN "gfx/sprites/pokemon/primeape.2bpp"
 FurretSpriteGFX::              INCBIN "gfx/sprites/pokemon/furret.2bpp"
 HoppipSpriteGFX::              INCBIN "gfx/sprites/pokemon/hoppip.2bpp"
+MunchlaxSpriteGFX::            INCBIN "gfx/sprites/pokemon/munchlax.2bpp"
 
 
 

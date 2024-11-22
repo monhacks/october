@@ -318,6 +318,7 @@ NurssumAnimation:    INCLUDE "gfx/pokemon/nurssum/anim.asm"
 GesticuteAnimation:  INCLUDE "gfx/pokemon/gesticute/anim.asm"
 RattlitAnimation:    INCLUDE "gfx/pokemon/rattlit/anim.asm"
 AudinoAnimation:     INCLUDE "gfx/pokemon/audino/anim.asm"
+MunchlaxAnimation:   INCLUDE "gfx/pokemon/munchlax/anim.asm"
 
 
 

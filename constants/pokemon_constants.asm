@@ -341,6 +341,7 @@ JOHTO_POKEMON EQU const_value
 	const GESTICUTE ; from g3 beytah idea sheet
 	const RATTLIT
 	const AUDINO
+	const MUNCHLAX
 
 NUM_POKEMON EQU const_value + -1
 

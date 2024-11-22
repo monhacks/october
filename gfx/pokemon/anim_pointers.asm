@@ -319,3 +319,4 @@ AnimationPointers:
 	dw GesticuteAnimation
 	dw RattlitAnimation
 	dw AudinoAnimation
+	dw MunchlaxAnimation

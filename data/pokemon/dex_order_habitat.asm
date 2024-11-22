@@ -128,6 +128,7 @@ HabitatPokedexOrder:
 	dw MACHAMP
 	dw MAGBY
 	dw MAGMAR
+	dw MUNCHLAX
 	dw SNORLAX
 	dw ZUBAT
 	dw GOLBAT

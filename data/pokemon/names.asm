@@ -324,6 +324,7 @@ PokemonNames::
 	db "GESTICUTE@"
 	db "RATTLIT@@@"
 	db "AUDINO@@@@"
+	db "MUNCHLAX@@"
 
 ;--------------------------------------------------------------
 _NUM_POKEMON_NAMES = (@ - PokemonNames) / (MON_NAME_LENGTH - 1)

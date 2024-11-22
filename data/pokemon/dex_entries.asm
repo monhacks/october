@@ -334,5 +334,6 @@ NurssumPokedexEntry::    INCLUDE "data/pokemon/dex_entries/nurssum.asm"
 GesticutePokedexEntry::  INCLUDE "data/pokemon/dex_entries/gesticute.asm"
 RattlitPokedexEntry::    INCLUDE "data/pokemon/dex_entries/rattlit.asm"
 AudinoPokedexEntry::     INCLUDE "data/pokemon/dex_entries/audino.asm"
+MunchlaxPokedexEntry::   INCLUDE "data/pokemon/dex_entries/munchlax.asm"
 
 

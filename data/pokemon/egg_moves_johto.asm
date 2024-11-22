@@ -165,6 +165,7 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw AudinoEggMoves
+	dw MunchlaxEggMoves
 
 ChikoritaEggMoves:
 	dw VINE_WHIP
@@ -652,6 +653,10 @@ SmujjEggMoves:
 	
 AudinoEggMoves:
 	dw SWEET_KISS
+	dw -1 ; end
+	
+MunchlaxEggMoves:
+	dw LICK
 	dw -1 ; end
 	
 NoEggMoves2:

@@ -869,6 +869,7 @@ SECTION "Pics 27", ROMX
 
 AudinoFrontpic:	    INCBIN "gfx/pokemon/audino/front.static.2bpp.lz"
 AudinoBackpic:      INCBIN "gfx/pokemon/audino/back.2bpp.lz"
-
+MunchlaxFrontpic:	INCBIN "gfx/pokemon/munchlax/front.static.2bpp.lz"
+MunchlaxBackpic:    INCBIN "gfx/pokemon/munchlax/back.2bpp.lz"
 
 INCLUDE "gfx/pics_animated.asm"

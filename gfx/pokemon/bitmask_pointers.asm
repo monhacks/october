@@ -319,4 +319,5 @@ BitmasksPointers:
 	dw GesticuteBitmasks
 	dw RattlitBitmasks
 	dw AudinoBitmasks
+	dw MunchlaxBitmasks
 

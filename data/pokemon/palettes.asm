@@ -670,6 +670,8 @@ INCBIN "gfx/pokemon/rattlit/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/rattlit/shiny.pal"
 INCBIN "gfx/pokemon/audino/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/audino/shiny.pal"
+INCBIN "gfx/pokemon/munchlax/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/munchlax/shiny.pal"
 
 
 ;--------------------------------------------------------

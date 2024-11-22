@@ -337,6 +337,7 @@ PokemonPicPointers::
 	mon_pic Gesticute
 	mon_pic Rattlit
 	mon_pic Audino
+	mon_pic Munchlax
 
 ;------------------------------------------------
 _NUM_POKEMON_PICS = (@ - PokemonPicPointers) / 9 - 1

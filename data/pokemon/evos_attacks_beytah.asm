@@ -45,6 +45,7 @@ EvosAttacksPointers3::
 	dw GesticuteEvosAttacks
 	dw RattlitEvosAttacks
 	dw AudinoEvosAttacks
+	dw MunchlaxEvosAttacks
 .End:
 
 StantlerEvosAttacks:
@@ -691,6 +692,23 @@ AudinoEvosAttacks:
 	dbw 45, PSYBEAM
 	dbw 50, REST
 	dbw 55, RETURN
+	db 0 ; no more level-up moves
+	
+MunchlaxEvosAttacks:
+	dbbw EVOLVE_HAPPINESS, TR_ANYTIME, SNORLAX
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	dbw 1, DEFENSE_CURL
+	dbw 1, ROLLOUT
+	dbw 8, HEADBUTT
+	dbw 16, AMNESIA
+	dbw 24, REST
+	dbw 24, SNORE
+	dbw 32, CRUNCH
+	dbw 40, BODY_SLAM
+	dbw 48, CURSE
+	dbw 56, BELLY_DRUM
+	dbw 64, HYPER_BEAM
 	db 0 ; no more level-up moves
 
 ;---------------------------------------------------------------------------------------------
