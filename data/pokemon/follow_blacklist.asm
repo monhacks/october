@@ -180,6 +180,7 @@ CantFollowList:
 	dw PHANPY
 	dw DONPHAN
 	dw LICKILICKY
+	dw PORYGIN
 	dw PORYGON2
 	dw STANTLER
 	dw SMEARGLE

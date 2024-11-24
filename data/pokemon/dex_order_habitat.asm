@@ -267,6 +267,7 @@ HabitatPokedexOrder:
 	dw SMUJJ
 	dw GRIMER
 	dw MUK
+	dw PORYGIN
 	dw PORYGON
 	dw PORYGON2
 	dw KOFFING

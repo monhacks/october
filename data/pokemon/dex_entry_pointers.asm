@@ -275,6 +275,7 @@ PokedexDataPointerTable:
 	dba PhanpyPokedexEntry
 	dba DonphanPokedexEntry
 	dba LickilickyPokedexEntry
+	dba PoryginPokedexEntry
 	dba Porygon2PokedexEntry
 	dba StantlerPokedexEntry
 	dba SmearglePokedexEntry

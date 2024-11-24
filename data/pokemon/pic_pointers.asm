@@ -292,6 +292,7 @@ PokemonPicPointers::
 	mon_pic Phanpy
 	mon_pic Donphan
 	mon_pic Lickilicky
+	mon_pic Porygin
 	mon_pic Porygon2
 	mon_pic Stantler
 	mon_pic Smeargle

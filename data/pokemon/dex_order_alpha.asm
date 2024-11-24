@@ -220,6 +220,7 @@ AlphabeticalPokedexOrder:
 	dw POLIWHIRL
 	dw POLIWRATH
 	dw PONYTA
+	dw PORYGIN
 	dw PORYGON
 	dw PORYGON2
 	dw PRESSIO

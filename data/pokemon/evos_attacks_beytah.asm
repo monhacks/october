@@ -645,12 +645,12 @@ NurssumEvosAttacks:
 	dbw 1, TACKLE
 	dbw 1, GROWL
 	dbw 4, DOUBLE_KICK
-	dbw 9, DEFENSE_CURL
+;	dbw 9, TANTRUM
 	dbw 13, QUICK_ATTACK
 	dbw 18, BARRAGE
 	dbw 26, CHARM
 	dbw 31, EXTREMESPEED
-	dbw 35, RECOVER
+;	dbw 35, MILK_TIME
 	dbw 40, TAKE_DOWN
 	dbw 44, FAINT_ATTACK
 	dbw 49, DOUBLE_EDGE
@@ -658,7 +658,18 @@ NurssumEvosAttacks:
 	
 GesticuteEvosAttacks:
 	db 0 ; no more evolutions
-	dbw 1, TACKLE
+	dbw 1, POUND
+	dbw 1, TAIL_WHIP
+	dbw 7, PSYWAVE
+	dbw 14, MEDITATE
+;   dbw 18, DELIVERY
+	dbw 22, CONFUSION
+	dbw 29, CHARM
+	dbw 36, SWIFT
+	dbw 40, PSYBEAM
+	dbw 44, TRI_ATTACK
+;   dbw 51, REVELATION
+	dbw 58, DOUBLE_EDGE
 	db 0 ; no more level-up moves
 	
 RattlitEvosAttacks:

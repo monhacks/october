@@ -280,6 +280,7 @@ NewPokedexOrder:
 	dw PHANDARIN
 	dw MISDREAVUS
 	dw RATTLIT
+	dw PORYGIN
 	dw PORYGON
 	dw PORYGON2
 	dw CHANSEY

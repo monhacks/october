@@ -125,6 +125,7 @@ EvosAttacksPointers2::
 	dw PhanpyEvosAttacks
 	dw DonphanEvosAttacks
 	dw LickilickyEvosAttacks
+	dw PoryginEvosAttacks
 	dw Porygon2EvosAttacks
 .End:
 
@@ -1993,21 +1994,37 @@ LickilickyEvosAttacks:
 	dbw 50, SCREECH
 	dbw 55, BODY_SLAM
 	db 0 ; no more level-up moves
+	
+PoryginEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	dbw 1, SHARPEN
+	dbw 1, THUNDER_WAVE
+	dbw 8, PECK
+	dbw 12, PSYBEAM
+	dbw 20, RECOVER
+	dbw 24, AGILITY
+	dbw 32, LOCK_ON
+	dbw 36, TRI_ATTACK
+	dbw 44, MIMIC
+	dbw 48, ZAP_CANNON
+	dbw 56, HYPER_BEAM
+	db 0 ; no more level-up moves
 
 Porygon2EvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, SHARPEN
 	dbw 1, THUNDER_WAVE
-	dbw 10, PECK
-	dbw 14, PSYBEAM
-	dbw 22, RECOVER
-	dbw 26, AGILITY
-	dbw 34, LOCK_ON
-	dbw 38, TRI_ATTACK
-	dbw 46, MIMIC
-	dbw 50, ZAP_CANNON
-	dbw 58, HYPER_BEAM
+	dbw 8, PECK
+	dbw 12, PSYBEAM
+	dbw 20, RECOVER
+	dbw 24, AGILITY
+	dbw 32, LOCK_ON
+	dbw 36, TRI_ATTACK
+	dbw 44, MIMIC
+	dbw 48, ZAP_CANNON
+	dbw 56, HYPER_BEAM
 	db 0 ; no more level-up moves
 
 ;-------------------------------------------------------------------------------------------

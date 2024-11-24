@@ -279,6 +279,7 @@ PokemonNames::
 	db "PHANPY@@@@"
 	db "DONPHAN@@@"
 	db "LICKILICKY"
+	db "PORYGIN@@@"
 	db "PORYGON2@@"
 	db "STANTLEER@"
 	db "SMEARGLE@@"

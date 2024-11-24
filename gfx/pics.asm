@@ -871,5 +871,7 @@ AudinoFrontpic:	    INCBIN "gfx/pokemon/audino/front.static.2bpp.lz"
 AudinoBackpic:      INCBIN "gfx/pokemon/audino/back.2bpp.lz"
 MunchlaxFrontpic:	INCBIN "gfx/pokemon/munchlax/front.static.2bpp.lz"
 MunchlaxBackpic:    INCBIN "gfx/pokemon/munchlax/back.2bpp.lz"
+PoryginFrontpic:	INCBIN "gfx/pokemon/porygin/front.static.2bpp.lz"
+PoryginBackpic:     INCBIN "gfx/pokemon/porygin/back.2bpp.lz"
 
 INCLUDE "gfx/pics_animated.asm"

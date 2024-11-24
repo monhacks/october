@@ -402,6 +402,7 @@ FollowSpritePointers::
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;PHANPY
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;DONPHAN
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;LICKILICKY
+	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_JIGGLYPUFF ;PORYGIN
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;PORYGON2
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;STANTLER
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;SMEARGLE

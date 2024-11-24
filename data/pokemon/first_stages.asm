@@ -136,7 +136,7 @@ FirstEvoStages::
 	dw EEVEE
 	dw EEVEE
 	dw EEVEE      ;88
-	dw PORYGON
+	dw PORYGIN
 	dw OMANYTE
 	dw OMANYTE
 	dw KABUTO
@@ -275,7 +275,8 @@ FirstEvoStages::
 	dw PHANPY
 	dw PHANPY     ;e8
 	dw LICKITUNG
-	dw PORYGON
+	dw PORYGIN
+	dw PORYGIN
 	dw STANTLER
 	dw SMEARGLE
 	dw TYROGUE

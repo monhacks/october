@@ -282,6 +282,7 @@ PokemonCries::
 	mon_cry CRY_SENTRET,     $048,  $230 ; PHANPY
 	mon_cry CRY_SENTRET,    -184,  768   ; DONPHAN
 	mon_cry CRY_SEEL,       -$100,  $180 ; LICKILICKY
+	mon_cry CRY_WEEPINBELL,  $0B0,  $17f ; PORYGIN
 	mon_cry CRY_GIRAFARIG,   $073,  $240 ; PORYGON2
 	mon_cry CRY_AIPOM,      -$160,  $180 ; STANTLER
 	mon_cry CRY_PICHU,      -$21a,  $1f0 ; SMEARGLE
@@ -313,8 +314,8 @@ PokemonCries::
 	mon_cry CRY_PARAS,       $0c4,  $0b0 ; PARASPOR
 	mon_cry CRY_MOLAMBINO,    $043, $050 ; MOLAMBINO
 	mon_cry CRY_CHIKORITA,    $040, $200 ; KIWACKI
- 	mon_cry CRY_DIGLETT,     $010,  $010 ; MORPHOBIA
- 	mon_cry CRY_DIGLETT,     $020,  $040 ; MORPHOBIA EVO
+ 	mon_cry CRY_DIGLETT,     $010,  $010 ; SILKANE
+ 	mon_cry CRY_DIGLETT,     $020,  $040 ; MORPHOBIA
 	mon_cry CRY_GLIGAR,     -$045,  $120  ; TERRACHNID
 	mon_cry CRY_GRIMER,      $100,  $100 ; SMUJJ
 	mon_cry CRY_NIDORAN_M,  -$0a3,  $091 ; KOALYPTUS

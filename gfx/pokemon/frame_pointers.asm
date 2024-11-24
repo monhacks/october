@@ -274,6 +274,7 @@ FramesPointers:
 	dba PhanpyFrames
 	dba DonphanFrames
 	dba LickilickyFrames
+	dba PoryginFrames
 	dba Porygon2Frames
 	dba StantlerFrames
 	dba SmeargleFrames
