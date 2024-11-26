@@ -87,6 +87,8 @@ FollowSpritePalettes::
 	dw .Hoppip
 	const PAL_FOLLOWER_MALLODY
 	dw .Mallody
+	const PAL_FOLLOWER_ARIADOS
+	dw .Ariados
 	
 .Red:      RGB 31,31,31, 31,19,10, 31,07,01, 00,00,00
 .Blue:     RGB 31,31,31, 31,19,10, 10,09,31, 00,00,00
@@ -127,6 +129,7 @@ FollowSpritePalettes::
 .Psyduck: RGB 31,31,31, 31,31,31, 31,28,10, 00,00,00
 .Hoppip: RGB 31,31,31, 31,31,31, 08, 18,07, 00,00,00
 .Mallody: RGB 31,31,31, 31,31,31, 10,09,31, 00,00,00
+.Ariados: RGB 31,31,31, 31,07,01, 21,15,23, 00,00,00
 
 FollowSpritePointers::
 	follow_sprite BulbasaurSpriteGFX, PAL_FOLLOWER_BULBASAUR ;BULBASAUR
@@ -217,7 +220,7 @@ FollowSpritePointers::
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;SEEL
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;DEWGONG
 	follow_sprite GrimerSpriteGFX, PAL_FOLLOWER_BLUE ;GRIMER
-	follow_sprite MukSpriteGFX, PAL_FOLLOWER_BLUE ;MUK
+	follow_sprite MukSpriteGFX, PAL_FOLLOWER_PURPLE ;MUK
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;SHELLDER
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;CLOYSTER
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;GASTLY
@@ -306,7 +309,7 @@ FollowSpritePointers::
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_RED ;LEDYBA
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_RED ;LEDIAN
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_PURPLE ;SPINARAK
-	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;ARIADOS
+	follow_sprite AriadosSpriteGFX, PAL_FOLLOWER_ARIADOS ;ARIADOS
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;CROBAT
 	follow_sprite YanmaSpriteGFX,  PAL_FOLLOWER_GREEN ;YANMA
 	follow_sprite YanmegaSpriteGFX, PAL_FOLLOWER_TONBOSS ;TONBOSS

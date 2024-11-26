@@ -96,7 +96,6 @@ CantFollowList:
 	dw LEDYBA
 	dw LEDIAN
 	dw SPINARAK
-	dw ARIADOS
 	dw CROBAT
 	dw BELLIGNAN
 	dw CHINCHOU
