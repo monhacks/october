@@ -6,4 +6,5 @@
 	next "hard-drive and re-"
 
 	page "leased for pre-"
-	next "servation purposes.@"
+	next "servation pur-"
+	next "poses.@"

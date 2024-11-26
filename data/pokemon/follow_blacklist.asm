@@ -204,7 +204,6 @@ CantFollowList:
 	dw PUPPERON ; done but TODO: growlithe & arcanine
 	dw MOIBELLE
 	dw BELLEDAM ; done but TODO: moibelle
-	dw MALLODY
 	dw CAMOUFLAKE
 	dw WORFURS
 	dw WEARLYCAN

@@ -85,6 +85,8 @@ FollowSpritePalettes::
 	dw    .Psyduck
 	const PAL_FOLLOWER_HOPPIP
 	dw .Hoppip
+	const PAL_FOLLOWER_MALLODY
+	dw .Mallody
 	
 .Red:      RGB 31,31,31, 31,19,10, 31,07,01, 00,00,00
 .Blue:     RGB 31,31,31, 31,19,10, 10,09,31, 00,00,00
@@ -124,6 +126,7 @@ FollowSpritePalettes::
 .Meowth: RGB 31,31,31, 31,28,10, 12,09,04, 00,00,00
 .Psyduck: RGB 31,31,31, 31,31,31, 31,28,10, 00,00,00
 .Hoppip: RGB 31,31,31, 31,31,31, 08, 18,07, 00,00,00
+.Mallody: RGB 31,31,31, 31,31,31, 10,09,31, 00,00,00
 
 FollowSpritePointers::
 	follow_sprite BulbasaurSpriteGFX, PAL_FOLLOWER_BULBASAUR ;BULBASAUR
@@ -297,7 +300,7 @@ FollowSpritePointers::
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BROWN ;SENTRET
 	follow_sprite FurretSpriteGFX, PAL_FOLLOWER_BROWN ;FURRET
 	follow_sprite CleflingSpriteGFX, PAL_FOLLOWER_RED ;CLEFLING
-	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;MALLODY
+	follow_sprite MallodySpriteGFX, PAL_FOLLOWER_MALLODY ;MALLODY
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BROWN ;HOOTHOOT
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BROWN ;NOCTOWL
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_RED ;LEDYBA
