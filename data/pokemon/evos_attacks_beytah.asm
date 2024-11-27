@@ -676,16 +676,16 @@ RattlitEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, NIGHT_SHADE
 	dbw 1, GROWL
-;   dbw 5, ECHO
+    dbw 5, ECHO
 	dbw 10, HEAL_BELL
 	dbw 15, CONFUSION
-;	dbw 20, ECHO
+	dbw 20, ECHO
 	dbw 25, RAPID_SPIN
 	dbw 30, SHADOW_BALL
-;	dbw 35, ECHO
+	dbw 35, ECHO
 ;	dbw 40, EXIT_PATH
 	dbw 45, PSYCHIC_M
-;	dbw 50, ECHO
+	dbw 50, ECHO
 	db 0 ; no more level-up moves
 	
 AudinoEvosAttacks:
@@ -695,7 +695,7 @@ AudinoEvosAttacks:
 	dbw 5, MIND_READER
 	dbw 10, SING
 	dbw 15, SWIFT
-;	dbw 20, ECHO
+	dbw 20, ECHO
 	dbw 25, SAFEGUARD
 	dbw 30, CONFUSION
 	dbw 35, TRI_ATTACK
