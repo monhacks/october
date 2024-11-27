@@ -281,6 +281,7 @@
 	const MAGNET_FIELD ; needs anim
 	const MAGNET_BOMB
 	const LAVA_BURST
+	const ECHO
 NUM_ATTACKS EQU const_value + -1
 
 	if NUM_ATTACKS > $3fff

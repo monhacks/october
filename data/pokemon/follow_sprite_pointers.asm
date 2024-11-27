@@ -328,7 +328,7 @@ FollowSpritePointers::
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;GIRAFARIG
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;TOPSYSPOT
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_GREEN ;NATU
-	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_GREEN ;KATU
+	follow_sprite KatuSpriteGFX, PAL_FOLLOWER_GREEN ;KATU
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_GREEN ;XATU
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;MAREEP
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;FLAAFFY

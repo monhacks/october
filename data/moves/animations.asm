@@ -303,10 +303,12 @@ BattleAnimations::
 	dw BattleAnim_MagnetField
 	dw BattleAnim_MagnetBomb
 	dw BattleAnim_LavaBurst
+	dw BattleAnim_Echo
 	dw BattleAnim_HeldItemTrigger
 .End:
 
 BattleAnim_0:
+BattleAnim_Echo:
 BattleAnim_MirrorMove:
 	anim_ret
 

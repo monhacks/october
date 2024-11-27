@@ -106,7 +106,6 @@ CantFollowList:
 	dw TOGEPI
 	dw TOGETIC
 	dw NATU
-	dw KATU
 	dw XATU
 	dw MAREEP
 	dw FLAAFFY

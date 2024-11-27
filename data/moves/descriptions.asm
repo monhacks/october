@@ -280,6 +280,7 @@ MoveDescriptions1:
 	dw MagnetFieldDescription
 	dw MagnetBombDescription
 	dw LavaBurstDescription
+	dw EchoDescription
 .End:
 	
 InvalidMoveDescription:
@@ -765,6 +766,7 @@ MetronomeDescription:
 	db   "Randomly uses any"
 	next "#MON move.@"
 
+EchoDescription:
 MirrorMoveDescription:
 	db   "Counters with the"
 	next "same move.@"

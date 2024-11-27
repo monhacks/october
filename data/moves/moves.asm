@@ -294,3 +294,5 @@ Moves1:
 	move EFFECT_NORMAL_HIT,         40, NORMAL,   100, 35,   0 ; MAGNET_FIELD: TODO
 	move EFFECT_ALWAYS_HIT,         60, STEEL,    100, 20,   0 ; MAGNET_BOMB
 	move EFFECT_BURN_HIT,           80, FIRE,      30, 15,   0 ; LAVA_BURST
+	move EFFECT_MIRROR_MOVE,         0, NORMAL,   100, 20,   0 ; ECHO
+

@@ -316,7 +316,7 @@ PokemonCries::
 	mon_cry CRY_CHIKORITA,    $040, $200 ; KIWACKI
  	mon_cry CRY_DIGLETT,     $010,  $010 ; SILKANE
  	mon_cry CRY_DIGLETT,     $020,  $040 ; MORPHOBIA
-	mon_cry CRY_GLIGAR,     -$045,  $120  ; TERRACHNID
+	mon_cry CRY_GLIGAR,     -$045,  $120 ; TERRACHNID
 	mon_cry CRY_GRIMER,      $100,  $100 ; SMUJJ
 	mon_cry CRY_NIDORAN_M,  -$0a3,  $091 ; KOALYPTUS
 	mon_cry CRY_CATERPIE,    $0a3,  $091 ; OREFRY
@@ -326,10 +326,9 @@ PokemonCries::
 	mon_cry CRY_TYPHLOSION, -$0B7,  $180 ; NECROREX
 	mon_cry CRY_PICHU,       $077,  $140 ; TODO: NURSSUM
 	mon_cry CRY_NONE,        $000,  $000 ; GESTICUTE
-	mon_cry CRY_VULPIX,      $0a1,  $090 ; RATTLIT
+	mon_cry CRY_VULPIX,      $0a1,  $069 ; RATTLIT
 	mon_cry CRY_MANTINE,    -$025,  $0d7 ; AUDINO
-	mon_cry CRY_GRIMER,      $055,  $081 ; MUNCHLAX
-
+	mon_cry CRY_WEEPINBELL, -$0D9,  $100 ; MUNCHLAX
 
 
 	;Beytah/new cries: Typhlosion, Pichu, Quagsire, Umbreon, Dunsparce, Sneasel, Houndour/Houndoom, Donphan, Coinpur, Katu, Adbarstork, Clefling, Mallody, Camouflake
