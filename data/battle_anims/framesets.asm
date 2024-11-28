@@ -198,8 +198,8 @@ BattleAnimFrameData:
 	dw .Frameset_ExplosionSmall      ; BATTLE_ANIM_FRAMESET_EXPLOSION_SMALL
 	dw .Frameset_BlurVerticalUp      ; BATTLE_ANIM_FRAMESET_BLUR_VERTICAL_UP
 	dw .Frameset_BlurVerticalDown    ; BATTLE_ANIM_FRAMESET_BLUR_VERTICAL_DOWN
-	dw .Frameset_LavaBurstSmoke      ; BATTLE_ANIM_FRAMESET_LAVA_BURST_SMOKE
-	dw .Frameset_BurnedShort         ; BATTLE_ANIM_FRAMESET_BURNED_SHORT
+;	dw .Frameset_LavaBurstSmoke      ; BATTLE_ANIM_FRAMESET_LAVA_BURST_SMOKE
+;	dw .Frameset_BurnedShort         ; BATTLE_ANIM_FRAMESET_BURNED_SHORT
 
 .Frameset_HitBig:
 	frame BATTLE_ANIM_OAMSET_00,  6
@@ -1339,18 +1339,18 @@ BattleAnimFrameData:
 	frame BATTLE_ANIM_OAMSET_DC, 32, OAM_X_FLIP, OAM_Y_FLIP
 	endanim
 	
-.Frameset_LavaBurstSmoke:
-	frame BATTLE_ANIM_OAMSET_03, 2
-	frame BATTLE_ANIM_OAMSET_11F , 2
-	frame BATTLE_ANIM_OAMSET_03, 2
-	delanim
-	
-.Frameset_BurnedShort:
-	frame BATTLE_ANIM_OAMSET_10,  4
-	frame BATTLE_ANIM_OAMSET_0F,  4
-	frame BATTLE_ANIM_OAMSET_0E,  4
-	frame BATTLE_ANIM_OAMSET_0A,  4
-	frame BATTLE_ANIM_OAMSET_0E,  4
-	frame BATTLE_ANIM_OAMSET_0A,  4
-	delanim
+;.Frameset_LavaBurstSmoke:
+;	frame BATTLE_ANIM_OAMSET_03, 2
+;	frame BATTLE_ANIM_OAMSET_DE , 2
+;	frame BATTLE_ANIM_OAMSET_03, 2
+;	delanim
+;	
+;.Frameset_BurnedShort:
+;	frame BATTLE_ANIM_OAMSET_10,  4
+;	frame BATTLE_ANIM_OAMSET_0F,  4
+;	frame BATTLE_ANIM_OAMSET_0E,  4
+;	frame BATTLE_ANIM_OAMSET_0A,  4
+;	frame BATTLE_ANIM_OAMSET_0E,  4
+;	frame BATTLE_ANIM_OAMSET_0A,  4
+;	delanim
 

@@ -1,4 +1,4 @@
-	db MUNCHLAX ; 252
+	db 0 ; species ID placeholder
 
 	db 135,  85,  40,   5,  40,  85
 	;   hp  atk  def  spd  sat  sdf

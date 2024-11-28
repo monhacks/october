@@ -50,6 +50,6 @@ AnimObjGFX:
 	anim_obj_gfx  9, AnimObjSmokePuffGFX
 	anim_obj_gfx  6, AnimObjSmallExplosionGFX
 	anim_obj_gfx 24, AnimObjBlurGFX
-	anim_obj_gfx 14, AnimObjSmokePuffBigGFX
+;	anim_obj_gfx 14, AnimObjSmokePuffBigGFX
 	anim_obj_gfx  1, NULL
 	anim_obj_gfx  1, NULL

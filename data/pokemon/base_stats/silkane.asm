@@ -1,4 +1,4 @@
-	db SILKANE ; 252
+	db 0 ; species ID placeholder
 
 	db  50,  45,  75,  10,  25,  75
 	;   hp  atk  def  spd  sat  sdf

@@ -1,4 +1,4 @@
-	db MOLAMBINO ; 193
+	db 0 ; species ID placeholder
 
 	db  55,  45,  65,  75,  75,  85
 	;   hp  atk  def  spd  sat  sdf

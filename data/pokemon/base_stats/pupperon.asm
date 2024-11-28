@@ -1,4 +1,4 @@
-	db PUPPERON ; 222
+	db 0 ; species ID placeholder
 
 	db  50,  65,  40,  50,  65,  45
 	;   hp  atk  def  spd  sat  sdf
@@ -19,5 +19,5 @@
 	; tm/hm learnset
 	tmhm HEADBUTT, CURSE, ROAR, TOXIC, ROCK_SMASH, HIDDEN_POWER, SUNNY_DAY, PROTECT, ENDURE, IRON_TAIL, DRAGONBREATH, RETURN, DIG, DOUBLE_TEAM, SWAGGER, SLEEP_TALK, FIRE_BLAST, SWIFT, REST, ATTRACT, FLAMETHROWER
 	; end
-	
+
 ;give Pupperon Megaphone when that is eventually added

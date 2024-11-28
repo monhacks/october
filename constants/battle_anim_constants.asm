@@ -240,8 +240,8 @@ BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLE_ANIM_OBJ_BLUR_VERTICAL_UP            ; cd
 	const BATTLE_ANIM_OBJ_BLUR_VERTICAL_DOWN          ; ce
 	const BATTLE_ANIM_OBJ_LAVA_BURST_SMOKE            ; cf
-	const BATTLE_ANIM_OBJ_ERUPTION_SMALL_FLAME        ; d0
-	const BATTLE_ANIM_OBJ_RADIAL_FLAME                ; d1
+;	const BATTLE_ANIM_OBJ_ERUPTION_SMALL_FLAME        ; d0
+;	const BATTLE_ANIM_OBJ_RADIAL_FLAME                ; d1
 
 ; DoBattleAnimFrame arguments (see engine/battle_anims/functions.asm)
 	const_def
@@ -328,7 +328,7 @@ BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLE_ANIM_FUNC_BUBBLE_SPLASH             ; 50
 	const BATTLE_ANIM_FUNC_RADIAL_MOVE_OUT           ; 51
 	const BATTLE_ANIM_FUNC_RADIAL_MOVE_IN            ; 52
-	const BATTLE_ANIM_FUNC_RADIAL_MOVE_OUT_SLOW      ; 53
+;	const BATTLE_ANIM_FUNC_RADIAL_MOVE_OUT_SLOW      ; 53
 
 ; BattleAnimFrameData indexes (see data/battle_anims/framesets.asm)
 	const_def
@@ -531,7 +531,7 @@ BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLE_ANIM_FRAMESET_BLUR_VERTICAL_UP      ; c4
 	const BATTLE_ANIM_FRAMESET_BLUR_VERTICAL_DOWN    ; c5
 	const BATTLE_ANIM_FRAMESET_LAVA_BURST_SMOKE      ; c6
-	const BATTLE_ANIM_FRAMESET_BURNED_SHORT          ; c7
+;	const BATTLE_ANIM_FRAMESET_BURNED_SHORT          ; c7
 
 ; BattleAnimOAMData indexes (see data/battle_anims/oam.asm)
 	const_def
@@ -756,7 +756,7 @@ BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLE_ANIM_OAMSET_DA
 	const BATTLE_ANIM_OAMSET_DB
 	const BATTLE_ANIM_OAMSET_DC
-	const BATTLE_ANIM_OAMSET_11F
+	const BATTLE_ANIM_OAMSET_DE
 
 ; BattleBGEffects indexes (see engine/battle_anims/bg_effects.asm)
 	const_def 1
@@ -859,7 +859,7 @@ BATTLEANIM_BASE_TILE EQU 7 * 7  ; Maximum size of a pokemon picture
 	const BATTLE_ANIM_GFX_SMOKE_PUFF        ; 29
 	const BATTLE_ANIM_GFX_SMALL_EXPLOSION   ; 2a
 	const BATTLE_ANIM_GFX_BLUR              ; 2b
-	const BATTLE_ANIM_GFX_SMOKE_PUFF_BIG    ; 2c
+;	const BATTLE_ANIM_GFX_SMOKE_PUFF_BIG    ; 2c
 
 
 ;- put new ANIM_GFX before this line -
@@ -926,6 +926,7 @@ NUM_BG_EFFECTS EQU 5 ; see wActiveBGEffects
 	const PAL_BTLCUSTOM_MIRROR_COAT     ; 12
 	const PAL_BTLCUSTOM_WILL_O_WISP     ; 13
 	const PAL_BTLCUSTOM_LAVA_BURST      ; 14
+	const PAL_BTLCUSTOM_LIME            ; 14
 NUM_CUSTOM_BATTLE_PALETTES EQU const_value
 
 PAL_BTLCUSTOM_DEFAULT EQU -1

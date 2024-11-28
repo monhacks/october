@@ -1,4 +1,4 @@
-	db MORPHOBIA ; 252
+	db 0 ; species ID placeholder
 
 	db  60,  85,  60,  95,  80,  60
 	;   hp  atk  def  spd  sat  sdf

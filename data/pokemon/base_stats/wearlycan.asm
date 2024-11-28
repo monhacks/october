@@ -1,4 +1,4 @@
-	db WEARLYCAN ; 247
+	db 0 ; species ID placeholder
 
 	db 70, 90, 80,  100, 70, 85
 	;   hp  atk  def  spd  sat  sdf

@@ -1,4 +1,4 @@
-	db KIWACKI ; 252
+	db 0 ; species ID placeholder
 
 	db 80,  85,  50,   95,  60,  50
 	;   hp  atk  def  spd  sat  sdf

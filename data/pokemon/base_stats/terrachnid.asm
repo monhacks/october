@@ -1,4 +1,4 @@
-	db TERRACHNID ; 252
+	db 0 ; species ID placeholder
 
 	db  75,  95,  35,  105,  45,  85
 	;   hp  atk  def  spd  sat  sdf

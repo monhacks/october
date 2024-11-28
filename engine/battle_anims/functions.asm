@@ -4149,7 +4149,7 @@ BattleAnimFunction_RadialMoveIn:
 	ld a, [hli]
 	ld d, a
 	ld e, [hl]
-	ld hl, -4.5
+	ld hl, -4
 	add hl, de
 	jp nc, DeinitBattleAnimation
 	ld e, l

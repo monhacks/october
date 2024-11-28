@@ -414,7 +414,7 @@ AskTeachTMHM: ; 2c7bf (b:47bf)
 	call CopyName1
 	ld hl, Text_BootedTM ; Booted up a TM
 	ld a, [wCurTMHM]
-	cp HM01
+	cp CUT
 	jr c, .TM
 	ld hl, Text_BootedHM ; Booted up an HM
 .TM:

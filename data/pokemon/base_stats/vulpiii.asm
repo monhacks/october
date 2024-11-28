@@ -1,4 +1,4 @@
-	db VULPIII ; 200
+	db 0 ; species ID placeholder
 
 	db  25,  28,  27,  50,  35,  50
 	;   hp  atk  def  spd  sat  sdf

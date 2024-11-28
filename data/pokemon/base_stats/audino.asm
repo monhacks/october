@@ -5,7 +5,7 @@
 
 	db NORMAL, NORMAL ; type
 	db 255 ; catch rate
-	db 390 ; base exp
+	db 255 ; base exp ; was 390 in gen 5
 	dw BERRY, APPLE ; items
 	db GENDER_F50 ; gender ratio
 	db 100 ; unknown 1

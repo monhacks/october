@@ -1,4 +1,4 @@
-	db DODAERIE ; 241
+	db 0 ; species ID placeholder
 
 	db  30,  70,  40,  65,  30,  30
 	;   hp  atk  def  spd  sat  sdf
