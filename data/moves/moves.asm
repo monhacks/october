@@ -295,4 +295,6 @@ Moves1:
 	move EFFECT_ALWAYS_HIT,         60, STEEL,    100, 20,   0 ; MAGNET_BOMB
 	move EFFECT_BURN_HIT,           80, FIRE,      30, 15,   0 ; LAVA_BURST
 	move EFFECT_MIRROR_MOVE,         0, NORMAL,   100, 20,   0 ; ECHO
+	move EFFECT_MULTI_HIT,          25, NORMAL,    85, 10,   0 ; DOUBLESLAP
+
 

@@ -281,3 +281,4 @@ MoveNames::
 	move_name "MAGNET BOMB"
 	move_name "LAVA BURST"
 	move_name "ECHO"
+	move_name "TAIL SLAP"

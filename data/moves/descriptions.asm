@@ -281,6 +281,7 @@ MoveDescriptions1:
 	dw MagnetBombDescription
 	dw LavaBurstDescription
 	dw EchoDescription
+	dw TailSlapDescription
 .End:
 	
 InvalidMoveDescription:
@@ -295,6 +296,7 @@ KarateChopDescription:
 	db   "Has a high criti-"
 	next "cal hit ratio.@"
 
+TailSlapDescription:
 DoubleslapDescription:
 	db   "Repeatedly slaps"
 	next "2-5 times.@"

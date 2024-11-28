@@ -282,6 +282,33 @@
 	const MAGNET_BOMB
 	const LAVA_BURST
 	const ECHO
+	const TAIL_SLAP
+;   const MUDDY_RIVER
+;	const SHADOW_PUNCH
+;	const FREEZE_DRY
+;	const SHADOW_PUNCH
+;	const EARTH_DRILL
+;	const TOXIC_LEECH
+;	const EERIE_LIGHT
+;	const STAR_FREEZE
+;	const MYSTIC_HORNS
+;	const HORN_ASSAULT
+;	const STUN_CUT
+;	const STEAM_BLAST
+;	const FLOODLIGHT
+;	const TOXIC_LASH
+;	const IRON_HEAD
+;	const REVELATION
+;	const WINTER_CLAW
+;	const DUAL_CUTTER
+;	const THUNDER_JOLT
+;	const DEEP_DIVE
+;	const ICE_BALL
+;	const EXIT_PATH
+;	const ICE_MIST
+;	const MILK_TIME
+;	const TANTRUM
+;	const SONIC_SCREAM
 NUM_ATTACKS EQU const_value + -1
 
 	if NUM_ATTACKS > $3fff

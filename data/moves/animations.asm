@@ -304,6 +304,7 @@ BattleAnimations::
 	dw BattleAnim_MagnetBomb
 	dw BattleAnim_LavaBurst
 	dw BattleAnim_Echo
+	dw BattleAnim_TailSlap
 	dw BattleAnim_HeldItemTrigger
 .End:
 
@@ -323,6 +324,7 @@ BattleAnim_Uproot:
 BattleAnim_Terrorize:
 BattleAnim_Blindside:
 BattleAnim_EvilEye:
+BattleAnim_TailSlap:
 	anim_ret
 
 BattleAnim_HeldItemTrigger:
