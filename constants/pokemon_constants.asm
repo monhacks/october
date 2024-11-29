@@ -343,7 +343,8 @@ JOHTO_POKEMON EQU const_value
 	const RATTLIT
 	const AUDINO
 	const MUNCHLAX
-
+	const MINCCINO
+	const CINCCINO
 NUM_POKEMON EQU const_value + -1
 
 EGG EQU -3

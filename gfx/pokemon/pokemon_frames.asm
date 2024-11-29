@@ -330,3 +330,7 @@ RattlitFrames:    INCLUDE "gfx/pokemon/rattlit/frames.asm"
 AudinoFrames:     INCLUDE "gfx/pokemon/audino/frames.asm"
 MunchlaxFrames:   INCLUDE "gfx/pokemon/munchlax/frames.asm"
 PoryginFrames:    INCLUDE "gfx/pokemon/porygin/frames.asm"
+MinccinoFrames:   INCLUDE "gfx/pokemon/minccino/frames.asm"
+CinccinoFrames:   INCLUDE "gfx/pokemon/cinccino/frames.asm"
+
+

@@ -219,4 +219,6 @@ CantFollowList:
 	dw GESTICUTE
 	dw RATTLIT
 	dw AUDINO
+	dw MINCCINO
+	dw CINCCINO
 	dw -1

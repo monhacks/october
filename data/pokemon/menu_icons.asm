@@ -323,6 +323,8 @@ MonMenuIcons:
 	db ICON_MISDREAVUS  ; RATTLIT
 	db ICON_CHANSEY     ; AUDINO
 	db ICON_SNORLAX     ; MUNCHLAX
+	db ICON_SENTRET     ; MINCCINO
+	db ICON_FURRET      ; CINCCINO
 
 ; -----------------------------
 	db ICON_EGG         ; EGG

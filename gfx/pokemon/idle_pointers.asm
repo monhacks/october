@@ -321,5 +321,5 @@ AnimationIdlePointers:
 	dw RattlitAnimationIdle
 	dw AudinoAnimationIdle
 	dw MunchlaxAnimationIdle
-
-
+	dw MinccinoAnimationIdle
+	dw CinccinoAnimationIdle

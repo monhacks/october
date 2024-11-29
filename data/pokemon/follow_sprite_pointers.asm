@@ -455,6 +455,6 @@ FollowSpritePointers::
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BROWN ;RATTLIT
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_JIGGLYPUFF ;AUDINO
 	follow_sprite MunchlaxSpriteGFX, PAL_FOLLOWER_BLUE ;MUNCHLAX
-
-
+	follow_sprite MunchlaxSpriteGFX, PAL_FOLLOWER_BLUE ;MINCCINO
+	follow_sprite MunchlaxSpriteGFX, PAL_FOLLOWER_BLUE ;CINCCINO
 

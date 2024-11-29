@@ -320,6 +320,8 @@ GesticuteAnimationIdle:  INCLUDE "gfx/pokemon/gesticute/anim_idle.asm"
 RattlitAnimationIdle:    INCLUDE "gfx/pokemon/rattlit/anim_idle.asm"
 AudinoAnimationIdle:     INCLUDE "gfx/pokemon/audino/anim_idle.asm"
 MunchlaxAnimationIdle:   INCLUDE "gfx/pokemon/munchlax/anim_idle.asm"
+MinccinoAnimationIdle:   INCLUDE "gfx/pokemon/minccino/anim_idle.asm"
+CinccinoAnimationIdle:   INCLUDE "gfx/pokemon/cinccino/anim_idle.asm"
 
 ;---------------------------------------------------------------
 EggAnimationIdle:        INCLUDE "gfx/pokemon/egg/anim_idle.asm"

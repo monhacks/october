@@ -42,6 +42,7 @@ AlphabeticalPokedexOrder:
 	dw CHIKORITA
 	dw CHINCHOU
 	dw CHOMOSWINE
+	dw CINCCINO
 	dw CLEFABLE
 	dw CLEFAIRY
 	dw CLEFFA
@@ -173,6 +174,7 @@ AlphabeticalPokedexOrder:
 	dw MEWTWO
 	dw MILTANK
 	dw MIMENTOR
+	dw MINCCINO
 	dw MISDREAVUS
 	dw MOIBELLE
 	dw MOLAMBINO

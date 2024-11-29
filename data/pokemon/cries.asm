@@ -329,6 +329,9 @@ PokemonCries::
 	mon_cry CRY_VULPIX,      $0a1,  $069 ; RATTLIT
 	mon_cry CRY_MANTINE,    -$025,  $0d7 ; AUDINO
 	mon_cry CRY_WEEPINBELL, -$0D9,  $100 ; MUNCHLAX
+	mon_cry CRY_SENTRET,     $0b0,  $0b8 ; MINCCINO
+	mon_cry CRY_CLEFFA,      $0b0,  $190 ; CINCCINO
+
 
 
 	;Beytah/new cries: Typhlosion, Pichu, Quagsire, Umbreon, Dunsparce, Sneasel, Houndour/Houndoom, Donphan, Coinpur, Katu, Adbarstork, Clefling, Mallody, Camouflake

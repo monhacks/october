@@ -322,6 +322,8 @@ PokedexDataPointerTable:
 	dba RattlitPokedexEntry
 	dba AudinoPokedexEntry
 	dba MunchlaxPokedexEntry
+	dba MinccinoPokedexEntry
+	dba CinccinoPokedexEntry
 
 ;-------------------------------------------------------
 _NUM_POKEDEX_ENTRIES = (@ - PokedexDataPointerTable) / 3

@@ -323,5 +323,5 @@ INCBIN "gfx/footprints/gesticute.1bpp"
 INCBIN "gfx/footprints/rattlit.1bpp"
 INCBIN "gfx/footprints/audino.1bpp"
 INCBIN "gfx/footprints/munchlax.1bpp"
-
-
+INCBIN "gfx/footprints/minccino.1bpp"
+INCBIN "gfx/footprints/cinccino.1bpp"

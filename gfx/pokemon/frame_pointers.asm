@@ -321,3 +321,5 @@ FramesPointers:
 	dba RattlitFrames
 	dba AudinoFrames
 	dba MunchlaxFrames
+	dba MinccinoFrames
+	dba CinccinoFrames

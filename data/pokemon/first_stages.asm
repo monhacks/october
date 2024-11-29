@@ -322,6 +322,8 @@ FirstEvoStages::
 	dw RATTLIT
 	dw AUDINO
 	dw MUNCHLAX
+	dw MINCCINO
+	dw MINCCINO
 
 
 

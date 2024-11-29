@@ -262,6 +262,8 @@ HabitatPokedexOrder:
 	dw DODRIO
 	dw FARFETCH_D
 	dw LUXSWAN
+	dw MINCCINO
+	dw CINCCINO
 
 ; URBAN
 	dw SMUJJ

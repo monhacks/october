@@ -423,4 +423,6 @@ RattlitFrontpicAnim:       INCBIN "gfx/pokemon/rattlit/front.animated.2bpp.lz"
 AudinoFrontpicAnim:        INCBIN "gfx/pokemon/audino/front.animated.2bpp.lz"
 MunchlaxFrontpicAnim:      INCBIN "gfx/pokemon/munchlax/front.animated.2bpp.lz"
 PoryginFrontpicAnim:       INCBIN "gfx/pokemon/porygin/front.animated.2bpp.lz"
+MinccinoFrontpicAnim:      INCBIN "gfx/pokemon/minccino/front.animated.2bpp.lz"
+CinccinoFrontpicAnim:      INCBIN "gfx/pokemon/cinccino/front.animated.2bpp.lz"
 

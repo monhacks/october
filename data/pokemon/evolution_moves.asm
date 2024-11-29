@@ -321,6 +321,8 @@ EvolutionMoves::
 	dw NO_MOVE      ; RATTLIT
 	dw NO_MOVE      ; AUDINO
 	dw NO_MOVE      ; MUNCHLAX
+	dw NO_MOVE      ; MINCCINO
+	dw NO_MOVE      ; CINCCINO
 
 ;----------------------------------
 _NUM_EVO_MOVES = (@ - EvolutionMoves) / 2

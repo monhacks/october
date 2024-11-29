@@ -46,6 +46,8 @@ EvosAttacksPointers3::
 	dw RattlitEvosAttacks
 	dw AudinoEvosAttacks
 	dw MunchlaxEvosAttacks
+	dw MinccinoEvosAttacks
+	dw CinccinoEvosAttacks
 .End:
 
 StantlerEvosAttacks:
@@ -720,6 +722,39 @@ MunchlaxEvosAttacks:
 	dbw 48, CURSE
 	dbw 56, BELLY_DRUM
 	dbw 64, HYPER_BEAM
+	db 0 ; no more level-up moves
+	
+MinccinoEvosAttacks:
+	dbbw EVOLVE_ITEM, HEART_STONE, CINCCINO
+	db 0 ; no more evolutions
+	dbw 1, POUND
+	dbw 1, GROWL
+	dbw 7, DOUBLESLAP
+	dbw 12, ENCORE
+	dbw 16, SWIFT
+	dbw 20, SING
+	dbw 25, KARATE_CHOP
+	dbw 32, TAIL_SLAP
+	dbw 40, SNORE
+	dbw 43, DIG
+;	dbw 47, SONIC_SCREAM
+	dbw 52, IRON_TAIL
+	db 0 ; no more level-up moves
+	
+CinccinoEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, POUND
+	dbw 1, GROWL
+	dbw 7, DOUBLESLAP
+	dbw 12, ENCORE
+	dbw 16, SWIFT
+	dbw 20, SING
+	dbw 25, KARATE_CHOP
+	dbw 32, TAIL_SLAP
+	dbw 40, SNORE
+	dbw 43, DIG
+;	dbw 47, SONIC_SCREAM
+	dbw 52, IRON_TAIL
 	db 0 ; no more level-up moves
 
 ;---------------------------------------------------------------------------------------------

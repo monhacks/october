@@ -52,6 +52,8 @@ NewPokedexOrder:
 	dw ZUBAT
 	dw GOLBAT
 	dw CROBAT
+	dw MINCCINO
+	dw CINCCINO
 	dw CLEFFA
 	dw CLEFAIRY
 	dw CLEFABLE

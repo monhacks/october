@@ -320,6 +320,8 @@ GesticuteAnimation:  INCLUDE "gfx/pokemon/gesticute/anim.asm"
 RattlitAnimation:    INCLUDE "gfx/pokemon/rattlit/anim.asm"
 AudinoAnimation:     INCLUDE "gfx/pokemon/audino/anim.asm"
 MunchlaxAnimation:   INCLUDE "gfx/pokemon/munchlax/anim.asm"
+MinccinoAnimation:   INCLUDE "gfx/pokemon/minccino/anim.asm"
+CinccinoAnimation:   INCLUDE "gfx/pokemon/cinccino/anim.asm"
 
 
 

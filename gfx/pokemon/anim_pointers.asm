@@ -321,3 +321,6 @@ AnimationPointers:
 	dw RattlitAnimation
 	dw AudinoAnimation
 	dw MunchlaxAnimation
+	dw MinccinoAnimation
+	dw CinccinoAnimation
+	
