@@ -331,7 +331,8 @@ PokemonCries::
 	mon_cry CRY_WEEPINBELL, -$0D9,  $100 ; MUNCHLAX
 	mon_cry CRY_SENTRET,     $0b0,  $0b8 ; MINCCINO
 	mon_cry CRY_CLEFFA,      $0b0,  $190 ; CINCCINO
-
+	mon_cry CRY_RATTATA,     $000,  $050 ; SPHEAL
+	mon_cry CRY_NIDORAN_M,   $000,  $100 ; SHURICORN: TODO
 
 
 	;Beytah/new cries: Typhlosion, Pichu, Quagsire, Umbreon, Dunsparce, Sneasel, Houndour/Houndoom, Donphan, Coinpur, Katu, Adbarstork, Clefling, Mallody, Camouflake

@@ -341,6 +341,8 @@ PokemonPicPointers::
 	mon_pic Munchlax
 	mon_pic Minccino
 	mon_pic Cinccino
+	mon_pic Spheal
+	mon_pic Shuricorn
 
 ;------------------------------------------------
 _NUM_POKEMON_PICS = (@ - PokemonPicPointers) / 9 - 1

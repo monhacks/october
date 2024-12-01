@@ -322,6 +322,9 @@ AudinoBitmasks:     INCLUDE "gfx/pokemon/audino/bitmask.asm"
 MunchlaxBitmasks:   INCLUDE "gfx/pokemon/munchlax/bitmask.asm"
 MinccinoBitmasks:   INCLUDE "gfx/pokemon/minccino/bitmask.asm"
 CinccinoBitmasks:   INCLUDE "gfx/pokemon/cinccino/bitmask.asm"
+SphealBitmasks:     INCLUDE "gfx/pokemon/spheal/bitmask.asm"
+ShuricornBitmasks:  INCLUDE "gfx/pokemon/shuricorn/bitmask.asm"
+
 
 
 ;--------------------------------------------------------

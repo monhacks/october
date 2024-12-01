@@ -678,6 +678,10 @@ INCBIN "gfx/pokemon/minccino/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/minccino/shiny.pal"
 INCBIN "gfx/pokemon/cinccino/front.gbcpal", middle_colors
 INCLUDE "gfx/pokemon/cinccino/shiny.pal"
+INCBIN "gfx/pokemon/spheal/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/spheal/shiny.pal"
+INCBIN "gfx/pokemon/shuricorn/front.gbcpal", middle_colors
+INCLUDE "gfx/pokemon/shuricorn/shiny.pal"
 
 ;--------------------------------------------------------
 _NUM_POKEMON_PALETTES = (@ - PokemonPalettes) / 8 - 1

@@ -380,6 +380,8 @@ INCLUDE "data/pokemon/base_stats/audino.asm"
 INCLUDE "data/pokemon/base_stats/munchlax.asm"
 INCLUDE "data/pokemon/base_stats/minccino.asm"
 INCLUDE "data/pokemon/base_stats/cinccino.asm"
+INCLUDE "data/pokemon/base_stats/spheal.asm"
+INCLUDE "data/pokemon/base_stats/shuricorn.asm"
 
 ;------------------------------------
 _NUM_BASE_STATS = (@ - BaseData1)/$27

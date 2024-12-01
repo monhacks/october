@@ -323,4 +323,5 @@ AnimationPointers:
 	dw MunchlaxAnimation
 	dw MinccinoAnimation
 	dw CinccinoAnimation
-	
+	dw SphealAnimation
+	dw ShuricornAnimation

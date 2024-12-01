@@ -345,6 +345,8 @@ JOHTO_POKEMON EQU const_value
 	const MUNCHLAX
 	const MINCCINO
 	const CINCCINO
+	const SPHEAL
+	const SHURICORN
 NUM_POKEMON EQU const_value + -1
 
 EGG EQU -3

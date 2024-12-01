@@ -322,6 +322,9 @@ AudinoAnimationIdle:     INCLUDE "gfx/pokemon/audino/anim_idle.asm"
 MunchlaxAnimationIdle:   INCLUDE "gfx/pokemon/munchlax/anim_idle.asm"
 MinccinoAnimationIdle:   INCLUDE "gfx/pokemon/minccino/anim_idle.asm"
 CinccinoAnimationIdle:   INCLUDE "gfx/pokemon/cinccino/anim_idle.asm"
+SphealAnimationIdle:     INCLUDE "gfx/pokemon/spheal/anim_idle.asm"
+ShuricornAnimationIdle:  INCLUDE "gfx/pokemon/shuricorn/anim_idle.asm"
+
 
 ;---------------------------------------------------------------
 EggAnimationIdle:        INCLUDE "gfx/pokemon/egg/anim_idle.asm"

@@ -145,6 +145,7 @@ NewPokedexOrder:
 	dw SMUJJ
 	dw GRIMER
 	dw MUK
+	dw SHURICORN
 	dw MAGNEMITE
 	dw MAGNETON
 	dw VOLTORB
@@ -221,6 +222,7 @@ NewPokedexOrder:
 	dw ANGORE
 	dw SEEL
 	dw DEWGONG
+	dw SPHEAL
 	dw LICKITUNG
 	dw LICKILICKY
 	dw BURGELA

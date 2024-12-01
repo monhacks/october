@@ -325,6 +325,8 @@ MonMenuIcons:
 	db ICON_SNORLAX     ; MUNCHLAX
 	db ICON_SENTRET     ; MINCCINO
 	db ICON_FURRET      ; CINCCINO
+	db ICON_VOLTORB     ; SPHEAL
+	db ICON_GLIGAR      ; SHURICORN
 
 ; -----------------------------
 	db ICON_EGG         ; EGG

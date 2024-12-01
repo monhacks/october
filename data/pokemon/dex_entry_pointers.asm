@@ -324,6 +324,8 @@ PokedexDataPointerTable:
 	dba MunchlaxPokedexEntry
 	dba MinccinoPokedexEntry
 	dba CinccinoPokedexEntry
+	dba SphealPokedexEntry
+	dba ShuricornPokedexEntry
 
 ;-------------------------------------------------------
 _NUM_POKEDEX_ENTRIES = (@ - PokedexDataPointerTable) / 3

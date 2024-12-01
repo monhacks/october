@@ -7,6 +7,7 @@ AlphabeticalPokedexOrder:
 	dw AERODACTYL
 	dw AGGROSWINE
 	dw AIPOM
+	dw AIRMOR
 	dw ALAKAZAM
 	dw ALUMAIDEN
 	dw AMPHAROS
@@ -253,8 +254,8 @@ AlphabeticalPokedexOrder:
 	dw SHELLDER
 	dw SHUCKLE
 	dw SHUQLOUR
+	dw SHURICORN
 	dw SILKANE
-	dw AIRMOR
 	dw SKIPLOOM
 	dw SLOWBRO
 	dw SLOWKING
@@ -268,6 +269,7 @@ AlphabeticalPokedexOrder:
 	dw SNOUWRBUN
 	dw SNUBBULL
 	dw SPEAROW
+	dw SPHEAL
 	dw SPINARAK
 	dw SQUIRTLE
 	dw STANTLER

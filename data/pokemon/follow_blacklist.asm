@@ -221,4 +221,6 @@ CantFollowList:
 	dw AUDINO
 	dw MINCCINO
 	dw CINCCINO
+	dw SPHEAL
+	dw SHURICORN
 	dw -1

@@ -798,6 +798,8 @@ OrijoeyFrontpic:	INCBIN "gfx/pokemon/orijoey/front.static.2bpp.lz"
 OrijoeyBackpic:	    INCBIN "gfx/pokemon/orijoey/back.2bpp.lz"
 AggroswineFrontpic:	INCBIN "gfx/pokemon/aggroswine/front.static.2bpp.lz"
 AggroswineBackpic:	INCBIN "gfx/pokemon/aggroswine/back.2bpp.lz"
+ShuricornFrontpic:	INCBIN "gfx/pokemon/shuricorn/front.static.2bpp.lz"
+ShuricornBackpic:   INCBIN "gfx/pokemon/shuricorn/back.2bpp.lz"
 
 SECTION "Pics 24", ROMX
 
@@ -851,8 +853,6 @@ ValhaldraFrontpic:	INCBIN "gfx/pokemon/valhaldra/front.static.2bpp.lz"
 ValhaldraBackpic:   INCBIN "gfx/pokemon/valhaldra/back.2bpp.lz"
 KomaitiffFrontpic:	INCBIN "gfx/pokemon/komaitiff/front.static.2bpp.lz"
 KomaitiffBackpic:   INCBIN "gfx/pokemon/komaitiff/back.2bpp.lz"
-KukulcanFrontpic:	INCBIN "gfx/pokemon/kukulcan/front.static.2bpp.lz"
-KukulcanBackpic:    INCBIN "gfx/pokemon/kukulcan/back.2bpp.lz"
 
 SECTION "Pics 26", ROMX
 
@@ -877,5 +877,9 @@ MinccinoFrontpic:	INCBIN "gfx/pokemon/minccino/front.static.2bpp.lz"
 MinccinoBackpic:    INCBIN "gfx/pokemon/minccino/back.2bpp.lz"
 CinccinoFrontpic:	INCBIN "gfx/pokemon/cinccino/front.static.2bpp.lz"
 CinccinoBackpic:    INCBIN "gfx/pokemon/cinccino/back.2bpp.lz"
+SphealFrontpic:	    INCBIN "gfx/pokemon/spheal/front.static.2bpp.lz"
+SphealBackpic:      INCBIN "gfx/pokemon/spheal/back.2bpp.lz"
+KukulcanFrontpic:	INCBIN "gfx/pokemon/kukulcan/front.static.2bpp.lz"
+KukulcanBackpic:    INCBIN "gfx/pokemon/kukulcan/back.2bpp.lz"
 
 INCLUDE "gfx/pics_animated.asm"

@@ -323,4 +323,6 @@ BitmasksPointers:
 	dw MunchlaxBitmasks
 	dw MinccinoBitmasks
 	dw CinccinoBitmasks
+	dw SphealBitmasks
+	dw ShuricornBitmasks
 

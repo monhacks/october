@@ -323,3 +323,5 @@ AnimationIdlePointers:
 	dw MunchlaxAnimationIdle
 	dw MinccinoAnimationIdle
 	dw CinccinoAnimationIdle
+	dw SphealAnimationIdle
+	dw ShuricornAnimationIdle

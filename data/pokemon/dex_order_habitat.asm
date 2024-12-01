@@ -100,6 +100,7 @@ HabitatPokedexOrder:
 	dw LEAFEON
 	dw KUKULCAN
 	dw GESTICUTE
+	dw SHURICORN
 
 ; MOUNTAIN
 	dw ONIX
@@ -136,6 +137,7 @@ HabitatPokedexOrder:
 	dw GLIGAR
 	dw DELIBIRD
 	dw STANTLER
+	dw SPHEAL
 
 ; WATER/PLANT
 	dw SQUIRTLE

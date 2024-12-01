@@ -371,6 +371,7 @@ OrijoeyFrontpicAnim:       INCBIN "gfx/pokemon/orijoey/front.animated.2bpp.lz"
 AggroswineFrontpicAnim:    INCBIN "gfx/pokemon/aggroswine/front.animated.2bpp.lz"
 LuxswanFrontpicAnim:       INCBIN "gfx/pokemon/luxswan/front.animated.2bpp.lz"
 
+
 SECTION "Pics 24 Animated", ROMX
 
 GermifrostFrontpicAnim:    INCBIN "gfx/pokemon/germifrost/front.animated.2bpp.lz"
@@ -425,4 +426,9 @@ MunchlaxFrontpicAnim:      INCBIN "gfx/pokemon/munchlax/front.animated.2bpp.lz"
 PoryginFrontpicAnim:       INCBIN "gfx/pokemon/porygin/front.animated.2bpp.lz"
 MinccinoFrontpicAnim:      INCBIN "gfx/pokemon/minccino/front.animated.2bpp.lz"
 CinccinoFrontpicAnim:      INCBIN "gfx/pokemon/cinccino/front.animated.2bpp.lz"
+
+SECTION "Pics 26 Animated", ROMX
+
+SphealFrontpicAnim:        INCBIN "gfx/pokemon/spheal/front.animated.2bpp.lz"
+ShuricornFrontpicAnim:     INCBIN "gfx/pokemon/shuricorn/front.animated.2bpp.lz"
 

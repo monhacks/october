@@ -322,7 +322,8 @@ AudinoAnimation:     INCLUDE "gfx/pokemon/audino/anim.asm"
 MunchlaxAnimation:   INCLUDE "gfx/pokemon/munchlax/anim.asm"
 MinccinoAnimation:   INCLUDE "gfx/pokemon/minccino/anim.asm"
 CinccinoAnimation:   INCLUDE "gfx/pokemon/cinccino/anim.asm"
-
+SphealAnimation:     INCLUDE "gfx/pokemon/spheal/anim.asm"
+ShuricornAnimation:  INCLUDE "gfx/pokemon/shuricorn/anim.asm"
 
 
 ;------------------------------------------------------

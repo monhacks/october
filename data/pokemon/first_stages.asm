@@ -324,6 +324,8 @@ FirstEvoStages::
 	dw MUNCHLAX
 	dw MINCCINO
 	dw MINCCINO
+	dw SPHEAL
+	dw SHURICORN
 
 
 

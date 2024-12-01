@@ -48,6 +48,8 @@ EvosAttacksPointers3::
 	dw MunchlaxEvosAttacks
 	dw MinccinoEvosAttacks
 	dw CinccinoEvosAttacks
+	dw SphealEvosAttacks
+	dw ShuricornEvosAttacks
 .End:
 
 StantlerEvosAttacks:
@@ -755,6 +757,39 @@ CinccinoEvosAttacks:
 	dbw 43, DIG
 ;	dbw 47, SONIC_SCREAM
 	dbw 52, IRON_TAIL
+	db 0 ; no more level-up moves
+	
+SphealEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, GROWL
+	dbw 1, RAPID_SPIN
+	dbw 4, POWDER_SNOW
+	dbw 10, DEFENSE_CURL
+	dbw 14, ROLLOUT
+;	dbw 14, ICE_BALL
+	dbw 20, TAKE_DOWN
+	dbw 24, ENCORE
+	dbw 30, ROCK_SLIDE
+	dbw 34, REST
+	dbw 40, ICE_BEAM
+	dbw 44, EARTHQUAKE
+	dbw 50, ROCK_HEAD
+	db 0 ; no more level-up moves
+	
+ShuricornEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, QUICK_ATTACK
+	dbw 1, LEER
+	dbw 1, CUT
+	dbw 5, SWIFT
+	dbw 12, SMOKESCREEN
+	dbw 17, MACH_PUNCH
+	dbw 24, DOUBLE_TEAM
+	dbw 29, FLY
+	dbw 36, EXTREMESPEED
+;	dbw 41, STUN_CUT
+	dbw 48, SWORDS_DANCE
+	dbw 53, ROCK_SLASH
 	db 0 ; no more level-up moves
 
 ;---------------------------------------------------------------------------------------------

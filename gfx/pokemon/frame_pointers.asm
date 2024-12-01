@@ -323,3 +323,5 @@ FramesPointers:
 	dba MunchlaxFrames
 	dba MinccinoFrames
 	dba CinccinoFrames
+	dba SphealFrames
+	dba ShuricornFrames

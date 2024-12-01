@@ -332,5 +332,6 @@ MunchlaxFrames:   INCLUDE "gfx/pokemon/munchlax/frames.asm"
 PoryginFrames:    INCLUDE "gfx/pokemon/porygin/frames.asm"
 MinccinoFrames:   INCLUDE "gfx/pokemon/minccino/frames.asm"
 CinccinoFrames:   INCLUDE "gfx/pokemon/cinccino/frames.asm"
-
+SphealFrames:     INCLUDE "gfx/pokemon/spheal/frames.asm"
+ShuricornFrames:  INCLUDE "gfx/pokemon/shuricorn/frames.asm"
 

@@ -323,6 +323,9 @@ EvolutionMoves::
 	dw NO_MOVE      ; MUNCHLAX
 	dw NO_MOVE      ; MINCCINO
 	dw NO_MOVE      ; CINCCINO
+	dw NO_MOVE      ; SPHEAL
+	dw NO_MOVE      ; SHURICORN
+
 
 ;----------------------------------
 _NUM_EVO_MOVES = (@ - EvolutionMoves) / 2
