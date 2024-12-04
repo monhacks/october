@@ -265,6 +265,7 @@ MoibelleEggMoves:
 	dw BEAT_UP
 	dw SING
 	dw SWEET_KISS
+	dw PAY_DAY
 	dw -1 ; end
 
 ChinchouEggMoves:

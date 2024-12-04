@@ -184,7 +184,7 @@ Rival1Group:
 	next_party ; RIVAL1 (4)
 		db "?@", TRAINERTYPE_NORMAL
 		dbw 12, SENTRET
-		dbw 12, ZUBAT
+		dbw 12, EEVEE
 		dbw 13, PHANPY
 		dbw 13, CHIKORITA
 	end_party
@@ -192,7 +192,7 @@ Rival1Group:
 	next_party ; RIVAL1 (5)
 		db "?@", TRAINERTYPE_NORMAL
 		dbw 12, SENTRET
-		dbw 12, ZUBAT
+		dbw 12, EEVEE
 		dbw 13, PHANPY
 		dbw 13, CYNDAQUIL
 	end_party
@@ -200,7 +200,7 @@ Rival1Group:
 	next_party ; RIVAL1 (6)
 		db "?@", TRAINERTYPE_NORMAL
 		dbw 12, SENTRET
-		dbw 12, ZUBAT
+		dbw 12, EEVEE
 		dbw 13, PHANPY
 		dbw 13, TOTODILE
 	end_party
@@ -209,15 +209,15 @@ Rival1Group:
 		db "?@", TRAINERTYPE_NORMAL
 		dbw 21, PHANPY
 		dbw 21, VULPIX
-		dbw 22, GOLBAT
+		dbw 22, EEVEE
 		dbw 22, PETAMOLE
 	end_party
 
 	next_party ; RIVAL1 (8)
 		db "?@", TRAINERTYPE_NORMAL
 		dbw 21, PHANPY
-		dbw 21, MOLAMBINO
-		dbw 22, GOLBAT
+		dbw 21, POLIWAG
+		dbw 22, EEVEE
 		dbw 22, QUILAVA
 	end_party
 
@@ -225,7 +225,7 @@ Rival1Group:
 		db "?@", TRAINERTYPE_NORMAL
 		dbw 21, PHANPY
 		dbw 21, TANGELA
-		dbw 22, GOLBAT
+		dbw 22, EEVEE
 		dbw 22, CROCONAW
 	end_party
 

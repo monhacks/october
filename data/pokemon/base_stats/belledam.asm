@@ -14,7 +14,7 @@
 	INCBIN "gfx/pokemon/belledam/front.dimensions"
 	db 0, 0, 0, 0 ; padding
 	db GROWTH_MEDIUM_FAST ; growth rate
-	dn EGG_GROUND, EGG_GROUND ; egg groups
+	dn EGG_GROUND, EGG_FAIRY ; egg groups
 
 	; tm/hm learnset
 	tmhm MUD_SLAP, HEADBUTT, ROAR, HIDDEN_POWER, HYPER_BEAM, PROTECT, ENDURE, RETURN, DOUBLE_TEAM, SWIFT, ATTRACT, REST, THIEF, SHADOW_BALL, UPROOT, TOXIC, SWAGGER

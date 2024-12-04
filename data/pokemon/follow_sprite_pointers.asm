@@ -89,6 +89,8 @@ FollowSpritePalettes::
 	dw .Mallody
 	const PAL_FOLLOWER_ARIADOS
 	dw .Ariados
+	const PAL_FOLLOWER_NATU
+	dw .Natu
 	
 .Red:      RGB 31,31,31, 31,19,10, 31,07,01, 00,00,00
 .Blue:     RGB 31,31,31, 31,19,10, 10,09,31, 00,00,00
@@ -130,6 +132,7 @@ FollowSpritePalettes::
 .Hoppip: RGB 31,31,31, 31,31,31, 08, 18,07, 00,00,00
 .Mallody: RGB 31,31,31, 31,31,31, 10,09,31, 00,00,00
 .Ariados: RGB 31,31,31, 31,07,01, 21,15,23, 00,00,00
+.Natu: RGB 31,31,31, 10,23,13, 09,14,19, 00,00,00
 
 FollowSpritePointers::
 	follow_sprite BulbasaurSpriteGFX, PAL_FOLLOWER_BULBASAUR ;BULBASAUR
@@ -327,9 +330,9 @@ FollowSpritePointers::
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;BIPULLA
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;GIRAFARIG
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;TOPSYSPOT
-	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_GREEN ;NATU
-	follow_sprite KatuSpriteGFX, PAL_FOLLOWER_GREEN ;KATU
-	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_GREEN ;XATU
+	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_NATU ;NATU
+	follow_sprite KatuSpriteGFX, PAL_FOLLOWER_NATU ;KATU
+	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_NATU ;XATU
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;MAREEP
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;FLAAFFY
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;AMPHAROS
@@ -346,7 +349,7 @@ FollowSpritePointers::
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;SUDOWOODO
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;POLITOED
 	follow_sprite HoppipSpriteGFX, PAL_FOLLOWER_HOPPIP ;HOPPIP
-	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;SKIPLOOM
+	follow_sprite SkiploomSpriteGFX, PAL_FOLLOWER_KOTORA ;SKIPLOOM
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;JUMPLUFF
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;AIPOM
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;SUNKERN

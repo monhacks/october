@@ -119,7 +119,6 @@ CantFollowList:
 	dw KUDATSUBE
 	dw SUDOWOODO
 	dw POLITOED
-	dw SKIPLOOM
 	dw JUMPLUFF
 	dw AIPOM
 	dw SUNKERN

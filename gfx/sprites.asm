@@ -232,3 +232,5 @@ MunchlaxSpriteGFX::            INCBIN "gfx/sprites/pokemon/munchlax.2bpp"
 MallodySpriteGFX::             INCBIN "gfx/sprites/pokemon/mallody.2bpp"
 AriadosSpriteGFX::             INCBIN "gfx/sprites/pokemon/ariados.2bpp"
 KatuSpriteGFX::                INCBIN "gfx/sprites/pokemon/katu.2bpp"
+SkiploomSpriteGFX::            INCBIN "gfx/sprites/pokemon/skiploom.2bpp"
+
