@@ -693,7 +693,7 @@ PichuEvosAttacks:
 	dbw 1, TAIL_WHIP
 	dbw 6, QUICK_ATTACK
 	dbw 11, THUNDER_WAVE
-	;dbw 15, THUNDERJOLT ; TODO
+;	dbw 15, THUNDER_JOLT
 	dbw 21, DOUBLE_TEAM
 	dbw 26, SWIFT
 	dbw 30, FAINT_ATTACK
@@ -715,9 +715,9 @@ CleffaEvosAttacks:
 	dbw 23, SWIFT
 	dbw 29, SWEET_KISS
 	dbw 36, MINIMIZE
-	dbw 42, DIZZY_PUNCH
-	dbw 48, MOONLIGHT
-	dbw 55, TACKLE ; STAR_FREEZE
+	dbw 41, DIZZY_PUNCH
+	dbw 47, MOONLIGHT
+;	dbw 54, STAR_FREEZE
 	db 0 ; no more level-up moves
 
 IgglybuffEvosAttacks:
