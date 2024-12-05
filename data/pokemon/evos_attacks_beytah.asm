@@ -420,20 +420,20 @@ KoalyptusEvosAttacks:
 	db 0 ; no more level-up moves
 
 PupperonEvosAttacks:
-	dbbw EVOLVE_HAPPINESS, TR_ANYTIME, GROWLITHE
+	dbbw EVOLVE_LEVEL, 13, GROWLITHE
 	db 0 ; no more evolutions
-	dbw 1, BITE
-	dbw 1, CHARM
-	dbw 6, EMBER
-	dbw 12, LEER
-	dbw 17, FLAME_WHEEL
-	dbw 23, REVERSAL
+	dbw 1, EMBER
+	dbw 1, GROWL
+	dbw 6, BITE
+	dbw 11, LEER
+	dbw 17, SWAGGER
+	dbw 22, FLAME_WHEEL
 	dbw 28, TAKE_DOWN
-	dbw 34, FLAMETHROWER
-	dbw 39, AGILITY
-	dbw 45, CRUNCH
-	dbw 50, OUTRAGE
-	dbw 56, FIRE_BLAST
+	dbw 33, FLAMETHROWER
+	dbw 39, CRUNCH
+	dbw 44, ROAR
+	dbw 50, FIRE_BLAST
+	dbw 56, OUTRAGE
 	db 0 ; no more level-up moves
 
 CoaltaEvosAttacks:
@@ -482,7 +482,7 @@ VulpiiiEvosAttacks:
 	dbw 17, PSYCH_UP
 	dbw 22, FIRE_SPIN
 	dbw 28, FAINT_ATTACK
-	dbw 33, TACKLE ; MAGMA_RING
+;	dbw 33, LAVA_BURST
 	dbw 39, WILL_O_WISP
 	dbw 44, CONFUSE_RAY
 	dbw 50, FIRE_BLAST
@@ -543,11 +543,11 @@ ParasporEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, SCRATCH
 	dbw 1, ABSORB
-	dbw 6, POISONPOWDER
+	dbw 6, STUN_SPORE
 	dbw 10, LEECH_LIFE
 	dbw 15, MEGA_DRAIN
-	dbw 21, STUN_SPORE
-	dbw 25, TACKLE ; DUAL_PINCER
+	dbw 21, POISONPOWDER
+;	dbw 25, DUAL_PINCER
 	dbw 30, GIGA_DRAIN
 	dbw 36, SPORE
 	dbw 40, GROWTH

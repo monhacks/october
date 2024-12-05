@@ -38,7 +38,7 @@ EvolutionMoves::
 	dw NO_MOVE      ; VULPIX
 	dw NO_MOVE      ; NINETALES, SYNCHRONIZE
 	dw NO_MOVE      ; JIGGLYPUFF
-	dw PERISH_SONG  ; WIGGLYTUFF
+	dw RETURN       ; WIGGLYTUFF
 	dw NO_MOVE      ; ZUBAT
 	dw MEAN_LOOK    ; GOLBAT
 	dw NO_MOVE      ; ODDISH

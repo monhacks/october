@@ -554,7 +554,7 @@ CrobatEvosAttacks:
 	dbw 11, BITE
 	dbw 17, WING_ATTACK
 	dbw 22, CONFUSE_RAY
-	dbw 30, TACKLE ; TOXIC_LEECH
+;	dbw 30, TOXIC_LEECH
 	dbw 35, SCREECH
 	dbw 41, CRUNCH
 	dbw 46, FLY
@@ -724,14 +724,14 @@ IgglybuffEvosAttacks:
 	dbbw EVOLVE_HAPPINESS, TR_ANYTIME, JIGGLYPUFF
 	db 0 ; no more evolutions
 	dbw 1, POUND
-	dbw 4, SING
+	dbw 1, SING
 	dbw 1, DEFENSE_CURL
-	dbw 6, DOUBLESLAP
-	dbw 11, DISABLE
+	dbw 6, MEGAPHONE
+	dbw 11, DOUBLESLAP
 	dbw 18, ROLLOUT
-	dbw 24, MEGAPHONE
-	dbw 30, BODY_SLAM
-	dbw 36, CHARM
+	dbw 24, ECHO
+	dbw 30, CHARM
+;	dbw 36, SONIC_SCREAM
 	dbw 42, REST
 	dbw 48, WHIRLWIND
 	dbw 54, DOUBLE_EDGE
@@ -952,8 +952,8 @@ BellossomEvosAttacks:
 	dbw 25, MEGA_DRAIN
 	dbw 28, CHARM
 	dbw 33, GIGA_DRAIN
-	dbw 38, TOXIC
-	dbw 41, BODY_SLAM
+	dbw 38, ECHO
+	dbw 41, TOXIC
 	dbw 46, MOONLIGHT
 	dbw 52, PETAL_DANCE
 	db 0 ; no more level-up moves
@@ -1028,12 +1028,19 @@ SudowoodoEvosAttacks:
 
 PolitoedEvosAttacks:
 	db 0 ; no more evolutions
-	dbw 1, WATER_GUN
-	dbw 1, HYPNOSIS
-	dbw 1, DOUBLESLAP
-	dbw 1, PERISH_SONG
-	dbw 35, PERISH_SONG
-	dbw 51, SWAGGER
+	dbw 1, BUBBLE
+	dbw 1, DEFENSE_CURL
+	dbw 5, MUD_SLAP
+	dbw 10, HYPNOSIS
+	dbw 13, WATER_GUN
+	dbw 18, DOUBLESLAP
+	dbw 23, ROLLOUT
+	dbw 28, RAIN_DANCE
+	dbw 33, BUBBLEBEAM
+	dbw 38, BODY_SLAM
+	dbw 41, SURF
+	dbw 46, BELLY_DRUM
+	dbw 52, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 HoppipEvosAttacks:

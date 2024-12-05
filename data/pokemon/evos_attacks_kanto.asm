@@ -732,7 +732,7 @@ VulpixEvosAttacks:
 	dbw 17, PSYCH_UP
 	dbw 22, FIRE_SPIN
 	dbw 28, FAINT_ATTACK
-	dbw 33, TACKLE ; MAGMA_RING
+;	dbw 33, LAVA_BURST
 	dbw 39, WILL_O_WISP
 	dbw 44, CONFUSE_RAY
 	dbw 50, FIRE_BLAST
@@ -748,7 +748,7 @@ NinetalesEvosAttacks:
 	dbw 17, PSYCH_UP
 	dbw 22, FIRE_SPIN
 	dbw 28, FAINT_ATTACK
-	dbw 33, TACKLE ; MAGMA_RING
+;	dbw 33, LAVA_BURST
 	dbw 39, WILL_O_WISP
 	dbw 44, CONFUSE_RAY
 	dbw 50, FIRE_BLAST
@@ -762,12 +762,12 @@ JigglypuffEvosAttacks:
 	dbw 1, POUND
 	dbw 1, SING
 	dbw 1, DEFENSE_CURL
-	dbw 6, DOUBLESLAP
-	dbw 11, DISABLE
+	dbw 6, MEGAPHONE
+	dbw 11, DOUBLESLAP
 	dbw 18, ROLLOUT
-	dbw 24, MEGAPHONE
-	dbw 30, BODY_SLAM
-	dbw 36, CHARM
+	dbw 24, ECHO
+	dbw 30, CHARM
+;	dbw 36, SONIC_SCREAM
 	dbw 42, REST
 	dbw 48, WHIRLWIND
 	dbw 54, DOUBLE_EDGE
@@ -776,14 +776,14 @@ JigglypuffEvosAttacks:
 WigglytuffEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, POUND
-	dbw 4, SING
+	dbw 1, SING
 	dbw 1, DEFENSE_CURL
-	dbw 6, DOUBLESLAP
-	dbw 11, DISABLE
+	dbw 6, MEGAPHONE
+	dbw 11, DOUBLESLAP
 	dbw 18, ROLLOUT
-	dbw 24, MEGAPHONE
-	dbw 30, BODY_SLAM
-	dbw 36, CHARM
+	dbw 24, ECHO
+	dbw 30, CHARM
+;	dbw 36, SONIC_SCREAM
 	dbw 42, REST
 	dbw 48, WHIRLWIND
 	dbw 54, DOUBLE_EDGE
@@ -798,7 +798,7 @@ ZubatEvosAttacks:
 	dbw 11, BITE
 	dbw 17, WING_ATTACK
 	dbw 22, CONFUSE_RAY
-	dbw 28, TACKLE ; TOXIC_LEECH
+;	dbw 28, TOXIC_LEECH
 	dbw 33, SCREECH
 	dbw 39, CRUNCH
 	dbw 44, FLY
@@ -815,7 +815,7 @@ GolbatEvosAttacks:
 	dbw 11, BITE
 	dbw 17, WING_ATTACK
 	dbw 22, CONFUSE_RAY
-	dbw 30, TACKLE ; TOXIC_LEECH
+;	dbw 30, TOXIC_LEECH
 	dbw 35, SCREECH
 	dbw 41, CRUNCH
 	dbw 46, FLY
@@ -835,8 +835,8 @@ OddishEvosAttacks:
 	dbw 23, MEGA_DRAIN
 	dbw 26, CHARM
 	dbw 31, GIGA_DRAIN
-	dbw 36, TOXIC
-	dbw 39, BODY_SLAM
+	dbw 36, ECHO
+	dbw 39, TOXIC
 	dbw 44, MOONLIGHT
 	dbw 50, PETAL_DANCE
 	db 0 ; no more level-up moves
@@ -854,8 +854,8 @@ GloomEvosAttacks:
 	dbw 25, MEGA_DRAIN
 	dbw 28, CHARM
 	dbw 33, GIGA_DRAIN
-	dbw 38, TOXIC
-	dbw 41, BODY_SLAM
+	dbw 38, ECHO
+	dbw 41, TOXIC
 	dbw 46, MOONLIGHT
 	dbw 52, PETAL_DANCE
 	db 0 ; no more level-up moves
@@ -871,8 +871,8 @@ VileplumeEvosAttacks:
 	dbw 25, MEGA_DRAIN
 	dbw 28, CHARM
 	dbw 33, GIGA_DRAIN
-	dbw 38, TOXIC
-	dbw 41, BODY_SLAM
+	dbw 38, ECHO
+	dbw 41, TOXIC
 	dbw 46, MOONLIGHT
 	dbw 52, PETAL_DANCE
 	db 0 ; no more level-up moves
@@ -882,32 +882,32 @@ ParasEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, SCRATCH
 	dbw 1, ABSORB
-	dbw 6, POISONPOWDER
+	dbw 6, STUN_SPORE
 	dbw 10, LEECH_LIFE
-	dbw 15, MEGA_DRAIN
-	dbw 21, STUN_SPORE
-	dbw 25, TACKLE ; DUAL_PINCER
-	dbw 30, GIGA_DRAIN
-	dbw 36, SPORE
-	dbw 40, GROWTH
-	dbw 45, SLASH
-	dbw 51, LUNGE
+	dbw 17, MEGA_DRAIN
+	dbw 23, POISONPOWDER
+;	dbw 27, DUAL_PINCER
+	dbw 32, GIGA_DRAIN
+	dbw 38, SPORE
+	dbw 42, GROWTH
+	dbw 47, SLASH
+	dbw 53, LUNGE
 	db 0 ; no more level-up moves
 
 ParasectEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, SCRATCH
 	dbw 1, ABSORB
-	dbw 6, POISONPOWDER
+	dbw 6, STUN_SPORE
 	dbw 10, LEECH_LIFE
-	dbw 15, MEGA_DRAIN
-	dbw 21, STUN_SPORE
-	dbw 27, TACKLE ; DUAL_PINCER
-	dbw 32, GIGA_DRAIN
-	dbw 38, SPORE
-	dbw 42, GROWTH
-	dbw 47, SLASH
-	dbw 53, LUNGE
+	dbw 17, MEGA_DRAIN
+	dbw 23, POISONPOWDER
+;	dbw 29, DUAL_PINCER
+	dbw 34, GIGA_DRAIN
+	dbw 40, SPORE
+	dbw 44, GROWTH
+	dbw 49, SLASH
+	dbw 55, LUNGE
 	db 0 ; no more level-up moves
 
 VenonatEvosAttacks:
@@ -1078,48 +1078,56 @@ PrimeapeEvosAttacks:
 	dbw 50, CROSS_CHOP
 	dbw 56, THRASH
 	db 0 ; no more level-up moves
-	
-	
-; ------ all Shadow learnsets above this line ----- 
-
 
 GrowlitheEvosAttacks:
 	dbbw EVOLVE_ITEM, FIRE_STONE, ARCANINE
 	db 0 ; no more evolutions
-	dbw 1, BITE
-	dbw 1, ROAR
-	dbw 6, EMBER
-	dbw 12, LEER
-	dbw 17, FLAME_WHEEL
-	dbw 23, REVERSAL
+	dbw 1, EMBER
+	dbw 1, GROWL
+	dbw 6, BITE
+	dbw 11, LEER
+	dbw 17, SWAGGER
+	dbw 22, FLAME_WHEEL
 	dbw 28, TAKE_DOWN
-	dbw 34, FLAMETHROWER
-	dbw 39, AGILITY
-	dbw 45, CRUNCH
-	dbw 50, OUTRAGE
-	dbw 56, FIRE_BLAST
+	dbw 33, FLAMETHROWER
+	dbw 39, CRUNCH
+	dbw 44, ROAR
+	dbw 50, FIRE_BLAST
+	dbw 56, OUTRAGE
 	db 0 ; no more level-up moves
 
 ArcanineEvosAttacks:
 	db 0 ; no more evolutions
-	dbw 1, ROAR
-	dbw 1, LEER
-	dbw 1, TAKE_DOWN
-	dbw 1, FLAME_WHEEL
-	dbw 4, EXTREMESPEED
+	dbw 1, EMBER
+	dbw 1, GROWL
+	dbw 6, BITE
+	dbw 11, LEER
+	dbw 17, SWAGGER
+	dbw 22, FLAME_WHEEL
+	dbw 28, TAKE_DOWN
+	dbw 33, FLAMETHROWER
+	dbw 39, CRUNCH
+	dbw 44, ROAR
+	dbw 50, FIRE_BLAST
+	dbw 56, OUTRAGE
 	db 0 ; no more level-up moves
 
 PoliwagEvosAttacks:
 	dbbw EVOLVE_LEVEL, 25, POLIWHIRL
 	db 0 ; no more evolutions
 	dbw 1, BUBBLE
-	dbw 7, HYPNOSIS
+	dbw 1, DEFENSE_CURL
+	dbw 5, MUD_SLAP
+	dbw 10, HYPNOSIS
 	dbw 13, WATER_GUN
-	dbw 19, DOUBLESLAP
-	dbw 25, RAIN_DANCE
-	dbw 31, BODY_SLAM
-	dbw 37, BELLY_DRUM
-	dbw 43, HYDRO_PUMP
+	dbw 18, DOUBLESLAP
+	dbw 23, ROLLOUT
+	dbw 26, RAIN_DANCE
+	dbw 31, BUBBLEBEAM
+	dbw 36, BODY_SLAM
+	dbw 39, SURF
+	dbw 44, BELLY_DRUM
+	dbw 50, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 PoliwhirlEvosAttacks:
@@ -1127,59 +1135,76 @@ PoliwhirlEvosAttacks:
 	dbbw EVOLVE_TRADE, KINGS_ROCK, POLITOED
 	db 0 ; no more evolutions
 	dbw 1, BUBBLE
-	dbw 1, HYPNOSIS
-	dbw 1, WATER_GUN
-	dbw 7, HYPNOSIS
+	dbw 1, DEFENSE_CURL
+	dbw 5, MUD_SLAP
+	dbw 10, HYPNOSIS
 	dbw 13, WATER_GUN
-	dbw 19, DOUBLESLAP
-	dbw 27, RAIN_DANCE
-	dbw 35, BODY_SLAM
-	dbw 43, BELLY_DRUM
-	dbw 51, HYDRO_PUMP
+	dbw 18, DOUBLESLAP
+	dbw 23, ROLLOUT
+	dbw 28, RAIN_DANCE
+	dbw 33, BUBBLEBEAM
+	dbw 38, BODY_SLAM
+	dbw 41, SURF
+	dbw 46, BELLY_DRUM
+	dbw 52, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 PoliwrathEvosAttacks:
 	db 0 ; no more evolutions
-	dbw 1, WATER_GUN
-	dbw 1, HYPNOSIS
-	dbw 1, DOUBLESLAP
-	dbw 1, SUBMISSION
-	dbw 51, MIND_READER
+	dbw 1, BUBBLE
+	dbw 1, DEFENSE_CURL
+	dbw 5, MUD_SLAP
+	dbw 10, HYPNOSIS
+	dbw 13, WATER_GUN
+	dbw 18, DOUBLESLAP
+	dbw 23, ROLLOUT
+	dbw 28, RAIN_DANCE
+	dbw 33, BUBBLEBEAM
+	dbw 38, BODY_SLAM
+	dbw 41, SURF
+	dbw 46, BELLY_DRUM
+	dbw 52, HYDRO_PUMP
 	db 0 ; no more level-up moves
 
 AbraEvosAttacks:
 	dbbw EVOLVE_LEVEL, 16, KADABRA
 	db 0 ; no more evolutions
 	dbw 1, TELEPORT
+	dbw 1, REST
+	dbw 10, SLEEP_TALK
 	db 0 ; no more level-up moves
 
 KadabraEvosAttacks:
 	dbbw EVOLVE_TRADE, -1, ALAKAZAM
 	db 0 ; no more evolutions
 	dbw 1, TELEPORT
-	dbw 1, KINESIS
-	dbw 1, CONFUSION
-	dbw 16, CONFUSION
-	dbw 18, DISABLE
-	dbw 21, PSYBEAM
-	dbw 26, RECOVER
-	dbw 31, FUTURE_SIGHT
-	dbw 38, PSYCHIC_M
+	dbw 1, REST
+	dbw 10, SLEEP_TALK
+	dbw 19, CONFUSION
+	dbw 24, KINESIS
+	dbw 27, DISABLE
+	dbw 32, PSYBEAM
+	dbw 36, RECOVER
+	dbw 41, FUTURE_SIGHT
 	dbw 45, REFLECT
+	dbw 50, TRI_ATTACK
+	dbw 54, PSYCHIC_M
 	db 0 ; no more level-up moves
 
 AlakazamEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, TELEPORT
-	dbw 1, KINESIS
-	dbw 1, CONFUSION
-	dbw 16, CONFUSION
-	dbw 18, DISABLE
-	dbw 21, PSYBEAM
-	dbw 26, RECOVER
-	dbw 31, FUTURE_SIGHT
-	dbw 38, PSYCHIC_M
+	dbw 1, REST
+	dbw 10, SLEEP_TALK
+	dbw 19, CONFUSION
+	dbw 24, KINESIS
+	dbw 27, DISABLE
+	dbw 32, PSYBEAM
+	dbw 36, RECOVER
+	dbw 41, FUTURE_SIGHT
 	dbw 45, REFLECT
+	dbw 50, TRI_ATTACK
+	dbw 54, PSYCHIC_M
 	db 0 ; no more level-up moves
 
 MachopEvosAttacks:
@@ -1231,6 +1256,8 @@ MachampEvosAttacks:
 	dbw 47, SCARY_FACE
 	dbw 52, CROSS_CHOP
 	db 0 ; no more level-up moves
+	
+; ------ all Shadow learnsets above this line ----- 
 
 BellsproutEvosAttacks:
 	dbbw EVOLVE_LEVEL, 21, WEEPINBELL
