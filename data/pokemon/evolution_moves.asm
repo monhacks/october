@@ -69,16 +69,16 @@ EvolutionMoves::
 	dw STRENGTH     ; MACHAMP
 	dw NO_MOVE      ; BELLSPROUT
 	dw NO_MOVE      ; WEEPINBELL
-	dw NO_MOVE      ; VICTREEBEL
+	dw CRUNCH       ; VICTREEBEL
 	dw NO_MOVE      ; TENTACOOL
-	dw WRAP         ; TENTACRUEL
+	dw VICEGRIP     ; TENTACRUEL
 	dw NO_MOVE      ; GEODUDE
 	dw NO_MOVE      ; GRAVELER
 	dw NO_MOVE      ; GOLEM
 	dw NO_MOVE      ; PONYTA
 	dw FURY_ATTACK  ; RAPIDASH
 	dw NO_MOVE      ; SLOWPOKE
-	dw WITHDRAW     ; SLOWBRO
+	dw IRON_TAIL    ; SLOWBRO
 	dw NO_MOVE      ; MAGNEMITE
 	dw TRI_ATTACK   ; MAGNETON
 	dw NO_MOVE      ; FARFETCH_D
@@ -224,7 +224,7 @@ EvolutionMoves::
 	dw SLUDGE       ; UMBREON
 	dw GIGA_DRAIN   ; LEAFEON
 	dw NO_MOVE      ; MURKROW
-	dw NO_MOVE      ; SLOWKING
+	dw SKULL_BASH   ; SLOWKING
 	dw NO_MOVE      ; MISDREAVUS
 	dw NO_MOVE      ; UNOWN
 	dw NO_MOVE      ; WOBBUFFET

@@ -592,11 +592,17 @@ BellignanEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, VINE_WHIP
 	dbw 1, GROWTH
-	dbw 1, LOVELY_KISS
-	dbw 1, RAZOR_LEAF
-	dbw 42, CONFUSE_RAY
-	dbw 50, GIGA_DRAIN
-	dbw 54, SOLARBEAM
+	dbw 5, WRAP
+	dbw 10, SWEET_SCENT
+	dbw 13, ACID
+	dbw 18, SLEEP_POWDER
+	dbw 25, RAZOR_LEAF
+	dbw 28, POISONPOWDER
+	dbw 33, GIGA_DRAIN
+	dbw 38, STUN_SPORE
+	dbw 41, SLAM
+	dbw 46, SYNTHESIS
+	dbw 52, SOLARBEAM
 	db 0 ; no more level-up moves
 	
 CoinpurEvosAttacks:
@@ -1140,14 +1146,16 @@ LuxswanEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, PECK
 	dbw 1, LEER
-	dbw 15, FURY_ATTACK
-	dbw 21, BATON_PASS
-	dbw 27, CUT
-	dbw 33, FLY
-	dbw 39, FALSE_SWIPE
-	dbw 45, SWORDS_DANCE
-	dbw 51, SLASH
-	dbw 57, AGILITY
+	dbw 6, FALSE_SWIPE
+	dbw 12, SAND_ATTACK
+	dbw 17, FURY_ATTACK
+	dbw 23, CUT
+	dbw 29, FAINT_ATTACK
+	dbw 34, FLY
+	dbw 40, BATON_PASS
+	dbw 46, SLASH
+	dbw 51, SWORDS_DANCE
+;	dbw 57, STUN_CUT
 	db 0 ; no more level-up moves
 
 WooperEvosAttacks:
@@ -1235,15 +1243,18 @@ MurkrowEvosAttacks:
 
 SlowkingEvosAttacks:
 	db 0 ; no more evolutions
-	dbw 1, CURSE
 	dbw 1, TACKLE
-	dbw 6, GROWL
-	dbw 15, WATER_GUN
-	dbw 20, CONFUSION
-	dbw 29, DISABLE
-	dbw 34, HEADBUTT
-	dbw 43, SWAGGER
-	dbw 48, PSYCHIC_M
+	dbw 1, GROWL
+	dbw 5, PSYWAVE
+	dbw 11, WATER_GUN
+	dbw 16, CURSE
+	dbw 22, CONFUSION
+	dbw 27, DISABLE
+	dbw 33, HEADBUTT
+	dbw 38, SURF
+	dbw 44, REST
+	dbw 49, AMNESIA
+	dbw 55, PSYCHIC_M
 	db 0 ; no more level-up moves
 
 MisdreavusEvosAttacks:

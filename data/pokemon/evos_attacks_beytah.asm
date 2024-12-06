@@ -523,18 +523,18 @@ WearlycanEvosAttacks:
     db 0 ; no more level-up moves
 
 DodaerieEvosAttacks:
-	dbbw EVOLVE_LEVEL, 18, DODUO
+	dbbw EVOLVE_LEVEL, 16, DODUO
 	db 0 ; no more evolutions
 	dbw 1,	QUICK_ATTACK
 	dbw 1,	GROWL
-	dbw 6,	PECK
-	dbw 12,	PURSUIT
-	dbw 18,	CHARM
+	dbw 6,	PURSUIT
+	dbw 12,	PECK
+	dbw 18,	LEER
 	dbw 24,	FURY_ATTACK
 	dbw 30,	RAGE
 	dbw 36,	JUMP_KICK
-	dbw 42,	DRILL_PECK
-	dbw 48,	AGILITY
+	dbw 42,	AGILITY
+	dbw 48,	DRILL_PECK
 	dbw 54,	EXTREMESPEED
 	db 0 ; no more level-up moves
 
