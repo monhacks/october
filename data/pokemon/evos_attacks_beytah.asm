@@ -372,7 +372,7 @@ OrijoeyEvoAttacks:
 	db 0 ; no more moves
 
 BallerineEvoAttacks:
-	dbbw EVOLVE_HAPPINESS, TR_ANYTIME, MIMENTOR
+	dbbw EVOLVE_LEVEL, 15, MIMENTOR
 	db 0 ; no more evos
 	dbw 1, BARRIER
 	dbw 6, CONFUSION
@@ -437,7 +437,7 @@ PupperonEvosAttacks:
 	db 0 ; no more level-up moves
 
 CoaltaEvosAttacks:
-	dbbw EVOLVE_HAPPINESS, TR_ANYTIME, PONYTA
+	dbbw EVOLVE_LEVEL, 20, PONYTA
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, TAIL_WHIP
@@ -455,7 +455,7 @@ CoaltaEvosAttacks:
 	db 0 ; no more level-up moves
 
 BurgelaEvosAttacks:
-	dbbw EVOLVE_LEVEL, 15, TANGELA
+	dbbw EVOLVE_HAPPINESS, TR_ANYTIME, TANGELA
 	db 0 ; no more evolutions
 	dbw 1, CONSTRICT
 	dbw 1, STUN_SPORE
@@ -473,7 +473,7 @@ BurgelaEvosAttacks:
 	db 0 ; no more level-up moves
 
 VulpiiiEvosAttacks:
-	dbbw EVOLVE_HAPPINESS, TR_ANYTIME, VULPIX
+	dbbw EVOLVE_LEVEL, 13, VULPIX
 	db 0 ; no more evolutions
 	dbw 1, EMBER
 	dbw 1, TAIL_WHIP
@@ -627,7 +627,7 @@ TerrachnidEvosAttacks:
 	db 0 ; no more level-up moves
 
 SmujjEvosAttacks:
-	dbbw EVOLVE_LEVEL, 14, GRIMER
+	dbbw EVOLVE_LEVEL, 19, GRIMER
 	db 0 ; no more evolutions
 	dbw 1, POUND
 	dbw 1, HARDEN

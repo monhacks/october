@@ -851,7 +851,7 @@ AmpharosEvosAttacks:
 	db 0 ; no more level-up moves
 
 TykerEvosAttacks:
-	dbbw EVOLVE_LEVEL, 15, STRAIGAR
+	dbbw EVOLVE_LEVEL, 25, STRAIGAR
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, TAIL_WHIP
@@ -859,7 +859,7 @@ TykerEvosAttacks:
 	dbw 10, BITE
 	dbw 15, THUNDER_WAVE
 	dbw 19, SCARY_FACE
-	dbw 24, SPARK
+	dbw 23, SPARK
 	dbw 28, TAKE_DOWN
 	dbw 33, AGILITY
 	dbw 37, CRUNCH
@@ -868,7 +868,7 @@ TykerEvosAttacks:
 	db 0 ; no more level-up moves
 
 StraigarEvosAttacks:
-	dbbw EVOLVE_LEVEL, 30, GOROTORA
+	dbbw EVOLVE_ITEM, THUNDERSTONE, GOROTORA
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, TAIL_WHIP
@@ -876,7 +876,7 @@ StraigarEvosAttacks:
 	dbw 10, BITE
 	dbw 17, THUNDER_WAVE
 	dbw 21, SCARY_FACE
-	dbw 25, SPARK
+	dbw 24, SPARK
 	dbw 30, TAKE_DOWN
 	dbw 35, AGILITY
 	dbw 42, CRUNCH
@@ -885,7 +885,6 @@ StraigarEvosAttacks:
 	db 0 ; no more level-up moves
 
 GorotoraEvosAttacks:
-	dbbw EVOLVE_LEVEL, 30, GOROTORA
 	db 0 ; no more evolutions
 	dbw 1, TACKLE
 	dbw 1, TAIL_WHIP
@@ -893,7 +892,7 @@ GorotoraEvosAttacks:
 	dbw 10, BITE
 	dbw 17, THUNDER_WAVE
 	dbw 21, SCARY_FACE
-	dbw 25, SPARK
+	dbw 24, SPARK
 	dbw 31, TAKE_DOWN
 	dbw 34, AGILITY
 	dbw 45, CRUNCH

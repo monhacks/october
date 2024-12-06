@@ -1880,7 +1880,7 @@ WeezingEvosAttacks:
 RhyhornEvosAttacks:
 	dbbw EVOLVE_LEVEL, 42, RHYDON
 	db 0 ; no more evolutions
-	dbw	1: TACKLE
+	dbw	1, TACKLE
 	dbw 1, LEER
 	dbw 1, HORN_ATTACK
 	dbw 6, FURY_ATTACK
@@ -1896,7 +1896,7 @@ RhyhornEvosAttacks:
 
 RhydonEvosAttacks:
 	db 0 ; no more evolutions
-	dbw	1: TACKLE
+	dbw	1, TACKLE
 	dbw 1, LEER
 	dbw 1, HORN_ATTACK
 	dbw 6, FURY_ATTACK
