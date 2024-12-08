@@ -319,6 +319,7 @@ BitmasksPointers:
 	dw NurssumBitmasks
 	dw GesticuteBitmasks
 	dw RattlitBitmasks
+	dw PiplupBitmasks
 	dw AudinoBitmasks
 	dw MunchlaxBitmasks
 	dw MinccinoBitmasks

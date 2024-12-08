@@ -233,4 +233,8 @@ MallodySpriteGFX::             INCBIN "gfx/sprites/pokemon/mallody.2bpp"
 AriadosSpriteGFX::             INCBIN "gfx/sprites/pokemon/ariados.2bpp"
 KatuSpriteGFX::                INCBIN "gfx/sprites/pokemon/katu.2bpp"
 SkiploomSpriteGFX::            INCBIN "gfx/sprites/pokemon/skiploom.2bpp"
+WorfursSpriteGFX::             INCBIN "gfx/sprites/pokemon/worfurs.2bpp"
+WearlycanSpriteGFX::           INCBIN "gfx/sprites/pokemon/wearlycan.2bpp"
+SphealSpriteGFX::              INCBIN "gfx/sprites/pokemon/spheal.2bpp"
+PiplupSpriteGFX::              INCBIN "gfx/sprites/pokemon/piplup.2bpp"
 

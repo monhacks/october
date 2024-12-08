@@ -149,6 +149,7 @@ HabitatPokedexOrder:
 	dw PALSSIO
 	dw PRESSIO
 	dw DONMARIN
+	dw PIPLUP
 	dw STARYU
 	dw STARMIE
 	dw PSYDUCK

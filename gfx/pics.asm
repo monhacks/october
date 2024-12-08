@@ -881,5 +881,7 @@ SphealFrontpic:	    INCBIN "gfx/pokemon/spheal/front.static.2bpp.lz"
 SphealBackpic:      INCBIN "gfx/pokemon/spheal/back.2bpp.lz"
 KukulcanFrontpic:	INCBIN "gfx/pokemon/kukulcan/front.static.2bpp.lz"
 KukulcanBackpic:    INCBIN "gfx/pokemon/kukulcan/back.2bpp.lz"
+PiplupFrontpic:	    INCBIN "gfx/pokemon/piplup/front.static.2bpp.lz"
+PiplupBackpic:      INCBIN "gfx/pokemon/piplup/back.2bpp.lz"
 
 INCLUDE "gfx/pics_animated.asm"

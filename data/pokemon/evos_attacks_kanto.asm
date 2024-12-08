@@ -1549,36 +1549,36 @@ DodrioEvosAttacks:
 SeelEvosAttacks:
 	dbbw EVOLVE_LEVEL, 34, DEWGONG
 	db 0 ; no more evolutions
-	dbw 1: DOUBLESLAP
-	dbw 1: GROWL
-	dbw 5: HEADBUTT
-	dbw 9: WATER_GUN
-	dbw 14: ENCORE
-	dbw 18: AURORA_BEAM
-;	dbw 23: DEEP_DIVE
-;	dbw 27: ICE_MIST
-	dbw 32: TAKE_DOWN
-	dbw 36: REST
-	dbw 41: SURF	
-	dbw 45: SAFEGUARD
-	dbw 51: ICE_BEAM
+	dbw 1, DOUBLESLAP
+	dbw 1, GROWL
+	dbw 5, HEADBUTT
+	dbw 9, WATER_GUN
+	dbw 14, ENCORE
+	dbw 18, AURORA_BEAM
+;	dbw 23, DEEP_DIVE
+;	dbw 27, ICE_MIST
+	dbw 32, TAKE_DOWN
+	dbw 36, REST
+	dbw 41, SURF	
+	dbw 45, SAFEGUARD
+	dbw 51, ICE_BEAM
 	db 0 ; no more level-up moves
 
 DewgongEvosAttacks:
 	db 0 ; no more evolutions
-	dbw 1: DOUBLESLAP
-	dbw 1: GROWL
-	dbw 5: HEADBUTT
-	dbw 9: WATER_GUN
-	dbw 14: ENCORE
-	dbw 18: AURORA_BEAM
-;	dbw 23: DEEP_DIVE
-;	dbw 27: ICE_MIST
-	dbw 32: TAKE_DOWN
-	dbw 38: REST
-	dbw 43: SURF	
-	dbw 47: SAFEGUARD
-	dbw 53: ICE_BEAM
+	dbw 1, DOUBLESLAP
+	dbw 1, GROWL
+	dbw 5, HEADBUTT
+	dbw 9, WATER_GUN
+	dbw 14, ENCORE
+	dbw 18, AURORA_BEAM
+;	dbw 23, DEEP_DIVE
+;	dbw 27, ICE_MIST
+	dbw 32, TAKE_DOWN
+	dbw 38, REST
+	dbw 43, SURF	
+	dbw 47, SAFEGUARD
+	dbw 53, ICE_BEAM
 	db 0 ; no more level-up moves
 
 GrimerEvosAttacks:
@@ -1604,7 +1604,7 @@ MukEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, POUND
 	dbw 1, HARDEN
-	dbw 5, ARBSORB
+	dbw 5, ABSORB
 	dbw 10, POISON_GAS
 	dbw 14, SLUDGE
 	dbw 19, MUD_SLAP

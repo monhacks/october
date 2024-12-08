@@ -218,6 +218,7 @@ AlphabeticalPokedexOrder:
 	dw PILOSWINE
 	dw PINECO
 	dw PINSIR
+	dw PIPLUP
 	dw POLITOED
 	dw POLIWAG
 	dw POLIWHIRL

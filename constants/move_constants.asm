@@ -276,17 +276,17 @@
 	const UPPERCUT     ; needs anim
 	const TERRORIZE    ; needs anim
 	const LUNGE        ; needs anim
-	const DRAGON_SMASH ; needs anim
+	const DRAGON_CLAW ; needs anim
 	const SHELL_BOMB   ; needs anim
-	const MAGNET_FIELD ; needs anim
+	const MAGNETISM ; needs anim
 	const MAGNET_BOMB
 	const LAVA_BURST
 	const ECHO
 	const TAIL_SLAP
+	const SHADOW_PUNCH
+	const SIGNAL_BEAM
 ;   const MUDDY_RIVER
-;	const SHADOW_PUNCH
 ;	const FREEZE_DRY
-;	const SHADOW_PUNCH
 ;	const EARTH_DRILL
 ;	const TOXIC_LEECH
 ;	const EERIE_LIGHT
@@ -308,7 +308,8 @@
 ;	const ICE_MIST
 ;	const MILK_TIME
 ;	const TANTRUM
-;	const SONIC_SCREAM
+;	const HYPER_VOICE
+;   const FROSTBITE
 NUM_ATTACKS EQU const_value + -1
 
 	if NUM_ATTACKS > $3fff

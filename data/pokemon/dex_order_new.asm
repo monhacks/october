@@ -17,6 +17,7 @@ NewPokedexOrder:
 	dw PALSSIO
 	dw PRESSIO
 	dw DONMARIN
+	dw PIPLUP
 	dw PIDGEY
 	dw PIDGEOTTO
 	dw PIDGEOT

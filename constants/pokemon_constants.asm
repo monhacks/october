@@ -341,6 +341,7 @@ JOHTO_POKEMON EQU const_value
 	const NURSSUM ; teraleak beytah
 	const GESTICUTE ; from g3 beytah idea sheet
 	const RATTLIT
+	const PIPLUP
 	const AUDINO
 	const MUNCHLAX
 	const MINCCINO

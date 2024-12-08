@@ -298,13 +298,15 @@ BattleAnimations::
 	dw BattleAnim_Uppercut
 	dw BattleAnim_Terrorize
 	dw BattleAnim_Lunge
-	dw BattleAnim_DragonSmash
+	dw BattleAnim_DragonClaw
 	dw BattleAnim_ShellBomb
-	dw BattleAnim_MagnetField
+	dw BattleAnim_Magnetism
 	dw BattleAnim_MagnetBomb
 	dw BattleAnim_LavaBurst
 	dw BattleAnim_Echo
 	dw BattleAnim_TailSlap
+	dw BattleAnim_ShadowPunch
+	dw BattleAnim_SignalBeam
 	dw BattleAnim_HeldItemTrigger
 .End:
 
@@ -313,8 +315,7 @@ BattleAnim_MirrorMove:
 BattleAnim_InWhirlpool: ; unused/removed
 BattleAnim_Miss:
 BattleAnim_Echo:
-BattleAnim_MagnetField:
-BattleAnim_DragonSmash:
+BattleAnim_Magnetism:
 BattleAnim_Uppercut:
 BattleAnim_BrightMoss:
 BattleAnim_InkSpray:
@@ -325,6 +326,8 @@ BattleAnim_Terrorize:
 BattleAnim_Blindside:
 BattleAnim_EvilEye:
 BattleAnim_TailSlap:
+BattleAnim_ShadowPunch:
+BattleAnim_SignalBeam:
 	anim_ret
 
 BattleAnim_HeldItemTrigger:
@@ -4986,6 +4989,9 @@ BattleAnim_LavaBurst:
 ;	anim_wait 2
 ;	anim_loop 2, .loop
 ;	anim_wait 20
+	anim_ret
+	
+BattleAnim_DragonClaw:
 	anim_ret
 
 BattleAnimSub_EyeBeams:

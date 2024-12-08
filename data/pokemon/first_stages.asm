@@ -320,6 +320,7 @@ FirstEvoStages::
 	dw NURSSUM
 	dw GESTICUTE
 	dw RATTLIT
+	dw PIPLUP
 	dw AUDINO
 	dw MUNCHLAX
 	dw MINCCINO

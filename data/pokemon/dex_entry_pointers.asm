@@ -320,6 +320,7 @@ PokedexDataPointerTable:
 	dba NurssumPokedexEntry
 	dba GesticutePokedexEntry
 	dba RattlitPokedexEntry
+	dba PiplupPokedexEntry
 	dba AudinoPokedexEntry
 	dba MunchlaxPokedexEntry
 	dba MinccinoPokedexEntry

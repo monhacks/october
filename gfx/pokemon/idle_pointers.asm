@@ -319,6 +319,7 @@ AnimationIdlePointers:
 	dw NurssumAnimationIdle
 	dw GesticuteAnimationIdle
 	dw RattlitAnimationIdle
+	dw PiplupAnimationIdle
 	dw AudinoAnimationIdle
 	dw MunchlaxAnimationIdle
 	dw MinccinoAnimationIdle

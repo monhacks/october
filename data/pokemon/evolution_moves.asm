@@ -319,6 +319,7 @@ EvolutionMoves::
 	dw NO_MOVE      ; NURSSUM
 	dw NO_MOVE      ; GESTICUTE
 	dw NO_MOVE      ; RATTLIT
+	dw NO_MOVE      ; PIPLUP
 	dw NO_MOVE      ; AUDINO
 	dw NO_MOVE      ; MUNCHLAX
 	dw NO_MOVE      ; MINCCINO

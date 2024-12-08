@@ -44,6 +44,7 @@ EvosAttacksPointers3::
 	dw NurssumEvosAttacks
 	dw GesticuteEvosAttacks
 	dw RattlitEvosAttacks
+	dw PiplupEvosAttacks
 	dw AudinoEvosAttacks
 	dw MunchlaxEvosAttacks
 	dw MinccinoEvosAttacks
@@ -691,6 +692,22 @@ RattlitEvosAttacks:
 	dbw 45, PSYCHIC_M
 	dbw 50, ECHO
 	db 0 ; no more level-up moves
+	
+PiplupEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, POUND
+	dbw 1, GROWL
+	dbw 6, BUBBLE
+	dbw 10, WATER_GUN
+	dbw 15, PECK
+	dbw 21, BUBBLEBEAM
+	dbw 25, BIDE
+	dbw 30, AURORA_BEAM
+	dbw 36, SURF
+	dbw 40, MIST
+	dbw 45, DRILL_PECK
+	dbw 51, HYDRO_PUMP
+	db 0 ; no more evolutions
 	
 AudinoEvosAttacks:
 	db 0 ; no more evolutions

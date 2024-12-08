@@ -327,6 +327,7 @@ PokemonCries::
 	mon_cry CRY_PICHU,       $077,  $140 ; TODO: NURSSUM
 	mon_cry CRY_NONE,        $000,  $000 ; GESTICUTE
 	mon_cry CRY_VULPIX,      $0a1,  $069 ; RATTLIT
+	mon_cry CRY_NIDORAN_M,   $000,  $100 ; PIPLUP
 	mon_cry CRY_MANTINE,    -$025,  $0d7 ; AUDINO
 	mon_cry CRY_WEEPINBELL, -$0D9,  $100 ; MUNCHLAX
 	mon_cry CRY_SENTRET,     $0b0,  $0b8 ; MINCCINO

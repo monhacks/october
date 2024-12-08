@@ -337,6 +337,7 @@ PokemonPicPointers::
 	mon_pic Nurssum
 	mon_pic Gesticute
 	mon_pic Rattlit
+	mon_pic Piplup
 	mon_pic Audino
 	mon_pic Munchlax
 	mon_pic Minccino

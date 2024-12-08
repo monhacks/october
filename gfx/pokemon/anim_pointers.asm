@@ -319,6 +319,7 @@ AnimationPointers:
 	dw NurssumAnimation
 	dw GesticuteAnimation
 	dw RattlitAnimation
+	dw PiplupAnimation
 	dw AudinoAnimation
 	dw MunchlaxAnimation
 	dw MinccinoAnimation

@@ -202,8 +202,6 @@ CantFollowList:
 	dw MOIBELLE
 	dw BELLEDAM ; done but TODO: moibelle
 	dw CAMOUFLAKE
-	dw WORFURS
-	dw WEARLYCAN
 	dw MOLAMBINO
 	dw KIWACKI
 	dw SILKANE
@@ -220,6 +218,5 @@ CantFollowList:
 	dw AUDINO
 	dw MINCCINO
 	dw CINCCINO
-	dw SPHEAL
 	dw SHURICORN
 	dw -1

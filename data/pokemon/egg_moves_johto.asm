@@ -165,6 +165,8 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
+	dw NoEggMoves2
+	dw NoEggMoves2
 	dw AudinoEggMoves
 	dw MunchlaxEggMoves
 	dw MinccinoEggMoves

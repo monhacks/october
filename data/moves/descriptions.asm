@@ -275,19 +275,20 @@ MoveDescriptions1:
 	dw UppercutDescription
 	dw TerrorizeDescription
 	dw LungeDescription
-	dw DragonSmashDescription
+	dw DragonClawDescription
 	dw ShellBombDescription
-	dw MagnetFieldDescription
+	dw MagnetismDescription
 	dw MagnetBombDescription
 	dw LavaBurstDescription
 	dw EchoDescription
 	dw TailSlapDescription
+	dw ShadowPunchDescription
+	dw SignalBeamDescription
 .End:
 	
 InvalidMoveDescription:
 	db "?@"
 
-MagnetFieldDescription:
 PoundDescription:
 	db   "Pounds with fore-"
 	next "legs or tail.@"
@@ -530,6 +531,7 @@ BlizzardDescription:
 	db   "An attack that may"
 	next "freeze the foe.@"
 
+SignalBeamDescription:
 PsybeamDescription:
 	db   "An attack that may"
 	next "confuse the foe.@"
@@ -1352,15 +1354,27 @@ LungeDescription:
 	
 ShellBombDescription:
 	db "Sets up spikes and"
-	next "does big damage."
+	next "does big damage.@"
+	
+MagnetismDescription:
+	db "Super-effective"
+	next "on STEEL-types.@"
 	
 MagnetBombDescription:
 	db "Floating magnets"
-	next "attack the foe."
+	next "attack the foe.@"
 	
 LavaBurstDescription:
 	db "Scarlet flames"
-	next "may leave burn."
+	next "may leave burn.@"
+	
+ShadowPunchDescription:
+	db "Shadowy punch"
+	next "always hits.@"
+	
+DragonClawDescription:
+	db "Slashes with"
+	next "sharp claws.@"
 	
 ;--------------------------------------------------------------------
 _NUM_MOVE_DESCRIPTIONS = (MoveDescriptions1.End  - MoveDescriptions1)/2

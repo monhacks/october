@@ -431,4 +431,5 @@ SECTION "Pics 26 Animated", ROMX
 
 SphealFrontpicAnim:        INCBIN "gfx/pokemon/spheal/front.animated.2bpp.lz"
 ShuricornFrontpicAnim:     INCBIN "gfx/pokemon/shuricorn/front.animated.2bpp.lz"
+PiplupFrontpicAnim:        INCBIN "gfx/pokemon/piplup/front.animated.2bpp.lz"
 

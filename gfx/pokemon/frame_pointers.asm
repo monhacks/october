@@ -319,6 +319,7 @@ FramesPointers:
 	dba NurssumFrames
 	dba GesticuteFrames
 	dba RattlitFrames
+	dba PiplupFrames
 	dba AudinoFrames
 	dba MunchlaxFrames
 	dba MinccinoFrames
