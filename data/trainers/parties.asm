@@ -5135,10 +5135,10 @@ InstructorGroup:
 	next_party
 		string "FRANK"
 		db     TRAINERTYPE_MOVES
-		dbw    23, HAUNTER
-		dw     CURSE, NIGHT_SHADE, SPITE, NO_MOVE
+		dbw    23, GASTLY
+		dw     CURSE, SMOG, LICK, NO_MOVE
 		dbw    24, BIPULLA
-		dw     LICK, CONFUSION, LICK, FORESIGHT
+		dw     LICK, PURSUIT, HYPNOSIS, NO_MOVE
 	end_party
 
 	end_party_list
