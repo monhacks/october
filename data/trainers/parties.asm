@@ -5647,13 +5647,15 @@ NiechelleGroup:
 	next_party ; LASS (19) NIE NIE 1
 	db "NIECHELLE@", TRAINERTYPE_NORMAL
 	db 5
-	dw MAREEP
+	dw CHIKRITA
+	db 5
+	dw CLEFLING
+	db 6
+	dw SNUBBULL
 	db 6
 	dw JIGGLYPUFF
-	db 6
-	dw AUDINO
 	db 7
-	dw GESTICUTE
+	dw PIPLUP
 	end_party
 
 	
