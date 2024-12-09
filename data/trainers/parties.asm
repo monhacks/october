@@ -5647,7 +5647,7 @@ NiechelleGroup:
 	next_party ; LASS (19) NIE NIE 1
 	db "NIECHELLE@", TRAINERTYPE_NORMAL
 	db 5
-	dw CHIKRITA
+	dw CHIKORITA
 	db 5
 	dw CLEFLING
 	db 6

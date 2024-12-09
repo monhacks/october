@@ -75,17 +75,21 @@ TrainerInstructorFrank:
 	trainer INSTRUCTOR, FRANK, EVENT_BEAT_INSTRUCTOR_FRANK, .SeenTxt, .BeatenTxt, 0, .AfterScript
 
 .SeenTxt:
-	text "GHOST moves are"
-	line "useless against"
-	cont "NORMAL-types."
-	para "But, I do know a"
-	line "secret that will"
-	cont "help me win!"
+	text "The immortal GHOST"
+	line "type is immune"
+	
+	para "to two other"
+	line "types."
+	
+	para "Can you figure"
+	line "out which ones"
+	
+	cont "before your life"
+	para "gets drained?"
 	done
 
 .BeatenTxt:
-	text "<...>How'd you figure"
-	line "it out?!"
+	text "You sure can<...>"
 	done
 
 .AfterScript:
@@ -93,11 +97,8 @@ TrainerInstructorFrank:
 	jumptextfaceplayer .AfterTxt
 
 .AfterTxt:
-	text "FORESIGHT can make"
-	line "NORMAL and GHOST"
-	para "moves affect each"
-	line "other!"
-	para "Isn't that neat?"
+	text "I sure got"
+	line "schooled there."
 	done
 
 TrainerMediumDorothy:
@@ -123,7 +124,33 @@ TrainerMediumDorothy:
 	para "sense change in"
 	line "the atmosphere."
 	done
+	
+TrainerSoldierGrant:
+	trainer SOLDIER, GRANT, EVENT_BEAT_SOLDIER_GRANT, .SeenTxt, .BeatenTxt, 0, .AfterScript
 
+.SeenTxt:
+	text "My ghosts served"
+    line "as my spies during"
+    cont "the war!"
+    para "Our bond is un-"
+    line "breakable!"
+    done
+
+.BeatenTxt:
+	text "Beaten down!"
+    done
+
+.AfterScript:
+	endifjustbattled
+	jumptextfaceplayer .AfterTxt
+
+.AfterTxt:
+	text "My ghost-type"
+    line "#MON helped me"
+    para "spy on the enemies"
+    line "using their super-"
+    cont "natural powers."
+    done
 
 AzaleaGymMortyScript:
 	faceplayer
@@ -322,9 +349,10 @@ AzaleaGym_MapEvents:
 	bg_event  3, 23, BGEVENT_READ, AzaleaGymStatue
 	bg_event  6, 23, BGEVENT_READ, AzaleaGymStatue
 
-	db 5 ; object events
-	object_event  4, 18, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerSageTakao, -1
+	db 6 ; object events
+	object_event 11,  4, SPRITE_SAGE, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerSageTakao, -1
 	object_event  5, 12, SPRITE_MYSTIC, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerMysticAndrea, -1
-	object_event 17, 16, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerInstructorFrank, -1
+	object_event  3, 20, SPRITE_SUPER_NERD, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerInstructorFrank, -1
 	object_event 17,  4, SPRITE_GRANNY, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerMediumDorothy, -1
+	object_event 17, 16, SPRITE_SOLDIER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, -1, 0, OBJECTTYPE_TRAINER, 2, TrainerSoldierGrant, -1
 	object_event  6,  3, SPRITE_MORTY, SPRITEMOVEDATA_STANDING_DOWN, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, AzaleaGymMortyScript, -1
