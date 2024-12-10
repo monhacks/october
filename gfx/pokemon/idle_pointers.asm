@@ -207,6 +207,8 @@ AnimationIdlePointers:
 	dw BellossomAnimationIdle
 	dw MarillAnimationIdle
 	dw AzumarillAnimationIdle
+	dw WailmerAnimationIdle
+	dw WailordAnimationIdle
 	dw PhandarinAnimationIdle
 	dw KudatsubeAnimationIdle
 	dw SudowoodoAnimationIdle

@@ -58,6 +58,8 @@ EvosAttacksPointers2::
 	dw BellossomEvosAttacks
 	dw MarillEvosAttacks
 	dw AzumarillEvosAttacks
+	dw WailmerEvosAttacks
+	dw WailordEvosAttacks
 	dw PhandarinEvosAttacks
 	dw KudatsubeEvosAttacks
 	dw SudowoodoEvosAttacks
@@ -989,6 +991,17 @@ AzumarillEvosAttacks:
 	dbw 25, BUBBLEBEAM
 	dbw 36, DOUBLE_EDGE
 	dbw 48, RAIN_DANCE
+	db 0 ; no more level-up moves
+	
+WailmerEvosAttacks:
+	dbbw EVOLVE_LEVEL, 40, WAILORD
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	db 0 ; no more level-up moves
+
+WailordEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
 	db 0 ; no more level-up moves
 	
 PhandarinEvosAttacks:

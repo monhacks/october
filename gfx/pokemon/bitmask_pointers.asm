@@ -207,6 +207,8 @@ BitmasksPointers:
 	dw BellossomBitmasks
 	dw MarillBitmasks
 	dw AzumarillBitmasks
+	dw WailmerBitmasks
+	dw WailordBitmasks
 	dw PhandarinBitmasks
 	dw KudatsubeBitmasks
 	dw SudowoodoBitmasks

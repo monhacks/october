@@ -208,6 +208,8 @@ FirstEvoStages::
 	dw ODDISH
 	dw MARILL
 	dw MARILL     ;b8
+	dw WAILMER
+	dw WAILMER
 	dw PHANDARIN
 	dw KUDATSUBE
 	dw SUDOWOODO

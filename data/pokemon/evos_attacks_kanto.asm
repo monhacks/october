@@ -318,14 +318,14 @@ MetapodEvosAttacks:
 
 ButterfreeEvosAttacks:
 	db 0 ; no more evolutions
-	dbw 1, HARDEN
 	dbw 1, TACKLE
 	dbw 1, STRING_SHOT
+	dbw 7, HARDEN
 	dbw 13, POISONPOWDER
 	dbw 17, GUST
-	dbw 22, MEGA_DRAIN
+	dbw 22, SIGNAL_BEAM
 	dbw 25, SLEEP_POWDER
-	dbw 29, PSYBEAM
+	dbw 29, SAFEGUARD
 	dbw 34, FLY
 	dbw 37, STUN_SPORE
 	dbw 41, LUNGE
@@ -916,16 +916,16 @@ VenonatEvosAttacks:
 	dbw 1, TACKLE
 	dbw 1, DISABLE
 	dbw 1, FORESIGHT
-	dbw 4, SUPERSONIC
-	dbw 10, CONFUSION
-	dbw 14, ACID
-	dbw 20, POISONPOWDER
-	dbw 24, LEECH_LIFE
+	dbw 4, LEECH_LIFE
+	dbw 10, SUPERSONIC
+	dbw 14, POISONPOWDER
+	dbw 20, CONFUSION
+	dbw 24, SIGNAL_BEAM
 	dbw 30, STUN_SPORE
 	dbw 34, PSYBEAM
-	dbw 40, SLEEP_POWDER
-	dbw 44, PSYCHIC_M
-	dbw 50, SLUDGE_BOMB
+;	dbw 40, TOXIC_LEECH
+	dbw 44, SLEEP_POWDER
+	dbw 50, PSYCHIC_M
 	db 0 ; no more level-up moves
 
 VenomothEvosAttacks:
@@ -933,16 +933,16 @@ VenomothEvosAttacks:
 	dbw 1, TACKLE
 	dbw 1, DISABLE
 	dbw 1, FORESIGHT
-	dbw 4, SUPERSONIC
-	dbw 10, CONFUSION
-	dbw 14, ACID
-	dbw 20, POISONPOWDER
-	dbw 24, LEECH_LIFE
+	dbw 4, LEECH_LIFE
+	dbw 10, SUPERSONIC
+	dbw 14, POISONPOWDER
+	dbw 20, CONFUSION
+	dbw 24, SIGNAL_BEAM
 	dbw 30, STUN_SPORE
 	dbw 38, PSYBEAM
-	dbw 42, SLEEP_POWDER
-	dbw 46, PSYCHIC_M
-	dbw 52, SLUDGE_BOMB
+;	dbw 42, TOXIC_LEECH
+	dbw 46, SLEEP_POWDER
+	dbw 52, PSYCHIC_M
 	db 0 ; no more level-up moves
 
 DiglettEvosAttacks:

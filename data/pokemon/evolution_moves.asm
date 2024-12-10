@@ -207,6 +207,8 @@ EvolutionMoves::
 	dw SWORDS_DANCE ; BELLOSSOM
 	dw NO_MOVE      ; MARILL
 	dw NO_MOVE      ; AZUMARILL
+	dw NO_MOVE      ; WAILMER
+	dw NO_MOVE      ; WAILORD
 	dw NO_MOVE      ; PHANDARIN
 	dw NO_MOVE      ; KUDATSUBE
 	dw NO_MOVE      ; SUDOWOODO

@@ -207,6 +207,8 @@ FramesPointers:
 	dba BellossomFrames
 	dba MarillFrames
 	dba AzumarillFrames
+	dba WailmerFrames
+	dba WailordFrames
 	dba PhandarinFrames
 	dba KudatsubeFrames
 	dba SudowoodoFrames

@@ -235,6 +235,8 @@ HabitatPokedexOrder:
 	dw POLITOED
 	dw MARILL
 	dw AZUMARILL
+	dw WAILMER
+	dw WAILORD
 	dw HORSEA
 	dw SEADRA
 	dw KINGDRA

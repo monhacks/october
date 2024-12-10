@@ -883,5 +883,10 @@ KukulcanFrontpic:	INCBIN "gfx/pokemon/kukulcan/front.static.2bpp.lz"
 KukulcanBackpic:    INCBIN "gfx/pokemon/kukulcan/back.2bpp.lz"
 PiplupFrontpic:	    INCBIN "gfx/pokemon/piplup/front.static.2bpp.lz"
 PiplupBackpic:      INCBIN "gfx/pokemon/piplup/back.2bpp.lz"
+WailmerFrontpic:	INCBIN "gfx/pokemon/wailmer/front.static.2bpp.lz"
+WailmerBackpic:     INCBIN "gfx/pokemon/wailmer/back.2bpp.lz"
+WailordFrontpic:    INCBIN "gfx/pokemon/wailord/front.static.2bpp.lz"
+WailordBackpic:     INCBIN "gfx/pokemon/wailord/back.2bpp.lz"
+
 
 INCLUDE "gfx/pics_animated.asm"

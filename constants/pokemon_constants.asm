@@ -229,6 +229,8 @@ JOHTO_POKEMON EQU const_value
 	const BELLOSSOM  ; b6
 	const MARILL     ; b7
 	const AZUMARILL  ; b8
+	const WAILMER
+	const WAILORD
 	const PHANDARIN
 	const KUDATSUBE
 	const SUDOWOODO  ; b9

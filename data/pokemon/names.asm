@@ -212,6 +212,8 @@ PokemonNames::
 	db "BELLOSSOM@"
 	db "MARILL@@@@"
 	db "AZUMARILL@"
+	db "WAILMER@@@"
+	db "WAILORD@@@"
 	db "PHANDARIN@"
 	db "KUDASTUBE@"
 	db "SUDOWOODO@"

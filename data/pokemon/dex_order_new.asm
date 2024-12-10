@@ -165,6 +165,8 @@ NewPokedexOrder:
 	dw STANTLER
 	dw MARILL
 	dw AZUMARILL
+	dw WAILMER
+	dw WAILORD
 	dw DIGLETT
 	dw DUGTRIO
 	dw MANKEY

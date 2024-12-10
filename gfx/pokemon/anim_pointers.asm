@@ -207,6 +207,8 @@ AnimationPointers:
 	dw BellossomAnimation
 	dw MarillAnimation
 	dw AzumarillAnimation
+	dw WailmerAnimation
+	dw WailordAnimation
 	dw PhandarinAnimation
 	dw KudatsubeAnimation
 	dw SudowoodoAnimation

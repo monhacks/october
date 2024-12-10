@@ -222,6 +222,8 @@ PokemonPicPointers::
 	mon_pic Bellossom
 	mon_pic Marill
 	mon_pic Azumarill
+	mon_pic Wailmer
+	mon_pic Wailord
 	mon_pic Phandarin
 	mon_pic Kudatsube
 	mon_pic Sudowoodo

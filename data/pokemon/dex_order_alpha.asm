@@ -314,6 +314,8 @@ AlphabeticalPokedexOrder:
 	dw VOLTORB
 	dw VULPIII
 	dw VULPIX
+	dw WAILMER
+	dw WAILORD
 	dw WARTORTLE
 	dw WEARLYCAN
 	dw WEEDLE

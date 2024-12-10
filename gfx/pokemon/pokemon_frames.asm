@@ -335,4 +335,7 @@ MinccinoFrames:   INCLUDE "gfx/pokemon/minccino/frames.asm"
 CinccinoFrames:   INCLUDE "gfx/pokemon/cinccino/frames.asm"
 SphealFrames:     INCLUDE "gfx/pokemon/spheal/frames.asm"
 ShuricornFrames:  INCLUDE "gfx/pokemon/shuricorn/frames.asm"
+WailmerFrames:    INCLUDE "gfx/pokemon/wailmer/frames.asm"
+WailordFrames:    INCLUDE "gfx/pokemon/wailord/frames.asm"
+
 

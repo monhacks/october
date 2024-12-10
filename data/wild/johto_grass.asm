@@ -1518,19 +1518,19 @@ JohtoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	dbw 10, KIWACKI
-	dbw 10, KIWACKI
+	dbw 10, PINECO
 	dbw 12, SILKANE
 	dbw 12, BEEDRILL
 	dbw 13, BUTTERFREE
 	dbw 14, SLUGMA
 	dbw 14, SLUGMA
 	; day
-	dbw 10, KIWACKI
 	dbw 10, SILKANE
+	dbw 10, KIWACKI
 	dbw 12, TERRACHNID
 	dbw 12, GLIGAR
 	dbw 13, HERACROSS
-	dbw 14, SLUGMA
+	dbw 14, PINECO
 	dbw 14, SLUGMA
 	; nite
 	dbw 10, VENONAT
