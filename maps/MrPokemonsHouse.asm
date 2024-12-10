@@ -330,7 +330,7 @@ MrPokemonsHouse_OakText2:
 	line "long, haha."
 
 	para "I have a radio"
-	line "show in GOLDENROD"
+	line "show in MARIGOLD"
 	para "to attend to, and"
 	line "then I'll get back"
 	cont "to my studies."
