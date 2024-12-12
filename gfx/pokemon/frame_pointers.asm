@@ -202,6 +202,8 @@ FramesPointers:
 	dba TykerFrames
 	dba StraigarFrames
 	dba GorotoraFrames
+	dba MolambinoFrames
+	dba AngoreFrames
 	dba BiteelFrames
 	dba LurreelFrames
 	dba BellossomFrames
@@ -269,7 +271,6 @@ FramesPointers:
 	dba GargraniteBitmasks
 	dba FennecurseFrames
 	dba StromenFrames
-	dba AngoreFrames
 	dba KingdraFrames
 	dba AlumaidenFrames
 	dba ValhaldraFrames
@@ -306,7 +307,6 @@ FramesPointers:
 	dba WearlycanFrames
 	dba DodaerieFrames
 	dba ParasporFrames
-	dba MolambinoFrames
 	dba KiwackiFrames
 	dba SilkaneFrames
 	dba MorphobiaFrames

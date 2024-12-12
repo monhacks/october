@@ -217,6 +217,8 @@ PokemonPicPointers::
 	mon_pic Tyker
 	mon_pic Straigar
 	mon_pic Gorotora
+	mon_pic Molambino
+	mon_pic Angore
 	mon_pic Biteel
 	mon_pic Lurreel
 	mon_pic Bellossom
@@ -287,7 +289,6 @@ PokemonPicPointers::
 	mon_pic Gargranite
 	mon_pic Fennecurse
 	mon_pic Stromen
-	mon_pic Angore
 	mon_pic Kingdra
 	mon_pic Alumaiden
 	mon_pic Valhaldra
@@ -324,7 +325,6 @@ PokemonPicPointers::
 	mon_pic Wearlycan
 	mon_pic Dodaerie
 	mon_pic Paraspor
-	mon_pic Molambino
 	mon_pic Kiwacki
 	mon_pic Silkane
 	mon_pic Morphobia

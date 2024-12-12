@@ -203,6 +203,8 @@ FirstEvoStages::
 	dw TYKER
 	dw TYKER
 	dw TYKER
+	dw MOLAMBINO
+	dw ANGORE
 	dw BITEEL
 	dw BITEEL
 	dw ODDISH
@@ -270,7 +272,6 @@ FirstEvoStages::
 	dw GARGRANITE
 	dw FENNECURSE
 	dw STROMEN
-	dw ANGORE
 	dw HORSEA
 	dw ALUMAIDEN
 	dw ALUMAIDEN
@@ -307,7 +308,6 @@ FirstEvoStages::
 	dw WORFURS
 	dw DODAERIE
 	dw PARASPOR
-	dw MOLAMBINO
 	dw KIWACKI
 	dw SILKANE
 	dw SILKANE

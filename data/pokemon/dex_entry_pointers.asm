@@ -203,6 +203,8 @@ PokedexDataPointerTable:
 	dba TykerPokedexEntry
 	dba StraigarPokedexEntry
 	dba GorotoraPokedexEntry
+	dba MolambinoPokedexEntry
+	dba AngorePokedexEntry
 	dba BiteelPokedexEntry
 	dba LurreelPokedexEntry
 	dba BellossomPokedexEntry
@@ -270,7 +272,6 @@ PokedexDataPointerTable:
 	dba GargranitePokedexEntry
 	dba FennecursePokedexEntry
 	dba StromenPokedexEntry
-	dba AngorePokedexEntry
 	dba KingdraPokedexEntry
 	dba AlumaidenPokedexEntry
 	dba ValhaldraPokedexEntry
@@ -307,7 +308,6 @@ PokedexDataPointerTable:
 	dba WearlycanPokedexEntry
 	dba DodaeriePokedexEntry
 	dba ParasporPokedexEntry
-	dba MolambinoPokedexEntry
 	dba KiwackiPokedexEntry
 	dba SilkanePokedexEntry
 	dba MorphobiaPokedexEntry

@@ -339,6 +339,8 @@ FollowSpritePointers::
 	follow_sprite KotoraSpriteGFX, PAL_FOLLOWER_KOTORA ;TYKER
 	follow_sprite KotoraSpriteGFX, PAL_FOLLOWER_KOTORA ;STRAIGAR TODO
 	follow_sprite KotoraSpriteGFX, PAL_FOLLOWER_KOTORA ;GOROTORA TODO
+	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;MOLAMBINO
+	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;ANGORE
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;BITEEL
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;LURREEL
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;BELLOSSOM
@@ -406,7 +408,6 @@ FollowSpritePointers::
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;GARGRANITE
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_RED ;FENNECURSE
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BROWN ;STROMEN
-	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;ANGORE
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;KINGDRA
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;ALUMAIDEN
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;VALHALDRA
@@ -443,7 +444,6 @@ FollowSpritePointers::
 	follow_sprite WearlycanSpriteGFX, PAL_FOLLOWER_SILVER ;WEARLYCAN
 	follow_sprite DodaerieSpriteGFX, PAL_FOLLOWER_BROWN ;DODAERIE
 	follow_sprite ParasporSpriteGFX, PAL_FOLLOWER_RED ;PARASPOR
-	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;MOLAMBINO
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;KIWACKI
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;SILKANE
 	follow_sprite WooperSpriteGFX, PAL_FOLLOWER_BLUE ;MORPHOBIA

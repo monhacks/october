@@ -202,6 +202,8 @@ AnimationPointers:
 	dw TykerAnimation
 	dw StraigarAnimation
 	dw GorotoraAnimation
+	dw MolambinoAnimation
+	dw AngoreAnimation
 	dw BiteelAnimation
 	dw LurreelAnimation
 	dw BellossomAnimation
@@ -269,7 +271,6 @@ AnimationPointers:
 	dw GargraniteAnimation
 	dw FennecurseAnimation
 	dw StromenAnimation
-	dw AngoreAnimation
 	dw KingdraAnimation
 	dw AlumaidenAnimation
 	dw ValhaldraAnimation
@@ -306,7 +307,6 @@ AnimationPointers:
 	dw WearlycanAnimation
 	dw DodaerieAnimation
 	dw ParasporAnimation
-	dw MolambinoAnimation
 	dw KiwackiAnimation
 	dw SilkaneAnimation
 	dw MorphobiaAnimation

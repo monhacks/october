@@ -103,6 +103,7 @@ NewPokedexOrder:
 	dw GOLDEEN
 	dw SEAKING
 	dw MOLAMBINO
+	dw ANGORE
 	dw SLOWPOKE
 	dw SLOWBRO
 	dw SLOWKING
@@ -222,7 +223,6 @@ NewPokedexOrder:
 	dw LANTURN
 	dw BITEEL
 	dw LURREEL
-	dw ANGORE
 	dw SEEL
 	dw DEWGONG
 	dw SPHEAL

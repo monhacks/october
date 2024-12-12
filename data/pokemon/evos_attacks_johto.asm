@@ -53,6 +53,8 @@ EvosAttacksPointers2::
 	dw TykerEvosAttacks
 	dw StraigarEvosAttacks
 	dw GorotoraEvosAttacks
+	dw MolambinoEvosAttacks
+	dw AngoreEvosAttacks
 	dw BiteelEvosAttacks
 	dw LurreelEvosAttacks
 	dw BellossomEvosAttacks
@@ -120,7 +122,6 @@ EvosAttacksPointers2::
 	dw GargraniteEvosAttacks
 	dw FennecurseEvosAttacks
 	dw StromenEvosAttacks
-	dw AngoreEvosAttacks
 	dw KingdraEvosAttacks
 	dw AlumaidenEvosAttacks
 	dw ValhaldraEvosAttacks
@@ -906,6 +907,41 @@ GorotoraEvosAttacks:
 	dbw 45, CRUNCH
 	dbw 51, THUNDERBOLT
 	dbw 58, SLASH
+	db 0 ; no more level-up moves
+	
+MolambinoEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1 , WATER_GUN
+	dbw 1 , GROWL
+	dbw 1 , TACKLE
+	dbw 10, RAGE
+	dbw 12, BUBBLE
+	dbw 13, HARDEN
+	dbw 16, SUPERSONIC
+	dbw 19, BIDE
+	dbw 23, SLAM
+	dbw 29, DOUBLE_TEAM
+	dbw 35, ACID_ARMOR
+	dbw 42, IRON_TAIL
+	dbw 47, THRASH
+	dbw 52, HYDRO_PUMP
+	db 0 ; no more level-up moves
+	
+AngoreEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, TACKLE
+	dbw 1, GROWL
+	dbw 1, BUBBLE
+	dbw 6, DEFENSE_CURL
+	dbw 10, RAGE
+	dbw 15, SUPERSONIC
+	dbw 19, BUBBLEBEAM
+	dbw 24, SCREECH
+	dbw 28, IRON_TAIL
+	dbw 34, ACID_ARMOR
+	dbw 39, SCARY_FACE
+	dbw 45, CRUNCH
+	dbw 50, HYDRO_PUMP
 	db 0 ; no more level-up moves
 	
 BiteelEvosAttacks:
@@ -1916,23 +1952,6 @@ StromenEvosAttacks:
 	dbw 46, SHADOW_BALL
 	dbw 53, DESTINY_BOND
 	dbw 58, PSYCHIC_M
-	db 0 ; no more level-up moves
-	
-AngoreEvosAttacks:
-	db 0 ; no more evolutions
-	dbw 1, TACKLE
-	dbw 1, GROWL
-	dbw 1, BUBBLE
-	dbw 6, DEFENSE_CURL
-	dbw 10, RAGE
-	dbw 15, SUPERSONIC
-	dbw 19, BUBBLEBEAM
-	dbw 24, SCREECH
-	dbw 28, IRON_TAIL
-	dbw 34, ACID_ARMOR
-	dbw 39, SCARY_FACE
-	dbw 45, CRUNCH
-	dbw 50, HYDRO_PUMP
 	db 0 ; no more level-up moves
 	
 KingdraEvosAttacks:

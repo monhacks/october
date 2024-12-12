@@ -202,6 +202,8 @@ EvolutionMoves::
 	dw NO_MOVE      ; TYKER
 	dw NO_MOVE      ; STRAIGAR
 	dw NO_MOVE      ; GOROTORA
+	dw NO_MOVE      ; MOLAMBINO
+	dw NO_MOVE      ; ANGORE
 	dw NO_MOVE      ; BITEEL
 	dw CRUNCH       ; LURREEL
 	dw SWORDS_DANCE ; BELLOSSOM
@@ -269,7 +271,6 @@ EvolutionMoves::
 	dw NO_MOVE      ; GARGRANITE
 	dw NO_MOVE      ; FENNECURSE
 	dw NO_MOVE      ; STROMEN
-	dw NO_MOVE      ; ANGORE
 	dw NO_MOVE      ; KINGDRA
 	dw NO_MOVE      ; ALUMAIDEN
     dw PERISH_SONG  ; VALHALDRA
@@ -306,7 +307,6 @@ EvolutionMoves::
 	dw NO_MOVE      ; WEARLYCAN
 	dw NO_MOVE      ; DODAERIE
 	dw NO_MOVE      ; PARASPOR
-	dw NO_MOVE      ; MOLAMBINO
 	dw NO_MOVE      ; KIWACKI
 	dw NO_MOVE      ; SILKANE
 	dw NO_MOVE      ; MORPHOBIA

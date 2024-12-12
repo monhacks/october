@@ -202,6 +202,8 @@ BitmasksPointers:
 	dw TykerBitmasks
 	dw StraigarBitmasks
 	dw GorotoraBitmasks
+	dw MolambinoBitmasks
+	dw AngoreBitmasks
 	dw BiteelBitmasks
 	dw LurreelBitmasks
 	dw BellossomBitmasks
@@ -269,7 +271,6 @@ BitmasksPointers:
 	dw GargraniteBitmasks
 	dw FennecurseBitmasks
 	dw StromenBitmasks
-	dw AngoreBitmasks
 	dw KingdraBitmasks
 	dw AlumaidenBitmasks
 	dw ValhaldraBitmasks
@@ -306,7 +307,6 @@ BitmasksPointers:
 	dw WearlycanBitmasks
 	dw DodaerieBitmasks
 	dw ParasporBitmasks
-	dw MolambinoBitmasks
 	dw KiwackiBitmasks
 	dw SilkaneBitmasks
 	dw MorphobiaBitmasks

@@ -224,6 +224,8 @@ JOHTO_POKEMON EQU const_value
 	const TYKER
 	const STRAIGAR
 	const GOROTORA
+	const MOLAMBINO
+	const ANGORE
 	const BITEEL
 	const LURREEL
 	const BELLOSSOM  ; b6
@@ -291,7 +293,6 @@ JOHTO_POKEMON EQU const_value
 	const GARGRANITE
 	const FENNECURSE
 	const STROMEN
-	const ANGORE
 	const KINGDRA    ; e6
 	const ALUMAIDEN
 	const VALHALDRA
@@ -328,7 +329,6 @@ JOHTO_POKEMON EQU const_value
 	const WEARLYCAN
 	const DODAERIE
 	const PARASPOR
-	const MOLAMBINO
 	const KIWACKI
 	const SILKANE
 	const MORPHOBIA

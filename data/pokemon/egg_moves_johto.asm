@@ -52,6 +52,7 @@ EggMovePointers2::
 	dw TykerEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
+	dw MolambinoEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
@@ -122,7 +123,6 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2
-	dw NoEggMoves2
 	dw PhanpyEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
@@ -156,7 +156,6 @@ EggMovePointers2::
 	dw NoEggMoves2
 	dw DodaerieEggMoves
 	dw ParasporEggMoves
-	dw MolambinoEggMoves
 	dw NoEggMoves2
 	dw NoEggMoves2
 	dw NoEggMoves2

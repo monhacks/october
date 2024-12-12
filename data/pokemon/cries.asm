@@ -210,6 +210,8 @@ PokemonCries::
 	mon_cry CRY_PICHU,       $f60,  $200 ; TYKER
 	mon_cry CRY_LARVITAR,    $db3,  $168 ; STRAIGAR
 	mon_cry CRY_LARVITAR,    $ca2,  $192 ; GOROTORA
+	mon_cry CRY_MOLAMBINO,    $043, $050 ; MOLAMBINO
+	mon_cry CRY_WOOPER,      $8f0,  $100 ; ANGORE: TODO
 	mon_cry CRY_MANTINE,     -$051,  $0e8 ; BITEEL TODO
 	mon_cry CRY_MANTINE,     -$051,  $0e8 ; LURREEL TODO
 	mon_cry CRY_CLEFFA,      $084,  $150 ; BELLOSSOM
@@ -277,7 +279,6 @@ PokemonCries::
 	mon_cry CRY_NIDORAN_M,   $000,  $100 ; GARGRANITE: TODO
 	mon_cry CRY_CYNDAQUIL,   $303,  $1c0 ; FENNECURSE
 	mon_cry CRY_GRIMER,      $210,  $100 ; STROMEN
-	mon_cry CRY_WOOPER,      $8f0,  $100 ; ANGORE: TODO
 	mon_cry CRY_SLUGMA,      $2fb,  $100 ; KINGDRA
 	mon_cry CRY_NIDORAN_M,   $000,  $100 ; ALUMAIDEN: TODO
 	mon_cry CRY_NIDORAN_M,   $000,  $100 ; VALHALDRA: TODO
@@ -314,7 +315,6 @@ PokemonCries::
 	mon_cry CRY_WORFURS,     -$1db, $150 ; WEARLYCAN
 	mon_cry CRY_DIGLETT,     $0cb,  $061 ; DODAERIE
 	mon_cry CRY_PARAS,       $0c4,  $0b0 ; PARASPOR
-	mon_cry CRY_MOLAMBINO,    $043, $050 ; MOLAMBINO
 	mon_cry CRY_CHIKORITA,    $040, $200 ; KIWACKI
  	mon_cry CRY_DIGLETT,     $010,  $010 ; SILKANE
  	mon_cry CRY_DIGLETT,     $020,  $040 ; MORPHOBIA

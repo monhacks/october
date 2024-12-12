@@ -202,6 +202,8 @@ AnimationIdlePointers:
 	dw TykerAnimationIdle
 	dw StraigarAnimationIdle
 	dw GorotoraAnimationIdle
+	dw MolambinoAnimationIdle
+	dw AngoreAnimationIdle
 	dw BiteelAnimationIdle
 	dw LurreelAnimationIdle
 	dw BellossomAnimationIdle
@@ -269,7 +271,6 @@ AnimationIdlePointers:
 	dw GargraniteAnimationIdle
 	dw FennecurseAnimationIdle
 	dw StromenAnimationIdle
-	dw AngoreAnimationIdle
 	dw KingdraAnimationIdle
 	dw AlumaidenAnimationIdle
 	dw ValhaldraAnimationIdle
@@ -306,7 +307,6 @@ AnimationIdlePointers:
 	dw WearlycanAnimationIdle
 	dw DodaerieAnimationIdle
 	dw ParasporAnimationIdle
-	dw MolambinoAnimationIdle
 	dw KiwackiAnimationIdle
 	dw SilkaneAnimationIdle
 	dw MorphobiaAnimationIdle
