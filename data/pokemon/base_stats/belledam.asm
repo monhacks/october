@@ -1,6 +1,6 @@
 	db BELLEDAM ; 214
 
-	db  70,  90,  40, 105,  70,  65
+	db  60,  85,  60, 90,  85,  60
 	;   hp  atk  def  spd  sat  sdf
 
 	db DARK, DARK ; type

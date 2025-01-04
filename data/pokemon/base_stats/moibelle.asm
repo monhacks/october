@@ -1,6 +1,6 @@
 	db MOIBELLE ; 213
 
-	db  45,  55,  30,  70,  40,  50
+	db  40,  65,  40,  70, 65,  40
 	;   hp  atk  def  spd  sat  sdf
 
 	db DARK, DARK ; type
