@@ -76,8 +76,14 @@ OctoberCredits_StringTable:
 		dw .Poket, .Blank
 			; sprite help
 		dw .Soup,  .Blank
-			; Reforged assets/custom animations
+			; Reforged assets
 
+	dw .Blank, .Blank
+	dw .Blank, .Blank
+
+	dw .BattleAnims, .Blank
+		dw .Soup,  .Blank
+	
 	dw .Blank, .Blank
 	dw .Blank, .Blank
 
@@ -188,7 +194,7 @@ OctoberCredits_StringTable:
 .Bloodless:     db "     BLOODLESSNX    ";;
 .Polished:      db "   POLISHED CRYSTAL ";;
 .Chatty:        db "    CHATTY CRYSTAL  ";;
-.Soup:          db "      SOUPPOTATO    ";;
+.Soup:          db "      SOURAPPLE     ";;
 .Froggest:      db "    FROGGESTSPIRIT  ";;
 .M17:           db "  MMMMMMMMMMMMMMMMM ";;
 .Gelius:        db "       GELIUS       ";;
@@ -215,3 +221,4 @@ OctoberCredits_StringTable:
 .MeanShape:     db "    MEANSHAPE101    ";;
 .GameScenario:  db "    GAME SCENARIO   ";;
 .Tajiri:        db "    SATOSHI TAJIRI  ";;
+.BattleAnims:   db "  BATTLE ANIMATIONS ";;
